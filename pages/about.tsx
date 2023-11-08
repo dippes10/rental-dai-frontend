@@ -1,14 +1,11 @@
-// import React from 'react';
-// import Header from '../components/header';
+import React from 'react';
 
-// const About: React.FC = () => {
-//   return (
-//     <div>
-//       <Header />
-//       <h1>About RentalDai</h1>
-//       {/* Add more content specific to your about page */}
-//     </div>
-//   );
-// };
+const About: React.FC = () => {
+  return (
+    <div>
+      <h1>About RentalDai</h1>
+    </div>
+  );
+};
 
-// export default About;
+export default About;

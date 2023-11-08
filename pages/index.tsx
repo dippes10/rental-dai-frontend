@@ -1,61 +1,103 @@
+// pages/index.tsx
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Image from 'next/image';
+
+// Example founder's photo from Unsplash (replace with actual URL)
+const founderPhotoUrl = '/house1.jpg';
+
+// Dummy data for other sections and advertisements (replace with actual data)
+const otherSectionsData = [
+  {
+    title: 'Featured Properties',
+    description: 'Discover our top-rated rental properties.',
+    imageUrl: '/house2.jpg',
+  },
+  // Add more sections as needed
+];
+
+const advertisementsData = [
+  {
+    title: 'Special Offer',
+    description: 'Get 20% off your first rental! Limited time offer.',
+    imageUrl: '/house1.jpg',
+  },
+  // Add more advertisements as needed
+];
 
 const HomePage: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
       <section className="hero">
-        <h1>Welcome to Rental Dai</h1>
-        <p>Your trusted platform for renting houses.</p>
-        <Link to="/properties" className="cta-button">
-          Explore Properties
-        </Link>
-      </section>
-
-      {/* Featured Properties */}
-      <section className="featured-properties">
-        <h2>Featured Properties</h2>
-        <div className="property-list">
-          {/* Example property card */}
-          <div className="property-card">
-            {/* <img src="/property1.jpg" alt="Property 1" /> */}
-            <h3>Modern Apartment</h3>
-            <p>Located in the heart of the city</p>
-            <Link to="/property/1" className="view-details">
-              View Details
-            </Link>
-          </div>
-
-          {/* Additional property cards go here */}
+        {/* Hero content */}
+        <div className="container mx-auto text-center py-16">
+          <h1 className="text-4xl font-bold mb-4">
+            Welcome to Rental-Dai - Your Home, Your Way
+          </h1>
+          <p className="text-lg text-gray-600">
+            Find the perfect rental property that suits your lifestyle.
+          </p>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="how-it-works">
-        <h2>How It Works</h2>
-        <div className="steps">
-          <div className="step">
-            <div className="step-number">1</div>
-            <p>Search for your ideal property on our platform.</p>
+      {/* Founder's Message Section */}
+      <section className="founder-message bg-gray-100 py-16">
+        <div className="container mx-auto flex items-center">
+          {/* Founder's Photo */}
+          <div className="mr-8">
+            <Image
+              src={founderPhotoUrl}
+              alt="Founder's Photo"
+              width={200}
+              height={200}
+              className="rounded-full"
+            />
           </div>
-          <div className="step">
-            <div className="step-number">2</div>
-            <p>Contact the property owner or manager for more details.</p>
-          </div>
-          <div className="step">
-            <div className="step-number">3</div>
-            <p>Book and move into your new home hassle-free.</p>
+          {/* Founder's Message */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Message from Our Founder</h2>
+            <p className="text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget
+              felis in sapien dignissim feugiat non eget turpis. Curabitur at erat
+              justo.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Call-to-Action */}
-      <section className="cta">
-        <h2>Start Your Journey with Rental Dai</h2>
-        <Link to="/join-club" className="cta-button">
-          Join Rental Dai
-        </Link>
+      {/* Other Sections */}
+      {otherSectionsData.map((section, index) => (
+        <section key={index} className="other-section py-16">
+          <div className="container mx-auto flex items-center">
+            <div className="w-1/2">
+              <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+              <p className="text-gray-600">{section.description}</p>
+            </div>
+            <div className="w-1/2">
+              <Image
+                src={section.imageUrl}
+                alt={section.title}
+                width={800}
+                height={600}
+                className="rounded-md"
+              />
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Advertisement Section */}
+      <section className="advertisements bg-gray-100 py-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {advertisementsData.map((ad, index) => (
+            <div key={index} className="advertisement">
+              <h3 className="text-xl font-bold mb-2">{ad.title}</h3>
+              <p className="text-gray-600 mb-4">{ad.description}</p>
+              <Image src={ad.imageUrl} alt={ad.title} width={800} height={400} />
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
