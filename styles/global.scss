@@ -1,0 +1,61 @@
+// styles/global.scss
+
+:root {
+  --apple-red: #ff3b30; // Replace with your preferred shade of red
+  --primary-bg: #f4f4f4; // Light gray for primary background
+  --text-color: #333; // Dark text color
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+}
+
+// Header styles
+header {
+  background-color: var(--apple-red);
+  padding: 16px;
+  color: white;
+}
+
+// Navigation styles
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+// Container styles
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+ Button styles
+.button {
+  background-color: var(--apple-red);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+Input styles
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
