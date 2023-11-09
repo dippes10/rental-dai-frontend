@@ -7,10 +7,7 @@ import '../styles/globals.scss'; // Import your global styles here
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Header HeaderNav={HeaderData.HeaderNav} />
       <Component {...pageProps} />
-    </>
   );
 }
 

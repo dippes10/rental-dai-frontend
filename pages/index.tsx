@@ -1,33 +1,35 @@
 // pages/index.tsx
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Dropdown from "../components/Dropdown";
+import AppLayout from "../components/AppLayout";
 
 // Example founder's photo from Unsplash (replace with actual URL)
-const founderPhotoUrl = '/house1.jpg';
+const founderPhotoUrl = "/house1.jpg";
 
 // Dummy data for other sections and advertisements (replace with actual data)
 const otherSectionsData = [
   {
-    title: 'Featured Properties',
-    description: 'Discover our top-rated rental properties.',
-    imageUrl: '/house2.jpg',
+    title: "Featured Properties",
+    description: "Discover our top-rated rental properties.",
+    imageUrl: "/house2.jpg",
   },
   // Add more sections as needed
 ];
 
 const advertisementsData = [
   {
-    title: 'Special Offer',
-    description: 'Get 20% off your first rental! Limited time offer.',
-    imageUrl: '/house1.jpg',
+    title: "Special Offer",
+    description: "Get 20% off your first rental! Limited time offer.",
+    imageUrl: "/house1.jpg",
   },
   // Add more advertisements as needed
 ];
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <AppLayout>
       {/* Hero Section */}
       <section className="hero">
         {/* Hero content */}
@@ -39,6 +41,21 @@ const HomePage: React.FC = () => {
             Find the perfect rental property that suits your lifestyle.
           </p>
         </div>
+        <Dropdown
+          navItem={{
+            id: 1,
+            navItem: "Dropdown",
+            navLink: "/",
+            subNavItems: [
+              {
+                id: 2,
+                navItem: "Dropdown",
+                navLink: "/buahwahahaaaha",
+                subNavItems: [],
+              }
+            ],
+          }}
+        />
       </section>
 
       {/* Founder's Message Section */}
@@ -56,11 +73,13 @@ const HomePage: React.FC = () => {
           </div>
           {/* Founder's Message */}
           <div>
-            <h2 className="text-2xl font-bold mb-4">Message from Our Founder</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              Message from Our Founder
+            </h2>
             <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget
-              felis in sapien dignissim feugiat non eget turpis. Curabitur at erat
-              justo.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              eget felis in sapien dignissim feugiat non eget turpis. Curabitur
+              at erat justo.
             </p>
           </div>
         </div>
@@ -94,12 +113,17 @@ const HomePage: React.FC = () => {
             <div key={index} className="advertisement">
               <h3 className="text-xl font-bold mb-2">{ad.title}</h3>
               <p className="text-gray-600 mb-4">{ad.description}</p>
-              <Image src={ad.imageUrl} alt={ad.title} width={800} height={400} />
+              <Image
+                src={ad.imageUrl}
+                alt={ad.title}
+                width={800}
+                height={400}
+              />
             </div>
           ))}
         </div>
       </section>
-    </div>
+    </AppLayout>
   );
 };
 
