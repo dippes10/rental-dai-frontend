@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 import Button from '../Button';
 
 // Import the Header object
@@ -11,6 +11,10 @@ interface HeaderProps {
   HeaderNav: NavItemProps[];
 }
 
+const handleClick = () => {
+  router.push("/contact");
+  setShowMenu(true);
+};
 
 const Header: React.FC<HeaderProps> = () => {
     const router = useRouter();
@@ -67,9 +71,11 @@ const Header: React.FC<HeaderProps> = () => {
               <div
                 className="text-gray-300 hover:text-white mr-4 transition duration-300 cursor-pointer"
               >
-                <Button>
-                  Log in
-                </Button>
+                <Button
+                  type="outline"
+                  title="Join RentalDai"
+                  onClick={handleClick}
+                />
               </div>
               <div
                 className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition duration-300 cursor-pointer"
@@ -84,3 +90,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
   
   export default Header;
+
+function setShowMenu(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}

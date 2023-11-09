@@ -1,50 +1,24 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React from 'react'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'small' | 'medium' | 'large';
+interface ButtonTypes {
+  title: string
+  onClick: () => void
+  type?: 'outline'
+  containerStyles?: string
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  size = 'medium',
-  ...props
-}) => {
-  const getButtonStyle = () => {
-    switch (variant) {
-      case 'primary':
-        return `bg-blue-500 hover:bg-blue-600 text-white`;
-      case 'secondary':
-        return `bg-gray-500 hover:bg-gray-600 text-white`;
-      case 'outline':
-        return `border border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500`;
-      default:
-        return '';
-    }
-  };
-
-  const getButtonSize = () => {
-    switch (size) {
-      case 'small':
-        return 'py-1 px-2 text-sm';
-      case 'medium':
-        return 'py-2 px-4 text-base';
-      case 'large':
-        return 'py-3 px-6 text-lg';
-      default:
-        return '';
-    }
-  };
-
+const Button = ({ title, onClick, type, containerStyles }: ButtonTypes) => {
   return (
     <button
-      className={`rounded-full focus:outline-none focus:ring focus:border-blue-300 transition-all duration-300 ${getButtonStyle()} ${getButtonSize()}`}
-      {...props}
+      className={`${containerStyles} py-3 md:px-20 px-8 rounded-[40px] bg-primary-500 hover:bg-primary-400 transition-colors font-semiBold text-purple ${
+        type === 'outline' &&
+        'border-2 border-primary-500 text-primary-600 bg-transparent hover:bg-primary-500 hover:text-white'
+      }`}
+      onClick={onClick}
     >
-      {children}
+      {title}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
