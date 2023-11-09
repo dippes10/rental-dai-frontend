@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
-import { NavItemProps } from "../constants";
+import { NavItemProps } from "../../constants";
 
 interface DropdownProps {
   navItem: NavItemProps;
@@ -47,7 +47,7 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem }) => {
           !isOpen ? "hidden" : ""
         } bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
       >
-        <ul className="py-2 text-sm text-gray-700">
+        <ul className="py-2 text-sm text-white"> {/* Change text-gray-700 to text-white */}
           {navItem.subNavItems?.map((subNavItem, index) => (
             <li key={index}>
               <Link

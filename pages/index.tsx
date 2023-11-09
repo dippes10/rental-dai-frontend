@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Dropdown from "../components/Dropdown";
+import Dropdown from "../components/header/Dropdown";
 import AppLayout from "../components/AppLayout";
 
 // Example founder's photo from Unsplash (replace with actual URL)
@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
             Find the perfect rental property that suits your lifestyle.
           </p>
         </div>
-        <Dropdown
+        {/* <Dropdown
           navItem={{
             id: 1,
             navItem: "Dropdown",
@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
               }
             ],
           }}
-        />
+        /> */}
       </section>
 
       {/* Founder's Message Section */}
