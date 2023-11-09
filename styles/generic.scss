@@ -1,0 +1,68 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Mulish', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+}
+
+.custom-gradient {
+  background-image: linear-gradient(180deg, var(--neutral-200) 50%, white 50%);
+}
+
+// slick navigation dots
+.slick-dots li.slick-active button:before {
+  color: var(--primary-500);
+}
+
+// markdown styles
+/* markdown styles */
+.doc-container {
+  max-width: 860px;
+}
+.doc-container p {
+  margin: 16px 0;
+}
+
+.doc-container li {
+  margin: 8px 0;
+}
+
+.doc-container ul {
+  list-style-type: circle;
+}
+
+.doc-container ol {
+  list-style-type: desc;
+}
+
+.doc-container > div {
+  width: 100%;
+}
+
+.hero .slick-track {
+  display: flex;
+}
+
+.font-bold {
+  font-weight: bold;
+}
