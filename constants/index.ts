@@ -50,14 +50,21 @@ export const SiteMeta = {
         navLink: "/contact-us",
       },
       {
-        id: "signup-lister",
-        navItem: "Lister Signup",
-        navLink: "/lister-signup",
-      },
-      {
-        id: "signup-user",
-        navItem: "User Signup",
-        navLink: "/user-signup",
+        id: "sign-up",
+        navItem: "Sign Up",
+        navLink: "/sign-up",
+        subNavItems: [
+          {
+            id: "signup-lister",
+            navItem: "Lister Signup",
+            navLink: "/lister-signup",
+          },
+          {
+            id: "signup-user",
+            navItem: "User Signup",
+            navLink: "/user-signup",
+          },
+        ],
       },
     ],
   };

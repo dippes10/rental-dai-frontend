@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import AppLayout from "../components/AppLayout";
 
 interface FormData {
   firstName: string;
@@ -40,6 +41,7 @@ const UserSignUp: React.FC = () => {
   ];
 
   return (
+    <AppLayout>
     <section
       className="bg-cover bg-center min-h-screen py-8"
       style={{ backgroundImage: "url('/your-background-image-for-users.jpg')" }}
@@ -86,6 +88,7 @@ const UserSignUp: React.FC = () => {
         </div>
       </div>
     </section>
+    </AppLayout>
   );
 };
 
