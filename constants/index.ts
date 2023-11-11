@@ -30,7 +30,7 @@ export const SiteMeta = {
           {
             id: "all-properties",
             navItem: "All Properties",
-            navLink: "/properties",
+            navLink: "/PropertiesPage",
           },
           {
             id: "featured-properties",

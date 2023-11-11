@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header>
-      <nav className="bg-brick text-white p-4">
+      <nav className="bg-green-200 text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
           {/* Logo */}
           <Link href="/">
@@ -87,7 +87,7 @@ const Header: React.FC<HeaderProps> = () => {
             <div className="text-black hover:text-red mr-4 transition duration-300 cursor-pointer">
               <Button type="outline" title="Join RentalDai" onClick={handleClick} />
             </div>
-            <div className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full transition duration-300 cursor-pointer">
+            <div className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full transition duration-300 cursor-pointer">
               Get started
             </div>
           </div>

@@ -2,8 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import Dropdown from "../components/header/Dropdown";
 import AppLayout from "../components/AppLayout";
+import GoogleMapComponent from "../components/GoogleMap";
+import RentalFlipImage from "../components/CardFlip";
+import RentalDaiSection from "../components/Description";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/house1.jpg";
@@ -30,6 +32,11 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
+
+      < RentalFlipImage/>
+
+      <RentalDaiSection/>
+
       {/* Hero Section */}
       <section className="hero">
         {/* Hero content */}
@@ -58,6 +65,7 @@ const HomePage: React.FC = () => {
         /> */}
       </section>
 
+<GoogleMapComponent/>
       {/* Founder's Message Section */}
       <section className="founder-message bg-gray-100 py-16">
         <div className="container mx-auto flex items-center">
