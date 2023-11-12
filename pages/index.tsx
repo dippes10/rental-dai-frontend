@@ -5,7 +5,7 @@ import Image from "next/image";
 import AppLayout from "../components/AppLayout";
 import GoogleMapComponent from "../components/GoogleMap";
 import RentalFlipImage from "../components/CardFlip";
-import RentalDaiSection from "../components/Description";
+import Description from "../components/Description";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/house1.jpg";
@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
 
       < RentalFlipImage/>
 
-      <RentalDaiSection/>
+      <Description/>
 
       {/* Hero Section */}
       <section className="hero">

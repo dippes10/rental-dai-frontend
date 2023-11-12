@@ -47,7 +47,7 @@ export const SiteMeta = {
       {
         id: "contact-us",
         navItem: "Contact Us",
-        navLink: "/contact-us",
+        navLink: "/contact",
       },
       {
         id: "sign-up",

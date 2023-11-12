@@ -32,7 +32,7 @@ const rentalDaiMessage = {
   ],
 };
 
-const RentalDaiSection: React.FC = () => {
+const Description: React.FC = () => {
   return (
     <section className="bg-neutral-200">
       <div className="container-custom py-10 flex gap-10 md:gap-2 flex-wrap md:flex-nowrap items-center justify-between text-justify">
@@ -64,4 +64,4 @@ const RentalDaiSection: React.FC = () => {
   );
 };
 
-export default RentalDaiSection;
+export default Description;
