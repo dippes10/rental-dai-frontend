@@ -1,13 +1,13 @@
-import React, { useState, useCallback } from 'react';
+// Import necessary modules and components
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Button from '../Button';
 import Dropdown from './Dropdown';
-
-// Import the Header object
 import { Header as HeaderData, NavItemProps } from '../../constants';
 
+// Your existing Header component
 interface HeaderProps {
   HeaderNav: NavItemProps[];
 }
@@ -15,29 +15,26 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
-  // Use the Header object data
   const HeaderNav = HeaderData.HeaderNav;
 
   const handleClick = () => {
-    router.push('/contact');
+    router.push('/signup-page');
     setShowMenu(false);
   };
-
+  
   return (
     <header>
       <nav className="bg-green-200 text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
-          {/* Logo */}
           <Link href="/">
-            <div className="flex items-center cursor-pointer">
+            <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
               <Image src="/next.svg" alt="Rental-Dai Logo" width={120} height={40} />
             </div>
           </Link>
           <div className={`lg:hidden ${showMenu ? 'block' : 'hidden'}`}>
-            {/* Mobile menu button */}
             <button
               onClick={() => setShowMenu(!showMenu)}
-              className="text-black focus:outline-none"
+              className="text-black focus:outline-none transition duration-300 hover:opacity-80"
             >
               {showMenu ? (
                 <svg
@@ -63,7 +60,6 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
           </div>
           <div className="hidden lg:flex items-center space-x-4">
-            {/* Render navigation links horizontally */}
             {HeaderNav.map((item) => (
               <div key={item.id} className="relative group">
                 {item.subNavItems ? (
@@ -73,7 +69,7 @@ const Header: React.FC<HeaderProps> = () => {
                     <div
                       className={`${
                         router.pathname === item.navLink ? 'underline' : 'hover:underline'
-                      } cursor-pointer text-black`}
+                      } cursor-pointer text-black transition duration-300 hover:opacity-80`}
                     >
                       {item.navItem}
                     </div>
@@ -83,8 +79,7 @@ const Header: React.FC<HeaderProps> = () => {
             ))}
           </div>
           <div className="flex items-center">
-            {/* Your login and signup buttons */}
-            <div className="text-black hover:text-red mr-4 transition duration-300 cursor-pointer">
+            <div className="text-black transition duration-300 hover:text-red mr-4 cursor-pointer">
               <Button type="outline" title="Join RentalDai" onClick={handleClick} />
             </div>
             <div className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full transition duration-300 cursor-pointer">

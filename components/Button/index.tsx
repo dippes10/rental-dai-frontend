@@ -1,24 +1,25 @@
-import React from 'react'
+import React from 'react';
 
-interface ButtonTypes {
-  title: string
-  onClick: () => void
-  type?: 'outline'
-  containerStyles?: string
+interface ButtonProps {
+  title: string;
+  onClick: () => void;
+  type?: 'outline';
+  containerStyles?: string;
 }
 
-const Button = ({ title, onClick, type, containerStyles }: ButtonTypes) => {
+const Button: React.FC<ButtonProps> = ({ title, onClick, type, containerStyles }) => {
+  const baseStyles = 'py-3 px-8 rounded-full transition-all duration-300 focus:outline-none';
+  const primaryStyles = 'bg-primary-500 text-white hover:bg-primary-400';
+  const outlineStyles =
+    'border-2 border-green-500 text-primary-500 bg-transparent hover:bg-green-500 hover:text-white';
+
+  const buttonStyles = `${baseStyles} ${type === 'outline' ? outlineStyles : primaryStyles} ${containerStyles}`;
+
   return (
-    <button
-      className={`${containerStyles} py-3 md:px-20 px-8 rounded-[40px] bg-primary-500 hover:bg-primary-400 transition-colors font-semiBold text-purple ${
-        type === 'outline' &&
-        'border-2 border-primary-500 text-primary-600 bg-transparent hover:bg-primary-500 hover:text-white'
-      }`}
-      onClick={onClick}
-    >
+    <button className={buttonStyles} onClick={onClick}>
       {title}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
