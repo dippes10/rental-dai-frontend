@@ -21,9 +21,26 @@ const SignupPage: React.FC = () => {
   // Return the JSX for the component
   return (
     <AppLayout>
-      <div className="flex h-screen justify-center items-center bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white">
+      <div className=" relative flex min-h-screen overflow-hidden justify-center items-center bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 z-0">
+          {/* Add your creative background elements, illustrations, or patterns here */}
+          {/* For example, you can use SVG patterns or illustrations */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+            className="absolute bottom-0 z-0"
+          >
+            <path
+              fill="#ffffff"
+              fillOpacity="1"
+              d="M0,96L1440,256L1440,0L0,0Z"
+            ></path>
+          </svg>
+        </div>
+
         {/* ListerSignup */}
-        <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105">
+        <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105 z-10">
           <h2 className="text-3xl font-bold mb-4 text-purple-800">
             <span className="flex items-center">
               <FaClipboardList className="mr-2" />
@@ -51,7 +68,7 @@ const SignupPage: React.FC = () => {
         </div>
 
         {/* UserSignup */}
-        <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105">
+        <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105 z-10">
           <h2 className="text-3xl font-bold mb-4 text-purple-800">
             <span className="flex items-center">
               <FaUserPlus className="mr-2" />
