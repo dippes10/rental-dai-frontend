@@ -98,11 +98,7 @@ const PropertiesPage: React.FC = () => {
               {/* Property Card */}
               <div className="bg-green-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                 {/* Property Image */}
-                <img
-                  src={property.imageUrl}
-                  alt={`Property: ${property.name}`}
-                  className="w-full h-48 object-cover rounded-md mb-4"
-                />
+                {/*  */}
 
                 {/* Property Name */}
                 <h3 className="text-xl font-semibold mb-2">{property.name}</h3>
