@@ -70,11 +70,11 @@ const PropertiesPage: React.FC = () => {
           type="text"
           placeholder="Filter by name"
           onChange={(e) => handleFilter(e.target.value)}
-          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:border-green-500"
+          className="p-3 border border-gray-300 rounded-md focus:outline-none focus:border-purple-500"
         />
         <button
           onClick={handleSort}
-          className="ml-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none"
+          className="ml-4 bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-700 focus:outline-none"
         >
           Sort by Name
         </button>
@@ -85,9 +85,9 @@ const PropertiesPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((index) => (
             <div key={index} className="relative animate-pulse">
-              <div className="bg-green-200 w-full h-60 rounded-md mb-4"></div>
-              <div className="bg-green-200 h-4 w-2/3 rounded mb-2"></div>
-              <div className="bg-green-200 h-4 w-1/2 rounded"></div>
+              <div className="bg-purple-200 w-full h-60 rounded-md mb-4"></div>
+              <div className="bg-purple-200 h-4 w-2/3 rounded mb-2"></div>
+              <div className="bg-purple-200 h-4 w-1/2 rounded"></div>
             </div>
           ))}
         </div>
@@ -96,7 +96,7 @@ const PropertiesPage: React.FC = () => {
           {filteredProperties.map((property) => (
             <div key={property.id} className="relative">
               {/* Property Card */}
-              <div className="bg-green-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
+              <div className="bg-purple-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                 {/* Property Image */}
                 {/*  */}
 
@@ -108,7 +108,7 @@ const PropertiesPage: React.FC = () => {
 
                 {/* Share Button */}
                 <button
-                  className="flex items-center bg-white text-green-500 px-3 py-1 rounded-md hover:bg-green-100 transition-all"
+                  className="flex items-center bg-white text-purple-500 px-3 py-1 rounded-md hover:bg-purple-100 transition-all"
                   onClick={() => console.log("Share button clicked")} // Replace with your share logic
                 >
                   Share
@@ -118,7 +118,7 @@ const PropertiesPage: React.FC = () => {
 
               {/* View Details Button */}
               <button
-                className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-700 focus:outline-none"
+                className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-md hover:bg-purple-700 focus:outline-none"
                 onClick={() => handleViewDetails(property)}
               >
                 View Details

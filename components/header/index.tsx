@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header>
-      <nav className="bg-green-200 text-white p-4">
+      <nav className="bg-purple-200 text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
           <Link href="/">
             <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
