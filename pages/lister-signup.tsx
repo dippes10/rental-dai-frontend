@@ -53,7 +53,7 @@ const ListerSignUp: React.FC = () => {
             <form className="space-y-4" onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <div key={field.name}>
-                  <label className="block text-sm font-medium text-gray-700 flex items-center">
+                  <label className="block text-sm font-medium text-gray-700 items-center">
                     <FontAwesomeIcon icon={field.icon} className="mr-2" />
                     {field.label}
                   </label>

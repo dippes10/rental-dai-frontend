@@ -3,12 +3,16 @@ import { useState } from "react";
 import AppLayout from "../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
+import router from "next/router";
+
+const handleSignUpClick = () => {
+  router.push("/lister-signup");
+};
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
-
   return (
     <AppLayout>
       <div className="flex justify-center items-center h-screen bgLogin">
@@ -24,7 +28,7 @@ function SignInBasic() {
                 className="mb-4" // Add margin-bottom to create space
               />
               <div>
-                <h4 className="text-white text-2xl font-medium mb-2">Sign in</h4>
+                <h4 className="text-white text-2xl font-medium mb-2">Sign in as Lister</h4>
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
@@ -111,12 +115,12 @@ function SignInBasic() {
               <div className="text-center">
                 <p className="text-sm text-gray-800">
                   Don't have an account?{" "}
-                  <a
-                    href="/authentication/sign-up/cover"
-                    className="text-purple-500 font-medium"
-                  >
-                    Sign up
-                  </a>
+                  <span
+                  className="text-blue-500 cursor-pointer hover:underline"
+                  onClick={handleSignUpClick}
+                >
+                  Sign up here
+                </span>
                 </p>
               </div>
             </form>

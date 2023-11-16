@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   const handleStartClick = () => {
-    router.push("/lister-login");
+    router.push("/login-page");
     setShowMenu(false);
   };
 
@@ -105,7 +105,7 @@ const Header: React.FC<HeaderProps> = () => {
                 onClick={handleClick}
               />
             </div>
-            <div className="text-black transition duration-300 hover:text-red mr-4 cursor-pointer">
+            <div className="text-black transition duration-300 hover:text-black mr-4 cursor-pointer">
               <Button
                 type="outline"
                 title="Get started"

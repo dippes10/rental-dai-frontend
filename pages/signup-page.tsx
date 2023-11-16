@@ -3,19 +3,26 @@ import React from 'react';
 import Image from 'next/image';
 import { FaUserPlus, FaClipboardList } from 'react-icons/fa'; // Import Font Awesome icons
 import AppLayout from '../components/AppLayout';
+import router from 'next/router';
 
 // Define your functional component
 const SignupPage: React.FC = () => {
   // Function to handle ListerSignup
-  const handleListerSignup = () => {
-    // Add logic for ListerSignup
-    console.log('ListerSignup clicked');
+  // const handleListerSignup = () => {
+  //   // Add logic for ListerSignup
+  //   console.log('ListerSignup clicked');
+  // };
+
+  const  handleListerSignup= () => {
+    router.push("/lister-signup");
+    // setShowMenu(false);
   };
 
   // Function to handle UserSignup
   const handleUserSignup = () => {
     // Add logic for UserSignup
-    console.log('UserSignup clicked');
+    router.push("user-signup");
+    // setShowMenu(false);
   };
 
   // Return the JSX for the component
@@ -24,8 +31,7 @@ const SignupPage: React.FC = () => {
       <div className=" relative flex min-h-screen overflow-hidden justify-center items-center bg-gradient-to-r from-purple-500 via-purple-700 to-purple-900 text-white">
         {/* Background Decoration */}
         <div className="absolute inset-0 z-0">
-          {/* Add your creative background elements, illustrations, or patterns here */}
-          {/* For example, you can use SVG patterns or illustrations */}
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
@@ -101,3 +107,7 @@ const SignupPage: React.FC = () => {
 
 // Export the component
 export default SignupPage;
+function setShowMenu(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+

@@ -32,40 +32,24 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
-
-      < RentalFlipImage/>
-
-      <Description/>
+      <RentalFlipImage />
+      <Description />
 
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero bg-gradient-to-r from-purple-500 via-purple-700 to-purple-800 text-white py-16">
         {/* Hero content */}
-        <div className="container mx-auto text-center py-16">
+        <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">
             Welcome to Rental-Dai - Your Home, Your Way
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-300">
             Find the perfect rental property that suits your lifestyle.
           </p>
         </div>
-        {/* <Dropdown
-          navItem={{
-            id: 1,
-            navItem: "Dropdown",
-            navLink: "/",
-            subNavItems: [
-              {
-                id: 2,
-                navItem: "Dropdown",
-                navLink: "/buahwahahaaaha",
-                subNavItems: [],
-              }
-            ],
-          }}
-        /> */}
       </section>
 
-<GoogleMapComponent/>
+      <GoogleMapComponent />
+
       {/* Founder's Message Section */}
       <section className="founder-message bg-gray-100 py-16">
         <div className="container mx-auto flex items-center">
@@ -95,13 +79,14 @@ const HomePage: React.FC = () => {
 
       {/* Other Sections */}
       {otherSectionsData.map((section, index) => (
-        <section key={index} className="other-section py-16">
-          <div className="container mx-auto flex items-center">
-            <div className="w-1/2">
-              <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
-              <p className="text-gray-600">{section.description}</p>
-            </div>
-            <div className="w-1/2">
+        <section
+          key={index}
+          className={`other-section py-16 ${
+            index % 2 === 0 ? "bg-gray-100" : "bg-white"
+          }`}
+        >
+          <div className="container mx-auto flex flex-col md:flex-row items-center">
+            <div className="w-full md:w-1/2 md:order-2">
               <Image
                 src={section.imageUrl}
                 alt={section.title}
@@ -109,6 +94,10 @@ const HomePage: React.FC = () => {
                 height={600}
                 className="rounded-md"
               />
+            </div>
+            <div className="w-full md:w-1/2 md:order-1 md:ml-4">
+              <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+              <p className="text-gray-600">{section.description}</p>
             </div>
           </div>
         </section>
@@ -126,6 +115,7 @@ const HomePage: React.FC = () => {
                 alt={ad.title}
                 width={800}
                 height={400}
+                className="rounded-md"
               />
             </div>
           ))}
