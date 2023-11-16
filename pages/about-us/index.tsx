@@ -9,14 +9,7 @@ const AboutUs: React.FC = () => {
   return (
     <div>
       {/* Header Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Welcome to RentalDai</h1>
-          <p className="text-gray-600">
-            Providing high-quality rental services for your housing needs.
-          </p>
-        </div>
-      </section>
+     
 
       {/* Information Section */}
       <Information />
