@@ -20,17 +20,38 @@ const UserSignUp: React.FC = () => {
     confirmPassword: "",
   });
 
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    // Handle form submission with formData
-    console.log("User Form submitted:", formData);
-    // You can add further logic for form submission here
-  };
+  
+    const handleSubmit = async (event: React.FormEvent) => {
+      event.preventDefault();
+    
+      try {
+        const response = await fetch('http://localhost:8080/signup', {
+          method: 'POST',  
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+    
+        if (response.ok) {
+          // Signup successful, perform further actions if needed
+          console.log('User signed up successfully');
+        } else {
+          // Handle signup error
+          console.error('Signup failed:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error during signup:', error);
+      }
+    };
+    
+  
 
   const formFields = [
     { name: "firstName", label: "First Name", type: "text", icon: faUser },

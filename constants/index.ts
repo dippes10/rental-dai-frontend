@@ -2,11 +2,15 @@
 
 import { Key } from "react";
 
+
+
 export const SiteMeta = {
     name: "RentalDai",
     description: "Real-Time House Renting Platform",
     url: "https://www.rentaldai.com",
   };
+
+  //jwala
   
   export type NavItemProps = {
     id: Key | null | undefined;
@@ -37,6 +41,12 @@ export const SiteMeta = {
             navItem: "Featured Properties",
             navLink: "/featured-properties",
           },
+          {
+            id: "featured-properties",
+            navItem: "Featured Properties",
+            navLink: "/featured-properties",
+          },
+          
         ],
       },
       {
