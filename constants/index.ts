@@ -10,8 +10,7 @@ export const SiteMeta = {
     url: "https://www.rentaldai.com",
   };
 
-  //jwala
-  
+
   export type NavItemProps = {
     id: Key | null | undefined;
     navItem: string;
@@ -74,6 +73,7 @@ export const SiteMeta = {
             navItem: "User Signup",
             navLink: "/user-signup",
           },
+
         ],
       },
     ],

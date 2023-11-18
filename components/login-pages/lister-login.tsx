@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
+import ListerForm from "../Lister-Signup/lister-form";
 
-const handleSignUpClick = () => {
-  router.push("/lister-signup");
+
+const handleSubmit = () => {
+  router.push("/lister-form");
 };
 
 function SignInBasic() {
@@ -117,7 +119,7 @@ function SignInBasic() {
                   Don't have an account?{" "}
                   <span
                   className="text-blue-500 cursor-pointer hover:underline"
-                  onClick={handleSignUpClick}
+                  onClick={handleSubmit}
                 >
                   Sign up here
                 </span>
@@ -127,6 +129,7 @@ function SignInBasic() {
           </div>
         </div>
       </div>
+      <ListerForm/>
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>

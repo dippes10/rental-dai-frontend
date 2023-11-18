@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 // UserLogin.tsx
-
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../AppLayout";
 import { useRouter } from "next/router";
 
 interface FormData {

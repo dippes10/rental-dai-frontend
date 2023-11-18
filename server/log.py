@@ -12,6 +12,7 @@ properties = [
         "imageUrl": "https://source.unsplash.com/800x600/?apartment",
         "details": "This elegant studio offers a comfortable living space with modern amenities."
     },
+    
     {
         "id": 2,
         "name": "Spacious Penthouse",
@@ -19,6 +20,7 @@ properties = [
         "imageUrl": "https://source.unsplash.com/800x600/?penthouse",
         "details": "Experience luxury living in this spacious penthouse with panoramic city views."
     },
+    
     {
         "id": 3,
         "name": "Charming Cottage",

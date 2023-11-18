@@ -7,11 +7,6 @@ import router from 'next/router';
 
 // Define your functional component
 const SignupPage: React.FC = () => {
-  // Function to handle ListerSignup
-  // const handleListerSignup = () => {
-  //   // Add logic for ListerSignup
-  //   console.log('ListerSignup clicked');
-  // };
 
   const  handleListerSignup= () => {
     router.push("/lister-signup");
