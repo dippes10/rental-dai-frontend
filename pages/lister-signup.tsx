@@ -27,29 +27,31 @@ const UserSignUp: React.FC = () => {
   };
 
   
-    const handleSubmit = async (event: React.FormEvent) => {
-      event.preventDefault();
-    
-      try {
-        const response = await fetch('http://localhost:8080/signup', {
-          method: 'POST',  
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-    
-        if (response.ok) {
-          // Signup successful, perform further actions if needed
-          console.log('User signed up successfully');
-        } else {
-          // Handle signup error
-          console.error('Signup failed:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error during signup:', error);
+   
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+  
+    try {
+      const response = await fetch('http://localhost:8080/listerSignup', {
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        // Signup successful, perform further actions if needed
+        console.log('User signed up successfully');
+      } else {
+        // Handle signup error
+        console.error('Signup failed:', response.statusText);
       }
-    };
+    } catch (error) {
+      console.error('Error during signup:', error);
+    }
+  };
+  
     
   
 

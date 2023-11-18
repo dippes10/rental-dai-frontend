@@ -78,6 +78,45 @@ def signup():
             return jsonify({'message': 'Error during signup'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
+#lister ko signup
+
+@app.route('/listerSignup', methods=['POST'])
+def listerSignup():
+    if request.method == 'POST':
+        try:
+            data = request.json
+            
+            # Retrieve form fields from the data
+            firstName = data.get('firstName')
+            lastName = data.get('lastName')
+            email = data.get('email')
+            password = data.get('password')
+            confirmPassword = data.get('confirmPassword')
+
+            # Validate data
+            if not email or not password:
+                return jsonify({'message': 'Email and password are required.'}), 400
+            if len(password) < 8:
+                return jsonify({'message': 'Password must be at least 8 characters long.'}), 400
+            if password != confirmPassword:
+                return jsonify({'message': 'Passwords do not match.'}), 400
+
+            # Insert data into the database
+            cursor = connection.cursor()
+            insert_query = "INSERT INTO lister (firstName, lastName, email, password) VALUES (%s, %s, %s, %s)"
+            user_data = (firstName, lastName, email, password)
+            cursor.execute(insert_query, user_data)
+            connection.commit()
+            cursor.close()
+
+            return jsonify({'message': 'User signed up successfully'}), 200
+
+        except Exception as e:
+            print('Error during signup:', str(e))
+            return jsonify({'message': 'Error during signup'}), 500
+
+    return jsonify({'message': 'Method not allowed'}), 405
+#login ko lagi
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
