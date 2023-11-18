@@ -119,7 +119,25 @@ def listerSignup():
 
     return jsonify({'message': 'Method not allowed'}), 405
 #login ko lagi
+@app.route('/signin', methods=['POST'])
+def signin():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
 
+    cursor = connection.cursor()
+
+    # Query to retrieve user with provided email and password
+    query = "SELECT * FROM lister WHERE email = %s AND password = %s"
+    cursor.execute(query, (email, password))
+    user = cursor.fetchone()
+
+    cursor.close()
+
+    if user:
+        return jsonify({'message': 'Sign-in successful'}), 200
+    else:
+        return jsonify({'message': 'Invalid credentials'}), 401
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
 

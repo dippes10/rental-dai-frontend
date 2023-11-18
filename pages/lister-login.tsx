@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import AppLayout from "../AppLayout";
+import AppLayout from "../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
-import ListerForm from "../Lister-Signup/lister-form";
+import ListerForm from "../components/Lister-Signup/lister-form";
 
 const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
