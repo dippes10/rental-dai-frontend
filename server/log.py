@@ -28,54 +28,58 @@ properties = [
     }
     # Add more properties as needed
 ]
-
 @app.route('/api/properties', methods=['GET'])
 def get_properties():
     return jsonify(properties)
-# Establishing a connection to
+
 connection = mysql.connector.connect(
-        host='localhost',  # Replace with your XAMPP MySQL host
-        database='signup',  # Replace with your database name
-        user='root',  # Replace with your MySQL username
-        password=''  # Replace with your MySQL password
-    )
+    host='localhost',
+    database='signup',
+    user='root',
+    password=''
+)
 
 if connection.is_connected():
-        print('Connected to MySQL database')
-
-
-
+    print('Connected to MySQL database')
 
 @app.route('/signup', methods=['POST'])
 def signup():
     if request.method == 'POST':
-        print(request.form)
-        data = request.json  # Assuming the data sent is JSON
+        try:
+            data = request.json
+            
+            # Retrieve form fields from the data
+            firstName = data.get('firstName')
+            lastName = data.get('lastName')
+            email = data.get('email')
+            password = data.get('password')
+            confirmPassword = data.get('confirmPassword')
 
+            # Validate data
+            if not email or not password:
+                return jsonify({'message': 'Email and password are required.'}), 400
+            if len(password) < 8:
+                return jsonify({'message': 'Password must be at least 8 characters long.'}), 400
+            if password != confirmPassword:
+                return jsonify({'message': 'Passwords do not match.'}), 400
 
-        # Retrieve form fields from the data
-        firstName = data.get('firstName')
-        lastName = data.get('lastName')
-        email = data.get('email')
-        password = data.get('password')
-        confirmPassword = data.get('confirmPassword')
+            # Insert data into the database
+            cursor = connection.cursor()
+            insert_query = "INSERT INTO users (firstName, lastName, email, password) VALUES (%s, %s, %s, %s)"
+            user_data = (firstName, lastName, email, password)
+            cursor.execute(insert_query, user_data)
+            connection.commit()
+            cursor.close()
 
-       
-        if not email or not password:
-            return jsonify({'message': 'Email and password are required.'}), 400
-        if len(password) < 8:
-            return jsonify({'message': 'Password must be at least 8 characters long.'}), 400
-        if password != confirmPassword:
-            return jsonify({'message': 'Passwords do not match.'}), 400
-        
+            return jsonify({'message': 'User signed up successfully'}), 200
 
-
-        # Example: Return a response indicating successful signup
-        return jsonify({'message': 'User signed up successfully'}), 200
+        except Exception as e:
+            print('Error during signup:', str(e))
+            return jsonify({'message': 'Error during signup'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
 
 if __name__ == '__main__':
-    app.run(port=8080,debug=True)
+    app.run(port=8080, debug=True)
 
    
