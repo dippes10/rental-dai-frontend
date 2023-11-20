@@ -1,0 +1,62 @@
+2023-11-19 14:16:33,168 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-19 14:16:33,168 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-19 14:16:33,170 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-19 14:16:33,603 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-19 14:16:33,608 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-19 14:17:10,407 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:10] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-19 14:17:15,574 ERROR root Thread-3 (process_request_thread) : Error during signin:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+    data = request.json
+           ^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\flask\wrappers.py", line 130, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2023-11-19 14:17:15,582 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:15] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
+2023-11-19 14:17:21,804 ERROR root Thread-4 (process_request_thread) : Error during signin:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+    data = request.json
+           ^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\flask\wrappers.py", line 130, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2023-11-19 14:17:21,805 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:21] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
+2023-11-19 14:17:34,049 ERROR root Thread-5 (process_request_thread) : Error during signin:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+    data = request.json
+           ^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\flask\wrappers.py", line 130, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2023-11-19 14:17:34,051 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:34] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
+2023-11-19 16:07:44,229 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 16:07:44] "GET /api/properties HTTP/1.1" 200 -

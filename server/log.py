@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import mysql.connector
+import logging
 app = Flask(__name__)
 CORS(app)
+logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+
 # Example property data (replace this with your actual property data)
 properties = [
     {
@@ -121,23 +124,30 @@ def listerSignup():
 #login ko lagi
 @app.route('/signin', methods=['POST'])
 def signin():
-    data = request.json
-    email = data.get('email')
-    password = data.get('password')
+    if request.method=="POST":
+     try:
+         data = request.json
+         email = data.get('email')
+         password = data.get('password')
 
-    cursor = connection.cursor()
+         cursor = connection.cursor()
 
-    # Query to retrieve user with provided email and password
-    query = "SELECT * FROM lister WHERE email = %s AND password = %s"
-    cursor.execute(query, (email, password))
-    user = cursor.fetchone()
+         # Query to retrieve user with provided email and password
+         query = "SELECT * FROM lister WHERE email = %s AND password = %s"
+         cursor.execute(query, (email, password))
+         user = cursor.fetchone()
+         cursor.close()
 
-    cursor.close()
-
-    if user:
-        return jsonify({'message': 'Sign-in successful'}), 200
-    else:
-        return jsonify({'message': 'Invalid credentials'}), 401
+         if user:
+                return jsonify({'message': 'Sign-in successful'}), 200
+         else:
+                return jsonify({'message': 'Invalid credentials'}), 401
+     except Exception as e:
+            logging.error('Error during signin:', exc_info=True)  # Log the error with traceback
+            return jsonify({'message': 'Error during signin'}), 500
+     
+    return jsonify({'message': 'Method not allowed'}), 405
+    
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
 
