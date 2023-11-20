@@ -26,12 +26,12 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header>
-      <nav className="bg-purple-200 text-white p-4">
+      <nav className="bg-red-600 text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
           <Link href="/">
             <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
               <Image
-                src="/next.svg"
+                src="/favicon.png"
                 alt="Rental-Dai Logo"
                 width={120}
                 height={40}

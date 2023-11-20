@@ -72,11 +72,17 @@ a {
 .bgHeader{
   background-image: url('../public/bg-header.jpg');
   background-size: auto;
-  background-position: 100% 51%;
+  background-position: 100% 50%;
 }
 
 .bgLogin{
   background-image: url('../public/bg-login.jpeg');
   background-size: cover;
-  background-position: 100% 51%;
+  background-position: 100% 50%;
+}
+
+.bgListerForm{
+  background-image: url('../public/lister-form-bg.jpg');
+  background-size: cover;
+  background-position: 100% 50%;
 }
