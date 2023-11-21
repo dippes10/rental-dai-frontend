@@ -33,6 +33,7 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
+      <Navbar/>
       <RentalFlipImage />
       <Description />
       {/* Hero Section */}

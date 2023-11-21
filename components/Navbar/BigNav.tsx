@@ -10,25 +10,21 @@ import {
   ArrowAutofitDown24Regular,
   BookContacts24Regular,
 } from "@fluentui/react-icons";
+import router from "next/router";
 
 export default function BigNav() {
-  const { theme, setTheme } = useTheme();
-  const [dark, darkTheme] = useState("show");
 
-  const [light, lightTheme] = useState("hidden");
+  const handleClick = () => {
+    router.push("");
+  };
 
-  function inverted() {
-    theme === "light" ? darkTheme("show") : darkTheme("hidden");
-    theme === "light" ? lightTheme("hidden") : lightTheme("show");
-  }
-  useEffect(() => {
-    inverted();
-  });
+
   return (
     <div style={{ textAlign: "center" }} className="inline-block">
       <Button
         style={{ width: "125px", height: "35px" }}
         appearance="transparent"
+        onClick={handleClick}
         icon={<Home24Regular />}
       >
         <p>Index</p>
@@ -68,20 +64,6 @@ export default function BigNav() {
         icon={<TaskListSquareLtr24Regular />}
       >
         FAQ
-      </Button>
-
-      <Button
-        style={{ width: "125px", height: "35px" }}
-        className="width: 200px, height: 300px"
-        appearance="transparent"
-        onClick={function (event) {
-          setTheme(theme === "light" ? "dark" : "light");
-        }}
-        icon={
-          dark == "show" ? <WeatherMoon24Filled /> : <WeatherSunny24Filled />
-        }
-      >
-        Dark Mode
       </Button>
     </div>
   );

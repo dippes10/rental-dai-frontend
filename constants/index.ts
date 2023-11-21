@@ -81,6 +81,23 @@ export const SiteMeta = {
           },
         ],
       },
+      {
+        id: "profile",
+        navItem: "Profle",
+        navLink: "/[profile]",
+        subNavItems: [
+          {
+            id: "user-profile",
+            navItem: "User Profile",
+            navLink: "/user-profile",
+          },
+          {
+            id: "lister-profile",
+            navItem: "Lister Profile",
+            navLink: "/lister-profile",
+          },
+        ],
+      },
     ],
   };
   
