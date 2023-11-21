@@ -147,7 +147,32 @@ def signin():
             return jsonify({'message': 'Error during signin'}), 500
      
     return jsonify({'message': 'Method not allowed'}), 405
+#userlogin
+@app.route('/user-Signin', methods=['POST'])
+def usersignin():
+    if request.method=="POST":
+     try:
+         data = request.json
+         email = data.get('email')
+         password = data.get('password')
 
+         cursor = connection.cursor()
+
+         # Query to retrieve user with provided email and password
+         query = "SELECT * FROM user WHERE email = %s AND password = %s"
+         cursor.execute(query, (email, password))
+         user = cursor.fetchone()
+         cursor.close()
+
+         if user:
+                return jsonify({'message': 'Sign-in successful'}), 200
+         else:
+                return jsonify({'message': 'Invalid credentials'}), 401
+     except Exception as e:
+            logging.error('Error during signin:', exc_info=True)  # Log the error with traceback
+            return jsonify({'message': 'Error during signin'}), 500
+     
+    return jsonify({'message': 'Method not allowed'}), 405
 
     
 if __name__ == '__main__':

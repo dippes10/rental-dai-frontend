@@ -49,3 +49,42 @@ werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not at
 2023-11-21 14:59:11,177 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:59:11] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
 2023-11-21 14:59:42,809 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:59:42] "GET /api/properties HTTP/1.1" 200 -
 2023-11-21 15:00:03,595 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 15:00:03] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 19:59:45,706 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-21 19:59:45,707 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-21 19:59:45,709 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 19:59:46,130 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-21 19:59:46,138 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-21 20:00:43,189 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:00:43] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-21 20:00:43,343 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:00:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-11-21 20:00:53,353 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:00:53] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 20:01:36,904 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:01:36] "OPTIONS /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:01:37,179 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:01:37] "POST /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:05:39,582 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:05:39] "OPTIONS /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:05:39,829 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:05:39] "[31m[1mPOST /listerSignup HTTP/1.1[0m" 400 -
+2023-11-21 20:06:04,140 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:06:04] "OPTIONS /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:06:04,455 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:06:04] "[31m[1mPOST /listerSignup HTTP/1.1[0m" 400 -
+2023-11-21 20:06:31,750 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:06:31] "OPTIONS /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:06:32,072 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:06:32] "POST /listerSignup HTTP/1.1" 200 -
+2023-11-21 20:07:54,135 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:07:54] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 20:08:45,064 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:08:45] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 20:08:52,029 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:08:52] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 20:09:45,158 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:09:45] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 20:09:53,286 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:09:53] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 20:10:12,720 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:10:12] "POST /signin HTTP/1.1" 200 -
+2023-11-21 20:40:07,228 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-21 20:40:07,287 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 20:49:35,053 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-21 20:49:35,054 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-21 20:49:35,056 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 20:49:35,573 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-21 20:49:35,583 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-21 20:49:45,556 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:49:45] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-21 20:49:47,450 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:49:47] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-21 20:50:00,408 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:50:00] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 20:50:06,068 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:50:06] "POST /signup HTTP/1.1" 200 -
+2023-11-21 20:50:15,843 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:50:15] "OPTIONS /signup HTTP/1.1" 200 -
+2023-11-21 20:50:16,107 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:50:16] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 20:52:38,153 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:52:38] "OPTIONS /signup HTTP/1.1" 200 -
+2023-11-21 20:52:38,422 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 20:52:38] "POST /signup HTTP/1.1" 200 -

@@ -6,6 +6,7 @@ import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
 import ListerForm from "../components/Lister-Signup/lister-form";
 
+
 const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
 
@@ -20,7 +21,7 @@ const handleSubmit = async (event: React.FormEvent) => {
 
     if (response.ok) {
       console.log('Sign-in successful');
-      router.push("/lister-form");
+      router.push("/properties");
     } else {
       console.error('Invalid credentials');
     }

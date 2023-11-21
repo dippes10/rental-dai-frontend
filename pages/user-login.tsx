@@ -1,102 +1,160 @@
 /* eslint-disable react/no-unescaped-entities */
-// UserLogin.tsx
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import AppLayout from "../components/AppLayout";
-import { useRouter } from "next/router";
+import NextImage from "next/image"; // Import next/image
+import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
+import router from "next/router";
+import ListerForm from "../components/Lister-Signup/lister-form";
 
-interface FormData {
-  email: string;
-  password: string;
-}
 
-const UserLogin: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    password: "",
-  });
+const handleSubmit = async (event: React.FormEvent) => {
+  event.preventDefault();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  try {
+    const response = await fetch('http://localhost:8080/user-signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ FormData }), 
+    });
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    // Handle form submission with formData
-    console.log("User Form submitted:", formData);
-    // You can add further logic for login here
-  };
+    if (response.ok) {
+      console.log('Sign-in successful');
+      router.push("/");
+    } else {
+      console.error('Invalid credentials');
+    }
+  } catch (error) {
+    console.error('Error during sign-in:', error);
+  }
+};
 
-  const router = useRouter();
 
-  const handleSignUpClick = () => {
-    router.push("/user-signup");
-  };
+function SignInBasic() {
+  const [rememberMe, setRememberMe] = useState(false);
 
-  const formFields = [
-    { name: "email", label: "Email Address", type: "email", icon: faEnvelope },
-    { name: "password", label: "Password", type: "password", icon: faLock },
-  ];
-
+  const handleSetRememberMe = () => setRememberMe(!rememberMe);
   return (
     <AppLayout>
-      <section
-        className="bg-cover bg-center min-h-screen py-8"
-        style={{ backgroundImage: "url('/your-background-image-for-users.jpg')" }}
-      >
-        <div className="max-w-screen-lg mx-auto px-4">
-          <div className="flex justify-center items-center">
-            <div className="bg-white bg-opacity-90 shadow-md rounded-lg p-10 w-full sm:w-96">
-              <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">
-                User Login
-              </h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                {formFields.map((field) => (
-                  <div key={field.name}>
-                    <label className="block text-sm font-medium text-gray-700 flex items-center">
-                      <FontAwesomeIcon icon={field.icon} className="mr-2" />
-                      {field.label}
-                    </label>
-                    <div className="relative">
-                      <input
-                        type={field.type}
-                        id={field.name}
-                        name={field.name}
-                        value={formData[field.name as keyof FormData]}
-                        onChange={handleChange}
-                        className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-blue-500"
-                        placeholder={field.label}
-                        required
-                      />
-                    </div>
-                  </div>
-                ))}
-                <div className="flex justify-center">
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
-                  >
-                    Login as a User
-                  </button>
-                </div>
-              </form>
-              <p className="mt-4 text-center">
-                Don't have an account?{" "}
-                <span
+      <div className="flex justify-center items-center h-screen bgLogin">
+        <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
+          {/* Header box with purple to white gradient */}
+          <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2">
+            <div className="flex flex-col items-center mb-4">
+              <NextImage
+                src="/LOGOO.png" // Replace with your logo
+                alt="Rental Dai Logo"
+                width={120} // Set the width and height according to your design
+                height={120}
+                className="mb-4" // Add margin-bottom to create space
+              />
+              <div>
+                <h4 className="text-white text-2xl font-medium mb-2">Sign in as user</h4>
+              </div>
+              <div className="flex space-x-4 mt-2">
+                <a
+                  href="your-github-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub
+                    size={24}
+                    className="text-gray-800 cursor-pointer hover:text-gray-600"
+                  />
+                </a>
+                <a
+                  href="your-facebook-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebook
+                    size={24}
+                    className="text-gray-800 cursor-pointer hover:text-blue-600"
+                  />
+                </a>
+                <a
+                  href="your-gmail-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGoogle
+                    size={24}
+                    className="text-gray-800 cursor-pointer hover:text-red-600"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Form box */}
+          <div className="bg-white rounded-md shadow-md p-8">
+            <form className="space-y-6">
+              {/* Form inputs */}
+              <div>
+                <label htmlFor="email" className="sr-only text-gray-800">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only text-gray-800">
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                  className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                />
+              </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  checked={rememberMe}
+                  onChange={handleSetRememberMe}
+                  className="mr-2"
+                />
+                <label
+                  htmlFor="rememberMe"
+                  onClick={handleSetRememberMe}
+                  className="cursor-pointer text-sm text-gray-800"
+                >
+                  Remember me
+                </label>
+              </div>
+              <div>
+                <button className="w-full bg-gradient-to-r from-purple-500 to-white text-white py-3 px-4 rounded-full">
+                  Sign in
+                </button>
+              </div>
+              <div className="text-center">
+                <p className="text-sm text-gray-800">
+                  Don't have an account?{" "}
+                  <span
                   className="text-blue-500 cursor-pointer hover:underline"
-                  onClick={handleSignUpClick}
+                  onClick={handleSubmit}
                 >
                   Sign up here
                 </span>
-              </p>
-            </div>
+                </p>
+              </div>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+      <ListerForm/>
+      <div className="w-full absolute z-2 bottom-8">
+        {/* Footer code here (if you have an alternative component) */}
+      </div>
     </AppLayout>
   );
-};
+}
 
-export default UserLogin;
+export default SignInBasic;
