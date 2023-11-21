@@ -117,7 +117,7 @@ const ListerForm: React.FC = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Image URL
+                  Image 
                 </label>
                 <div className="relative">
                   <input

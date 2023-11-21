@@ -72,7 +72,7 @@ const UserSignUp: React.FC = () => {
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex justify-center items-center">
           <div className="bg-white bg-opacity-90 shadow-md rounded-lg p-10 w-full sm:w-96">
-            <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">User Sign Up</h3>
+            <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">sign up  as lister</h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <div key={field.name}>
@@ -99,7 +99,7 @@ const UserSignUp: React.FC = () => {
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
                 >
-                  Sign Up as a User
+                  Sign Up  as a lister
                 </button>
               </div>
             </form>

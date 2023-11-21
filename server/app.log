@@ -1,0 +1,51 @@
+2023-11-21 11:41:36,838 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-21 11:41:36,839 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-21 11:41:36,841 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 11:41:37,286 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-21 11:41:37,290 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-21 11:42:19,840 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:42:19] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-21 11:42:19,996 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:42:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-11-21 11:42:28,295 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:42:28] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 11:43:22,869 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:43:22] "[31m[1mGET /signin HTTP/1.1[0m" 405 -
+2023-11-21 11:43:42,348 ERROR root Thread-6 (process_request_thread) : Error during signin:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+    data = request.json
+           ^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
+    return self.get_json()
+           ^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 604, in get_json
+    return self.on_json_loading_failed(None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\flask\wrappers.py", line 130, in on_json_loading_failed
+    return super().on_json_loading_failed(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 647, in on_json_loading_failed
+    raise UnsupportedMediaType(
+werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
+2023-11-21 11:43:42,350 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:43:42] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
+2023-11-21 11:44:23,886 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 11:44:23] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:03:33,196 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:03:33] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:46:38,268 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:46:38] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:47:02,696 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:47:02] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:47:24,097 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:47:24] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 12:48:32,636 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:48:32] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:48:45,932 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:48:45] "POST /signup HTTP/1.1" 200 -
+2023-11-21 12:49:26,436 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:49:26] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-21 12:50:37,710 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:50:37] "POST /signin HTTP/1.1" 200 -
+2023-11-21 12:54:03,891 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:03] "OPTIONS /signup HTTP/1.1" 200 -
+2023-11-21 12:54:04,146 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:04] "POST /signup HTTP/1.1" 200 -
+2023-11-21 12:54:04,652 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:04] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:54:06,139 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:06] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:54:06,359 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:06] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:54:06,390 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:06] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2023-11-21 12:54:47,234 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:47] "[31m[1mGET /signup HTTP/1.1[0m" 405 -
+2023-11-21 12:54:47,485 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 12:54:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-11-21 14:57:15,247 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:57:15] "OPTIONS /signup HTTP/1.1" 200 -
+2023-11-21 14:57:15,462 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:57:15] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2023-11-21 14:58:56,277 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:58:56] "POST /signin HTTP/1.1" 200 -
+2023-11-21 14:59:11,177 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:59:11] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-21 14:59:42,809 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 14:59:42] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 15:00:03,595 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [21/Nov/2023 15:00:03] "GET /api/properties HTTP/1.1" 200 -

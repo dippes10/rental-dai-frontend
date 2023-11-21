@@ -147,6 +147,8 @@ def signin():
             return jsonify({'message': 'Error during signin'}), 500
      
     return jsonify({'message': 'Method not allowed'}), 405
+
+
     
 if __name__ == '__main__':
     app.run(port=8080, debug=True)

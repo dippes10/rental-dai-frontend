@@ -60,3 +60,15 @@ Traceback (most recent call last):
 werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not attempt to load JSON data because the request Content-Type was not 'application/json'.
 2023-11-19 14:17:34,051 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:34] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
 2023-11-19 16:07:44,229 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 16:07:44] "GET /api/properties HTTP/1.1" 200 -
+2023-11-21 11:30:27,022 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-21 11:30:27,022 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-21 11:30:27,025 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 11:30:27,497 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-21 11:30:27,506 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-21 11:33:35,622 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-21 11:33:35,622 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-21 11:33:35,625 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-21 11:33:36,064 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-21 11:33:36,068 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
