@@ -41,8 +41,7 @@ export const SiteMeta = {
             id: "featured-properties",
             navItem: "Featured Properties",
             navLink: "/featured-properties",
-          },
-          
+          }, 
         ],
       },
       {
@@ -74,6 +73,11 @@ export const SiteMeta = {
             id: "Lister-Form",
             navItem: "Lister Form",
             navLink: "",
+          },
+          {
+            id: "lister-profile",
+            navItem: "Lister Profile",
+            navLink: "profile/lister-profile",
           },
         ],
       },

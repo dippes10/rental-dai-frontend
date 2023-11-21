@@ -20,7 +20,7 @@ const handleSubmit = async (event: React.FormEvent) => {
 
     if (response.ok) {
       console.log('Sign-in successful');
-      router.push("/dashboard");
+      router.push("/lister-form");
     } else {
       console.error('Invalid credentials');
     }

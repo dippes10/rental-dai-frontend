@@ -6,6 +6,7 @@ import AppLayout from "../components/AppLayout";
 import GoogleMapComponent from "../components/GoogleMap";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
+import Navbar from "../components/Navbar/navbar";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/house1.jpg";
@@ -34,7 +35,6 @@ const HomePage: React.FC = () => {
     <AppLayout>
       <RentalFlipImage />
       <Description />
-
       {/* Hero Section */}
       <section className="hero bg-gradient-to-r from-purple-500 via-purple-700 to-purple-800 text-white py-16">
         {/* Hero content */}
