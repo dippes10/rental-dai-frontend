@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar/navbar';
 const Contact: React.FC = () => {
   return (
     <AppLayout>
-      <div className="container mx-auto py-8">
+      <div className=" container mx-auto py-8">
         <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
         <p className="text-gray-500 mb-6">
           Have questions, suggestions, or just want to say hello? Reach out to us!
