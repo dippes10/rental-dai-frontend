@@ -2,15 +2,11 @@
 import React from "react";
 import Navbar from "../components/Navbar/navbar";
 
-const ListerProfile: React.FC = () => {
-  // Example: Logging a message when the component renders
-  console.log("ListerProfile component is rendering");
-
+const UserProfile: React.FC = () => {
   return (
     <div>
-      <Navbar/>
     </div>
   );
 }
 
-export default ListerProfile;
+export default UserProfile;

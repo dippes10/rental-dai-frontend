@@ -10,7 +10,7 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 
-const ListerDashboard: React.FC = () => {
+const ListerProfile: React.FC = () => {
   // Placeholder data (replace with actual data)
   const listerData = {
     name: "Jwalan Dai",
@@ -48,8 +48,7 @@ const ListerDashboard: React.FC = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      
-
+      {/* <Navbar/> */}
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-6">Welcome back, {listerData.name}!</h1>
 
@@ -164,4 +163,4 @@ const ListerDashboard: React.FC = () => {
   );
 };
 
-export default ListerDashboard;
+export default ListerProfile;
