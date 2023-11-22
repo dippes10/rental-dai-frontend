@@ -3,6 +3,7 @@
 import React from 'react';
 import AppLayout from "../components/AppLayout";
 import Navbar from '../components/Navbar/navbar';
+import ListerProfile from './lister-profile';
 
 
 const Contact: React.FC = () => {

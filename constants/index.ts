@@ -72,7 +72,7 @@ export const SiteMeta = {
           {
             id: "Lister-Form",
             navItem: "Lister Form",
-            navLink: "",
+            navLink: "/",
           },
           {
             id: "lister-profile",

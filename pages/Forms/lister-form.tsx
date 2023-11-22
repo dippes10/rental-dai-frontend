@@ -4,11 +4,12 @@ import {
   faCheckCircle,
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import AppLayout from "../../components/AppLayout";
 
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
   const [details, setDetails] = useState("");
   const [checked, setChecked] = useState(true);
 
@@ -19,7 +20,7 @@ const ListerForm: React.FC = () => {
 
   const handleChecked = () => setChecked(!checked);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Reset previous error messages
@@ -38,33 +39,43 @@ const ListerForm: React.FC = () => {
       return;
     }
 
-    if (!imageUrl.trim()) {
-      setImageUrlError("Please enter a valid image URL.");
+    if (!imageFile) {
+      setImageUrlError("Please upload an image.");
       return;
     }
 
-    // If all validations pass, you can proceed with form submission
-    // For demonstration, I'll just display a success message and clear the form
-    setSuccessMessage("Form submitted successfully!");
-    clearForm();
+    // Additional logic for file upload, e.g., using FormData
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("address", address);
+    formData.append("image", imageFile);
+    formData.append("details", details);
+    formData.append("agreedToTerms", checked.toString());
+
+    try {
+      // You can send the formData to your server or handle it as needed
+      // For demonstration, I'll just display a success message
+      setSuccessMessage("Form submitted successfully!");
+      clearForm();
+    } catch (error) {
+      // Handle any errors that occur during the submission
+      console.error("Error submitting form:", error);
+    }
   };
 
   const clearForm = () => {
     setName("");
     setAddress("");
-    setImageUrl("");
+    setImageFile(null);
     setDetails("");
     setChecked(true);
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100 bgListerForm">
-      <div className="relative w-full sm:w-96 md:w-96 lg:w-120 xl:w-120 p-100">
-        {" "}
-        {/* Change lg:w-120 and xl:w-120 to a specific width value */}
-        {/* Increased width to lg:w-120 and xl:w-120 */}
-        {/* Header box with purple to white gradient */}
-        <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2">
+    <AppLayout>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 bgListerForm" style={{ minHeight: "100vh"}} >
+      <div className="w-full sm:w-11/12 md:w-9/12 lg:w-8/12 xl:w-4/12 p-4">
+        <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2 w-full">
           <div className="flex flex-col items-center mb-4">
             <h4 className="text-white text-2xl font-medium mb-2">
               List Your Property
@@ -79,7 +90,7 @@ const ListerForm: React.FC = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Form inputs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">
                   Name
                 </label>
@@ -97,7 +108,7 @@ const ListerForm: React.FC = () => {
                   )}
                 </div>
               </div>
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">
                   Address
                 </label>
@@ -115,25 +126,24 @@ const ListerForm: React.FC = () => {
                   )}
                 </div>
               </div>
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">
-                  Image 
+                  Image
                 </label>
                 <div className="relative">
                   <input
-                    type="text"
-                    name="imageUrl"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
+                    type="file"
+                    name="imageFile"
+                    onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+                    accept="image/*"
                     className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-purple-300"
-                    placeholder="https://source.unsplash.com/800x600/?apartment"
                   />
                   {imageUrlError && (
                     <p className="text-red-500 text-sm mt-1">{imageUrlError}</p>
                   )}
                 </div>
               </div>
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium text-gray-700">
                   Details
                 </label>
@@ -184,6 +194,7 @@ const ListerForm: React.FC = () => {
         </div>
       </div>
     </div>
+    </AppLayout>
   );
 };
 
