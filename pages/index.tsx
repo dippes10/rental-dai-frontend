@@ -9,7 +9,7 @@ import Description from "../components/Description";
 import Navbar from "../components/Navbar/navbar";
 
 // Example founder's photo from Unsplash (replace with actual URL)
-const founderPhotoUrl = "/house1.jpg";
+const founderPhotoUrl = "/sirak-shrestha.jpeg";
 
 // Dummy data for other sections and advertisements (replace with actual data)
 const otherSectionsData = [
