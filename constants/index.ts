@@ -83,7 +83,7 @@ export const SiteMeta = {
       },
       {
         id: "profile",
-        navItem: "Profle",
+        navItem: "Profile",
         navLink: "/[profile]",
         subNavItems: [
           {
