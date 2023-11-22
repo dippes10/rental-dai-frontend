@@ -18,7 +18,7 @@
 //       <Head>
 //         <title>{SiteMeta.name}</title>
 //       </Head>
-//       <Header/>
+//       <Header HeaderNav={[]}/>
 //       <main id="#main">{children}</main>
 //       <Footer />
 //     </div>

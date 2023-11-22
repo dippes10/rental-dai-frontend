@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
-import Navbar from "../components/Navbar/navbar";
 import { FaHome, FaUser, FaClipboardList, FaNewspaper, FaCalendarAlt, FaFileAlt, FaPlus } from "react-icons/fa";
 import ListerForm from "./Forms/lister-form";
 import router from "next/router";

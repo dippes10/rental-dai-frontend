@@ -2,8 +2,8 @@
 
 import React from 'react';
 import AppLayout from "../components/AppLayout";
-import Navbar from '../components/Navbar/navbar';
 import ListerProfile from './lister-profile';
+import UserProfile from './user-profile';
 
 
 const Contact: React.FC = () => {
@@ -57,6 +57,7 @@ const Contact: React.FC = () => {
         </form>
       </div>
       </AppLayout>
+
   );
 };
 

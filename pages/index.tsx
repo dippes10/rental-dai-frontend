@@ -6,7 +6,20 @@ import AppLayout from "../components/AppLayout";
 import GoogleMapComponent from "../components/GoogleMap";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
-import Navbar from "../components/Navbar/navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faSearch,
+  faCheckCircle,
+  faKey,
+  faMapMarkerAlt,
+  faHandsHelping,
+  faDollarSign,
+  faCalendarAlt,
+  faWifi,
+  faParking,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/sirak-shrestha.jpeg";
@@ -33,12 +46,9 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
-      
       <RentalFlipImage />
       <Description />
-      {/* Hero Section */}
       <section className="hero bg-gradient-to-r from-purple-500 via-purple-700 to-purple-800 text-white py-16">
-        {/* Hero content */}
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">
             Welcome to Rental-Dai - Your Home, Your Way
@@ -51,10 +61,8 @@ const HomePage: React.FC = () => {
 
       <GoogleMapComponent />
 
-      {/* Founder's Message Section */}
       <section className="founder-message bg-gray-100 py-16">
         <div className="container mx-auto flex items-center">
-          {/* Founder's Photo */}
           <div className="mr-8">
             <Image
               src={founderPhotoUrl}
@@ -64,7 +72,6 @@ const HomePage: React.FC = () => {
               className="rounded-full"
             />
           </div>
-          {/* Founder's Message */}
           <div>
             <h2 className="text-2xl font-bold mb-4">
               Message from Our Founder
@@ -78,7 +85,96 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Other Sections */}
+      <section className="steps bg-gray-100 py-16">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="step">
+            <FontAwesomeIcon icon={faSearch} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Search</h3>
+            <p className="text-gray-600">
+              Explore a wide range of rental properties that match your criteria.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faCheckCircle} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Choose</h3>
+            <p className="text-gray-600">
+              Select your ideal property from our curated listings.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faKey} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Secure</h3>
+            <p className="text-gray-600">
+              Easily secure your chosen rental with our hassle-free process.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Locate</h3>
+            <p className="text-gray-600">
+              Conveniently locate your new home on our interactive map.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faHandsHelping} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Assistance</h3>
+            <p className="text-gray-600">
+              Get personalized assistance throughout the renting process.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faDollarSign} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Affordable</h3>
+            <p className="text-gray-600">
+              Find affordable rentals that fit your budget effortlessly.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faCalendarAlt} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Flexible</h3>
+            <p className="text-gray-600">
+              Enjoy flexible rental terms tailored to your needs.
+            </p>
+          </div>
+          <div className="step">
+            <FontAwesomeIcon icon={faHome} className="text-4xl mb-4" />
+            <h3 className="text-xl font-bold mb-2">Feel at Home</h3>
+            <p className="text-gray-600">
+              Settle into your new home and make it your own.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="facilities bg-white py-16">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-8">Facilities We Provide</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="facility">
+              <FontAwesomeIcon icon={faWifi} className="text-4xl mb-4" />
+              <p className="text-lg font-semibold mb-2">High-Speed Internet</p>
+              <p className="text-gray-600">
+                Stay connected with our fast and reliable internet service.
+              </p>
+            </div>
+            <div className="facility">
+              <FontAwesomeIcon icon={faParking} className="text-4xl mb-4" />
+              <p className="text-lg font-semibold mb-2">Parking Space</p>
+              <p className="text-gray-600">
+                Hassle-free parking options available for our residents.
+              </p>
+            </div>
+            <div className="facility">
+              <FontAwesomeIcon icon={faUtensils} className="text-4xl mb-4" />
+              <p className="text-lg font-semibold mb-2">Fully Equipped Kitchen</p>
+              <p className="text-gray-600">
+                Enjoy the convenience of a fully equipped kitchen in every rental.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {otherSectionsData.map((section, index) => (
         <section
           key={index}
@@ -104,7 +200,6 @@ const HomePage: React.FC = () => {
         </section>
       ))}
 
-      {/* Advertisement Section */}
       <section className="advertisements bg-gray-100 py-16">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advertisementsData.map((ad, index) => (

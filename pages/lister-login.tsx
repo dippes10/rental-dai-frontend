@@ -20,13 +20,13 @@ const handleSubmit = async (event: React.FormEvent) => {
     });
 
     if (response.ok) {
-      console.log('Sign-in successful');
+      setSuccessMessage("Success! Profile updated.");
       router.push("/lister-profile");
     } else {
-      console.error('Invalid credentials');
+      console.error();
     }
   } catch (error) {
-    console.error('Error during sign-in:', error);
+    console.error(error);
   }
 };
 
@@ -158,3 +158,7 @@ function SignInBasic() {
 }
 
 export default SignInBasic;
+function setSuccessMessage(arg0: string) {
+  throw new Error("Function not implemented.");
+}
+
