@@ -53,7 +53,7 @@ const ListerProfile: React.FC = () => {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* Property Listings */}
           <ProfileStat
-            icon={<FaHome className="text-4xl text-blue-500" />}
+            icon={<FaHome className="text-4xl text-red-500" />}
             title="Properties Listed"
             value={listerData.propertiesListed}
           />
@@ -65,7 +65,7 @@ const ListerProfile: React.FC = () => {
           />
           {/* Messages */}
           <ProfileStat
-            icon={<FaUser className="text-4xl text-purple-500" />}
+            icon={<FaUser className="text-4xl text-red-500" />}
             title="Messages"
             value={listerData.messages}
           />
@@ -87,7 +87,7 @@ const ListerProfile: React.FC = () => {
         <div className="flex justify-center mt-8">
           <button
                       onClick={() => router.push("Forms/lister-form")}
-            className="bg-gradient-to-r from-purple-500 to-purple-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-purple-300"
+            className="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-red-300"
           >
             <FaPlus className="mr-2" />
             Add Listing

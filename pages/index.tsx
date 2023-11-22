@@ -48,7 +48,7 @@ const HomePage: React.FC = () => {
     <AppLayout>
       <RentalFlipImage />
       <Description />
-      <section className="hero bg-gradient-to-r from-purple-500 via-purple-700 to-purple-800 text-white py-16">
+      <section className="hero bg-gradient-to-r from-red-500 via-red-700 to-red-800 text-white py-16">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">
             Welcome to Rental-Dai - Your Home, Your Way

@@ -75,7 +75,7 @@ const ListerForm: React.FC = () => {
     <AppLayout>
     <div className="flex justify-center items-center min-h-screen bg-gray-100 bgListerForm" style={{ minHeight: "100vh"}} >
       <div className="w-full sm:w-11/12 md:w-9/12 lg:w-8/12 xl:w-4/12 p-4">
-        <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2 w-full">
+        <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2 w-full">
           <div className="flex flex-col items-center mb-4">
             <h4 className="text-white text-2xl font-medium mb-2">
               List Your Property
@@ -100,7 +100,7 @@ const ListerForm: React.FC = () => {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-purple-300"
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                     placeholder="Elegant Studio"
                   />
                   {nameError && (
@@ -118,7 +118,7 @@ const ListerForm: React.FC = () => {
                     name="address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-purple-300"
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                     placeholder="123 Maple Avenue, Townsville"
                   />
                   {addressError && (
@@ -136,7 +136,7 @@ const ListerForm: React.FC = () => {
                     name="imageFile"
                     onChange={(e) => setImageFile(e.target.files?.[0] || null)}
                     accept="image/*"
-                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-purple-300"
+                    className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                   />
                   {imageUrlError && (
                     <p className="text-red-500 text-sm mt-1">{imageUrlError}</p>
@@ -152,7 +152,7 @@ const ListerForm: React.FC = () => {
                     name="details"
                     value={details}
                     onChange={(e) => setDetails(e.target.value)}
-                    className="w-full p-1 border rounded-md focus:outline-none focus:ring focus:border-purple-300"
+                    className="w-full p-1 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                     placeholder="Phone Number, Room Description, Water Availability, etc."
                     rows={6}
                   />
@@ -180,7 +180,7 @@ const ListerForm: React.FC = () => {
             <div className="mt-6">
               <button
                 type="submit"
-                className="w-full px-6 py-3 text-white bg-gradient-to-r from-purple-500 to-purple-700 rounded-md focus:outline-none focus:ring focus:border-purple-300"
+                className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
               >
                 Send Message
               </button>

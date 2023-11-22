@@ -87,7 +87,7 @@ const UserSignUp: React.FC = () => {
                       name={field.name}
                       value={formData[field.name as keyof FormData]}
                       onChange={handleChange}
-                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-blue-500"
+                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-red-500"
                       placeholder={field.label}
                       required
                     />
@@ -97,7 +97,7 @@ const UserSignUp: React.FC = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
+                  className="w-full bg-gradient-to-r from-red-500 to-red-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
                 >
                   Sign Up as a User
                 </button>

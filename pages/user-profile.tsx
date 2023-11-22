@@ -174,13 +174,13 @@ const UserProfile: React.FC = () => {
           />
           {/* Messages Received */}
           <ProfileStat
-            icon={<FaUser className="text-4xl text-purple-500" />}
+            icon={<FaUser className="text-4xl text-red-500" />}
             title="Messages Received"
             value={userData.messagesReceived}
           />
           {/* Additional Profile Stats */}
           <ProfileStat
-            icon={<FaHome className="text-4xl text-blue-500" />}
+            icon={<FaHome className="text-4xl text-red-500" />}
             title="Properties Owned"
             value={userData.propertiesOwned}
           />

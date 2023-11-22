@@ -39,8 +39,8 @@ function SignInBasic() {
     <AppLayout>
       <div className="flex justify-center items-center h-screen bgLogin">
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
-          {/* Header box with purple to white gradient */}
-          <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2">
+          {/* Header box with red to white gradient */}
+          <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2">
             <div className="flex flex-col items-center mb-4">
               <NextImage
                 src="/faviconnn.png" // Replace with your logo
@@ -70,7 +70,7 @@ function SignInBasic() {
                 >
                   <FaFacebook
                     size={24}
-                    className="text-gray-800 cursor-pointer hover:text-blue-600"
+                    className="text-gray-800 cursor-pointer hover:text-red-600"
                   />
                 </a>
                 <a
@@ -130,7 +130,7 @@ function SignInBasic() {
                 </label>
               </div>
               <div>
-                <button className="w-full bg-gradient-to-r from-purple-500 to-white text-white py-3 px-4 rounded-full">
+                <button className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full">
                   Sign in
                 </button>
               </div>
@@ -138,7 +138,7 @@ function SignInBasic() {
                 <p className="text-sm text-gray-800">
                   Don't have an account?{" "}
                   <span
-                  className="text-blue-500 cursor-pointer hover:underline"
+                  className="text-red-500 cursor-pointer hover:underline"
                   onClick={handleSubmit}
                 >
                   Sign up here

@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-purple-300 via-purple-500 to-purple-700 text-white">
+      <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-red-300 via-red-500 to-red-700 text-white">
         {/* Introduction Section */}
         <div className="text-center mb-8">
           <h1 className="text-white font-bold mb-4">Welcome to Rental Dai</h1>
