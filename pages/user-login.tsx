@@ -43,7 +43,7 @@ function SignInBasic() {
           <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2">
             <div className="flex flex-col items-center mb-4">
               <NextImage
-                src="/LOGOO.png" // Replace with your logo
+                src="/faviconnn.png" // Replace with your logo
                 alt="Rental Dai Logo"
                 width={120} // Set the width and height according to your design
                 height={120}

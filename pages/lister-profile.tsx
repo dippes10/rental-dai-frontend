@@ -13,7 +13,7 @@ import {
 const ListerDashboard: React.FC = () => {
   // Placeholder data (replace with actual data)
   const listerData = {
-    name: "John Doe",
+    name: "Jwalan Dai",
     propertiesListed: 5,
     upcomingBookings: 3,
     messages: 8,

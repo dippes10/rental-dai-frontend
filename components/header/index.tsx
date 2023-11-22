@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = () => {
           <Link href="/">
             <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
               <Image
-                src="/LOGOO.png"
+                src="/faviconnn.png"
                 alt="Rental-Dai Logo"
                 width={120}
                 height={40}
