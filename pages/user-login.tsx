@@ -21,7 +21,7 @@ const handleSubmit = async (event: React.FormEvent) => {
 
     if (response.ok) {
       console.log('Sign-in successful');
-      router.push("/");
+      router.push("/user-profile");
     } else {
       console.error('Invalid credentials');
     }
@@ -149,7 +149,6 @@ function SignInBasic() {
           </div>
         </div>
       </div>
-      <ListerForm/>
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>

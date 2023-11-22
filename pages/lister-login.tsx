@@ -21,7 +21,7 @@ const handleSubmit = async (event: React.FormEvent) => {
 
     if (response.ok) {
       console.log('Sign-in successful');
-      router.push("/properties");
+      router.push("/lister-profile");
     } else {
       console.error('Invalid credentials');
     }
