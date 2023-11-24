@@ -12,13 +12,12 @@ export function Sidebar({
     <>
       {isOpen && (
         <div
-        onBlur={() => {
-          setIsOpen(false);
-        }}
-          className="
-        flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5
+          onBlur={() => {
+            setIsOpen(false);
+          }}
+          className=" flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5
 
-        fixed inset-0 top-0 z-50 grid h-[calc(100vh-0rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-bottom-80
+        fixed inset-0 top-0 z-50 grid-flow-row auto-rows-max overflow-auto  pb-32  animate-in slide-in-from-bottom-80
         "
         >
           <div className="mb-2 p-4">

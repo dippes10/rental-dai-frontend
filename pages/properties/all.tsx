@@ -1,46 +1,71 @@
 // pages/PropertiesPage.tsx
 import React, { useState, useEffect } from "react";
+import ReactMapGL, { Marker } from "react-map-gl";
 import PropertyDetailsModal from "../../components/PropertyDetailsModal";
-import Image from "next/image";
 import AppLayout from "../../components/AppLayout";
 
 const fakeProperties = [
   {
+    id: 1,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
   {
-    name: "Property 2",
+    id: 2,
+    name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
   {
-    name: "Property 3",
+    id: 3,
+    name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
   {
-    name: "Property 4",
+    id: 4,
+    name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
   {
-    name: "Property 5",
+    id: 5,
+    name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
   {
-    name: "Property 6",
+    id: 6,
+    name: "Property 1",
     address: "123 Fake Street",
-    imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    location: {
+      latitude: 37.7749, // Replace with actual latitude
+      longitude: -122.4194, // Replace with actual longitude
+    },
   },
+  // Add more fake properties with location information
 ];
 
 const PropertiesPage: React.FC = () => {
@@ -51,10 +76,10 @@ const PropertiesPage: React.FC = () => {
 
   useEffect(() => {
     // To use fake data uncomment below commented code
-    // setProperties(fakeProperties);
-    // setFilteredProperties(fakeProperties);
-    // setIsLoading(false);
-    // return;
+    setProperties(fakeProperties);
+    setFilteredProperties(fakeProperties);
+    setIsLoading(false);
+    /* Uncomment the following code when using actual API
     fetch("http://localhost:8080/api/properties")
       .then((response) => response.json())
       .then((data) => {
@@ -63,6 +88,7 @@ const PropertiesPage: React.FC = () => {
         setIsLoading(false);
       })
       .catch((error) => console.error("Error fetching properties:", error));
+    */
   }, []);
 
   const handleFilter = (filterTerm: string) => {
@@ -86,7 +112,6 @@ const PropertiesPage: React.FC = () => {
   const handleCloseModal = () => {
     setSelectedProperty(null);
   };
-
   return (
     <AppLayout>
       <div className="container mx-auto mt-8 px-4 lg:px-2">
@@ -100,7 +125,7 @@ const PropertiesPage: React.FC = () => {
           />
           <button
             onClick={handleSort}
-            className=" bg-red-500  text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
+            className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
           >
             Sort by Name
           </button>
@@ -142,10 +167,28 @@ const PropertiesPage: React.FC = () => {
                     {/* Property Address */}
                     <p className="text-gray-700 mb-4">{property.address}</p>
 
+                    {/* Map Embedding */}
+                    <div className="mb-4" style={{ height: "200px" }}>
+                      <ReactMapGL
+                        style={{ width: '100%', height: '100%' }}
+                        latitude={property.location.latitude}
+                        longitude={property.location.longitude}
+                        zoom={15}
+                        mapboxAccessToken="pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA"
+                      >
+                        {/* Marker for the property location */}
+                        <Marker
+                          latitude={property.location.latitude}
+                          longitude={property.location.longitude}
+                        >
+                        </Marker>
+                      </ReactMapGL>
+                    </div>
+
                     {/* Share Button */}
                     <button
                       className="flex items-center bg-white text-red-500 px-3 py-1 rounded-md hover:bg-red-100 transition-all"
-                      onClick={() => console.log("Share button clicked")} // Replace with your share logic
+                      onClick={() => console.log("Share button clicked")}
                     >
                       Share
                     </button>
