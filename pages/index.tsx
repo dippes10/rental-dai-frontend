@@ -21,6 +21,7 @@ import {
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 import BigNav from "../components/NavBar/home-navbar";
+import MapboxComponent from "../components/mapbox/mapbox";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/sirak-shrestha.jpeg";
@@ -47,6 +48,7 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
+      <MapboxComponent/>
       <BigNav/>
       <RentalFlipImage />
       <Description />
