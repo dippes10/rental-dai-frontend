@@ -1,17 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
-// import ListerForm from "../components/Forms/lister-form";
+import ListerForm from "../Forms/lister-form";
 
 
 const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:8080/signin', {
+    const response = await fetch('http://localhost:8080/user-signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,13 +20,13 @@ const handleSubmit = async (event: React.FormEvent) => {
     });
 
     if (response.ok) {
-      setSuccessMessage("Success! Profile updated.");
-      router.push("/lister-profile");
+      console.log('Sign-in successful');
+      router.push("/user-profile");
     } else {
-      console.error();
+      console.error('Invalid credentials');
     }
   } catch (error) {
-    console.error(error);
+    console.error('Error during sign-in:', error);
   }
 };
 
@@ -50,7 +50,7 @@ function SignInBasic() {
                 className="mb-4" // Add margin-bottom to create space
               />
               <div>
-                <h4 className="text-white text-2xl font-medium mb-2">Sign in as Lister</h4>
+                <h4 className="text-white text-2xl font-medium mb-2">Sign in as user</h4>
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
@@ -149,7 +149,7 @@ function SignInBasic() {
           </div>
         </div>
       </div>
-      {/* <ListerForm/> */}
+      <ListerForm/>
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>
@@ -158,7 +158,3 @@ function SignInBasic() {
 }
 
 export default SignInBasic;
-function setSuccessMessage(arg0: string) {
-  throw new Error("Function not implemented.");
-}
-

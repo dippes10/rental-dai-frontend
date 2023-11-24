@@ -30,17 +30,17 @@ export const SiteMeta = {
           {
             id: "all-properties",
             navItem: "All Properties",
-            navLink: "/PropertiesPage",
+            navLink: "/properties/all",
           },
           {
             id: "featured-properties",
             navItem: "Featured Properties",
-            navLink: "/featured-properties",
+            navLink: "/properties/featured",
           },
           {
             id: "featured-properties",
             navItem: "Featured Properties",
-            navLink: "/featured-properties",
+            navLink: "/properties/featured",
           }, 
         ],
       },
@@ -57,22 +57,17 @@ export const SiteMeta = {
       {
         id: "sign-up",
         navItem: "Sign Up",
-        navLink: "/sign-up",
+        navLink: "/signup",
         subNavItems: [
           {
             id: "signup-lister",
             navItem: "Lister Signup",
-            navLink: "/lister-signup",
+            navLink: "/signup/lister",
           },
           {
             id: "signup-user",
             navItem: "User Signup",
-            navLink: "/user-signup",
-          },
-          {
-            id: "Lister-Form",
-            navItem: "Lister Form",
-            navLink: "/",
+            navLink: "/signup/user",
           },
           {
             id: "lister-profile",

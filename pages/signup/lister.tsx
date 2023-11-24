@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import router from "next/router";
 
 interface FormData {

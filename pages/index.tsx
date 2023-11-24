@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
   return (
     <AppLayout>
       <MapboxComponent/>
-      <BigNav/>
+      {/* <BigNav/> */}
       <RentalFlipImage />
       <Description />
       <section className="hero bg-gradient-to-r from-red-500 via-red-700 to-red-800 text-white py-16">

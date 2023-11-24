@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import router from "next/router";
 
 interface FormData {
@@ -43,7 +43,7 @@ const UserSignUp: React.FC = () => {
         if (response.ok) {
           // Signup successful, perform further actions if needed
           console.log('User signed up successfully');
-          router.push("/user-login");
+          router.push("/login/user");
         } else {
           // Handle signup error
           console.error('Signup failed:', response.statusText);

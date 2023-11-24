@@ -46,11 +46,11 @@ const MapboxComponent = () => {
           }
         `}</style>
       </div>
-      <Button
+      {/* <Button
         title="Explore Rentals"
         type="outline"
         onClick={handleClick} // Use the handleClick function
-      />
+      /> */}
     </section>
   );
 };

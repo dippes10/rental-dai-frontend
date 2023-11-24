@@ -1,7 +1,7 @@
 // Import necessary modules from React
 import React from "react";
 import Image from "next/image";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import { FaUser, FaClipboardList } from "react-icons/fa";
 import { useRouter } from "next/router";
 
@@ -10,11 +10,11 @@ const HomePage: React.FC = () => {
   const router = useRouter();
 
   const handleUserLogin = () => {
-    router.push("/user-login");
+    router.push("/login/user");
   };
 
   const handleListerLogin = () => {
-    router.push("/lister-login");
+    router.push("/login/lister");
   };
 
   return (

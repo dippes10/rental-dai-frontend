@@ -2,21 +2,21 @@
 import React from 'react';
 import Image from 'next/image';
 import { FaUserPlus, FaClipboardList } from 'react-icons/fa'; // Import Font Awesome icons
-import AppLayout from '../components/AppLayout';
+import AppLayout from '../../components/AppLayout';
 import router from 'next/router';
 
 // Define your functional component
 const SignupPage: React.FC = () => {
 
   const  handleListerSignup= () => {
-    router.push("/lister-signup");
+    router.push("/signup/lister");
     // setShowMenu(false);
   };
 
   // Function to handle UserSignup
   const handleUserSignup = () => {
     // Add logic for UserSignup
-    router.push("user-signup");
+    router.push("/signup/user");
     // setShowMenu(false);
   };
 

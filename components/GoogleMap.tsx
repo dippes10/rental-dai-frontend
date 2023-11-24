@@ -5,7 +5,7 @@ const GoogleMapComponent: React.FC = () => {
     <div
       style={{
         position: 'relative',
-        width: '20cm',
+        width: '100%',
         height: '20cm',
         overflow: 'hidden',
         margin: 'auto', // Center the map within the frame
