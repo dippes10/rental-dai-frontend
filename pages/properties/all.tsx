@@ -50,10 +50,11 @@ const PropertiesPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setProperties(fakeProperties);
-    setFilteredProperties(fakeProperties);
-    setIsLoading(false);
-    return;
+    // To use fake data uncomment below commented code
+    // setProperties(fakeProperties);
+    // setFilteredProperties(fakeProperties);
+    // setIsLoading(false);
+    // return;
     fetch("http://localhost:8080/api/properties")
       .then((response) => response.json())
       .then((data) => {
