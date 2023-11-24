@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaHome, FaClipboardList, FaUser, FaCalendarAlt, FaFileAlt } from "react-icons/fa";
 import router from "next/router";
+import Image from "next/image";
 
 const UserProfile: React.FC = () => {
   // Expanded placeholder data for user profile
@@ -91,7 +92,7 @@ const UserProfile: React.FC = () => {
     <div className="mt-8">
       <h2 className="text-xl font-bold mb-4">Profile Overview</h2>
       <div className="flex items-center">
-        <img src={userData.profilePicture} alt={userData.name} className="w-12 h-12 rounded-full mr-4" />
+        <Image src={userData.profilePicture} alt={userData.name} className="w-12 h-12 rounded-full mr-4" />
         <div>
           <p className="text-gray-600">{userData.email}</p>
           {/* Add more profile information and statistics here */}
