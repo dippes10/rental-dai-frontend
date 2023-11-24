@@ -3,66 +3,73 @@ import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
+import MapboxComponent from "../../components/mapbox/mapbox";
 
 const fakeProperties = [
   {
     id: 1,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   {
     id: 2,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   {
     id: 3,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   {
     id: 4,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   {
     id: 5,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   {
     id: 6,
     name: "Property 1",
     address: "123 Fake Street",
-    imageUrl: "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    imageUrl:
+      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 37.7749, // Replace with actual latitude
-      longitude: -122.4194, // Replace with actual longitude
+      latitude: 28.3949, // Replace with actual latitude
+      longitude: 84.124, // Replace with actual longitude
     },
   },
   // Add more fake properties with location information
@@ -168,22 +175,11 @@ const PropertiesPage: React.FC = () => {
                     <p className="text-gray-700 mb-4">{property.address}</p>
 
                     {/* Map Embedding */}
-                    <div className="mb-4" style={{ height: "200px" }}>
-                      <ReactMapGL
-                        style={{ width: '100%', height: '100%' }}
-                        latitude={property.location.latitude}
-                        longitude={property.location.longitude}
-                        zoom={15}
-                        mapboxAccessToken="pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA"
-                      >
-                        {/* Marker for the property location */}
-                        <Marker
-                          latitude={property.location.latitude}
-                          longitude={property.location.longitude}
-                        >
-                        </Marker>
-                      </ReactMapGL>
-                    </div>
+                    <MapboxComponent
+                      showMarker={true}
+                      latitude={property.latitude}
+                      longitude={property.longitude}
+                    />
 
                     {/* Share Button */}
                     <button
