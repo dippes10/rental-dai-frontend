@@ -1,14 +1,16 @@
 import React from "react";
 import Image from "next/image";
+import AppLayout from "../components/AppLayout";
 
 const ContactUsPage = () => {
   const contactInfo = {
-    phone: "(+977) 984 1770770",
-    email: "yes@youthenergysociety.org.np",
-    address: "Sampurneshwar Mahadev, Tarakeshwor-6, Kathmandu",
+    phone: "(+977) 986 76388495",
+    email: "rentaldai2023@gmail.com",
+    address: "Thamel, Kathmandu",
   };
 
   return (
+    <AppLayout>
     <section className="bg-image min-h-screen py-8">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -27,8 +29,7 @@ const ContactUsPage = () => {
                     Contact Information
                   </h3>
                   <p className="text-white opacity-80 mb-3">
-                    Fill up the form and our Team will get back to you within 24
-                    hours.
+                    Fill up the form and we will contact you in no time!
                   </p>
                   <div className="flex items-center text-white">
                     <i className="fas fa-phone mr-2"></i>
@@ -83,9 +84,10 @@ const ContactUsPage = () => {
         </div>
         <h3 className="text-2xl font-bold mt-6 mb-4">Our Location</h3>
         <div className="h-64 w-full py-6">
-          <iframe
+
+        <iframe
             title="Our Location"
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d265.3596840876694!2d85.29264227870162!3d27.76983894811788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDQ2JzExLjAiTiA4NcKwMTcnMzMuOCJF!5e0!3m2!1sen!2snp!4v1685976303117!5m2!1sen!2snp"
+            src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.7604435323206!2d85.31320745204977!3d27.75553396208275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1f7cdfe0f03d%3A0x7e306d673f31067!2sSirak%20home!5e0!3m2!1sen!2snp!4v1700810102805!5m2!1sen!2snp"
             width="100%"
             height="120%"
             frameBorder="0"
@@ -96,6 +98,7 @@ const ContactUsPage = () => {
         </div>
       </div>
     </section>
+    </AppLayout>
   );
 };
 
