@@ -20,6 +20,7 @@ import {
   faParking,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import BigNav from "../components/NavBar/home-navbar";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/sirak-shrestha.jpeg";
@@ -46,6 +47,7 @@ const advertisementsData = [
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
+      <BigNav/>
       <RentalFlipImage />
       <Description />
       <section className="hero bg-gradient-to-r from-red-500 via-red-700 to-red-800 text-white py-16">

@@ -19,6 +19,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@heroicons/react": "^2.0.18",
     "mapbox-gl": "^2.15.0",
     "next": "^14.0.2",
     "next-themes": "^0.2.1",
