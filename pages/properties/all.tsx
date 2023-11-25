@@ -72,6 +72,204 @@ export const fakeProperties = [
       longitude: 85.3536846, // Replace with actual longitude
     },
   },
+  {
+    id: 1,
+    name: "Property 1 edited",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?hotel",
+    location: {
+      latitude: 27.6867253, // Replace with actual latitude
+      longitude: 85.3522846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?building",
+    location: {
+      latitude: 27.6957053, // Replace with actual latitude
+      longitude: 85.3526846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 3,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?flat",
+    location: {
+      latitude: 27.6957153, // Replace with actual latitude
+      longitude: 85.3526836, // Replace with actual longitude
+    },
+  },
+  {
+    id: 4,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453, // Replace with actual latitude
+      longitude: 85.3526946, // Replace with actual longitude
+    },
+  },
+  {
+    id: 5,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+    "https://source.unsplash.com/800x600/?house ",
+    location: {
+      latitude: 27.6952053, // Replace with actual latitude
+      longitude: 85.3526346, // Replace with actual longitude
+    },
+  },
+  {
+    id: 6,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?penthouse",
+    location: {
+      latitude: 27.6957653, // Replace with actual latitude
+      longitude: 85.3536846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 1,
+    name: "Property 1 edited",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?hotel",
+    location: {
+      latitude: 27.6867253, // Replace with actual latitude
+      longitude: 85.3522846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?building",
+    location: {
+      latitude: 27.6957053, // Replace with actual latitude
+      longitude: 85.3526846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 3,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?flat",
+    location: {
+      latitude: 27.6957153, // Replace with actual latitude
+      longitude: 85.3526836, // Replace with actual longitude
+    },
+  },
+  {
+    id: 4,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453, // Replace with actual latitude
+      longitude: 85.3526946, // Replace with actual longitude
+    },
+  },
+  {
+    id: 5,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+    "https://source.unsplash.com/800x600/?house ",
+    location: {
+      latitude: 27.6952053, // Replace with actual latitude
+      longitude: 85.3526346, // Replace with actual longitude
+    },
+  },
+  {
+    id: 6,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?penthouse",
+    location: {
+      latitude: 27.6957653, // Replace with actual latitude
+      longitude: 85.3536846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 1,
+    name: "Property 1 edited",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?hotel",
+    location: {
+      latitude: 27.6867253, // Replace with actual latitude
+      longitude: 85.3522846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?building",
+    location: {
+      latitude: 27.6957053, // Replace with actual latitude
+      longitude: 85.3526846, // Replace with actual longitude
+    },
+  },
+  {
+    id: 3,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?flat",
+    location: {
+      latitude: 27.6957153, // Replace with actual latitude
+      longitude: 85.3526836, // Replace with actual longitude
+    },
+  },
+  {
+    id: 4,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453, // Replace with actual latitude
+      longitude: 85.3526946, // Replace with actual longitude
+    },
+  },
+  {
+    id: 5,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+    "https://source.unsplash.com/800x600/?house ",
+    location: {
+      latitude: 27.6952053, // Replace with actual latitude
+      longitude: 85.3526346, // Replace with actual longitude
+    },
+  },
+  {
+    id: 6,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl:
+      "https://source.unsplash.com/800x600/?penthouse",
+    location: {
+      latitude: 27.6957653, // Replace with actual latitude
+      longitude: 85.3536846, // Replace with actual longitude
+    },
+  },
   // Add more fake properties with location information
 ];
 
