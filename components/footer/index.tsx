@@ -1,10 +1,5 @@
 // Import necessary icons
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoInstagram,
-} from "react-icons/io";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { Footer as FooterConst } from "../../constants";
@@ -16,6 +11,22 @@ type SocialLink = {
   link?: string;
   icon: ReactElement;
 };
+
+// Social Media Links and Icons Constant
+const SocialMediaLinks: SocialLink[] = [
+  {
+    link: "https://www.facebook.com/RentalDai",
+    icon: <FaFacebook />,
+  },
+  {
+    link: "https://twitter.com/RentalDai",
+    icon: <FaTwitter />,
+  },
+  {
+    link: "https://instagram.com/RentalDai",
+    icon: <FaInstagram />,
+  },
+];
 
 const Footer = () => {
   const { BottomFooterNav, FooterNav } = FooterConst;
@@ -51,19 +62,16 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t border-black border-opacity-25 mt-8 pt-4">
-          <p className="text-sm text-black">{BottomFooterNav.copyright}</p>
+        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex justify-end">
           <ul className="flex gap-x-4 mt-4">
-            {BottomFooterNav.socialLinks.map((link, index) => (
+            {SocialMediaLinks.map((link, index) => (
               <li key={index}>
                 {link.link ? (
-                  <Link href={link.link} passHref>
-                    <div rel="noreferrer">
+                  <Link href={link.link} passHref rel="noreferrer" className="text-red-500 hover:text-blue-500">
                       {link.icon}
-                    </div>
                   </Link>
                 ) : (
-                  <div>
+                  <div className="text-red-500 hover:text-blue-500">
                     {link.icon}
                   </div>
                 )}

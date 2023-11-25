@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import AppLayout from "../../components/AppLayout";
 import { useRouter } from "next/router";
+import { FaUser, FaClipboardList } from "react-icons/fa"; // Import Font Awesome icons
 
 // Define your functional component
 const HomePage: React.FC = () => {
@@ -50,6 +51,7 @@ const HomePage: React.FC = () => {
                   Explore a wide range of rental houses available for you.
                 </p>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <FaClipboardList className="text-white mr-2" />
                   <p className="text-white font-bold">Sign In as Lister</p>
                 </div>
               </button>
@@ -73,6 +75,7 @@ const HomePage: React.FC = () => {
                   Read reviews from other users to make informed decisions.
                 </p>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <FaUser className="text-white mr-2" />
                   <p className="text-white font-bold">Sign In as User</p>
                 </div>
               </button>

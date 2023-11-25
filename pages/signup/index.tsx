@@ -23,7 +23,7 @@ const SignupPage: React.FC = () => {
   return (
     <div className="bg-gradient-to-r from-blue-700 via-red-500 to-red-700 text-white min-h-screen">
       <AppLayout>
-        <div className="relative grid grid-col justify-center items-center p-4 ">
+        <div className="relative flex flex-col justify-center items-center p-4">
           {/* Background Decoration */}
           <div className="absolute inset-0 z-0">
             <svg
@@ -43,60 +43,63 @@ const SignupPage: React.FC = () => {
             </p>
           </div>
 
-          {/* ListerSignup */}
-          <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105 z-10">
-            <h2 className="text-2xl font-bold mb-4 text-red-800">
-              <span className="flex items-center">
-                <FaClipboardList className="mr-2" />
-                Lister Signup
-              </span>
-            </h2>
-            <div className="relative h-40 mb-4">
-              <Image
-                src="/lister-image.jpg" // Add the path to your lister image
-                alt="Lister Signup"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+          {/* Signup Components Section */}
+          <div className="flex justify-center space-x-8">
+            {/* ListerSignup */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-white p-6 w-72 transition-transform transform hover:scale-105 z-10">
+              <h2 className="text-2xl font-bold mb-4 text-red-800">
+                <span className="flex items-center">
+                  <FaClipboardList className="mr-2" />
+                  Lister Signup
+                </span>
+              </h2>
+              <div className="relative h-40 mb-4">
+                <Image
+                  src="/lister-image.jpg"
+                  alt="Lister Signup"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="text-gray-800 mb-4">
+                Ready to share your items? Sign up as a Lister and start listing your items for rent.
+              </p>
+              <button
+                onClick={handleListerSignup}
+                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
+              >
+                Get Started
+              </button>
             </div>
-            <p className="text-gray-800 mb-4">
-              Ready to share your items? Sign up as a Lister and start listing your items for rent.
-            </p>
-            <button
-              onClick={handleListerSignup}
-              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
-            >
-              Get Started
-            </button>
-          </div>
 
-          {/* UserSignup */}
-          <div className="rounded-lg overflow-hidden shadow-md bg-white mx-4 p-6 w-72 transition-transform transform hover:scale-105 z-10 mt-8">
-            <h2 className="text-2xl font-bold mb-4 text-red-800">
-              <span className="flex items-center">
-                <FaUserPlus className="mr-2" />
-                User Signup
-              </span>
-            </h2>
-            <div className="relative h-40 mb-4">
-              <Image
-                src="/user-image.jpg" // Add the path to your user image
-                alt="User Signup"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+            {/* UserSignup */}
+            <div className="rounded-lg overflow-hidden shadow-md bg-white p-6 w-72 transition-transform transform hover:scale-105 z-10">
+              <h2 className="text-2xl font-bold mb-4 text-red-800">
+                <span className="flex items-center">
+                  <FaUserPlus className="mr-2" />
+                  User Signup
+                </span>
+              </h2>
+              <div className="relative h-40 mb-4">
+                <Image
+                  src="/user-image.jpg"
+                  alt="User Signup"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="text-gray-800 mb-4">
+                Discover and rent items from Listers. Create an account as a User and start exploring.
+              </p>
+              <button
+                onClick={handleUserSignup}
+                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
+              >
+                Get Started
+              </button>
             </div>
-            <p className="text-gray-800 mb-4">
-              Discover and rent items from Listers. Create an account as a User and start exploring.
-            </p>
-            <button
-              onClick={handleUserSignup}
-              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
-            >
-              Get Started
-            </button>
           </div>
         </div>
       </AppLayout>
