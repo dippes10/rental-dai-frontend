@@ -139,7 +139,7 @@ def signin():
          cursor.close()
 
          if user:
-                return jsonify({'message': 'Sign-in successful'}), 200
+                return jsonify({'message': 'Sign-in successful as lister'}), 200
          else:
                 return jsonify({'message': 'Invalid credentials'}), 401
      except Exception as e:
@@ -159,13 +159,13 @@ def usersignin():
          cursor = connection.cursor()
 
          # Query to retrieve user with provided email and password
-         query = "SELECT * FROM user WHERE email = %s AND password = %s"
+         query = "SELECT * FROM users WHERE email = %s AND password = %s"
          cursor.execute(query, (email, password))
          user = cursor.fetchone()
          cursor.close()
 
          if user:
-                return jsonify({'message': 'Sign-in successful'}), 200
+                return jsonify({'message': 'Sign-in successful as user'}), 200
          else:
                 return jsonify({'message': 'Invalid credentials'}), 401
      except Exception as e:

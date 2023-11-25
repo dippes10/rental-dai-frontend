@@ -4,6 +4,7 @@ import AppLayout from "../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
+import ListerProfile from "./lister-profile";
 // import ListerForm from "../components/Forms/lister-form";
 
 
@@ -20,13 +21,13 @@ const handleSubmit = async (event: React.FormEvent) => {
     });
 
     if (response.ok) {
-      setSuccessMessage("Success! Profile updated.");
+      console.log('Sign-in successful as lister');
       router.push("/lister-profile");
     } else {
-      console.error();
+      console.error('Invalid credentials');
     }
   } catch (error) {
-    console.error(error);
+    console.error('Error during sign-in:', error);
   }
 };
 

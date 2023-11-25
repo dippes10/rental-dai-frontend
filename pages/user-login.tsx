@@ -11,7 +11,7 @@ const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:8080/user-signin', {
+    const response = await fetch('http://localhost:8080/user-Signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,8 +20,8 @@ const handleSubmit = async (event: React.FormEvent) => {
     });
 
     if (response.ok) {
-      console.log('Sign-in successful');
-      router.push("/user-profile");
+      console.log('Sign-in successful as user');
+      router.push("/lister-profile");
     } else {
       console.error('Invalid credentials');
     }
