@@ -12,7 +12,7 @@ const Information: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center text-justify">
             <div className="space-y-5">
               {/* Additional Card Components or Text */}
-              <h4 className="text-red-700">Rental Dai</h4>
+              <h4 className="text-red-500">Rental Dai</h4>
               <p className="text-xl text-gray-700">
                 Discover the ease of finding your perfect home with RentalDai in the heart of Kathmandu Valley.
                 Whether you're looking for a spacious house, cozy flat, or comfortable room, we have diverse
