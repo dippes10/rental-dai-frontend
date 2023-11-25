@@ -87,7 +87,7 @@ const ContactUsPage = () => {
 
         <iframe
             title="Our Location"
-            src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.7604435323206!2d85.31320745204977!3d27.75553396208275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1f7cdfe0f03d%3A0x7e306d673f31067!2sSirak%20home!5e0!3m2!1sen!2snp!4v1700810102805!5m2!1sen!2snp"
+            src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0832516847686!2d85.30643297603619!3d27.714715725165416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18fc9a83c0cd%3A0xc0495456663927d4!2sNational%20College%20of%20Computer%20Studies!5e0!3m2!1sen!2snp!4v1700922170002!5m2!1sen!2snp"
             width="100%"
             height="120%"
             frameBorder="0"

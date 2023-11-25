@@ -73,12 +73,18 @@ a {
   background-image: url('../public/bg-header.jpg');
   background-size: auto;
   background-position: 100% 50%;
+  margin-top: -8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .bgLogin{
   background-image: url('../public/bg-login.jpeg');
   background-size: cover;
   background-position: 100% 50%;
+  margin-top: -8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .bgListerForm{
@@ -95,4 +101,17 @@ a {
   background-image: url('../public/contactus.jpg');
   background-size: cover;
   background-position: 100% 50%;
+  margin-top: -8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.bg-properties
+{
+  background-image: url('../public/bgproperties.png');
+  background-size: cover;
+  background-position: 100% 50%;
+  margin-top: -8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }

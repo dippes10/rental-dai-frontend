@@ -86,16 +86,17 @@ const PropertiesPage: React.FC = () => {
     setProperties(fakeProperties);
     setFilteredProperties(fakeProperties);
     setIsLoading(false);
-    /* Uncomment the following code when using actual API
-    fetch("http://localhost:8080/api/properties")
-      .then((response) => response.json())
-      .then((data) => {
-        setProperties(data);
-        setFilteredProperties(data);
-        setIsLoading(false);
-      })
-      .catch((error) => console.error("Error fetching properties:", error));
-    */
+    // Uncomment the following code when using actual API
+
+    // fetch("http://localhost:8080/api/properties")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setProperties(data);
+    //     setFilteredProperties(data);
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => console.error("Error fetching properties:", error));
+    
   }, []);
 
   const handleFilter = (filterTerm: string) => {
@@ -121,7 +122,8 @@ const PropertiesPage: React.FC = () => {
   };
   return (
     <AppLayout>
-      <div className="container mx-auto mt-8 px-4 lg:px-2">
+      <div className="bg-properties">
+      <div className="container mx-auto mt-8 px-4 lg:px-2 ">
         {/* Filter and Sort Controls */}
         <div className="flex flex-col lg:flex-row gap-2 mb-8">
           <input
@@ -220,6 +222,7 @@ const PropertiesPage: React.FC = () => {
             onClose={handleCloseModal}
           />
         )}
+      </div>
       </div>
     </AppLayout>
   );

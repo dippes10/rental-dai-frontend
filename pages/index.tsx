@@ -36,14 +36,10 @@ const HomePage: React.FC = () => {
         }}
         alt="hero landscape"
       />
-      <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-white overflow-visible">
+      <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-gray-50 overflow-visible">
         <RentalFlipImage />
-        <Description />
       <MapboxComponent showNavigationControl={true} latitude={27.6957053} longitude={85.3526846} zoom={11} showAllProperties={true} properties={fakeProperties} />
-
-
-  
-
+        <Description />
       </div>
     </AppLayout>
   );
