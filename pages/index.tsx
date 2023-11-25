@@ -18,6 +18,7 @@ import {
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
 import MapboxComponent from "../components/mapbox/mapbox";
+import { fakeProperties } from "./properties/all";
 
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/sirak-shrestha.jpeg";
@@ -38,7 +39,7 @@ const HomePage: React.FC = () => {
       <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-white overflow-visible">
         <RentalFlipImage />
         <Description />
-      <MapboxComponent showNavigationControl={true} />
+      <MapboxComponent showNavigationControl={true} latitude={27.6957053} longitude={85.3526846} zoom={11} showAllProperties={true} properties={fakeProperties} />
 
 
   

@@ -5,27 +5,27 @@ import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 
-const fakeProperties = [
+export const fakeProperties = [
   {
     id: 1,
-    name: "Property 1",
+    name: "Property 1 edited",
     address: "123 Fake Street",
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6867253, // Replace with actual latitude
+      longitude: 85.3522846, // Replace with actual longitude
     },
   },
   {
     id: 2,
-    name: "Property 1",
+    name: "Property 2",
     address: "123 Fake Street",
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6957053, // Replace with actual latitude
+      longitude: 85.3526846, // Replace with actual longitude
     },
   },
   {
@@ -35,8 +35,8 @@ const fakeProperties = [
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6957153, // Replace with actual latitude
+      longitude: 85.3526836, // Replace with actual longitude
     },
   },
   {
@@ -46,8 +46,8 @@ const fakeProperties = [
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6957453, // Replace with actual latitude
+      longitude: 85.3526946, // Replace with actual longitude
     },
   },
   {
@@ -57,8 +57,8 @@ const fakeProperties = [
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6952053, // Replace with actual latitude
+      longitude: 85.3526346, // Replace with actual longitude
     },
   },
   {
@@ -68,8 +68,8 @@ const fakeProperties = [
     imageUrl:
       "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
     location: {
-      latitude: 28.3949, // Replace with actual latitude
-      longitude: 84.124, // Replace with actual longitude
+      latitude: 27.6957653, // Replace with actual latitude
+      longitude: 85.3536846, // Replace with actual longitude
     },
   },
   // Add more fake properties with location information
@@ -176,11 +176,12 @@ const PropertiesPage: React.FC = () => {
 
                     {/* Map Embedding */}
                     <MapboxComponent
-                      disableMove={true}
+                      disableMove={false}
                       showNavigationControl={true}
                       showMarker={true}
-                      latitude={property.latitude}
-                      longitude={property.longitude}
+                      latitude={property.location.latitude}
+                      longitude={property.location.longitude}
+                      zoom={11}
                     />
 
                     {/* Share Button */}

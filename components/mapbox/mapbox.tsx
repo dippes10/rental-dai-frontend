@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactMapGL, { Marker, NavigationControl } from "react-map-gl";
+import ReactMapGL, { GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 
 type Props = {
   longitude?: number;
@@ -9,6 +9,8 @@ type Props = {
   showNavigationControl?: boolean;
   disableMove?: boolean;
   children?: React.ReactNode;
+  showAllProperties?: boolean;
+  properties?: any;
 };
 
 const MapboxComponent = (props: Props) => {
@@ -35,6 +37,17 @@ const MapboxComponent = (props: Props) => {
             }}
             mapboxAccessToken={mapboxToken}
           >
+            {
+              // @ts-ignore
+             props.showAllProperties && props.properties.map((property) => (
+                <Marker
+                  key={property.id}
+                  latitude={property.location.latitude}
+                  longitude={property.location.longitude}
+                  draggable={false}
+                ></Marker>
+              ))
+            }
             {props.children}
             {!!props.showMarker && (
               <Marker
@@ -43,6 +56,7 @@ const MapboxComponent = (props: Props) => {
                 draggable={false}
               ></Marker>
             )}
+            <GeolocateControl />
             {/* Additional components, markers, or overlays can be added here */}
             {!!props.showNavigationControl && (
               <div style={{ position: "absolute", top: 10, right: 10 }}>
