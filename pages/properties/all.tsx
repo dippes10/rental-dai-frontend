@@ -158,7 +158,7 @@ const PropertiesPage: React.FC = () => {
                   {/* Property Card */}
                   <div className="bg-red-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                     {/* Property Image */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
                       <img
                         src={property.imageUrl}
                         alt={`Property: ${property.name}`}
