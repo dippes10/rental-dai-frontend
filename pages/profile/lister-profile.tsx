@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
 import { FaHome, FaUser, FaClipboardList, FaNewspaper, FaCalendarAlt, FaFileAlt, FaPlus } from "react-icons/fa";
-import ListerForm from "../Forms/lister-form";
+import ListerForm from "../forms/lister-form";
 import router from "next/router";
 
 const ListerProfile: React.FC = () => {
@@ -87,7 +87,7 @@ const ListerProfile: React.FC = () => {
         {/* "Add Listing" button */}
         <div className="flex justify-center mt-8">
           <button
-                      onClick={() => router.push("Forms/lister-form")}
+                      onClick={() => router.push("/forms/lister-form")}
             className="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-red-300"
           >
             <FaPlus className="mr-2" />
