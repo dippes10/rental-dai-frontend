@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
 import { FaHome, FaUser, FaClipboardList, FaNewspaper, FaCalendarAlt, FaFileAlt, FaPlus } from "react-icons/fa";
-import ListerForm from "../forms/lister-form";
 import router from "next/router";
 
 const ListerProfile: React.FC = () => {
   const [showForm, setShowForm] = useState(false); // State to control the display of the ListerForm
 
-  const toggleForm = () => setShowForm(!showForm);
 
   // Placeholder data (replace with actual data)
   const listerData = {
@@ -85,18 +83,16 @@ const ListerProfile: React.FC = () => {
         <NewsAndUpdates updates={listerData.newsAndUpdates} />
 
         {/* "Add Listing" button */}
-        <div className="flex justify-center mt-8">
+        <div className="flex flex-row justify-center mt-8">
           <button
                       onClick={() => router.push("/forms/lister-form")}
-            className="bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-red-300"
+            className="bg-gradient-to-r flex flex-row items-center from-red-500 to-red-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-red-300"
           >
             <FaPlus className="mr-2" />
             Add Listing
           </button>
         </div>
 
-        {/* Conditionally render ListerForm based on the state */}
-        {showForm && <ListerForm />}
       </div>
     </div>
   );

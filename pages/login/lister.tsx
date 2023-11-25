@@ -4,7 +4,6 @@ import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import { useRouter } from "next/router";
-// import ListerForm from "../components/Forms/lister-form";
 
 
 function SignInBasic() {

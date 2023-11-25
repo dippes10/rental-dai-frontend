@@ -4,7 +4,6 @@ import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
-import ListerForm from "../forms/lister-form";
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -163,7 +162,6 @@ function SignInBasic() {
           </div>
         </div>
       </div>
-      <ListerForm />
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>
