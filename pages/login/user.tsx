@@ -9,6 +9,8 @@ function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -21,7 +23,7 @@ function SignInBasic() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ FormData }), 
+        body: JSON.stringify({ email,password }), 
       });
 
       if (response.ok) {
@@ -104,6 +106,8 @@ function SignInBasic() {
                   type="email"
                   placeholder="Email"
                   className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -115,6 +119,8 @@ function SignInBasic() {
                   type="password"
                   placeholder="Password"
                   className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="flex items-center">
