@@ -55,28 +55,6 @@ export const SiteMeta = {
         navLink: "/contact",
       },
       {
-        id: "sign-up",
-        navItem: "Sign Up",
-        navLink: "/signup",
-        subNavItems: [
-          {
-            id: "signup-lister",
-            navItem: "Lister Signup",
-            navLink: "/signup/lister",
-          },
-          {
-            id: "signup-user",
-            navItem: "User Signup",
-            navLink: "/signup/user",
-          },
-          {
-            id: "lister-profile",
-            navItem: "Lister Profile",
-            navLink: "profile/lister-profile",
-          },
-        ],
-      },
-      {
         id: "profile",
         navItem: "Profile",
         navLink: "/[profile]",
@@ -112,11 +90,11 @@ export const SiteMeta = {
         navItems: [
           {
             navItem: "Terms & Conditions",
-            navLink: "/terms-and-conditions",
+            navLink: "/legal/terms-and-conditions",
           },
           {
             navItem: "Privacy Policy",
-            navLink: "/privacy-policy",
+            navLink: "/legal/privacy-policy",
           },
         ],
       },
@@ -125,16 +103,16 @@ export const SiteMeta = {
         navLink: "/contact-us",
         navItems: [
           {
-            navItem: "(+1) 123-456-7890",
-            navLink: "tel:+11234567890",
+            navItem: "(+977) 984-121-5288",
+            navLink: "tel:+9779841215288",
           },
           {
-            navItem: "123 RentalDai St, City",
+            navItem: "NCCS, paknakol, Kathmandu",
             navLink: "https://goo.gl/maps/rentaldai-location",
           },
           {
-            navItem: "info@rentaldai.com",
-            navLink: "mailto:info@rentaldai.com",
+            navItem: "rentaldai2023@gmail.com",
+            navLink: "mailto:rentaldai2023@gmail.com",
           },
         ],
       },

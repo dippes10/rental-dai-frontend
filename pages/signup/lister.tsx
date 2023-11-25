@@ -27,8 +27,6 @@ const UserSignUp: React.FC = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  
-   
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
   
@@ -54,9 +52,6 @@ const UserSignUp: React.FC = () => {
     }
   };
   
-    
-  
-
   const formFields = [
     { name: "firstName", label: "First Name", type: "text", icon: faUser },
     { name: "lastName", label: "Last Name", type: "text", icon: faUser },
