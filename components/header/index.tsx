@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = () => {
       {/* Navigation */}
       <nav className="fixed z-40 w-full bg-white text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
-          <FaBars className=" text-black w-6 h-6" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          <FaBars className=" lg:hidden text-black w-6 h-6" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
           {/* <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             className="bg-blue-500 text-white rounded-md p-2 shadow-xl shadow-blue-gray-900/5"
