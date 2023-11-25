@@ -34,7 +34,7 @@ const rentalDaiMessage = {
 
 const Description: React.FC = () => {
   return (
-    <section className="bg-neutral-200">
+    <section className="bg-gray-200">
       <div className="container-custom py-10 flex gap-10 md:gap-2 flex-wrap md:flex-nowrap items-center justify-between text-justify">
         <div className="md:w-4/5 mr-6" data-aos="fade-right">
           <h3 className="max-w-[500px] mb-5">{rentalDaiMessage.title}</h3>
@@ -44,14 +44,14 @@ const Description: React.FC = () => {
           <Button
             title={rentalDaiMessage.cta}
             type="outline"
-            onClick={() => router.push('/rentals')}
+            onClick={() => router.push('../properties/all')}
           />
         </div>
         <div className="md:max-w-[456px] grid xs:grid-cols-2 gap-4" data-aos="fade-left">
           {rentalDaiMessage.featureCards.map((card, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center px-4 py-5 bg-white rounded-lg shadow-main transition duration-300 transform hover:scale-105"
+              className=" text-justify flex flex-col items-center justify-center px-4 py-5 bg-white rounded-lg shadow-main transition duration-300 transform hover:scale-105"
             >
               <div className="mb-2 text-primary-500 text-4xl">{card.icon}</div>
               <p className="mb-2 text-center font-semiBold">{card.title}</p>
