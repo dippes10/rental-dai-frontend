@@ -11,7 +11,7 @@ const ContactUsPage = () => {
 
   return (
     <AppLayout>
-    <section className="bg-image min-h-screen py-8">
+    <section className="bg-contact min-h-screen py-8">
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-black rounded-xl shadow-xl overflow-hidden">

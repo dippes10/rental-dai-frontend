@@ -103,8 +103,8 @@ export const SiteMeta = {
         navLink: "/contact-us",
         navItems: [
           {
-            navItem: "(+977) 984-121-5288",
-            navLink: "tel:+9779841215288",
+            navItem: "(+977) 984-7845124",
+            navLink: "tel:+9779844585288",
           },
           {
             navItem: "NCCS, paknakol, Kathmandu",
