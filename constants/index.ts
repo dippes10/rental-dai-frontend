@@ -144,12 +144,16 @@ export const SiteMeta = {
       copyright: `©${new Date().getFullYear()} RentalDai. All rights reserved.`,
       socialLinks: [
         {
-          icon: "facebook",
+          icon: "Facebook",
           link: "https://www.facebook.com/RentalDai",
         },
         {
-          icon: "twitter",
+          icon: "Twitter",
           link: "https://twitter.com/RentalDai",
+        },
+        {
+          icon: "Instagram",
+          link: "https://instagram.com/RentalDai",
         },
       ],
     },
