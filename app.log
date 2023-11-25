@@ -72,3 +72,13 @@ werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not at
 2023-11-21 11:33:35,625 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-21 11:33:36,064 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-21 11:33:36,068 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-22 11:43:28,976 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-22 11:43:28,976 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-22 11:43:28,980 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-22 11:43:29,476 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-22 11:43:29,488 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-22 11:43:50,364 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 11:43:50] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-22 11:43:51,798 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 11:43:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-11-22 11:43:57,389 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 11:43:57] "[31m[1mGET /signup HTTP/1.1[0m" 405 -
+2023-11-22 11:44:28,240 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 11:44:28] "GET /api/properties HTTP/1.1" 200 -
