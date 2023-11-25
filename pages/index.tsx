@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
       />
       <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-gray-50 overflow-visible">
         <RentalFlipImage />
-      <MapboxComponent showNavigationControl={true} latitude={27.6957053} longitude={85.3526846} zoom={11} showAllProperties={true} properties={fakeProperties} disableMove={true}/>
+      <MapboxComponent showNavigationControl={true} latitude={27.6957053} longitude={85.3526846} zoom={12} showAllProperties={true} properties={fakeProperties} disableMove={true}/>
         <Description />
       </div>
     </AppLayout>
