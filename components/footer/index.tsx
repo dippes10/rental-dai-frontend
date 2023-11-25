@@ -1,9 +1,15 @@
 // Import necessary icons
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { Footer as FooterConst } from "../../constants";
-import { UrlObject } from "url";
 import { ReactElement } from "react";
 
 // Define a type for social link
@@ -39,14 +45,16 @@ const Footer = () => {
             <Image
               src="/favicon.png"
               alt="Rental Dai Logo"
-              width="160"
-              height="40"
+              width={160}
+              height={40}
             />
           </div>
           <div className="flex flex-wrap justify-around md:justify-start gap-20">
             {FooterNav.map((item, i) => (
               <div key={i} className="mb-4 md:mb-0">
-                <h6 className="mb-2 text-black font-semibold text-lg">{item.navTitle}</h6>
+                <h6 className="mb-2 text-black font-semibold text-lg">
+                  {item.navTitle}
+                </h6>
                 <ul className="flex flex-col gap-y-2">
                   {item.navItems.map((item, i) => (
                     <li key={i}>
@@ -67,8 +75,13 @@ const Footer = () => {
             {SocialMediaLinks.map((link, index) => (
               <li key={index}>
                 {link.link ? (
-                  <Link href={link.link} passHref rel="noreferrer" className="text-red-500 hover:text-blue-500">
-                      {link.icon}
+                  <Link
+                    href={link.link}
+                    passHref
+                    rel="noreferrer"
+                    className="text-red-500 hover:text-blue-500"
+                  >
+                    {link.icon}
                   </Link>
                 ) : (
                   <div className="text-red-500 hover:text-blue-500">
