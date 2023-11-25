@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import ReactMapGL, { GeolocateControl, Marker, NavigationControl } from "react-map-gl";
+import ReactMapGL, {
+  GeolocateControl,
+  Marker,
+  NavigationControl,
+} from "react-map-gl";
 
 type Props = {
   longitude?: number;
@@ -11,9 +15,11 @@ type Props = {
   children?: React.ReactNode;
   showAllProperties?: boolean;
   properties?: any;
+  height?: string;
 };
 
 const MapboxComponent = (props: Props) => {
+  console.log("props.height", props.height)
   const mapboxToken =
     "pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA";
 
@@ -25,7 +31,12 @@ const MapboxComponent = (props: Props) => {
 
   return (
     <section className="-z-10">
-      <div className="scrollable-container">
+      <div
+        className="scrollable-container"
+        style={{
+          height: props.height || "400px",
+        }}
+      >
         <div className="map-container">
           <ReactMapGL
             {...viewport}
@@ -39,14 +50,15 @@ const MapboxComponent = (props: Props) => {
           >
             {
               // @ts-ignore
-             props.showAllProperties && props.properties.map((property) => (
-                <Marker
-                  key={property.id}
-                  latitude={property.location.latitude}
-                  longitude={property.location.longitude}
-                  draggable={false}
-                ></Marker>
-              ))
+              props.showAllProperties &&
+                props.properties.map((property: any) => (
+                  <Marker
+                    key={property.id}
+                    latitude={property.location.latitude}
+                    longitude={property.location.longitude}
+                    draggable={false}
+                  ></Marker>
+                ))
             }
             {props.children}
             {!!props.showMarker && (
@@ -67,7 +79,6 @@ const MapboxComponent = (props: Props) => {
         </div>
         <style jsx>{`
           .scrollable-container {
-            height: 400px;
             overflow: auto;
           }
 

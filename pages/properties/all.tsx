@@ -150,7 +150,7 @@ const PropertiesPage: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Array.isArray(filteredProperties) &&
             filteredProperties.length > 0 ? (
               filteredProperties.map((property) => (
@@ -158,13 +158,27 @@ const PropertiesPage: React.FC = () => {
                   {/* Property Card */}
                   <div className="bg-red-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                     {/* Property Image */}
-                    <img
-                      src={property.imageUrl}
-                      alt={`Property: ${property.name}`}
-                      width={0}
-                      height={0}
-                      className="w-full h-48 object-cover rounded-md mb-4"
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                      <img
+                        src={property.imageUrl}
+                        alt={`Property: ${property.name}`}
+                        width={0}
+                        height={0}
+                        className="w-full h-52 object-cover rounded-md mb-4"
+                      />
+                      {/* Map Embedding */}
+                      <div className="overflow-hidden rounded-lg">
+                        <MapboxComponent
+                          disableMove={true}
+                          showNavigationControl={true}
+                          showMarker={true}
+                          latitude={property.location.latitude}
+                          longitude={property.location.longitude}
+                          zoom={11}
+                          height="13rem"
+                        />
+                      </div>
+                    </div>
 
                     {/* Property Name */}
                     <h3 className="text-xl font-semibold mb-2">
@@ -174,19 +188,9 @@ const PropertiesPage: React.FC = () => {
                     {/* Property Address */}
                     <p className="text-gray-700 mb-4">{property.address}</p>
 
-                    {/* Map Embedding */}
-                    <MapboxComponent
-                      disableMove={false}
-                      showNavigationControl={true}
-                      showMarker={true}
-                      latitude={property.location.latitude}
-                      longitude={property.location.longitude}
-                      zoom={11}
-                    />
-
                     {/* Share Button */}
                     <button
-                      className="flex items-center bg-white text-red-500 px-3 py-1 rounded-md hover:bg-red-100 transition-all"
+                      className="flex mt-4 items-center bg-white text-red-500 px-3 py-1 rounded-md hover:bg-red-100 transition-all"
                       onClick={() => console.log("Share button clicked")}
                     >
                       Share
@@ -196,7 +200,7 @@ const PropertiesPage: React.FC = () => {
 
                   {/* View Details Button */}
                   <button
-                    className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-700 focus:outline-none"
+                    className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-700 focus:outline-none"
                     onClick={() => handleViewDetails(property)}
                   >
                     View Offer
