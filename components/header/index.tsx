@@ -43,9 +43,12 @@ const Header: React.FC<HeaderProps> = () => {
       </Head>
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       {/* Navigation */}
-      <nav className="fixed z-40 w-full bg-white text-white p-4">
-        <div className="container mx-auto flex items-center justify-between h-20 text-black">
-          <FaBars className=" lg:hidden text-black w-6 h-6" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+      <nav className="fixed z-40 pt-4 flex flex-row justify-center items-center w-full bg-transparent px-2">
+        <div className="container px-2 rounded-xl border-2 shadow-lg bg-white mx-auto flex items-center justify-between h-20 text-black">
+          <FaBars
+            className=" lg:hidden text-black w-6 h-6"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          />
           {/* <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             className="bg-blue-500 text-white rounded-md p-2 shadow-xl shadow-blue-gray-900/5"
@@ -59,7 +62,7 @@ const Header: React.FC<HeaderProps> = () => {
               <Image
                 src="/favicon.png"
                 alt="Rental-Dai Logo"
-                width={160}
+                width={120}
                 height={40}
               />
             </div>
@@ -104,33 +107,38 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
           </div>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {HeaderNav.map((item) => (
-              <div key={item.id} className="relative group">
-                {item.subNavItems ? (
-                  <Dropdown navItem={item} />
-                ) : (
+          <ul className="hidden lg:flex items-center space-x-4">
+            {HeaderNav.map((item) =>
+              item.subNavItems ? (
+                <Dropdown displayHoverEffect={true} key={item.id} navItem={item} />
+              ) : (
+                <li key={item.id} className="relative overflow-hidden">
                   <Link href={item.navLink}>
                     <div
-                      className={`${
-                        router.pathname === item.navLink
-                          ? "underline"
-                          : "hover:underline"
-                      } cursor-pointer text-black transition duration-300 hover:opacity-80`}
+                      // className={`${
+                      //   router.pathname === item.navLink
+                      //     ? "underline"
+                      //     : "hover:underline"
+                      // } cursor-pointer text-black transition duration-300 hover:opacity-80`}
+                      className={`hover:text-primary-600 transition-colors after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-primary-600 after:bottom-0 after:-left-[100%] font-semiBold after:transition-all hover:after:left-0 ${
+                        router.pathname === item.navLink &&
+                        "after:left-0 text-primary-600"
+                      }`}
                     >
                       {item.navItem}
                     </div>
                   </Link>
-                )}
-              </div>
-            ))}
-          </div>
+                </li>
+              )
+            )}
+          </ul>
           {/* Call-to-action Buttons */}
           <div className="flex items-center">
             <div className="text-black transition duration-300 hover:text-red mr-4 cursor-pointer">
               <Button
+                containerStyles="py-2 px-2"
                 type="outline"
-                title="Join RentalDai"
+                title="Join Us"
                 onClick={handleClick}
               />
             </div>

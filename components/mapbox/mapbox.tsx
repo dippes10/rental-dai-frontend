@@ -6,6 +6,8 @@ type Props = {
   latitude?: number;
   zoom?: number;
   showMarker?: boolean;
+  showNavigationControl?: boolean;
+  disableMove?: boolean;
   children?: React.ReactNode;
 };
 
@@ -20,14 +22,17 @@ const MapboxComponent = (props: Props) => {
   });
 
   return (
-    <section>
+    <section className="-z-10">
       <div className="scrollable-container">
         <div className="map-container">
           <ReactMapGL
             {...viewport}
             style={{ width: "100%", height: "100%" }}
             mapStyle="mapbox://styles/mapbox/navigation-preview-day-v4"
-            onMove={evt => setViewport(evt.viewState)}
+            onMove={(evt) => {
+              if (props.disableMove) return;
+              setViewport(evt.viewState);
+            }}
             mapboxAccessToken={mapboxToken}
           >
             {props.children}
@@ -35,23 +40,23 @@ const MapboxComponent = (props: Props) => {
               <Marker
                 latitude={viewport.latitude}
                 longitude={viewport.longitude}
-                draggable = {false}
-              >
-              </Marker>
+                draggable={false}
+              ></Marker>
             )}
             {/* Additional components, markers, or overlays can be added here */}
-            <div style={{ position: "absolute", top: 10, right: 10 }}>
-              <NavigationControl showCompass={false} />
-            </div>
+            {!!props.showNavigationControl && (
+              <div style={{ position: "absolute", top: 10, right: 10 }}>
+                <NavigationControl showCompass={false} />
+              </div>
+            )}
           </ReactMapGL>
         </div>
         <style jsx>{`
-      
           .scrollable-container {
-            height: 30vh;
+            height: 400px;
             overflow: auto;
           }
- 
+
           .map-container {
             position: relative;
             width: 100%;

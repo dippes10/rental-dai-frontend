@@ -4,9 +4,10 @@ import { NavItemProps } from "../../constants";
 
 interface DropdownProps {
   navItem: NavItemProps;
+  displayHoverEffect?: boolean;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ navItem }) => {
+const Dropdown: React.FC<DropdownProps> = ({ navItem, displayHoverEffect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = useCallback(() => {
@@ -20,9 +21,13 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem }) => {
   }, []);
 
   return (
-    <div className="relative" onBlur={closeDropdown}>
+    <div className="relative px-4" onBlur={closeDropdown}>
       <button
-        className="px-4 py-2.5 text-center inline-flex items-center text-neutral-900"
+        className={`text-center inline-flex items-center ${
+          displayHoverEffect
+            ? "hover:text-primary-500 hover:border-b-2 hover:border-primary-500 focus:outline-none transition-colors after:content-[''] after:absolute after:w-full after:h-[2px] font-semiBold after:transition-all"
+            : ""
+        }`}
         type="button"
         onClick={toggleDropdown}
       >
@@ -53,7 +58,7 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem }) => {
               <Link
                 href={subNavItem.navLink}
                 passHref
-                className="block px-4 py-2 hover:bg-gray-100"
+                className="block px-4 py-2 hover:bg-red-50"
               >
                 {subNavItem.navItem}
               </Link>

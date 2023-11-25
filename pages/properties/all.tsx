@@ -176,6 +176,8 @@ const PropertiesPage: React.FC = () => {
 
                     {/* Map Embedding */}
                     <MapboxComponent
+                      disableMove={true}
+                      showNavigationControl={true}
                       showMarker={true}
                       latitude={property.latitude}
                       longitude={property.longitude}
