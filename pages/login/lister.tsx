@@ -1,17 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
-import ListerForm from "./Forms/lister-form";
+import ListerProfile from "./lister-profile";
+// import ListerForm from "../components/Forms/lister-form";
 
 
 const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
 
   try {
-    const response = await fetch('http://localhost:8080/user-Signin', {
+    const response = await fetch('http://localhost:8080/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +21,7 @@ const handleSubmit = async (event: React.FormEvent) => {
     });
 
     if (response.ok) {
-      console.log('Sign-in successful as user');
+      console.log('Sign-in successful as lister');
       router.push("/lister-profile");
     } else {
       console.error('Invalid credentials');
@@ -39,8 +40,8 @@ function SignInBasic() {
     <AppLayout>
       <div className="flex justify-center items-center h-screen bgLogin">
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
-          {/* Header box with purple to white gradient */}
-          <div className="bg-gradient-to-r from-purple-500 to-white rounded-md shadow-md p-6 mb-2">
+          {/* Header box with red to white gradient */}
+          <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2">
             <div className="flex flex-col items-center mb-4">
               <NextImage
                 src="/faviconnn.png" // Replace with your logo
@@ -50,7 +51,7 @@ function SignInBasic() {
                 className="mb-4" // Add margin-bottom to create space
               />
               <div>
-                <h4 className="text-white text-2xl font-medium mb-2">Sign in as user</h4>
+                <h4 className="text-white text-2xl font-medium mb-2">Sign in as Lister</h4>
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
@@ -70,7 +71,7 @@ function SignInBasic() {
                 >
                   <FaFacebook
                     size={24}
-                    className="text-gray-800 cursor-pointer hover:text-blue-600"
+                    className="text-gray-800 cursor-pointer hover:text-red-600"
                   />
                 </a>
                 <a
@@ -130,7 +131,7 @@ function SignInBasic() {
                 </label>
               </div>
               <div>
-                <button className="w-full bg-gradient-to-r from-purple-500 to-white text-white py-3 px-4 rounded-full">
+                <button className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full">
                   Sign in
                 </button>
               </div>
@@ -138,7 +139,7 @@ function SignInBasic() {
                 <p className="text-sm text-gray-800">
                   Don't have an account?{" "}
                   <span
-                  className="text-blue-500 cursor-pointer hover:underline"
+                  className="text-red-500 cursor-pointer hover:underline"
                   onClick={handleSubmit}
                 >
                   Sign up here
@@ -149,7 +150,7 @@ function SignInBasic() {
           </div>
         </div>
       </div>
-      <ListerForm/>
+      {/* <ListerForm/> */}
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>
@@ -158,3 +159,7 @@ function SignInBasic() {
 }
 
 export default SignInBasic;
+function setSuccessMessage(arg0: string) {
+  throw new Error("Function not implemented.");
+}
+

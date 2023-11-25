@@ -1,65 +1,107 @@
-// pages/contact-us.tsx
-
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 import AppLayout from "../components/AppLayout";
-import ListerProfile from './lister-profile';
-import UserProfile from './user-profile';
 
+const ContactUsPage = () => {
+  const contactInfo = {
+    phone: "(+977) 986 76388495",
+    email: "rentaldai2023@gmail.com",
+    address: "Thamel, Kathmandu",
+  };
 
-const Contact: React.FC = () => {
   return (
     <AppLayout>
-      <div className=" container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-        <p className="text-gray-500 mb-6">
-          Have questions, suggestions, or just want to say hello? Reach out to us!
-        </p>
-        <form>
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Your Name
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
-            type="text"
-            placeholder="Enter Your Name"
-          />
-          <div className="mt-4" />
+    <section className="bg-image min-h-screen py-8">
+      <div className="max-w-screen-lg mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-black rounded-xl shadow-xl overflow-hidden">
+            <div
+              className="h-full bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${Image})`,
+                backgroundSize: "cover",
+                position: "relative",
+              }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center px-6 contact-us-form">
+                <div className="text-center">
+                  <h3 className="text-white text-3xl font-bold mb-1">
+                    Contact Information
+                  </h3>
+                  <p className="text-white opacity-80 mb-3">
+                    Fill up the form and we will contact you in no time!
+                  </p>
+                  <div className="flex items-center text-white">
+                    <i className="fas fa-phone mr-2"></i>
+                    <span>{contactInfo.phone}</span>
+                  </div>
+                  <div className="flex items-center text-white">
+                    <i className="fas fa-envelope mr-2"></i>
+                    <span>{contactInfo.email}</span>
+                  </div>
+                  <div className="flex items-center text-white">
+                    <i className="fas fa-map-marker-alt mr-2"></i>
+                    <span>{contactInfo.address}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="px-6 py-4">
+            <h3 className="text-3xl font-bold mb-4">Get In Touch</h3>
+            <div className="mb-3">
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full border-gray-300 border rounded py-2 px-4"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                placeholder="Email"
+                className="w-full border-gray-300 border rounded py-2 px-4"
+              />
+            </div>
+            <div className="mb-3">
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full border-gray-300 border rounded py-2 px-4"
+              />
+            </div>
+            <div className="mb-3">
+              <textarea
+                placeholder="Message"
+                className="w-full border-gray-300 border rounded py-2 px-4"
+                rows={6}
+              ></textarea>
+            </div>
+            <button className="bg-red-500 text-white py-2 px-4 rounded w-full">
+              Send Message
+            </button>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold mt-6 mb-4">Our Location</h3>
+        <div className="h-64 w-full py-6">
 
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            Your Email
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="email"
-            placeholder="Enter Your Email"
-          />
-          <div className="mt-4" />
-
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-            Message
-          </label>
-          <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="message"
-            rows={4}
-            placeholder="Enter Your Message"
-          />
-          <div className="mt-6" />
-
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Send Message
-          </button>
-        </form>
+        <iframe
+            title="Our Location"
+            src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.7604435323206!2d85.31320745204977!3d27.75553396208275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1f7cdfe0f03d%3A0x7e306d673f31067!2sSirak%20home!5e0!3m2!1sen!2snp!4v1700810102805!5m2!1sen!2snp"
+            width="100%"
+            height="120%"
+            frameBorder="0"
+            allowFullScreen
+            aria-hidden="false"
+            tabIndex={0}
+          ></iframe>
+        </div>
       </div>
-      </AppLayout>
-
+    </section>
+    </AppLayout>
   );
 };
 
-export default Contact;
+export default ContactUsPage;
 
+//"https://script.google.com/macros/s/AKfycbyYi9hDuFhpTKGqJSuFJv79pHUDQ9p515WU-bQE46BOGTYZzx_MmPyOxDGaQx2H9Emw/exec",

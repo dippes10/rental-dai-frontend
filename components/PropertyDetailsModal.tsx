@@ -39,7 +39,7 @@ const PropertyDetailsModal: React.FC<PropertyDetailsModalProps> = ({ property, o
         <p className="text-gray-800">{property.details}</p>
         <div className="flex justify-end mt-4">
           <button
-            className="flex items-center bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            className="flex items-center bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700"
             onClick={() => console.log("Share button clicked")} // Replace with your share logic
           >
             <FaShare className="mr-2" />

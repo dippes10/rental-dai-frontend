@@ -66,7 +66,7 @@ const Footer = () => {
               ) => (
                 <li key={index}>
                   <a href={link.link} target="_blank" rel="noreferrer">
-                    <i className={`fab ${link.icon} text-white hover:text-blue-800`} />
+                    <i className={`fab ${link.icon} text-white hover:text-red-800`} />
                   </a>
                 </li>
               )

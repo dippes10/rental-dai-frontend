@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import router from "next/router";
 
 interface FormData {
@@ -28,30 +28,32 @@ const UserSignUp: React.FC = () => {
   };
 
   
-    const handleSubmit = async (event: React.FormEvent) => {
-      event.preventDefault();
-    
-      try {
-        const response = await fetch('http://localhost:8080/signup', {
-          method: 'POST',  
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-    
-        if (response.ok) {
-          // Signup successful, perform further actions if needed
-          console.log('User signed up successfully');
-          router.push("/user-login");
-        } else {
-          // Handle signup error
-          console.error('Signup failed:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error during signup:', error);
+   
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+  
+    try {
+      const response = await fetch('http://localhost:8080/listerSignup', {
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        // Signup successful, perform further actions if needed
+        console.log('User signed up successfully');
+        router.push("/lister-login");
+      } else {
+        // Handle signup error
+        console.error('Signup failed:', response.statusText);
       }
-    };
+    } catch (error) {
+      console.error('Error during signup:', error);
+    }
+  };
+  
     
   
 
@@ -72,7 +74,7 @@ const UserSignUp: React.FC = () => {
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex justify-center items-center">
           <div className="bg-white bg-opacity-90 shadow-md rounded-lg p-10 w-full sm:w-96">
-            <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">User Sign Up</h3>
+            <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">sign up  as lister</h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <div key={field.name}>
@@ -87,7 +89,7 @@ const UserSignUp: React.FC = () => {
                       name={field.name}
                       value={formData[field.name as keyof FormData]}
                       onChange={handleChange}
-                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-blue-500"
+                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-red-500"
                       placeholder={field.label}
                       required
                     />
@@ -97,9 +99,9 @@ const UserSignUp: React.FC = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-blue-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
+                  className="w-full bg-gradient-to-r from-red-500 to-red-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
                 >
-                  Sign Up as a User
+                  Sign Up  as a lister
                 </button>
               </div>
             </form>

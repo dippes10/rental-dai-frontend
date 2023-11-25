@@ -1,3 +1,5 @@
+// Import necessary modules
+import Head from "next/head";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,39 +7,64 @@ import { useRouter } from "next/router";
 import Button from "../Button";
 import Dropdown from "./Dropdown";
 import { Header as HeaderData, NavItemProps } from "../../constants";
+import { Sidebar } from "../../components/sidebar";
+import { FaBars } from "react-icons/fa";
+
+// Interface for HeaderProps
 interface HeaderProps {
   HeaderNav: NavItemProps[];
 }
 
+// Header component
 const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const router = useRouter();
   const HeaderNav = HeaderData.HeaderNav;
 
+  // Function to handle click on "Join RentalDai" button
   const handleClick = () => {
-    router.push("/signup-page");
+    router.push("/signup");
     setShowMenu(false);
   };
 
+  // Function to handle click on "Get started" button
   const handleStartClick = () => {
-    router.push("/login-page");
+    router.push("/login");
     setShowMenu(false);
   };
 
   return (
     <header>
-      <nav className="bg-purple-200 text-white p-4">
+      {/* Use Head component to update title and icon */}
+      <Head>
+        <title>Rental Dai</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      {/* Navigation */}
+      <nav className="fixed z-40 w-full bg-white text-white p-4">
         <div className="container mx-auto flex items-center justify-between h-20 text-black">
+          <FaBars className=" text-black w-6 h-6" onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+          {/* <button
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="bg-blue-500 text-white rounded-md p-2 shadow-xl shadow-blue-gray-900/5"
+          >
+            
+            {isSidebarOpen ? "Close" : "Open"}
+          </button> */}
+          {/* Logo */}
           <Link href="/">
             <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
               <Image
-                src="/faviconnn.png"
+                src="/favicon.png"
                 alt="Rental-Dai Logo"
-                width={120}
+                width={160}
                 height={40}
               />
             </div>
           </Link>
+          {/* Mobile Menu Toggle */}
           <div className={`lg:hidden ${showMenu ? "block" : "hidden"}`}>
             <button
               onClick={() => setShowMenu(!showMenu)}
@@ -76,6 +103,7 @@ const Header: React.FC<HeaderProps> = () => {
               )}
             </button>
           </div>
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4">
             {HeaderNav.map((item) => (
               <div key={item.id} className="relative group">
@@ -97,6 +125,7 @@ const Header: React.FC<HeaderProps> = () => {
               </div>
             ))}
           </div>
+          {/* Call-to-action Buttons */}
           <div className="flex items-center">
             <div className="text-black transition duration-300 hover:text-red mr-4 cursor-pointer">
               <Button
@@ -119,4 +148,5 @@ const Header: React.FC<HeaderProps> = () => {
   );
 };
 
+// Export the Header component
 export default Header;

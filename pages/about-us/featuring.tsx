@@ -29,7 +29,7 @@ const Featuring: React.FC<FeaturingProps> = () => {
             <FontAwesomeIcon icon={faSpotify} size="3x" className="text-green-500 hover:text-green-600 transition duration-300 cursor-pointer" />
           </div>
           <div className="w-full flex items-center justify-center">
-            <FontAwesomeIcon icon={faAirbnb} size="3x" className="text-blue-500 hover:text-blue-600 transition duration-300 cursor-pointer" />
+            <FontAwesomeIcon icon={faAirbnb} size="3x" className="text-red-500 hover:text-red-600 transition duration-300 cursor-pointer" />
           </div>
           <div className="w-full flex items-center justify-center">
             <FontAwesomeIcon icon={faUber} size="3x" className="text-pink-500 hover:text-pink-600 transition duration-300 cursor-pointer" />

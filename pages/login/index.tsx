@@ -1,7 +1,7 @@
 // Import necessary modules from React
 import React from "react";
 import Image from "next/image";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../../components/AppLayout";
 import { FaUser, FaClipboardList } from "react-icons/fa";
 import { useRouter } from "next/router";
 
@@ -10,16 +10,16 @@ const HomePage: React.FC = () => {
   const router = useRouter();
 
   const handleUserLogin = () => {
-    router.push("/user-login");
+    router.push("/login/user");
   };
 
   const handleListerLogin = () => {
-    router.push("/lister-login");
+    router.push("/login/lister");
   };
 
   return (
     <AppLayout>
-      <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-purple-300 via-purple-500 to-purple-700 text-white">
+      <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-red-300 via-red-500 to-red-700 text-white">
         {/* Introduction Section */}
         <div className="text-center mb-8">
           <h1 className="text-white font-bold mb-4">Welcome to Rental Dai</h1>
