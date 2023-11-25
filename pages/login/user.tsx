@@ -6,35 +6,40 @@ import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
 import ListerForm from "../Forms/lister-form";
 
-
-const handleSubmit = async (event: React.FormEvent) => {
-  event.preventDefault();
-
-  try {
-    const response = await fetch('http://localhost:8080/user-Signin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ FormData }), 
-    });
-
-    if (response.ok) {
-      console.log('Sign-in successful as user');
-      router.push("/lister-profile");
-    } else {
-      console.error('Invalid credentials');
-    }
-  } catch (error) {
-    console.error('Error during sign-in:', error);
-  }
-};
-
-
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:8080/user-Signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ FormData }), 
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Sign-in successful as user');
+        setErrorMessage('');
+        router.push("/profile/user-profile");
+      } else {
+        setErrorMessage('Invalid credentials');
+        setSuccessMessage('');
+      }
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+      setErrorMessage('Error during sign-in');
+      setSuccessMessage('');
+    }
+  };
+
   return (
     <AppLayout>
       <div className="flex justify-center items-center h-screen bgLogin">
@@ -130,26 +135,35 @@ function SignInBasic() {
                 </label>
               </div>
               <div>
-                <button className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full">
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full"
+                >
                   Sign in
                 </button>
               </div>
+              {successMessage && (
+                <div className="text-green-600 text-center">{successMessage}</div>
+              )}
+              {errorMessage && (
+                <div className="text-red-600 text-center">{errorMessage}</div>
+              )}
               <div className="text-center">
                 <p className="text-sm text-gray-800">
                   Don't have an account?{" "}
                   <span
-                  className="text-red-500 cursor-pointer hover:underline"
-                  onClick={handleSubmit}
-                >
-                  Sign up here
-                </span>
+                    className="text-red-500 cursor-pointer hover:underline"
+                    onClick={() => router.push("/signup")}
+                  >
+                    Sign up here
+                  </span>
                 </p>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <ListerForm/>
+      <ListerForm />
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>

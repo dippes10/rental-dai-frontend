@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from "react";
 import { FaHome, FaUser, FaClipboardList, FaNewspaper, FaCalendarAlt, FaFileAlt, FaPlus } from "react-icons/fa";
-import ListerForm from "./Forms/lister-form";
+import ListerForm from "../Forms/lister-form";
 import router from "next/router";
 
 const ListerProfile: React.FC = () => {
@@ -45,6 +45,7 @@ const ListerProfile: React.FC = () => {
   };
 
   return (
+
     <div className="bg-gray-100 min-h-screen">
       {/* <Navbar/> */}
       <div className="container mx-auto p-4">

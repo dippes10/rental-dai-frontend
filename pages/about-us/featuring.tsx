@@ -28,15 +28,6 @@ const Featuring: React.FC<FeaturingProps> = () => {
           <div className="w-full flex items-center justify-center">
             <FontAwesomeIcon icon={faSpotify} size="3x" className="text-green-500 hover:text-green-600 transition duration-300 cursor-pointer" />
           </div>
-          <div className="w-full flex items-center justify-center">
-            <FontAwesomeIcon icon={faAirbnb} size="3x" className="text-red-500 hover:text-red-600 transition duration-300 cursor-pointer" />
-          </div>
-          <div className="w-full flex items-center justify-center">
-            <FontAwesomeIcon icon={faUber} size="3x" className="text-pink-500 hover:text-pink-600 transition duration-300 cursor-pointer" />
-          </div>
-          <div className="w-full flex items-center justify-center">
-            <FontAwesomeIcon icon={faCcVisa} size="3x" className="text-orange-500 hover:text-orange-600 transition duration-300 cursor-pointer" />
-          </div>
         </div>
         <div className="flex justify-center text-center">
           {/* Replace with your custom counter card components */}

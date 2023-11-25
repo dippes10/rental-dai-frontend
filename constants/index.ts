@@ -62,12 +62,12 @@ export const SiteMeta = {
           {
             id: "user-profile",
             navItem: "User Profile",
-            navLink: "/user-profile",
+            navLink: "/profile/user-profile",
           },
           {
             id: "lister-profile",
             navItem: "Lister Profile",
-            navLink: "/lister-profile",
+            navLink: "/profile/lister-profile",
           },
         ],
       },
