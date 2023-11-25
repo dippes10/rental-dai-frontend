@@ -85,7 +85,7 @@ const ListerProfile: React.FC = () => {
         {/* "Add Listing" button */}
         <div className="flex flex-row justify-center mt-8">
           <button
-                      onClick={() => router.push("/forms/lister-form")}
+                      onClick={() => router.push("/Forms/lister-form")}
             className="bg-gradient-to-r flex flex-row items-center from-red-500 to-red-700 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-red-300"
           >
             <FaPlus className="mr-2" />

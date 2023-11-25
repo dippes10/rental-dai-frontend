@@ -48,9 +48,9 @@ const RentalFlipImage: React.FC = () => {
           Join us on a journey to discover quality rentals and make your next living space a comfortable and enjoyable one.
         </p>
         <Button
-          title="Explore Rentals"
+          title="About Us"
           type="outline"
-          onClick={() => router.push("/rentals")}
+          onClick={() => router.push("../about-us")}
         />
       </div>
       <div

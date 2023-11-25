@@ -42,7 +42,7 @@ const UserSignUp: React.FC = () => {
       if (response.ok) {
         // Signup successful, perform further actions if needed
         console.log('User signed up successfully');
-        router.push("/lister-login");
+        router.push("/login/lister");
       } else {
         // Handle signup error
         console.error('Signup failed:', response.statusText);
@@ -64,7 +64,7 @@ const UserSignUp: React.FC = () => {
     <AppLayout>
     <section
       className="bg-cover bg-center min-h-screen py-8 bgLogin"
-      style={{ backgroundImage: "url('/your-background-image-for-users.jpg')" }}
+      style={{ backgroundImage: "url('/bg-login.jpeg')" }}
     >
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex justify-center items-center">
@@ -102,7 +102,7 @@ const UserSignUp: React.FC = () => {
             </form>
           </div>
         </div>
-        <h3 className="text-2xl font-bold mt-6 mb-4 text-white">User Location</h3>
+       
         <div className="h-64 w-full py-6">
           {/* User-specific location or map */}
         </div>
