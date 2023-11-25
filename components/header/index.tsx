@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
           </div>
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center space-x-4">
+          <ul className="hidden lg:flex items-center space-x-4 gap-2">
             {HeaderNav.map((item) =>
               item.subNavItems ? (
                 <Dropdown displayHoverEffect={true} key={item.id} navItem={item} />

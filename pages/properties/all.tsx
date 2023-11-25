@@ -171,7 +171,7 @@ const PropertiesPage: React.FC = () => {
                       {/* Map Embedding */}
                       <div className="overflow-hidden rounded-lg">
                         <MapboxComponent
-                          disableMove={true}
+                          disableMove={false}
                           showNavigationControl={true}
                           showMarker={true}
                           latitude={property.location.latitude}

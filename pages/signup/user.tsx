@@ -66,7 +66,7 @@ const UserSignUp: React.FC = () => {
   return (
     <AppLayout>
     <section
-      className="bg-cover bg-center min-h-screen py-8"
+      className="bg-cover bg-center min-h-screen py-8 bgLogin"
       style={{ backgroundImage: "url('/your-background-image-for-users.jpg')" }}
     >
       <div className="max-w-screen-lg mx-auto px-4">

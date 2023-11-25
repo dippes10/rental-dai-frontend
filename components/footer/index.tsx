@@ -41,7 +41,7 @@ const Footer = () => {
     <footer className="bg-neutral-100 text-black">
       <div className="container mx-auto py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="self-start">
+          <div className="self-start flex-shrink-0">
             <Image
               src="/favicon.png"
               alt="Rental Dai Logo"
@@ -70,7 +70,10 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex justify-end">
+        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex justify-between items-center">
+          <div className="text-sm text-black">
+            {BottomFooterNav.copyright}
+          </div>
           <ul className="flex gap-x-4 mt-4">
             {SocialMediaLinks.map((link, index) => (
               <li key={index}>

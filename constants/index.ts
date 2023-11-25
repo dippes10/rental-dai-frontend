@@ -22,6 +22,19 @@ export const SiteMeta = {
         navItem: "Home",
         navLink: "/",
       },
+      
+      {
+        id: "about-us",
+        navItem: "About us",
+        navLink: "/about-us",
+      },
+
+      {
+        id: "contact-us",
+        navItem: "Contact Us",
+        navLink: "/contact",
+      },
+
       {
         id: "properties",
         navItem: "Properties",
@@ -42,33 +55,6 @@ export const SiteMeta = {
             navItem: "Featured Properties",
             navLink: "/properties/featured",
           }, 
-        ],
-      },
-      {
-        id: "about-us",
-        navItem: "About us",
-        navLink: "/about-us",
-      },
-      {
-        id: "contact-us",
-        navItem: "Contact Us",
-        navLink: "/contact",
-      },
-      {
-        id: "profile",
-        navItem: "Profile",
-        navLink: "/[profile]",
-        subNavItems: [
-          {
-            id: "user-profile",
-            navItem: "User Profile",
-            navLink: "/profile/user-profile",
-          },
-          {
-            id: "lister-profile",
-            navItem: "Lister Profile",
-            navLink: "/profile/lister-profile",
-          },
         ],
       },
     ],
@@ -108,7 +94,7 @@ export const SiteMeta = {
           },
           {
             navItem: "NCCS, paknakol, Kathmandu",
-            navLink: "https://goo.gl/maps/rentaldai-location",
+            navLink: "https://maps.app.goo.gl/NAmYnYo9MoxmXbgRA",
           },
           {
             navItem: "rentaldai2023@gmail.com",
