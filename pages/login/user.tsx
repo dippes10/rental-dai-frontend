@@ -29,7 +29,7 @@ function SignInBasic() {
       if (response.ok) {
         setSuccessMessage('Sign-in successful as user');
         setErrorMessage('');
-        router.push("/profile/user-profile");
+        router.push("/properties/all");
       } else {
         setErrorMessage('Invalid credentials');
         setSuccessMessage('');
