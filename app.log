@@ -184,3 +184,33 @@ mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'signup.user' doesn
 2023-11-22 14:54:04,554 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2023-11-22 14:55:06,299 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:55:06] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
 2023-11-22 14:59:08,934 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:59:08] "GET /api/properties HTTP/1.1" 200 -
+2023-11-25 19:13:33,139 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-11-25 19:13:33,139 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-11-25 19:13:33,142 INFO werkzeug MainThread :  * Restarting with stat
+2023-11-25 19:13:33,650 WARNING werkzeug MainThread :  * Debugger is active!
+2023-11-25 19:13:33,659 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-11-25 19:13:44,231 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:13:44] "[33mGET / HTTP/1.1[0m" 404 -
+2023-11-25 19:13:44,367 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:13:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2023-11-25 19:13:52,948 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:13:52] "GET /api/properties HTTP/1.1" 200 -
+2023-11-25 19:16:09,493 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:16:09] "OPTIONS /listerSignup HTTP/1.1" 200 -
+2023-11-25 19:16:09,745 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:16:09] "POST /listerSignup HTTP/1.1" 200 -
+2023-11-25 19:32:59,100 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:32:59] "GET /api/properties HTTP/1.1" 200 -
+2023-11-25 19:49:39,931 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:49:39] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:49:40,194 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:49:40] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:49:40,666 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:49:40] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:50:33,070 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:33] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:50:33,336 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:33] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:50:34,733 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:34] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:50:35,477 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:35] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:50:35,695 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:35] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:50:48,296 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:48] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:50:48,606 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:50:48] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:51:34,077 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:51:34] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:52:58,259 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:52:58] "POST /signin HTTP/1.1" 200 -
+2023-11-25 19:54:03,867 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:54:03] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:54:04,134 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:54:04] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:54:44,193 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:54:44] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:54:44,514 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:54:44] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -
+2023-11-25 19:56:26,240 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:56:26] "OPTIONS /signin HTTP/1.1" 200 -
+2023-11-25 19:56:26,504 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [25/Nov/2023 19:56:26] "[31m[1mPOST /signin HTTP/1.1[0m" 401 -

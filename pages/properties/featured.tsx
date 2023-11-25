@@ -9,37 +9,37 @@ const fakeProperties = [
     name: "Property 1",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?home",
   },
   {
     name: "Property 2",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?cottage",
   },
   {
     name: "Property 3",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?building",
   },
   {
     name: "Property 4",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?villa",
   },
   {
     name: "Property 5",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?rooftop",
   },
   {
     name: "Property 6",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?hotel",
   },
 ];
 

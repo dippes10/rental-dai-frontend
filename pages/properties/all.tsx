@@ -11,7 +11,7 @@ export const fakeProperties = [
     name: "Property 1 edited",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?hotel",
     location: {
       latitude: 27.6867253, // Replace with actual latitude
       longitude: 85.3522846, // Replace with actual longitude
@@ -22,7 +22,7 @@ export const fakeProperties = [
     name: "Property 2",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?building",
     location: {
       latitude: 27.6957053, // Replace with actual latitude
       longitude: 85.3526846, // Replace with actual longitude
@@ -33,7 +33,7 @@ export const fakeProperties = [
     name: "Property 1",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?flat",
     location: {
       latitude: 27.6957153, // Replace with actual latitude
       longitude: 85.3526836, // Replace with actual longitude
@@ -44,7 +44,7 @@ export const fakeProperties = [
     name: "Property 1",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?room",
     location: {
       latitude: 27.6957453, // Replace with actual latitude
       longitude: 85.3526946, // Replace with actual longitude
@@ -55,7 +55,7 @@ export const fakeProperties = [
     name: "Property 1",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+    "https://source.unsplash.com/800x600/?house ",
     location: {
       latitude: 27.6952053, // Replace with actual latitude
       longitude: 85.3526346, // Replace with actual longitude
@@ -66,7 +66,7 @@ export const fakeProperties = [
     name: "Property 1",
     address: "123 Fake Street",
     imageUrl:
-      "https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp",
+      "https://source.unsplash.com/800x600/?penthouse",
     location: {
       latitude: 27.6957653, // Replace with actual latitude
       longitude: 85.3536846, // Replace with actual longitude
