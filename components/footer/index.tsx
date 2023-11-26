@@ -6,6 +6,8 @@ import {
   FaFacebook,
   FaTwitter,
   FaInstagram,
+  FaTiktok,
+  FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,6 +33,14 @@ const SocialMediaLinks: SocialLink[] = [
   {
     link: "https://instagram.com/RentalDai",
     icon: <FaInstagram />,
+  },
+  {
+    link: "https://tiktok.com/RentalDai",
+    icon: <FaTiktok />,
+  },
+  {
+    link: "https://linkedin.com/RentalDai",
+    icon: <FaLinkedin />,
   },
 ];
 
