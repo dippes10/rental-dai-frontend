@@ -4,7 +4,6 @@ import {
   FaTimes,
   FaHome,
   FaBuilding,
-  FaFileAlt,
   FaInfoCircle,
   FaPhoneAlt,
   FaSignOutAlt,
@@ -18,10 +17,10 @@ const items = [
     label: "Properties",
     icon: <FaBuilding size={20} />,
     badgeCount: 3,
-    path: "/properties/all",
+    path: "../properties/all",
   },
-  { label: "About Us", icon: <FaInfoCircle size={20} />, path: "/about" },
-  { label: "Contact Us", icon: <FaPhoneAlt size={20} />, path: "/contact" },
+  { label: "About Us", icon: <FaInfoCircle size={20} />, path: "../about-us" },
+  { label: "Contact Us", icon: <FaPhoneAlt size={20} />, path: "../contact" },
   { label: "Log Out", icon: <FaSignOutAlt size={20} />, path: "/logout" },
 ];
 
