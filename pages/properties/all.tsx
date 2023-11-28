@@ -386,14 +386,14 @@ const PropertiesPage: React.FC = () => {
     setIsLoading(false);
     // Uncomment the following code when using actual API
 
-    // fetch("http://localhost:8080/api/properties")
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setProperties(data);
-    //     setFilteredProperties(data);
-    //     setIsLoading(false);
-    //   })
-    //   .catch((error) => console.error("Error fetching properties:", error));
+    fetch("http://localhost:8080/api/properties")
+    .then(response => response.json())
+    .then(data => {
+      if (data.properties) {
+        setProperties(data.properties);
+      }
+    })
+    .catch(error => console.error('Error fetching properties:', error));
     
   }, []);
 

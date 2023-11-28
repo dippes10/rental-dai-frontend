@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
 
+
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -22,7 +23,7 @@ const ListerForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     // Reset previous error messages
     setNameError("");
     setAddressError("");
@@ -56,11 +57,24 @@ const ListerForm: React.FC = () => {
     try {
       // You can send the formData to your server or handle it as needed
       // For demonstration, I'll just display a success message
-      setSuccessMessage("Form submitted successfully!");
-      clearForm();
+      const response = await fetch('http://localhost:8080/add_property', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({name,address,imageUrls,details}),
+      });
+      if (response.ok) {
+        setSuccessMessage('Form submitted successfully!');
+        clearForm();
+        const responseData = await response.json();
+        console.log(responseData); // Log success response from the backend
+      } else {
+        throw new Error('Failed to submit form');
+      }
     } catch (error) {
-      // Handle any errors that occur during the submission
-      console.error("Error submitting form:", error);
+      console.error('Error submitting form:', error); // Log error response from the backend
+      // Handle errors or show an error message to the user
     }
   };
 

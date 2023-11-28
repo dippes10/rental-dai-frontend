@@ -6,36 +6,20 @@ app = Flask(__name__)
 CORS(app)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
-# Example property data (replace this with your actual property data)
-properties = [
-    {
-        "id": 1,
-        "name": "Elegant Studio",
-        "address": "123 Maple Avenue, Townsville",
-        "imageUrl": "https://source.unsplash.com/800x600/?apartment",
-        "details": "This elegant studio offers a comfortable living space with modern amenities."
-    },
-    
-    {
-        "id": 2,
-        "name": "Spacious Penthouse",
-        "address": "456 Pine Street, Cityville",
-        "imageUrl": "https://source.unsplash.com/800x600/?penthouse",
-        "details": "Experience luxury living in this spacious penthouse with panoramic city views."
-    },
-    
-    {
-        "id": 3,
-        "name": "Charming Cottage",
-        "address": "789 Oak Road, Villagetown",
-        "imageUrl": "https://source.unsplash.com/800x600/?cottage",
-        "details": "Escape to the countryside in this charming cottage surrounded by nature."
-    }
-    # Add more properties as needed
-]
 @app.route('/api/properties', methods=['GET'])
 def get_properties():
-    return jsonify(properties)
+    cursor = connection.cursor(dictionary=True)  # Use dictionary cursor for easier JSON conversion
+    
+    try:
+        cursor.execute("SELECT * FROM properties")  # Fetch all properties
+        properties = cursor.fetchall()  # Retrieve all rows
+        
+        cursor.close()
+        return jsonify({'properties': properties})
+    except Exception as e:
+        cursor.close()
+        print("Failed to fetch properties:", str(e))
+        return jsonify({'error': 'Failed to fetch properties'}), 500  # Return internal server error
 
 connection = mysql.connector.connect(
     host='localhost',
@@ -173,6 +157,77 @@ def usersignin():
             return jsonify({'message': 'Error during signin'}), 500
      
     return jsonify({'message': 'Method not allowed'}), 405
+
+
+
+
+#listing properties
+#add properties
+@app.route('/add_property', methods=['POST'])
+def add_property():
+    data = request.get_json()  
+    
+    # Print received data to check if it's received properly
+    print("Received data:", data)
+    
+    name = data.get('name')
+    address = data.get('address')
+    image_urls = data.get('imageUrls')
+    details = data.get('details')
+    
+    cursor = connection.cursor()
+    try:
+        # Perform INSERT operation into the properties table with static values
+        cursor.execute("INSERT INTO properties (name, address, image_urls, details) VALUES (%s, %s, %s, %s)",
+                       (name, address, image_urls, details))  # Use static values for testing
+        connection.commit()
+        cursor.close()
+        return jsonify({'message': 'Property added successfully'})
+    except Exception as e:
+        connection.rollback()
+        cursor.close()
+        print("Failed to add property:", str(e))  # Print error for debugging
+        return jsonify({'error': 'Failed to add property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
+#edit ko lagi
+@app.route('/edit_property/<property_id>', methods=['PUT'])
+def edit_property(property_id):
+    data = request.get_json()
+
+    name = data.get('name')
+    address = data.get('address')
+    image_urls = data.get('imageUrls')
+    details = data.get('details')
+
+    cursor = connection.cursor()
+    try:
+        # Perform UPDATE operation on the specified property_id
+        cursor.execute("UPDATE properties SET name = %s, address = %s, image_urls = %s, details = %s WHERE id = %s",
+                       (name, address, image_urls, details, property_id))
+        connection.commit()
+        cursor.close()
+        return jsonify({'message': f'Property with ID {property_id} updated successfully'})
+    except Exception as e:
+        connection.rollback()
+        cursor.close()
+        logging.error("Failed to edit property: %s", str(e))
+        return jsonify({'error': 'Failed to edit property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
+
+#delete ko lagi
+@app.route('/delete_property/<int:property_id>', methods=['DELETE'])
+def delete_property(property_id):
+    cursor = connection.cursor()
+    try:
+        # Perform DELETE operation on the specified property_id
+        cursor.execute("DELETE FROM properties WHERE id = %s", (property_id,))
+        connection.commit()
+        cursor.close()
+        return jsonify({'message': f'Property with ID {property_id} deleted successfully'})
+    except Exception as e:
+        connection.rollback()
+        cursor.close()
+        logging.error("Failed to delete property: %s", str(e))
+        return jsonify({'error': 'Failed to delete property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
+
 
     
 if __name__ == '__main__':
