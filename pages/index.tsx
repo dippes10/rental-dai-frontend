@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // pages/index.tsx
 
 import React from "react";
@@ -5,18 +6,6 @@ import Image from "next/image";
 import AppLayout from "../components/AppLayout";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSearch,
-  faKey,
-  faMapMarkerAlt,
-  faHandsHelping,
-  faDollarSign,
-  faCalendarAlt,
-  faWifi,
-  faParking,
-  faUtensils,
-} from "@fortawesome/free-solid-svg-icons";
 import MapboxComponent from "../components/mapbox/mapbox";
 import { fakeProperties } from "./properties/all";
 
@@ -26,6 +15,7 @@ const founderPhotoUrl = "/sirak-shrestha.jpeg";
 const HomePage: React.FC = () => {
   return (
     <AppLayout>
+      <div className="bg-black">
       <img
         src="/bg-home.jpeg"
         width={0}
@@ -40,6 +30,7 @@ const HomePage: React.FC = () => {
         <RentalFlipImage />
       <MapboxComponent showNavigationControl={true} latitude={27.6957053} longitude={85.3526846} zoom={12} showAllProperties={true} properties={fakeProperties} />
         <Description />
+      </div>
       </div>
     </AppLayout>
   );

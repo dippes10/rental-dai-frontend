@@ -14,7 +14,7 @@ const rentalImages: string[] = [
 const RentalFlipImage: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const flipDelay = 1000;
+  const flipDelay = 3000;
 
   useEffect(() => {
     let flipTimeout: NodeJS.Timeout | undefined;
@@ -37,12 +37,12 @@ const RentalFlipImage: React.FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center py-10 md:flex-row md:gap-20 container-custom">
+    <section className="flex flex-col items-center justify-center py-10 md:flex-row md:gap-20 container-custom" data-aos="fade-right">
       <div className="md:w-3/5 text-center md:text-left" data-aos="fade-right">
         <h3 className="mb-4">
           Find Your Perfect Rental with <span className="text-primary-500">RentalDai</span>
         </h3>
-        <p className="max-w-[885px] text-neutral-700 mb-6 justify-between text-justify">
+        <p className="max-w-[830px] text-neutral-700 mb-6 justify-between text-justify">
           Explore a variety of flats and rooms available for rent through RentalDai. Whether you're looking for a cozy room or a spacious flat, we've got you covered. Our platform makes finding the perfect rental easy and convenient.
           <br />
           Join us on a journey to discover quality rentals and make your next living space a comfortable and enjoyable one.
@@ -68,7 +68,7 @@ const RentalFlipImage: React.FC = () => {
                   alt="front"
                   height={375}
                   width={375}
-                  className="z-10 rounded-full hero cursor-pointer"
+                  className="z-10 rounded-lg hero cursor-pointer"
                 />
               </div>
               <div onClick={handleCardClick}>
@@ -77,7 +77,7 @@ const RentalFlipImage: React.FC = () => {
                   alt="back"
                   height={375}
                   width={375}
-                  className="z-10 rounded-full hero cursor-pointer"
+                  className="z-10 rounded-lg hero cursor-pointer"
                 />
               </div>
             </CardFlip>

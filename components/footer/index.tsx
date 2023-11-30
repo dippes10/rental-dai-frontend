@@ -1,4 +1,3 @@
-// Import necessary icons
 import {
   FaPhone,
   FaEnvelope,
@@ -14,13 +13,11 @@ import Image from "next/image";
 import { Footer as FooterConst } from "../../constants";
 import { ReactElement } from "react";
 
-// Define a type for social link
 type SocialLink = {
   link?: string;
   icon: ReactElement;
 };
 
-// Social Media Links and Icons Constant
 const SocialMediaLinks: SocialLink[] = [
   {
     link: "https://www.facebook.com/RentalDai",
@@ -59,7 +56,7 @@ const Footer = () => {
               height={40}
             />
           </div>
-          <div className="flex flex-wrap justify-around md:justify-start gap-20">
+          <div className="flex flex-col md:flex-row justify-around md:justify-start gap-4 md:gap-20 mt-4 md:mt-0">
             {FooterNav.map((item, i) => (
               <div key={i} className="mb-4 md:mb-0">
                 <h6 className="mb-2 text-black font-semibold text-lg">
@@ -68,10 +65,8 @@ const Footer = () => {
                 <ul className="flex flex-col gap-y-2">
                   {item.navItems.map((item, i) => (
                     <li key={i}>
-                      <Link href={item.navLink}>
-                        <div className="transition-colors text-black hover:text-red-500">
+                      <Link href={item.navLink} className="transition-colors text-black hover:text-red-500">
                           {item.navItem}
-                        </div>
                       </Link>
                     </li>
                   ))}
@@ -80,26 +75,19 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex justify-between items-center">
-          <div className="text-sm text-black">
+        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-sm text-black mb-4 md:mb-0 text-center md:text-left">
             {BottomFooterNav.copyright}
           </div>
-          <ul className="flex gap-x-4 mt-4">
+          <ul className="flex gap-x-4">
             {SocialMediaLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="text-red-500 hover:text-blue-500">
                 {link.link ? (
-                  <Link
-                    href={link.link}
-                    passHref
-                    rel="noreferrer"
-                    className="text-red-500 hover:text-blue-500"
-                  >
+                  <Link href={link.link} passHref>
                     {link.icon}
                   </Link>
                 ) : (
-                  <div className="text-red-500 hover:text-blue-500">
-                    {link.icon}
-                  </div>
+                  <>{link.icon}</>
                 )}
               </li>
             ))}

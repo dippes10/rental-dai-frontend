@@ -26,7 +26,7 @@ function Newsletter() {
           <div className="md:w-1/2 ml-auto">
             <div className="relative">
               {/* Replace 'macbook.png' with the actual path to your image */}
-              <Image src="/phone.png" alt="phone" className="w-auto" width={200} height={200} />
+              <Image src="/phone.png" alt="phone" className="w-auto flex-row" width={200} height={200} />
             </div>
           </div>
         </div>

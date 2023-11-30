@@ -4,7 +4,7 @@ import React from 'react';
 import Button from '../components/Button';
 
 const rentalDaiMessage = {
-  title: 'Find Your Perfect Rental with RentalDai',
+  title: 'About Us ',
   subTitle:
     'Discover a wide range of rental options that suit your lifestyle. RentalDai makes the search for flats and rooms easy and convenient. Join us on a journey to find your ideal living space.',
   cta: 'Explore Rentals',
@@ -34,7 +34,7 @@ const rentalDaiMessage = {
 
 const Description: React.FC = () => {
   return (
-    <section className="bg-gray-200">
+    <section className="bg-gray-100">
       <div className="container-custom py-10 flex gap-10 md:gap-2 flex-wrap md:flex-nowrap items-center justify-between text-justify">
         <div className="md:w-4/5 mr-6" data-aos="fade-right">
           <h3 className="max-w-[500px] mb-5">{rentalDaiMessage.title}</h3>
