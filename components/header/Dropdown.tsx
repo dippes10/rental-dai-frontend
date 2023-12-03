@@ -50,7 +50,7 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem, displayHoverEffect }) => {
       <div
         className={`absolute mt-2 overflow-visible z-20 ${
           !isOpen ? "hidden" : ""
-        } bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
+        } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 Dropdown`}
       >
         <ul className="py-2 text-sm text-white">
           {navItem.subNavItems?.map((subNavItem, index) => (
@@ -58,7 +58,7 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem, displayHoverEffect }) => {
               <Link
                 href={subNavItem.navLink}
                 passHref
-                className="block px-4 py-2 hover:bg-red-50"
+                className="block px-4 py-2 hover:text-red-500 rounded-lg"
               >
                 {subNavItem.navItem}
               </Link>

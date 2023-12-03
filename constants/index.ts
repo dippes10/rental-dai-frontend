@@ -50,11 +50,6 @@ export const SiteMeta = {
             navItem: "Featured Properties",
             navLink: "/properties/featured",
           },
-          {
-            id: "featured-properties",
-            navItem: "Featured Properties",
-            navLink: "/properties/featured",
-          }, 
         ],
       },
     ],
