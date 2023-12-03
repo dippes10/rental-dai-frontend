@@ -8,7 +8,7 @@ import {
   FaPhoneAlt,
   FaSignOutAlt,
 } from "react-icons/fa";
-import SidebarImage from "../public/favicon.png"; // Import your image file
+import SidebarImage from "../public/favicon.ico";
 import Image from "next/image";
 
 const items = [
@@ -16,8 +16,12 @@ const items = [
   {
     label: "Properties",
     icon: <FaBuilding size={20} />,
-    badgeCount: 3,
+    badgeCount: 2,
     path: "../properties/all",
+    subLabels: [
+      { label: "All Properties", path: "../[rproperties/all" },
+      { label: "Featured Properties", path: "../properties/featured" },
+    ],
   },
   { label: "About Us", icon: <FaInfoCircle size={20} />, path: "../about-us" },
   { label: "Contact Us", icon: <FaPhoneAlt size={20} />, path: "../contact" },
@@ -33,13 +37,33 @@ export function Sidebar({
 }) {
   const router = useRouter();
 
-  const handleItemClick = (path: string) => {
-    // Close the sidebar before navigating
-    setIsOpen(false);
+  const [openSubLabels, setOpenSubLabels] = React.useState<string | null>(
+    null
+  );
 
-    // Navigate to the specified path
-    router.push(path);
+  const handleItemClick = (
+    path: string,
+    hasSubLabels: boolean,
+    isSubLabel: boolean
+  ) => {
+    // If it's a sublabel, just navigate without closing the sidebar
+    if (isSubLabel) {
+      router.push(path);
+      return;
+    }
+
+    // If the clicked item is "Properties" and it has sub-labels, toggle their visibility
+    if (path === "../properties/all" && hasSubLabels) {
+      setOpenSubLabels((prev) => (prev === path ? null : path));
+    } else {
+      // Close the sidebar before navigating
+      setIsOpen(false);
+
+      // Navigate to the specified path
+      router.push(path);
+    }
   };
+
 
   const sideNavRef = React.useRef<HTMLDivElement>(null);
 
@@ -65,9 +89,6 @@ export function Sidebar({
     <>
       {isOpen && (
         <div
-          onBlur={() => {
-            setIsOpen(false);
-          }}
           ref={sideNavRef}
           className="flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-screen w-full max-w-[20rem] p-4 shadow-xl shadow-red-gray-900/5 fixed inset-0 top-0 z-50 grid-flow-row auto-rows-max overflow-auto pb-32 animate-in slide-in-from-bottom-80"
         >
@@ -93,26 +114,50 @@ export function Sidebar({
           </div>
           <nav className="flex flex-col gap-2 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700">
             {items.map((item, index) => (
-              <div
-                key={index}
-                role="button"
-                tabIndex={0}
-                onClick={() => handleItemClick(item.path)}
-                className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-red-50 hover:bg-opacity-80
+              <div key={index} className="relative">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() =>
+                    handleItemClick(item.path, !!item.subLabels, false)
+                  }
+                  className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-red-50 hover:bg-opacity-80
                  focus:bg-red-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-red-900 focus:text-red-900 active:text-red-900 outline-none cursor-pointer"
-              >
-                <div className="grid place-items-center mr-4">{item.icon}</div>
-                <span className="flex-1">{item.label}</span>
-                {item.badgeCount && (
-                  <div className="flex items-center ml-auto">
-                    <div
-                      className="relative grid items-center font-sans font-bold uppercase whitespace-nowrap select-none bg-red-500/20 text-red-900 py-1 px-2 text-xs rounded-full"
-                      style={{
-                        opacity: 1,
-                      }}
-                    >
-                      <span className="">{item.badgeCount}</span>
+                >
+                  <div className="grid place-items-center mr-4">
+                    {item.icon}
+                  </div>
+                  <span className="flex-1">{item.label}</span>
+                  {item.badgeCount && (
+                    <div className="flex items-center ml-auto">
+                      <div
+                        className="relative grid items-center font-sans font-bold uppercase whitespace-nowrap select-none bg-red-500/20 text-red-900 py-1 px-2 text-xs rounded-full"
+                        style={{
+                          opacity: 1,
+                        }}
+                      >
+                        <span className="">{item.badgeCount}</span>
+                      </div>
                     </div>
+                  )}
+                </div>
+
+                {item.subLabels && openSubLabels === item.path && (
+                  <div className="pl-6">
+                    {item.subLabels.map((subLabel, subIndex) => (
+                      <div
+                        key={subIndex}
+                        role="button"
+                        tabIndex={0}
+                        onClick={() =>
+                          handleItemClick(subLabel.path, false, true)
+                        }
+                        className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-red-50 hover:bg-opacity-80
+                      focus:bg-red-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-red-900 focus:text-red-900 active:text-red-900 outline-none cursor-pointer"
+                      >
+                        <span className="flex-1">{subLabel.label}</span>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
