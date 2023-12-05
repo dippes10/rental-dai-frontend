@@ -5,25 +5,39 @@ import {
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
-
+import MapboxComponent from "../../components/mapbox/mapbox"; // Import your Mapbox component
+import GeocodingComponent from "../../components/mapbox/geocoding";
 
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [imageUrls, setImageUrls] = useState<string>("");
   const [details, setDetails] = useState("");
-  const [checked, setChecked] = useState(false); // Default to "Not Agreed"
+  const [checked, setChecked] = useState(false);
 
   const [nameError, setNameError] = useState("");
   const [addressError, setAddressError] = useState("");
   const [imageUrlError, setImageUrlError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  const [latitude, setLatitude] = useState<number | null>(null);
+  const [longitude, setLongitude] = useState<number | null>(null);
+
+  const handleLatitudeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(e.target.value);
+    setLatitude(isNaN(value) ? null : value);
+  };
+
+  const handleLongitudeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(e.target.value);
+    setLongitude(isNaN(value) ? null : value);
+  };
+
   const handleChecked = () => setChecked(!checked);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Reset previous error messages
     setNameError("");
     setAddressError("");
@@ -52,30 +66,45 @@ const ListerForm: React.FC = () => {
     formData.append("address", address);
     formData.append("imageUrls", imageUrls);
     formData.append("details", details);
+    formData.append("latitude", latitude?.toString() || "");
+    formData.append("longitude", longitude?.toString() || "");
     formData.append("agreedToTerms", checked.toString());
 
     try {
       // You can send the formData to your server or handle it as needed
       // For demonstration, I'll just display a success message
-      const response = await fetch('http://localhost:8080/add_property', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8080/add_property", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({name,address,imageUrls,details}),
+        body: JSON.stringify({
+          name,
+          address,
+          imageUrls,
+          details,
+          latitude,
+          longitude,
+          agreedToTerms: checked,
+        }),
       });
       if (response.ok) {
-        setSuccessMessage('Form submitted successfully!');
+        setSuccessMessage("Form submitted successfully!");
         clearForm();
         const responseData = await response.json();
         console.log(responseData); // Log success response from the backend
       } else {
-        throw new Error('Failed to submit form');
+        throw new Error("Failed to submit form");
       }
     } catch (error) {
-      console.error('Error submitting form:', error); // Log error response from the backend
+      console.error("Error submitting form:", error); // Log error response from the backend
       // Handle errors or show an error message to the user
     }
+  };
+
+  const handleMapClick = (event: any) => {
+    setLatitude(event.lngLat[1]);
+    setLongitude(event.lngLat[0]);
   };
 
   const clearForm = () => {
@@ -84,11 +113,16 @@ const ListerForm: React.FC = () => {
     setImageUrls("");
     setDetails("");
     setChecked(false); // Reset to "Not Agreed"
+    setLatitude(null);
+    setLongitude(null);
   };
 
   return (
     <AppLayout>
-      <div className="flex justify-center items-center min-h-screen bg-gray-100 bgListerForm" style={{ minHeight: "100vh"}}>
+      <div
+        className="flex justify-center items-center min-h-screen bg-gray-100 bgListerForm"
+        style={{ minHeight: "100vh" }}
+      >
         <div className="w-full sm:w-11/12 md:w-9/12 lg:w-8/12 xl:w-4/12 p-4">
           <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2 w-full">
             <div className="flex flex-col items-center mb-4">
@@ -137,7 +171,9 @@ const ListerForm: React.FC = () => {
                       placeholder="123 Maple Avenue, Townsville"
                     />
                     {addressError && (
-                      <p className="text-red-500 text-sm mt-1">{addressError}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {addressError}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -155,7 +191,9 @@ const ListerForm: React.FC = () => {
                       placeholder="https://example.com/image.jpg"
                     />
                     {imageUrlError && (
-                      <p className="text-red-500 text-sm mt-1">{imageUrlError}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {imageUrlError}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -175,6 +213,51 @@ const ListerForm: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Mapbox component for location selection */}
+              <div className="w-full mt-4">
+            <label className="block text-sm font-medium text-gray-700">
+              Property Location
+            </label>
+            
+            <MapboxComponent
+              latitude={latitude || 27.6957053}
+              longitude={longitude || 85.3526846}
+              showMarker={true}
+              height="400px"
+              onMapClick={handleMapClick}  // Pass the click handler
+            />
+          </div>
+
+          {/* Latitude and Longitude input fields */}
+          <div className="grid grid-cols-2 gap-6 mt-4">
+            <div className="w-full">
+              <label className="block text-sm font-medium text-gray-700">
+                Latitude
+              </label>
+              <input
+                type="number"
+                name="latitude"
+                value={latitude || ''}
+                onChange={handleLatitudeChange}
+                className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                placeholder="Enter Latitude"
+              />
+            </div>
+            <div className="w-full">
+              <label className="block text-sm font-medium text-gray-700">
+                Longitude
+              </label>
+              <input
+                type="number"
+                name="longitude"
+                value={longitude || ''}
+                onChange={handleLongitudeChange}
+                className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                placeholder="Enter Longitude"
+              />
+            </div>
+          </div>
 
               <div className="flex items-center mt-4">
                 <label className="flex items-center space-x-2 cursor-pointer">

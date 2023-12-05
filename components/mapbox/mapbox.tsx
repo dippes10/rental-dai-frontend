@@ -16,10 +16,11 @@ type Props = {
   showAllProperties?: boolean;
   properties?: any;
   height?: string;
+  onMapClick?: any;
 };
 
 const MapboxComponent = (props: Props) => {
-  console.log("props.height", props.height)
+  console.log("props.height", props.height);
   const mapboxToken =
     "pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA";
 

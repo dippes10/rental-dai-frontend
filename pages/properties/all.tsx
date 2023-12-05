@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox"; // Assuming you have this Mapbox component
+import ListerForm from "../../pages/forms/lister-form";
 
 export const fakeProperties = [
   {
@@ -12,7 +13,7 @@ export const fakeProperties = [
     imageUrl: "https://source.unsplash.com/800x600/?flat",
     location: {
       latitude: 27.6957153,
-      longitude: 85.3026536,
+      longitude: 85.3016536,
     },
     bedrooms: 3,
     bathrooms: 2,
@@ -57,7 +58,6 @@ const PropertiesPage: React.FC = () => {
     //     }
     //   })
     //   .catch(error => console.error('Error fetching properties:', error));
-
   }, []);
 
   const handleFilter = (filterTerm: string) => {
@@ -170,13 +170,14 @@ const PropertiesPage: React.FC = () => {
             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center">
               <div className="bg-white p-8 rounded-lg">
                 {/* Mapbox Component */}
+                
                 <MapboxComponent
-                  disableMove={true} // Disable map interaction in the modal
+                  disableMove={true}
                   showNavigationControl={true}
                   showMarker={true}
                   latitude={selectedProperty.location.latitude}
                   longitude={selectedProperty.location.longitude}
-                  zoom={11}
+                  zoom={13}
                   height="400px"
                 />
 
@@ -190,7 +191,9 @@ const PropertiesPage: React.FC = () => {
                     Bedrooms: {selectedProperty.bedrooms}, Bathrooms:{" "}
                     {selectedProperty.bathrooms}
                   </p>
-                  <p className="text-gray-700">Price: {selectedProperty.price}</p>
+                  <p className="text-gray-700">
+                    Price: {selectedProperty.price}
+                  </p>
                   <p className="text-gray-700">
                     Description: {selectedProperty.description}
                   </p>
@@ -208,6 +211,7 @@ const PropertiesPage: React.FC = () => {
           )}
         </div>
       </div>
+      {/* <ListerForm /> */}
     </AppLayout>
   );
 };

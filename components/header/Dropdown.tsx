@@ -58,7 +58,7 @@ const Dropdown: React.FC<DropdownProps> = ({ navItem, displayHoverEffect }) => {
               <Link
                 href={subNavItem.navLink}
                 passHref
-                className="block px-4 py-2 hover:text-red-500 rounded-lg"
+                className="block px-4 py-2 hover:bg-red-50 rounded-lg"
               >
                 {subNavItem.navItem}
               </Link>
