@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faExclamationCircle,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
-import MapboxComponent from "../../components/mapbox/mapbox"; // Import your Mapbox component
 import GeocodingComponent from "../../components/mapbox/geocoding";
 
 const ListerForm: React.FC = () => {
@@ -213,51 +213,7 @@ const ListerForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Mapbox component for location selection */}
-              <div className="w-full mt-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Property Location
-            </label>
-            
-            <MapboxComponent
-              latitude={latitude || 27.6957053}
-              longitude={longitude || 85.3526846}
-              showMarker={true}
-              height="400px"
-              onMapClick={handleMapClick}  // Pass the click handler
-            />
-          </div>
-
-          {/* Latitude and Longitude input fields */}
-          <div className="grid grid-cols-2 gap-6 mt-4">
-            <div className="w-full">
-              <label className="block text-sm font-medium text-gray-700">
-                Latitude
-              </label>
-              <input
-                type="number"
-                name="latitude"
-                value={latitude || ''}
-                onChange={handleLatitudeChange}
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
-                placeholder="Enter Latitude"
-              />
-            </div>
-            <div className="w-full">
-              <label className="block text-sm font-medium text-gray-700">
-                Longitude
-              </label>
-              <input
-                type="number"
-                name="longitude"
-                value={longitude || ''}
-                onChange={handleLongitudeChange}
-                className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
-                placeholder="Enter Longitude"
-              />
-            </div>
-          </div>
+                  <GeocodingComponent/>
 
               <div className="flex items-center mt-4">
                 <label className="flex items-center space-x-2 cursor-pointer">

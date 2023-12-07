@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox"; // Assuming you have this Mapbox component
-import ListerForm from "../../pages/forms/lister-form";
+import GeocodingComponent from "../../components/mapbox/geocoding";
 
 export const fakeProperties = [
   {
@@ -19,6 +19,20 @@ export const fakeProperties = [
     bathrooms: 2,
     price: "$500,000",
     description: "Spacious property with a beautiful view.",
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl: "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453,
+      longitude: 85.3136646,
+    },
+    bedrooms: 2,
+    bathrooms: 1,
+    price: "$300,000",
+    description: "Cozy property with modern amenities.",
   },
   {
     id: 2,
@@ -211,7 +225,6 @@ const PropertiesPage: React.FC = () => {
           )}
         </div>
       </div>
-      {/* <ListerForm /> */}
     </AppLayout>
   );
 };
