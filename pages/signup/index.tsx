@@ -21,7 +21,7 @@ const SignupPage: React.FC = () => {
 
   // Return the JSX for the component
   return (
-    <div className="bg-gradient-to-r from-blue-700 via-red-500 to-red-700 text-white min-h-screen">
+    <div className="flex-container bg-gradient-to-r from-blue-700 via-red-500 to-red-700 text-white min-h-screen">
       <AppLayout>
         <div className="relative flex flex-col justify-center items-center p-4">
           {/* Background Decoration */}
@@ -44,7 +44,7 @@ const SignupPage: React.FC = () => {
           </div>
 
           {/* Signup Components Section */}
-          <div className="flex justify-center space-x-8">
+          <div className="flex lg:flex-row md:flex-row flex-col justify-center gap-4">
             {/* ListerSignup */}
             <div className="rounded-lg overflow-hidden shadow-md bg-white p-6 w-72 transition-transform transform hover:scale-105 z-10">
               <h2 className="text-2xl font-bold mb-4 text-red-800">

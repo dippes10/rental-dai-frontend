@@ -19,7 +19,7 @@ const items = [
     badgeCount: 2,
     path: "../properties/all",
     subLabels: [
-      { label: "All Properties", path: "../[rproperties/all" },
+      { label: "All Properties", path: "../properties/all" },
       { label: "Featured Properties", path: "../properties/featured" },
     ],
   },
