@@ -39,24 +39,25 @@ const GeocodingComponent = () => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Mapbox API Response:", data);
         const [lng, lat] = data.features[0].center;
+        console.log("Latitude:", lat);
+        console.log("Longitude:", lng);
         setLongitude(lng);
         setLatitude(lat);
-
-        // Send latitude and longitude to the backend
         sendCoordinatesToBackend(lat, lng);
       } else {
         console.error("Failed to fetch coordinates");
       }
+      
     } catch (error) {
       console.error("Error fetching coordinates:", error);
     }
   };
 
   const sendCoordinatesToBackend = (lat: number, lng: number) => {
-    // Replace this with your backend API endpoint
-    const backendEndpoint = "https://your-backend-api.com/coordinates";
-    
+    const backendEndpoint = "http://localhost:8080/api/properties";
+
     fetch(backendEndpoint, {
       method: "POST",
       headers: {
@@ -69,13 +70,18 @@ const GeocodingComponent = () => {
     })
       .then(response => {
         if (!response.ok) {
-          throw new Error("Failed to send coordinates to the backend");
+          throw new Error(`Failed to send coordinates to the backend: ${response.statusText}`);
         }
+        return response.json(); // You can remove this line if your backend doesn't return JSON
+      })
+      .then(data => {
+        console.log("Backend response:", data);
       })
       .catch(error => {
         console.error("Error sending coordinates to the backend:", error);
       });
   };
+  
 
   return (
     <div className="geocoding-container border p-4">
