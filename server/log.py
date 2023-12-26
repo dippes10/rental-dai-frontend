@@ -161,11 +161,10 @@ def usersignin():
 
 
 #listing properties
-from cloudinary.uploader import upload
 import os
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = 'static/uploads/'
+UPLOAD_FOLDER = r'C:\Users\PC\Desktop\rental-dai-frontend\static\uploads'
 app.secret_key = "cairocoders-ednalan"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -202,12 +201,11 @@ def add_property():
 
     # Insert property data into the properties table along with image paths
    cursor = connection.cursor()
-   insert_query = "INSERT INTO propertieslist (name, address, images, details, latitude, longitude, agreedToTerms) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms) VALUES (%s, %s, %s, %s, %s, %s, %s)"
    property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms)
    cursor.execute(insert_query, property_data)
    connection.commit()
    cursor.close()
-
    return jsonify({'message': 'Property added successfully'}), 200
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
