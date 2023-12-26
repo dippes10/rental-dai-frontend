@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,flash
 from flask_cors import CORS
 import mysql.connector
 import logging
@@ -160,76 +160,55 @@ def usersignin():
 
 
 
-
 #listing properties
-#add properties
-@app.route('/add_property', methods=['POST'])
+from cloudinary.uploader import upload
+import os
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = 'static/uploads/'
+app.secret_key = "cairocoders-ednalan"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+@app.route('/api/properties', methods=['POST'])
 def add_property():
-    data = request.get_json()  
-    
-    # Print received data to check if it's received properly
-    print("Received data:", data)
-    
-    name = data.get('name')
-    address = data.get('address')
-    image_urls = data.get('imageUrls')
-    details = data.get('details')
-    
-    cursor = connection.cursor()
-    try:
-        # Perform INSERT operation into the properties table with static values
-        cursor.execute("INSERT INTO properties (name, address, image_urls, details) VALUES (%s, %s, %s, %s)",
-                       (name, address, image_urls, details))  # Use static values for testing
-        connection.commit()
-        cursor.close()
-        return jsonify({'message': 'Property added successfully'})
-    except Exception as e:
-        connection.rollback()
-        cursor.close()
-        print("Failed to add property:", str(e))  # Print error for debugging
-        return jsonify({'error': 'Failed to add property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
-#edit ko lagi
-@app.route('/edit_property/<property_id>', methods=['PUT'])
-def edit_property(property_id):
-    data = request.get_json()
+   if 'files[]' not in request.files:
+        flash('No file part')
+        return jsonify({'message': 'No file part'}), 400
 
-    name = data.get('name')
-    address = data.get('address')
-    image_urls = data.get('imageUrls')
-    details = data.get('details')
+    # Retrieve property details from the request JSON
+   data = request.form
+   name = data.get('name')
+   address = data.get('address')
+   details = data.get('details')
+   latitude = data.get('latitude')
+   longitude = data.get('longitude')
+   agreed_to_terms = data.get('agreedToTerms')
 
-    cursor = connection.cursor()
-    try:
-        # Perform UPDATE operation on the specified property_id
-        cursor.execute("UPDATE properties SET name = %s, address = %s, image_urls = %s, details = %s WHERE id = %s",
-                       (name, address, image_urls, details, property_id))
-        connection.commit()
-        cursor.close()
-        return jsonify({'message': f'Property with ID {property_id} updated successfully'})
-    except Exception as e:
-        connection.rollback()
-        cursor.close()
-        logging.error("Failed to edit property: %s", str(e))
-        return jsonify({'error': 'Failed to edit property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
+   files = request.files.getlist('files[]')
+   image_paths = []
+   for file in files:
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            image_paths.append(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        else:
+            flash('Allowed image types are -> png, jpg, jpeg, gif')
+            return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
 
-#delete ko lagi
-@app.route('/delete_property/<int:property_id>', methods=['DELETE'])
-def delete_property(property_id):
-    cursor = connection.cursor()
-    try:
-        # Perform DELETE operation on the specified property_id
-        cursor.execute("DELETE FROM properties WHERE id = %s", (property_id,))
-        connection.commit()
-        cursor.close()
-        return jsonify({'message': f'Property with ID {property_id} deleted successfully'})
-    except Exception as e:
-        connection.rollback()
-        cursor.close()
-        logging.error("Failed to delete property: %s", str(e))
-        return jsonify({'error': 'Failed to delete property', 'details': str(e)}), 500  # HTTP status code 500 for internal server error
+    # Insert property data into the properties table along with image paths
+   cursor = connection.cursor()
+   insert_query = "INSERT INTO propertieslist (name, address, images, details, latitude, longitude, agreedToTerms) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms)
+   cursor.execute(insert_query, property_data)
+   connection.commit()
+   cursor.close()
 
-
-    
+   return jsonify({'message': 'Property added successfully'}), 200
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
 

@@ -11,7 +11,7 @@ import GeocodingComponent from "../../components/mapbox/geocoding";
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [imageUrls, setImageUrls] = useState<string>("");
+  const [image, setImage] = useState<string>("");
   const [details, setDetails] = useState("");
   const [checked, setChecked] = useState(false);
 
@@ -55,7 +55,7 @@ const ListerForm: React.FC = () => {
     }
 
     // Additional validation for image links
-    if (!imageUrls.trim()) {
+    if (!image.trim()) {
       setImageUrlError("Please enter at least one image link.");
       return;
     }
@@ -64,7 +64,7 @@ const ListerForm: React.FC = () => {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("address", address);
-    formData.append("imageUrls", imageUrls);
+    formData.append("imageUrls", image);
     formData.append("details", details);
     formData.append("latitude", latitude?.toString() || "");
     formData.append("longitude", longitude?.toString() || "");
@@ -81,7 +81,7 @@ const ListerForm: React.FC = () => {
         body: JSON.stringify({
           name,
           address,
-          imageUrls,
+          image,
           details,
           latitude,
           longitude,
@@ -110,12 +110,28 @@ const ListerForm: React.FC = () => {
   const clearForm = () => {
     setName("");
     setAddress("");
-    setImageUrls("");
+    setImage("");
     setDetails("");
     setChecked(false); // Reset to "Not Agreed"
     setLatitude(null);
     setLongitude(null);
   };
+  
+  const handleFileChange = (e:any) => {
+    const file = e.target.files?.[0];
+    // // if (file) {
+    //   const reader = new FileReader();
+    //   reader.onloadend = () => {
+    //     if (reader.result !== null && typeof reader.result === 'string') {
+    //       setImage(reader.result);
+    //     } 
+    //   };
+    //   reader.readAsDataURL(file);
+     
+    // }
+    console.log(image)
+  };
+  
 
   return (
     <AppLayout>
@@ -179,14 +195,14 @@ const ListerForm: React.FC = () => {
                 </div>
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700">
-                    Image Link(s)
+                    Image 
                   </label>
                   <div className="relative">
                     <input
-                      type="text"
-                      name="imageUrls"
-                      value={imageUrls}
-                      onChange={(e) => setImageUrls(e.target.value)}
+                      type="file"
+                      name="image"
+                      value={image}
+                      onChange={(e) => handleFileChange(e)}
                       className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                       placeholder="https://example.com/image.jpg"
                     />
