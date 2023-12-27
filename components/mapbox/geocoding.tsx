@@ -30,6 +30,15 @@ const GeocodingComponent = () => {
         setLatitude(markerLngLat.lat);
       });
 
+      map.on("click", (e) => {
+        const clickedLngLat = e.lngLat;
+        setLongitude(clickedLngLat.lng);
+        setLatitude(clickedLngLat.lat);
+        if (marker) {
+          marker.setLngLat(clickedLngLat);
+        }
+      });
+
       // Add Mapbox geolocate control
       map.addControl(new mapboxgl.GeolocateControl({
         positionOptions: {
@@ -128,16 +137,17 @@ const GeocodingComponent = () => {
           />
         </label>
         <button
-          className=" mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
+          className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
           onClick={handleFetchCoordinates}
         >
           {searching ? "Searching..." : "Search"}
         </button>
         <Button
-                type="outline"
-                title="Get your location"
-          onClick={handleAddCurrentLocation} >
-            </Button>
+          type="outline"
+          title="Get your location"
+          onClick={handleAddCurrentLocation}
+        >
+        </Button>
       </div>
       {latitude !== null && longitude !== null && (
         <div>
