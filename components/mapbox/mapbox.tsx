@@ -53,7 +53,7 @@ const MapboxComponent = (props: Props) => {
               // @ts-ignore
               props.showAllProperties &&
                 props.properties.map((property: any) => (
-                  <Marker
+                  <Marker 
                     key={property.id}
                     latitude={property.location.latitude}
                     longitude={property.location.longitude}
