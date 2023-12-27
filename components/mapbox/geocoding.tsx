@@ -57,7 +57,6 @@ const GeocodingComponent = () => {
 
   const sendCoordinatesToBackend = (lat: number, lng: number) => {
     const backendEndpoint = "http://localhost:8080/api/properties";
-
     fetch(backendEndpoint, {
       method: "POST",
       headers: {

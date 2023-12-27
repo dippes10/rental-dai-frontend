@@ -11,7 +11,7 @@ import GeocodingComponent from "../../components/mapbox/geocoding";
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<File[]>([]);
   const [details, setDetails] = useState("");
   const [checked, setChecked] = useState(false);
 
@@ -55,30 +55,30 @@ const ListerForm: React.FC = () => {
     }
 
     // Additional validation for image links
-    if (!image.trim()) {
-      setImageUrlError("Please enter at least one image link.");
-      return;
-    }
+    
 
     // Additional logic for handling image links
     const formData = new FormData();
     formData.append("name", name);
     formData.append("address", address);
-    formData.append("imageUrls", image);
     formData.append("details", details);
     formData.append("latitude", latitude?.toString() || "");
     formData.append("longitude", longitude?.toString() || "");
     formData.append("agreedToTerms", checked.toString());
+    for (let i = 0; i < image.length; i++) {
+      formData.append("images[]", image[i]);
+    }
+  
 
     try {
       // You can send the formData to your server or handle it as needed
       // For demonstration, I'll just display a success message
-      const response = await fetch("http://localhost:8080/add_property", {
+      const response = await fetch("http://localhost:8080/api/properties", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
+         body:JSON.stringify({
           name,
           address,
           image,
@@ -110,25 +110,19 @@ const ListerForm: React.FC = () => {
   const clearForm = () => {
     setName("");
     setAddress("");
-    setImage("");
+    setImage([]);
     setDetails("");
     setChecked(false); // Reset to "Not Agreed"
     setLatitude(null);
     setLongitude(null);
   };
   
-  const handleFileChange = (e:any) => {
-    const file = e.target.files?.[0];
-    // // if (file) {
-    //   const reader = new FileReader();
-    //   reader.onloadend = () => {
-    //     if (reader.result !== null && typeof reader.result === 'string') {
-    //       setImage(reader.result);
-    //     } 
-    //   };
-    //   reader.readAsDataURL(file);
-     
-    // }
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files) {
+      const imageFiles = Array.from(files);
+      setImage(imageFiles); // Set your state to store multiple images
+    }
     console.log(image)
   };
   
@@ -201,10 +195,10 @@ const ListerForm: React.FC = () => {
                     <input
                       type="file"
                       name="image"
-                      value={image}
                       onChange={(e) => handleFileChange(e)}
                       className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
                       placeholder="https://example.com/image.jpg"
+                      multiple
                     />
                     {imageUrlError && (
                       <p className="text-red-500 text-sm mt-1">

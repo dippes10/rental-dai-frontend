@@ -531,3 +531,36 @@ werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not at
 2023-12-26 14:40:53,580 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 14:40:53] "POST /api/properties HTTP/1.1" 200 -
 2023-12-26 14:42:38,597 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\log.py', reloading
 2023-12-26 14:42:38,637 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-26 21:20:34,649 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2023-12-26 21:20:34,650 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-12-26 21:20:34,652 INFO werkzeug MainThread :  * Restarting with stat
+2023-12-26 21:20:35,123 WARNING werkzeug MainThread :  * Debugger is active!
+2023-12-26 21:20:35,130 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2023-12-26 21:20:40,969 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 21:20:40] "OPTIONS /signin HTTP/1.1" 200 -
+2023-12-26 21:20:41,233 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 21:20:41] "POST /signin HTTP/1.1" 200 -
+2023-12-26 21:20:51,215 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 21:20:51] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 21:20:51,544 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 21:20:51] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 22:12:24,556 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 22:12:24] "POST /api/properties HTTP/1.1" 200 -
+2023-12-26 23:10:22,075 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:10:22] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:10:22,324 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:10:22] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:33:04,439 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:04] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:33:04,479 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:04] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:33:04,698 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:04] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:33:04,746 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:04] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:33:12,000 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:12] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:33:12,321 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:33:12] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:38:16,984 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:16] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:38:17,252 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:17] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:38:30,877 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:30] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:38:31,203 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:31] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:38:31,205 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:31] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:38:31,454 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:38:31] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:40:46,747 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:40:46] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:40:46,841 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:40:46] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:40:47,017 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:40:47] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:40:47,065 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:40:47] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:47:07,201 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:47:07] "OPTIONS /api/properties HTTP/1.1" 200 -
+2023-12-26 23:47:07,469 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:47:07] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2023-12-26 23:47:27,562 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:47:27] "GET /api/properties HTTP/1.1" 200 -
+2023-12-26 23:47:27,823 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [26/Dec/2023 23:47:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
