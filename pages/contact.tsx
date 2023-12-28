@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import AppLayout from "../components/AppLayout";
-import ListerForm from "./Forms/lister-form";
+import ListerForm from "./forms/lister-form";
 
 const ContactUsPage = () => {
   const contactInfo = {

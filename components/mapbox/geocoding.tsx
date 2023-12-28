@@ -142,12 +142,12 @@ const GeocodingComponent = () => {
         >
           {searching ? "Searching..." : "Search"}
         </button>
-        <Button
-          type="outline"
-          title="Get your location"
+        <button 
+        className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none"
           onClick={handleAddCurrentLocation}
         >
-        </Button>
+        Add your Location
+        </button>
       </div>
       {latitude !== null && longitude !== null && (
         <div>
