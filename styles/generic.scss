@@ -179,3 +179,24 @@ border-color: rgb(238, 80, 80);
 .fetch-button:hover {
   background: linear-gradient(135deg, #ff0000 0%, #0000ff 100%);
 }
+
+
+.map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.map-container {
+  width: 60vw !important; /* Adjust the width as needed */
+  height: 90vh !important; /* Adjust the height as needed */
+  border: 2px solid #fff;
+}

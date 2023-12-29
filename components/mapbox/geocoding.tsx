@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import Button from "../../components/Button";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA';
+
+// Import statements remain the same as in your original code
 
 const GeocodingComponent = () => {
   const [location, setLocation] = useState("");
@@ -11,14 +12,16 @@ const GeocodingComponent = () => {
   const [marker, setMarker] = useState<mapboxgl.Marker | null>(null);
   const [searching, setSearching] = useState(false);
   const [warning, setWarning] = useState("");
+  const [mapVisible, setMapVisible] = useState(false);
+  const [coordinatesSet, setCoordinatesSet] = useState(false);
 
   useEffect(() => {
-    if (latitude !== null && longitude !== null) {
+    if (latitude !== null && longitude !== null && mapVisible) {
       const map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
         center: [longitude, latitude],
-        zoom: 14,
+        zoom: 15,
       });
 
       const newMarker = new mapboxgl.Marker({ draggable: true }).setLngLat([longitude, latitude]).addTo(map);
@@ -28,6 +31,7 @@ const GeocodingComponent = () => {
         const markerLngLat = newMarker.getLngLat();
         setLongitude(markerLngLat.lng);
         setLatitude(markerLngLat.lat);
+        setCoordinatesSet(true);
       });
 
       map.on("click", (e) => {
@@ -37,25 +41,24 @@ const GeocodingComponent = () => {
         if (marker) {
           marker.setLngLat(clickedLngLat);
         }
+        setCoordinatesSet(true);
       });
 
-      // Add Mapbox geolocate control
       map.addControl(new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
         },
         trackUserLocation: true,
         showUserLocation: true,
-      }), "top-left");
+      }), "top-right");
 
-      // Add Mapbox navigation controls
-      map.addControl(new mapboxgl.NavigationControl(), "top-left");
+      map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
       return () => {
         map.remove();
       };
     }
-  }, [latitude, longitude]);
+  }, [latitude, longitude, mapVisible]);
 
   const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLocation(e.target.value);
@@ -82,6 +85,8 @@ const GeocodingComponent = () => {
         if (marker) {
           marker.setLngLat([lng, lat]);
         }
+        setMapVisible(true);
+        setCoordinatesSet(true);
       } else {
         console.error("Failed to fetch coordinates");
       }
@@ -112,6 +117,8 @@ const GeocodingComponent = () => {
             marker.setLngLat([currentLng, currentLat]);
           }
           setWarning("Geo-location might not be accurate. You need to adjust the marker for better results.");
+          setMapVisible(true);
+          setCoordinatesSet(true);
         },
         (error) => {
           console.error("Error getting current location:", error);
@@ -120,6 +127,17 @@ const GeocodingComponent = () => {
       );
     } else {
       setWarning("Geolocation is not supported by your browser. Please enter the location manually.");
+    }
+  };
+
+  const hideMap = () => {
+    setMapVisible(false);
+  };
+
+  const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Close the map if clicking outside the map
+    if (e.target === e.currentTarget) {
+      hideMap();
     }
   };
 
@@ -138,29 +156,44 @@ const GeocodingComponent = () => {
         </label>
         <button
           className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
-          onClick={handleFetchCoordinates}
+          onClick={() => {
+            handleFetchCoordinates();
+          }}
         >
           {searching ? "Searching..." : "Search"}
         </button>
         <button 
-        className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none"
+          className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none"
           onClick={handleAddCurrentLocation}
         >
-        Add your Location
+          Add your Location
         </button>
       </div>
-      {latitude !== null && longitude !== null && (
-        <div>
+      {latitude !== null && longitude !== null && mapVisible && (
+        <div className="map-modal" onClick={handleMapClick}>
           <div id="map" className="map-container"></div>
-          <p className="text-red-500">{warning}</p>
-          <p>Latitude: {latitude}</p>
-          <p>Longitude: {longitude}</p>
           <button
             className="mt-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
-            onClick={handleFetchMarkerLocation}
+            onClick={() => {
+              handleFetchMarkerLocation();
+              hideMap();
+            }}
           >
             Fetch Marker Location
           </button>
+          <button 
+            className={`mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none ${coordinatesSet ? '' : 'hidden'}`}
+            onClick={handleAddCurrentLocation}
+          >
+            Add your Location
+          </button>
+        </div>
+      )}
+      {latitude !== null && longitude !== null && (
+        <div>
+          <p className="text-red-500">{warning}</p>
+          <p>Latitude: {latitude}</p>
+          <p>Longitude: {longitude}</p>
         </div>
       )}
     </div>

@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
               {/* Component 1: House Listing */}
               <button
                 onClick={handleListerLogin}
-                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring focus:border-white"
+                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring-red-500 focus:border-red-50"
               >
                 <h2 className="text-xl font-bold mb-4">House Listings</h2>
                 <div className="relative h-40 mb-4">
@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
               {/* Component 2: User Reviews */}
               <button
                 onClick={handleUserLogin}
-                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring focus:border-white"
+                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring-red-500 focus:border-red-500"
               >
                 <h2 className="text-xl font-bold mb-4">User Reviews</h2>
                 <div className="relative h-40 mb-4">

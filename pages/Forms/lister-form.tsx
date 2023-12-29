@@ -165,7 +165,7 @@ const ListerForm: React.FC = () => {
                       name="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                      className="w-full p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
                       placeholder="Elegant Studio"
                     />
                     {nameError && (
@@ -183,7 +183,7 @@ const ListerForm: React.FC = () => {
                       name="address"
                       value={address}
                       onChange={(e) => setAddress(e.target.value)}
-                      className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                      className="w-full p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
                       placeholder="123 Maple Avenue, Townsville"
                     />
                     {addressError && (
@@ -203,7 +203,7 @@ const ListerForm: React.FC = () => {
                       name="image"
                       value={image}
                       onChange={(e) => handleFileChange(e)}
-                      className="w-full p-3 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                      className="w-full p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
                       placeholder="https://example.com/image.jpg"
                     />
                     {imageUrlError && (
@@ -222,7 +222,7 @@ const ListerForm: React.FC = () => {
                       name="details"
                       value={details}
                       onChange={(e) => setDetails(e.target.value)}
-                      className="w-full p-1 border rounded-md focus:outline-none focus:ring focus:border-red-300"
+                      className="w-full p-1 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
                       placeholder="Phone Number, Room Description, Water Availability, etc."
                       rows={6}
                     />
@@ -235,7 +235,7 @@ const ListerForm: React.FC = () => {
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    className="form-checkbox border-2 border-gray-500"
+                    className="form-checkbox border-2 border-red-500 focus:outline-none focus:ring-red-500 focus:border-red-500"
                     checked={checked}
                     onChange={handleChecked}
                   />
