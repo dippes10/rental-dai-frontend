@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Information from "./information";
 import Featuring from "./featuring";
 import Team from "./team";
 import Newsletter from "./newsLetter";
+import ListerForm from "../../pages/forms/lister-form";
 
 const AboutUs: React.FC = () => {
   return (
@@ -22,6 +22,7 @@ const AboutUs: React.FC = () => {
 
       {/* Newsletter Section */}
       <Newsletter />
+      <ListerForm/>
     </div>
   );
 };

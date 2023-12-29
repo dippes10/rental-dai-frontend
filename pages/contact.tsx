@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import AppLayout from "../components/AppLayout";
-import ListerForm from "./forms/lister-form";
+
 
 const ContactUsPage = () => {
   const contactInfo = {
@@ -99,7 +99,6 @@ const ContactUsPage = () => {
         </div>
       </div>
     </section>
-    <ListerForm/>
     </AppLayout>
   );
 };
