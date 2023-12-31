@@ -60,14 +60,25 @@ const ListerForm: React.FC = () => {
     // Additional logic for handling image links
     const formData = new FormData();
     formData.append("name", name);
+
     formData.append("address", address);
     formData.append("details", details);
     formData.append("latitude", latitude?.toString() || "");
     formData.append("longitude", longitude?.toString() || "");
     formData.append("agreedToTerms", checked.toString());
+    // if (image.length > 0) {
+    //   console.log("image", image)
+    //   console.log("image", image[0])
+    //   formData.append("file", image[0]);
+    // }
     for (let i = 0; i < image.length; i++) {
-      formData.append("images[]", image[i]);
+      formData.append(`files[${i}]`, image[i]);
     }
+    console.log("formData", formData)
+    formData.forEach((value, key) => {
+      console.log("key", key)
+      console.log("value", value)
+    })
   
 
     try {
@@ -75,18 +86,10 @@ const ListerForm: React.FC = () => {
       // For demonstration, I'll just display a success message
       const response = await fetch("http://localhost:8080/api/properties", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-         body:JSON.stringify({
-          name,
-          address,
-          image,
-          details,
-          latitude,
-          longitude,
-          agreedToTerms: checked,
-        }),
+        // headers: {
+        //   "Content-Type": "multipart/form-data",
+        // },
+        body: formData,
       });
       if (response.ok) {
         setSuccessMessage("Form submitted successfully!");
@@ -119,13 +122,14 @@ const ListerForm: React.FC = () => {
   
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
+    console.log(files);
     if (files) {
       const imageFiles = Array.from(files);
+      console.log(imageFiles);
       setImage(imageFiles); // Set your state to store multiple images
     }
-    console.log(image)
   };
-  
+
 
   return (
     <AppLayout>
@@ -223,7 +227,10 @@ const ListerForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-                  <GeocodingComponent/>
+                  <GeocodingComponent
+                  onLatitudeChange={setLatitude}
+                  onLongitudeChange={setLongitude}
+                  />
 
               <div className="flex items-center mt-4">
                 <label className="flex items-center space-x-2 cursor-pointer">

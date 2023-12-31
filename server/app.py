@@ -11,7 +11,7 @@ def get_properties():
     cursor = connection.cursor(dictionary=True)  # Use dictionary cursor for easier JSON conversion
     
     try:
-        cursor.execute("SELECT * FROM properties")  # Fetch all properties
+        cursor.execute("SELECT * FROM propertieslist")  # Fetch all properties
         properties = cursor.fetchall()  # Retrieve all rows
         
         cursor.close()
@@ -173,10 +173,14 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @app.route('/api/properties', methods=['POST'])
 def add_property():
-   if 'files[]' not in request.files:
-        flash('No file part')
+   print("request.files", request.files)    
+   print("request.form", request.form)  
+   print("reques.files.keys()", request.files.keys())  
+   if len(request.files) == 0:
+        flash('No file provided')
         return jsonify({'message': 'No file part'}), 400
 
     # Retrieve property details from the request JSON
@@ -188,7 +192,8 @@ def add_property():
    longitude = data.get('longitude')
    agreed_to_terms = data.get('agreedToTerms')
 
-   files = request.files.getlist('files[]')
+   files = request.files.values()
+   print("files", files)
    image_paths = []
    for file in files:
         if file and allowed_file(file.filename):

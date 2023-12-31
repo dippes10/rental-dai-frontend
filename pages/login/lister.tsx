@@ -45,13 +45,13 @@ function SignInBasic() {
 
   return (
     <AppLayout>
-      <div className="flex justify-center items-center h-screen bgLogin">
+      <div className="flex justify-center items-center bgLogin">
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
           {/* Header box with red to white gradient */}
           <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2">
             <div className="flex flex-col items-center mb-4">
               <NextImage
-                src="/faviconnn.png" // Replace with your logo
+                src="/favicon.png" // Replace with your logo
                 alt="Rental Dai Logo"
                 width={120} // Set the width and height according to your design
                 height={120}

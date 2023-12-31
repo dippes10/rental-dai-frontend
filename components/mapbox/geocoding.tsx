@@ -5,7 +5,13 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwd
 
 // Import statements remain the same as in your original code
 
-const GeocodingComponent = () => {
+interface GeocodingComponentProps {
+  onLatitudeChange: (latitude: number) => void;
+  onLongitudeChange: (longitude: number) => void;
+  onMarkerChange?: (marker: mapboxgl.Marker) => void;
+}
+
+const GeocodingComponent = (props: GeocodingComponentProps) => {
   const [location, setLocation] = useState("");
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
@@ -26,6 +32,7 @@ const GeocodingComponent = () => {
 
       const newMarker = new mapboxgl.Marker({ draggable: true }).setLngLat([longitude, latitude]).addTo(map);
       setMarker(newMarker);
+      props?.onMarkerChange && props?.onMarkerChange(newMarker);
 
       newMarker.on("dragend", () => {
         const markerLngLat = newMarker.getLngLat();
@@ -100,6 +107,10 @@ const GeocodingComponent = () => {
   const handleFetchMarkerLocation = () => {
     if (marker) {
       const markerLngLat = marker.getLngLat();
+      props?.onMarkerChange && props?.onMarkerChange(marker);
+      props.onLongitudeChange(markerLngLat.lng);
+      props.onLatitudeChange(markerLngLat.lat);
+
       console.log("Marker Latitude:", markerLngLat.lat);
       console.log("Marker Longitude:", markerLngLat.lng);
     }
@@ -155,6 +166,7 @@ const GeocodingComponent = () => {
           />
         </label>
         <button
+          type="button"
           className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
           onClick={() => {
             handleFetchCoordinates();
@@ -163,6 +175,7 @@ const GeocodingComponent = () => {
           {searching ? "Searching..." : "Search"}
         </button>
         <button 
+          type="button"
           className="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none"
           onClick={handleAddCurrentLocation}
         >
@@ -171,7 +184,7 @@ const GeocodingComponent = () => {
       </div>
       {latitude !== null && longitude !== null && mapVisible && (
         <div className="map-modal" onClick={handleMapClick}>
-          <div id="map" className="map-container"></div>
+          <div id="map" className="map-container-modal"></div>
           <button
             className="mt-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
             onClick={() => {

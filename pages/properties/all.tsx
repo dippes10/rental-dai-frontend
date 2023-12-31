@@ -186,13 +186,15 @@ const PropertiesPage: React.FC = () => {
                 {/* Mapbox Component */}
                 
                 <MapboxComponent
-                  disableMove={true}
+                  disableMove={false}
                   showNavigationControl={true}
                   showMarker={true}
                   latitude={selectedProperty.location.latitude}
                   longitude={selectedProperty.location.longitude}
                   zoom={13}
                   height="400px"
+                  properties={[selectedProperty]}
+                  showAllProperties={true}
                 />
 
                 {/* Additional Property Details */}

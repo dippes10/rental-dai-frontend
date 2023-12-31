@@ -58,17 +58,18 @@ const MapboxComponent = (props: Props) => {
                     latitude={property.location.latitude}
                     longitude={property.location.longitude}
                     draggable={false}
-                  ></Marker>
+                  />
                 ))
             }
             {props.children}
-            {!!props.showMarker && (
+            {/* {props.showMarker && (
               <Marker
+                key="1"
                 latitude={viewport.latitude}
                 longitude={viewport.longitude}
                 draggable={false}
-              ></Marker>
-            )}
+              />
+            )} */}
             <GeolocateControl />
             {/* Additional components, markers, or overlays can be added here */}
             {!!props.showNavigationControl && (
