@@ -76,7 +76,7 @@ const UserSignUp: React.FC = () => {
             <form className="space-y-4" onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <div key={field.name}>
-                  <label className="block text-sm font-medium text-gray-700 flex items-center">
+                  <label className="block text-sm font-medium text-gray-700  items-center">
                     <FontAwesomeIcon icon={field.icon} className="mr-2" />
                     {field.label}
                   </label>
@@ -87,7 +87,7 @@ const UserSignUp: React.FC = () => {
                       name={field.name}
                       value={formData[field.name as keyof FormData]}
                       onChange={handleChange}
-                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:border-red-500"
+                      className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:ring-red-500 focus:border-red-500"
                       placeholder={field.label}
                       required
                     />

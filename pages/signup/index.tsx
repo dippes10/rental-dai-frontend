@@ -37,8 +37,8 @@ const SignupPage: React.FC = () => {
 
           {/* Title Section */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Sign Up to RentalDai</h1>
-            <p className="text-lg">
+            <h1 className="text-4xl font-bold mb-4 text-white">Sign Up to RentalDai</h1>
+            <p className="text-lg text-white">
               Your platform for finding the perfect rental home.
             </p>
           </div>
@@ -67,7 +67,7 @@ const SignupPage: React.FC = () => {
               </p>
               <button
                 onClick={handleListerSignup}
-                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
+                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring-red-500 focus:border-red-500"
               >
                 Get Started
               </button>
@@ -95,7 +95,7 @@ const SignupPage: React.FC = () => {
               </p>
               <button
                 onClick={handleUserSignup}
-                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring focus:border-white"
+                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-full focus:outline-none focus:ring-red-500 focus:border-red-500"
               >
                 Get Started
               </button>

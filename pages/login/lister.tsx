@@ -107,7 +107,7 @@ function SignInBasic() {
                   id="email"
                   type="email"
                   placeholder="Email"
-                  className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                  className="w-full p-3 border-2 border-gray-300 rounded-md bg-gray-100 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -120,7 +120,7 @@ function SignInBasic() {
                   id="password"
                   type="password"
                   placeholder="Password"
-                  className="w-full p-3 border border-gray-300 rounded-md bg-gray-100"
+                  className="w-full p-3 border-2 border-gray-300 rounded-md bg-gray-100 focus:outline-none focus:ring-red-500 focus:border-red-500"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
