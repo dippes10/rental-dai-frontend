@@ -52,6 +52,11 @@ export const SiteMeta = {
           },
         ],
       },
+      {
+        id: "profile",
+        navItem: "profile",
+        navLink: "/profile/lister-profile",
+      },
     ],
   };
   
