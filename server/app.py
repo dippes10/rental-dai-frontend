@@ -2,9 +2,13 @@ from flask import Flask, request, jsonify,flash
 from flask_cors import CORS
 import mysql.connector
 import logging
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+
 app = Flask(__name__)
 CORS(app)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+app.config['JWT_SECRET_KEY'] = 'thisissecret'  # Replace with a complex secret key
+jwt = JWTManager(app)
 
 @app.route('/api/properties', methods=['GET'])
 def get_properties():
@@ -67,97 +71,42 @@ def signup():
             return jsonify({'message': 'Error during signup'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
-#lister ko signup
+#userlogin
 
-@app.route('/listerSignup', methods=['POST'])
-def listerSignup():
-    if request.method == 'POST':
+@app.route('/user-Signin', methods=['POST'])
+def signin():
+    if request.method == "POST":
         try:
             data = request.json
-            
-            # Retrieve form fields from the data
-            firstName = data.get('firstName')
-            lastName = data.get('lastName')
             email = data.get('email')
             password = data.get('password')
-            confirmPassword = data.get('confirmPassword')
 
-            # Validate data
-            if not email or not password:
-                return jsonify({'message': 'Email and password are required.'}), 400
-            if len(password) < 8:
-                return jsonify({'message': 'Password must be at least 8 characters long.'}), 400
-            if password != confirmPassword:
-                return jsonify({'message': 'Passwords do not match.'}), 400
-
-            # Insert data into the database
             cursor = connection.cursor()
-            insert_query = "INSERT INTO lister (firstName, lastName, email, password) VALUES (%s, %s, %s, %s)"
-            user_data = (firstName, lastName, email, password)
-            cursor.execute(insert_query, user_data)
-            connection.commit()
+            query = "SELECT id, user_type,email FROM users WHERE email = %s AND password = %s"
+            cursor.execute(query, (email, password))
+            user_data = cursor.fetchone()
             cursor.close()
 
-            return jsonify({'message': 'User signed up successfully'}), 200
-
+            if user_data:
+                user_id = user_data[0]  # Access the first element (ID)
+                user_type = user_data[1] 
+                user_email=user_data[2] # Access the second element (user_type)
+                access_token = create_access_token(identity={"user_id":user_id,"email":user_email})
+                return jsonify({'access_token': access_token, 'user':{"user_id":user_id,"email":user_email,"user_type":user_type} }), 200
+            else:
+                return jsonify({'message': 'Invalid credentials'}), 401
         except Exception as e:
-            print('Error during signup:', str(e))
-            return jsonify({'message': 'Error during signup'}), 500
+            logging.error(f'Error during signin: {e}', exc_info=True)
+            return jsonify({'message': f'Error during signin: {e}'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
-#login ko lagi
-@app.route('/signin', methods=['POST'])
-def signin():
-    if request.method=="POST":
-     try:
-         data = request.json
-         email = data.get('email')
-         password = data.get('password')
 
-         cursor = connection.cursor()
 
-         # Query to retrieve user with provided email and password
-         query = "SELECT * FROM lister WHERE email = %s AND password = %s"
-         cursor.execute(query, (email, password))
-         user = cursor.fetchone()
-         cursor.close()
-
-         if user:
-                return jsonify({'message': 'Sign-in successful as lister'}), 200
-         else:
-                return jsonify({'message': 'Invalid credentials'}), 401
-     except Exception as e:
-            logging.error('Error during signin:', exc_info=True)  # Log the error with traceback
-            return jsonify({'message': 'Error during signin'}), 500
-     
-    return jsonify({'message': 'Method not allowed'}), 405
-#userlogin
-@app.route('/user-Signin', methods=['POST'])
-def usersignin():
-    if request.method=="POST":
-     try:
-         data = request.json
-         email = data.get('email')
-         password = data.get('password')
-
-         cursor = connection.cursor()
-
-         # Query to retrieve user with provided email and password
-         query = "SELECT * FROM users WHERE email = %s AND password = %s"
-         cursor.execute(query, (email, password))
-         user = cursor.fetchone()
-         cursor.close()
-
-         if user:
-                return jsonify({'message': 'Sign-in successful as user'}), 200
-         else:
-                return jsonify({'message': 'Invalid credentials'}), 401
-     except Exception as e:
-            logging.error('Error during signin:', exc_info=True)  # Log the error with traceback
-            return jsonify({'message': 'Error during signin'}), 500
-     
-    return jsonify({'message': 'Method not allowed'}), 405
-
+@app.route('/properties', methods=['GET'])
+@jwt_required()
+def properties():
+    current_user_id = get_jwt_identity()
+    return jsonify(logged_in_user_id=current_user_id), 200
 
 
 #listing properties
@@ -175,6 +124,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/api/properties', methods=['POST'])
+@jwt_required()
 def add_property():
    print("request.files", request.files)    
    print("request.form", request.form)  
@@ -191,6 +141,8 @@ def add_property():
    latitude = data.get('latitude')
    longitude = data.get('longitude')
    agreed_to_terms = data.get('agreedToTerms')
+   current_user = get_jwt_identity()
+   created_by=current_user["user_id"]
 
    files = request.files.values()
    print("files", files)
@@ -206,8 +158,8 @@ def add_property():
 
     # Insert property data into the properties table along with image paths
    cursor = connection.cursor()
-   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms)
+   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms,created_by) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)"
+   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms,created_by)
    cursor.execute(insert_query, property_data)
    connection.commit()
    cursor.close()
