@@ -1,254 +1,217 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  FaUserEdit,
+  FaUserCircle,
   FaEnvelope,
   FaPhone,
   FaEdit,
   FaTrashAlt,
-  FaStar,
-  FaHeart,
-  FaComments,
-  FaHistory,
+  FaUserEdit,
+  FaCog,
+  FaHome,
 } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
+import Link from "next/link";
+
+interface Listing {
+  id: number;
+  title: string;
+  address: string;
+  details: string;
+  latitude: number;
+  longitude: number;
+  images: string[];
+  views: number;
+  inquiries: number;
+}
 
 const ListerProfile = () => {
-   // User Data State
-   const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState({
     name: "John Doe",
     email: "johndoe@example.com",
     phone: "123-456-7890",
-    imageUrl: "https://images.unsplash.com/photo-1560264280-88e9c1c35330", // Sample user image from Unsplash
   });
 
-  // Sample Data States
-  const [listings, setListings] = useState([
-    {
-      id: 1,
-      title: "Beautiful Apartment",
-      imageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be", // Sample listing image from Unsplash
-      views: 120,
-      inquiries: 5,
-    },
-    // Add more sample listings with Unsplash images
-  ]);
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [isEditingListings, setIsEditingListings] = useState(false);
 
-  const [favorites, setFavorites] = useState([
-    {
-      id: 1,
-      title: "Cozy Cottage",
-      imageUrl: "https://images.unsplash.com/photo-1505691938895-1758d7feb511", // Sample favorite image from Unsplash
-      location: "Lake View",
-    },
-    {
-      id: 2,
-      title: "Modern Apartment",
-      imageUrl: "https://images.unsplash.com/photo-1494526585095-c41746248156", // Sample favorite image from Unsplash
-      location: "City Center",
-    },
-  ]);
+  const [listings, setListings] = useState<Listing[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sender: "Alice",
-      content: "Is the apartment still available?",
-      date: "2023-01-20",
-    },
-    {
-      id: 2,
-      sender: "Bob",
-      content: "Can I schedule a visit?",
-      date: "2023-01-22",
-    },
-  ]);
+  useEffect(() => {
+    // Replace with your actual API call
+    const fetchListings = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("/api/listings");
+        if (!response.ok) throw new Error("Failed to fetch listings");
+        const data = await response.json();
+        setListings(data);
+      } catch (err) {
+        if (err instanceof Error) setError(err.message);
+        else setError("An unexpected error occurred");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchListings();
+  }, []);
 
-  const [rentalHistory, setRentalHistory] = useState([
-    {
-      id: 1,
-      property: "Modern Condo",
-      date: "2023-01-15",
-      status: "Completed",
-    },
-    { id: 2, property: "Beach House", date: "2022-12-10", status: "Completed" },
-  ]);
-
-  const [reviews, setReviews] = useState([
-    {
-      id: 1,
-      reviewer: "Bob",
-      rating: 4,
-      comment: "Great experience!",
-      date: "2023-01-18",
-    },
-    {
-      id: 2,
-      reviewer: "Alice",
-      rating: 5,
-      comment: "Amazing host!",
-      date: "2023-01-15",
-    },
-  ]);
-
-  // Handler Functions (to be implemented)
-  const handleEditProfile = () => {
-    /* Implement Functionality */
+  const saveUserProfile = async (userData: { name: string; email: string; phone: string; }) => {
+    try {
+      const response = await fetch("/api/update-profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to save user profile");
+      }
+      // Handle success or any additional logic here
+    } catch (error) {
+      // Handle errors appropriately
+      console.error("Error saving user profile:", error);
+    }
   };
-  const handleEditListing = (listingId: number) => {
-    // Implement functionality using listingId
-    // Example: console.log(`Editing listing with ID: ${listingId}`);
+  
+
+  const handleEditProfile = () => {
+    if (isEditingProfile) {
+      // Save changes to the backend
+      saveUserProfile(userData); // Implement saveUserProfile function
+    }
+    setIsEditingProfile(!isEditingProfile);
   };
 
   const handleDeleteListing = (listingId: number) => {
-    // Implement functionality using listingId
-    // Example: console.log(`Deleting listing with ID: ${listingId}`);
+    // Implement Delete Listing Logic
   };
 
-  return(
+  const handleListingChange = (id: number, property: string, value: string) => {
+    // Implement change handling for listings
+    // Update the listings state with the modified data
+    const updatedListings = listings.map((listing) =>
+      listing.id === id ? { ...listing, [property]: value } : listing
+    );
+    setListings(updatedListings);
+  };
+
+
+  return (
     <AppLayout>
-  <div className="min-h-screen bg-red-50 font-sans">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Profile Header */}
-    <div className="bg-red-100 shadow-md p-6 flex items-center space-x-6 rounded-lg my-4">
-        <img
-          src={userData.imageUrl}
-          alt="Profile"
-          className="w-32 h-32 rounded-full border-4 border-red-300"
-        />
-        <div className="flex flex-col justify-center">
-          <h1 className="text-3xl font-semibold text-red-600">
-            {userData.name}
-          </h1>
-          <p className="flex items-center text-red-500 text-sm mt-2">
-            <FaEnvelope className="mr-2" />
-            {userData.email}
-          </p>
-          <p className="flex items-center text-red-500 text-sm">
-            <FaPhone className="mr-2" />
-            {userData.phone}
-          </p>
-        </div>
-        <button
-          onClick={handleEditProfile}
-          className="ml-auto bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded transition duration-200"
-        >
-          <FaUserEdit className="inline mr-2" /> Edit Profile
-        </button>
-      </div>
-
-      {/* Dashboard Menu */}
-      <div className="flex overflow-x-auto space-x-4 bg-white py-3 px-4">
-        <a href="/my-listings" className="text-blue-500 hover:underline">
-          My Listings
-        </a>
-        <a href="/favorites" className="text-blue-500 hover:underline">
-          Favorites
-        </a>
-        <a href="/messages" className="text-blue-500 hover:underline">
-          Messages
-        </a>
-        <a href="/settings" className="text-blue-500 hover:underline">
-          Account Settings
-        </a>
-      </div>
-
-      {/* My Listings Section */}
-      <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600">My Listings</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {listings.map((listing) => (
-            <div key={listing.id} className="border rounded-lg p-4 shadow-sm">
-              <img
-                src={listing.imageUrl}
-                alt={listing.title}
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="text-lg font-semibold mt-2">{listing.title}</h3>
-              <p>Views: {listing.views}</p>
-              <p>Inquiries: {listing.inquiries}</p>
-              <div className="flex mt-2">
-                <button
-                  onClick={() => handleEditListing(listing.id)}
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2"
-                >
-                  <FaEdit className="inline mr-2" /> Edit
-                </button>
-                <button
-                  onClick={() => handleDeleteListing(listing.id)}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
-                >
-                  <FaTrashAlt className="inline mr-2" /> Delete
-                </button>
-              </div>
+      <div className="lister-profile">
+        <div className="p-6 bg-red-600 rounded-lg flex items-center justify-between transform hover:scale-105 transition-transform">
+          <Link href="/properties/listing" className="menu-item">
+            <div className="dashboard-link flex items-center text-white">
+              <FaHome className="mr-2 text-2xl" /> My Listings
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Other sections */}
-
-      <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600">Favorites</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {favorites.map((favorite) => (
-            <div key={favorite.id} className="border rounded-lg p-4 shadow-sm">
-              <img
-                src={favorite.imageUrl}
-                alt={favorite.title}
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="text-lg font-semibold mt-2">{favorite.title}</h3>
-              <p>{favorite.location}</p>
+          </Link>
+          <Link href="/settings" className="menu-item">
+            <div className="dashboard-link flex items-center text-white">
+              <FaCog className="mr-2 text-2xl" /> Account Settings
             </div>
-          ))}
+          </Link>
         </div>
-      </div>
 
-      <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600">Messages</h2>
-        <div className="divide-y divide-gray-200">
-          {messages.map((message) => (
-            <div key={message.id} className="py-2">
-              <p className="font-semibold">{message.sender}</p>
-              <p>{message.content}</p>
-              <p className="text-sm text-gray-500">{message.date}</p>
-            </div>
-          ))}
+        <div className="profile-header">
+          <div className="profile-icon">
+            <FaUserCircle />
+          </div>
+          <div className="user-details">
+            {isEditingProfile ? (
+              // Editable fields for user profile
+              <>
+                <input
+                  type="text"
+                  value={userData.name}
+                  onChange={(e) =>
+                    setUserData({ ...userData, name: e.target.value })
+                  }
+                  className="edit-input"
+                />
+                <input
+                  type="text"
+                  value={userData.email}
+                  onChange={(e) =>
+                    setUserData({ ...userData, email: e.target.value })
+                  }
+                  className="edit-input"
+                />
+                <input
+                  type="text"
+                  value={userData.phone}
+                  onChange={(e) =>
+                    setUserData({ ...userData, phone: e.target.value })
+                  }
+                  className="edit-input"
+                />
+              </>
+            ) : (
+              // Display user profile
+              <>
+                <h1>{userData.name}</h1>
+                <p>
+                  <FaEnvelope /> {userData.email}
+                </p>
+                <p>
+                  <FaPhone /> {userData.phone}
+                </p>
+              </>
+            )}
+          </div>
+          <button onClick={handleEditProfile} className="edit-profile-button">
+            {isEditingProfile ? <FaUserEdit /> : "Edit Profile"}
+          </button>
         </div>
-      </div>
 
-      <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600">Rental History</h2>
-        <div className="divide-y divide-gray-200">
-          {rentalHistory.map((history) => (
-            <div key={history.id} className="py-2">
-              <p className="font-semibold">{history.property}</p>
-              <p>{history.date}</p>
-              <p>Status: {history.status}</p>
+        <div className="listings-section">
+          <h2>My Listings</h2>
+          {isLoading ? (
+            <p>Loading listings...</p>
+          ) : error ? (
+            <p className="error-message">{error}</p>
+          ) : (
+            <div className="listings-grid">
+              {listings.map((listing) => (
+                <div key={listing.id} className="listing-card">
+                  {isEditingListings ? (
+                    // Editable fields for listings
+                    <>
+                      <input
+                        type="text"
+                        value={listing.title}
+                        onChange={(e) =>
+                          handleListingChange(listing.id, "title", e.target.value)
+                        }
+                        className="edit-input"
+                      />
+                      {/* Add editable fields for other listing properties */}
+                    </>
+                  ) : (
+                    // Display listing details
+                    <>
+                      <h3>{listing.title}</h3>
+                      <p>Address: {listing.address}</p>
+                      {/* Display other listing details */}
+                    </>
+                  )}
+                  <div className="listing-actions">
+                    <button
+                      onClick={() => handleDeleteListing(listing.id)}
+                      className="delete-button"
+                    >
+                      <FaTrashAlt /> Delete
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </div>
-
-      <div className="bg-white p-4 mt-4 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600">
-          Reviews & Ratings
-        </h2>
-        <div className="divide-y divide-gray-200">
-          {reviews.map((review) => (
-            <div key={review.id} className="py-2">
-              <div className="flex items-center">
-                <FaStar className="text-yellow-500 mr-1" />
-                <span className="font-semibold">{review.reviewer}</span>
-              </div>
-              <p className="text-sm">{review.comment}</p>
-              <p className="text-sm text-gray-500">{review.date}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-    </div>
     </AppLayout>
   );
 };

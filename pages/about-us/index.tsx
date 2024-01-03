@@ -3,7 +3,7 @@ import Information from "./information";
 import Featuring from "./featuring";
 import Team from "./team";
 import Newsletter from "./newsLetter";
-import ListerForm from "../Forms/lister-form";
+import ListerForm from "../forms/lister-form";
 
 const AboutUs: React.FC = () => {
   return (
