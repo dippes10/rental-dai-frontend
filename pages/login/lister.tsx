@@ -29,6 +29,10 @@ function SignInBasic() {
       });
 
       if (response.ok) {
+        
+        const data = await response.json()
+        localStorage.setItem("access_token", data.access_token);
+
         setSuccessMessage('Sign-in successful as lister');
         setErrorMessage('');
         router.push("/profile/lister-profile");

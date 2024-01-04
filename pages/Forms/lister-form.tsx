@@ -84,11 +84,14 @@ const ListerForm: React.FC = () => {
     try {
       // You can send the formData to your server or handle it as needed
       // For demonstration, I'll just display a success message
+
+      const token = localStorage.getItem('access_token');
       const response = await fetch("http://localhost:8080/api/properties", {
         method: "POST",
-        // headers: {
-        //   "Content-Type": "multipart/form-data",
-        // },
+        headers: {
+          // "Content-Type": "multipart/form-data",
+          'Authorization': 'Bearer '+ token 
+        },
         body: formData,
       });
       if (response.ok) {

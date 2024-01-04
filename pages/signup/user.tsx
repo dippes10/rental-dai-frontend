@@ -23,7 +23,6 @@ const UserSignUp: React.FC = () => {
     user_type:"user",
   });
 
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));

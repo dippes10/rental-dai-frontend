@@ -27,6 +27,11 @@ function SignInBasic() {
       });
 
       if (response.ok) {
+
+        // Authentication locally saving access token
+        const data = await response.json()
+        localStorage.setItem("access_token", data.access_token);
+
         setSuccessMessage('Sign-in successful as user');
         setErrorMessage('');
         router.push("/properties/all");

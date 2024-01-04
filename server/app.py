@@ -167,5 +167,3 @@ def add_property():
    return jsonify({'message': 'Property added successfully'}), 200
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
-
-   
