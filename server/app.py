@@ -72,6 +72,8 @@ def signup():
             return jsonify({'message': 'Error during signup'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
+
+
 #userlogin
 
 @app.route('/user-Signin', methods=['POST'])

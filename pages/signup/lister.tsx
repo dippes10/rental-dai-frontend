@@ -10,6 +10,7 @@ interface FormData {
   email: string;
   password: string;
   confirmPassword: string;
+  user_type: string;
 }
 
 const UserSignUp: React.FC = () => {
@@ -19,6 +20,7 @@ const UserSignUp: React.FC = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    user_type: "lister",
   });
 
   
@@ -36,8 +38,9 @@ const UserSignUp: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({...formData, user_type: "lister"}), 
       });
+
   
       if (response.ok) {
         // Signup successful, perform further actions if needed

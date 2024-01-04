@@ -10,6 +10,7 @@ interface FormData {
   email: string;
   password: string;
   confirmPassword: string;
+  user_type:string;
 }
 
 const UserSignUp: React.FC = () => {
@@ -19,6 +20,7 @@ const UserSignUp: React.FC = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    user_type:"user",
   });
 
   
@@ -27,18 +29,18 @@ const UserSignUp: React.FC = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
   
-    const handleSubmit = async (event: React.FormEvent) => {
-      event.preventDefault();
-    
-      try {
-        const response = await fetch('http://localhost:8080/signup', {
-          method: 'POST',  
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+    try {
+      const response = await fetch('http://localhost:8080/signup', {
+        method: 'POST',  
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({...formData, user_type: "user"}), 
+      });
+
     
         if (response.ok) {
           // Signup successful, perform further actions if needed
