@@ -47,6 +47,7 @@ def signup():
             email = data.get('email')
             password = data.get('password')
             confirmPassword = data.get('confirmPassword')
+            user_type = data.get("user_type")
 
             # Validate data
             if not email or not password:
@@ -58,8 +59,8 @@ def signup():
 
             # Insert data into the database
             cursor = connection.cursor()
-            insert_query = "INSERT INTO users (firstName, lastName, email, password) VALUES (%s, %s, %s, %s)"
-            user_data = (firstName, lastName, email, password)
+            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type) VALUES (%s, %s, %s, %s,%s)"
+            user_data = (firstName, lastName, email, password,user_type)
             cursor.execute(insert_query, user_data)
             connection.commit()
             cursor.close()
