@@ -5,7 +5,7 @@ import {
   FaFacebook,
   FaTwitter,
   FaInstagram,
-  FaTiktok,
+
   FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
@@ -21,23 +21,19 @@ type SocialLink = {
 const SocialMediaLinks: SocialLink[] = [
   {
     link: "https://www.facebook.com/RentalDai",
-    icon: <FaFacebook />,
+    icon: <FaFacebook className="text-xl hover:text-blue-600" />,
   },
   {
     link: "https://twitter.com/RentalDai",
-    icon: <FaTwitter />,
+    icon: <FaTwitter className="text-xl hover:text-blue-300" />,
   },
   {
     link: "https://instagram.com/RentalDai",
-    icon: <FaInstagram />,
-  },
-  {
-    link: "https://tiktok.com/RentalDai",
-    icon: <FaTiktok />,
+    icon: <FaInstagram className="text-xl hover:text-pink-600" />,
   },
   {
     link: "https://linkedin.com/RentalDai",
-    icon: <FaLinkedin />,
+    icon: <FaLinkedin className="text-xl hover:text-blue-700" />,
   },
 ];
 
@@ -45,28 +41,36 @@ const Footer = () => {
   const { BottomFooterNav, FooterNav } = FooterConst;
 
   return (
-    <footer className="bg-neutral-100 text-black">
-      <div className="container mx-auto py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="self-start flex-shrink-0">
-            <Image
-              src="/favicon.png"
-              alt="Rental Dai Logo"
-              width={160}
-              height={40}
-            />
+    <footer className="bg-neutral-100 text-black pt-8 pb-6">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap justify-between items-center gap-8">
+          <div className="w-full lg:w-auto">
+            <Link
+              href="/"
+              passHref
+              className="flex items-center justify-center lg:justify-start"
+            >
+              <Image
+                src="/favicon.png"
+                alt="Rental Dai Logo"
+                width={160}
+                height={40}
+                className="h-20"
+              />
+            </Link>
           </div>
-          <div className="flex flex-col md:flex-row justify-around md:justify-start gap-4 md:gap-20 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-around gap-4 lg:gap-20 mt-4 lg:mt-0 w-full lg:w-auto">
             {FooterNav.map((item, i) => (
-              <div key={i} className="mb-4 md:mb-0">
-                <h6 className="mb-2 text-black font-semibold text-lg">
-                  {item.navTitle}
-                </h6>
-                <ul className="flex flex-col gap-y-2">
+              <div key={i} className="w-full md:w-auto">
+                <h6 className="mb-2 font-semibold text-lg">{item.navTitle}</h6>
+                <ul className="list-none mb-0">
                   {item.navItems.map((item, i) => (
                     <li key={i}>
-                      <Link href={item.navLink} className="transition-colors text-black hover:text-red-500">
-                          {item.navItem}
+                      <Link
+                        href={item.navLink}
+                        className="text-sm text-black hover:text-red-500 transition-colors"
+                      >
+                        {item.navItem}
                       </Link>
                     </li>
                   ))}
@@ -75,23 +79,25 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t border-black border-opacity-25 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-black mb-4 md:mb-0 text-center md:text-left">
-            {BottomFooterNav.copyright}
+        <div className="border-t border-gray-300 mt-8 pt-4">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="w-full lg:w-auto mb-4 lg:mb-0 text-center lg:text-left">
+              <p className="text-sm">{BottomFooterNav.copyright}</p>
+            </div>
+            <div className="flex gap-4 justify-center lg:justify-start">
+              {SocialMediaLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.link} // Changed from 'ref' to 'href'
+                  className="text-gray-900 hover:text-blue-500 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
-          <ul className="flex gap-x-4">
-            {SocialMediaLinks.map((link, index) => (
-              <li key={index} className="text-red-500 hover:text-blue-500">
-                {link.link ? (
-                  <Link href={link.link} passHref>
-                    {link.icon}
-                  </Link>
-                ) : (
-                  <>{link.icon}</>
-                )}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </footer>

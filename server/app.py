@@ -75,7 +75,6 @@ def signup():
 
 
 #userlogin
-
 @app.route('/user-Signin', methods=['POST'])
 def signin():
     if request.method == "POST":
@@ -103,7 +102,6 @@ def signin():
             return jsonify({'message': f'Error during signin: {e}'}), 500
 
     return jsonify({'message': 'Method not allowed'}), 405
-
 
 @app.route('/properties', methods=['GET'])
 @jwt_required()
