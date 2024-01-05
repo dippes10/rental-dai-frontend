@@ -68,7 +68,7 @@ const UserSignUp: React.FC = () => {
     <AppLayout>
     <section
       className="bg-cover bg-center min-h-screen py-8 bgLogin"
-      style={{ backgroundImage: "url('/your-background-image-for-users.jpg')" }}
+      style={{ backgroundImage: "url('/bg-signup.jpg')" }}
     >
       <div className="max-w-screen-lg mx-auto px-4">
         <div className="flex justify-center items-center">
@@ -105,10 +105,6 @@ const UserSignUp: React.FC = () => {
               </div>
             </form>
           </div>
-        </div>
-        <h3 className="text-2xl font-bold mt-6 mb-4 text-white">User Location</h3>
-        <div className="h-64 w-full py-6">
-          {/* User-specific location or map */}
         </div>
       </div>
     </section>

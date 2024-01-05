@@ -3,14 +3,17 @@ import {
   FaUserCircle,
   FaEnvelope,
   FaPhone,
-  FaEdit,
-  FaTrashAlt,
   FaUserEdit,
   FaCog,
   FaHome,
 } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
 import Link from "next/link";
+
+import CardLineChart from "../../components/Cards/CardBarChart";
+import CardBarChart from "../../components/Cards/CardBarChart";
+import CardPageVisits from "../../components/Cards/CardPageVisits";
+import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
 
 interface Listing {
   id: number;
@@ -57,7 +60,11 @@ const ListerProfile = () => {
     fetchListings();
   }, []);
 
-  const saveUserProfile = async (userData: { name: string; email: string; phone: string; }) => {
+  const saveUserProfile = async (userData: {
+    name: string;
+    email: string;
+    phone: string;
+  }) => {
     try {
       const response = await fetch("/api/update-profile", {
         method: "POST",
@@ -66,7 +73,7 @@ const ListerProfile = () => {
         },
         body: JSON.stringify(userData),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to save user profile");
       }
@@ -76,7 +83,6 @@ const ListerProfile = () => {
       console.error("Error saving user profile:", error);
     }
   };
-  
 
   const handleEditProfile = () => {
     if (isEditingProfile) {
@@ -84,10 +90,6 @@ const ListerProfile = () => {
       saveUserProfile(userData); // Implement saveUserProfile function
     }
     setIsEditingProfile(!isEditingProfile);
-  };
-
-  const handleDeleteListing = (listingId: number) => {
-    // Implement Delete Listing Logic
   };
 
   const handleListingChange = (id: number, property: string, value: string) => {
@@ -98,7 +100,6 @@ const ListerProfile = () => {
     );
     setListings(updatedListings);
   };
-
 
   return (
     <AppLayout>
@@ -167,6 +168,11 @@ const ListerProfile = () => {
           </button>
         </div>
 
+        <div className="analytics-section">
+        <h2 className="text-xl font-semibold mb-4">Listing Analytics</h2>
+        <CardBarChart />
+      </div>
+
         <div className="listings-section">
           <h2>My Listings</h2>
           {isLoading ? (
@@ -184,7 +190,11 @@ const ListerProfile = () => {
                         type="text"
                         value={listing.title}
                         onChange={(e) =>
-                          handleListingChange(listing.id, "title", e.target.value)
+                          handleListingChange(
+                            listing.id,
+                            "title",
+                            e.target.value
+                          )
                         }
                         className="edit-input"
                       />
@@ -198,14 +208,6 @@ const ListerProfile = () => {
                       {/* Display other listing details */}
                     </>
                   )}
-                  <div className="listing-actions">
-                    <button
-                      onClick={() => handleDeleteListing(listing.id)}
-                      className="delete-button"
-                    >
-                      <FaTrashAlt /> Delete
-                    </button>
-                  </div>
                 </div>
               ))}
             </div>
