@@ -9,6 +9,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUsers, faLock } from '@fortawesome/free-solid-svg-icons';
 import AppLayout from "../../components/AppLayout";
+import { FaUser, FaLock, FaFastForward, FaTree } from "react-icons/fa";
 
 // Use like this in your component
 <FontAwesomeIcon icon={faHome} />
@@ -55,7 +56,7 @@ const AboutUs: React.FC = () => {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
         <div className="px-4 py-5 flex-auto">
           <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
-            <i className="fas fa-home"></i>
+            <FaUser className="fas FaUser"></FaUser>
           </div>
           <h6 className="text-xl font-semibold">Wide Range of Listings</h6>
           <p className="mt-2 mb-4 text-blueGray-500">
@@ -70,7 +71,7 @@ const AboutUs: React.FC = () => {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
         <div className="px-4 py-5 flex-auto">
           <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-            <i className="fas fa-users"></i>
+            <FaLock className="fas"></FaLock>
           </div>
           <h6 className="text-xl font-semibold">Trusted by Tenants</h6>
           <p className="mt-2 mb-4 text-blueGray-500">
@@ -85,7 +86,7 @@ const AboutUs: React.FC = () => {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
         <div className="px-4 py-5 flex-auto">
           <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-yellow-400">
-            <i className="fas fa-lock"></i>
+            <FaFastForward className="fas "></FaFastForward>
           </div>
           <h6 className="text-xl font-semibold">Secure and Easy Transactions</h6>
           <p className="mt-2 mb-4 text-blueGray-500">
@@ -150,7 +151,7 @@ const AboutUs: React.FC = () => {
           <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
             <div className="md:pr-12">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
-                <i className="fas fa-rocket text-xl"></i>
+                <FaTree className="fas fa-rocket text-xl text-green-600"></FaTree>
               </div>
               <h3 className="text-3xl font-semibold">A growing company</h3>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
