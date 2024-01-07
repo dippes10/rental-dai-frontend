@@ -319,3 +319,15 @@ border-color: rgb(238, 80, 80);
 }
 
 /* Add any additional styles as needed */
+
+.button-icon {
+  width: 2rem;
+  height: 2rem;
+  // border-radius: 50%;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-right: 1rem;
+  // margin-bottom: 1rem;
+}
