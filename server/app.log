@@ -1135,3 +1135,13 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-04 11:32:08,376 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2024-01-04 11:32:09,400 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
 2024-01-04 11:32:09,452 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-06 09:55:22,122 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-06 09:55:22,123 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-06 09:55:22,125 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-06 09:55:22,764 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-06 09:55:22,771 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-06 10:01:02,701 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [06/Jan/2024 10:01:02] "OPTIONS /signup HTTP/1.1" 200 -
+2024-01-06 10:01:02,958 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [06/Jan/2024 10:01:02] "POST /signup HTTP/1.1" 200 -
+2024-01-06 10:01:10,129 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [06/Jan/2024 10:01:10] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-06 10:01:10,445 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [06/Jan/2024 10:01:10] "POST /user-Signin HTTP/1.1" 200 -
