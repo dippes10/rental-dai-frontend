@@ -9,11 +9,14 @@ import {
 } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
 import Link from "next/link";
+import ListerForm from "../../pages/Forms/lister-form";
 
 import CardLineChart from "../../components/Cards/CardBarChart";
 import CardBarChart from "../../components/Cards/CardBarChart";
 import CardPageVisits from "../../components/Cards/CardPageVisits";
 import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
+import router from "next/router";
+import Button from "../../components/Button";
 
 interface Listing {
   id: number;
@@ -26,6 +29,11 @@ interface Listing {
   views: number;
   inquiries: number;
 }
+
+const handleButtonClick = () => {
+  router.push("/Forms/lister-form");
+  
+};
 
 const ListerProfile = () => {
   const [userData, setUserData] = useState({
@@ -169,9 +177,8 @@ const ListerProfile = () => {
         </div>
 
         <div className="analytics-section">
-        <h2 className="text-xl font-semibold mb-4">Listing Analytics</h2>
-        <CardBarChart />
-      </div>
+          <h2 className="text-xl font-semibold mb-4">Listing Analytics</h2>
+        </div>
 
         <div className="listings-section">
           <h2>My Listings</h2>
@@ -212,6 +219,11 @@ const ListerProfile = () => {
               ))}
             </div>
           )}
+          <Button 
+            type="outline"
+            title="Add Listing"
+            onClick={handleButtonClick}
+          />
         </div>
       </div>
     </AppLayout>
@@ -219,3 +231,8 @@ const ListerProfile = () => {
 };
 
 export default ListerProfile;
+
+
+// function setShowMenu(arg0: boolean) {
+//   throw new Error("Function not implemented.");
+// }

@@ -3,6 +3,7 @@ from flask_cors import CORS
 import mysql.connector
 import logging
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+import math
 
 app = Flask(__name__)
 CORS(app)
@@ -165,5 +166,58 @@ def add_property():
    connection.commit()
    cursor.close()
    return jsonify({'message': 'Property added successfully'}), 200
+
+# Haversine formula to calculate distance between two points
+def haversine(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of the Earth in kilometers
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = math.sin(dlat / 2) ** 2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2) ** 2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    distance = R * c
+    return distance
+@app.route('/recommend_properties', methods=['POST'])
+def recommend_properties():
+    # Get user's location data from request
+    user_latitude = request.json.get('latitude')
+    user_longitude = request.json.get('longitude')
+    radius_in_km = 4 # Radius to search within (adjust as needed)
+
+    # Execute Haversine query to find nearby properties
+
+    cursor = connection.cursor()  
+    query = "SELECT * FROM propertieslist;"
+    cursor.execute(query)
+    
+    columns = [col[0] for col in cursor.description]
+    print(columns)
+
+    # Convert fetched data into a list of dictionaries
+    properties = [
+        dict(zip(columns, row)) # Create dictionary for each row
+        for row in cursor.fetchall()
+    ]
+    print(properties)
+
+
+
+    # Calculate distance for each property and add it to property details
+    for prop in properties:
+     prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
+     print(prop["distance"])
+    
+
+    # Filter properties within the radius and sort by distance
+    nearby_properties = [
+    {'property_details': prop, 'distance': prop['distance']}  # Structure the response
+    for prop in properties
+    if prop['distance'] <= radius_in_km
+    ]
+    nearby_properties.sort(key=lambda x: x['distance'])
+
+    cursor.close()
+
+    return jsonify(nearby_properties)
+
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
