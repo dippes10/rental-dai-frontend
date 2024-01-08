@@ -7,7 +7,24 @@ import Newsletter from "./newsLetter";
 import Link from "next/link";
 
 import AppLayout from "../../components/AppLayout";
-import { FaUser, FaLock, FaFastForward, FaTree, FaMedal, FaPoll, FaLightbulb, FaGoogle, FaTwitter, FaInstagram, FaDribbble, FaFingerprint, FaHtml5, FaPaperPlane, FaRocket, FaFacebook } from "react-icons/fa";
+import {
+  FaUser,
+  FaLock,
+  FaFastForward,
+  FaTree,
+  FaMedal,
+  FaPoll,
+  FaLightbulb,
+  FaGoogle,
+  FaTwitter,
+  FaInstagram,
+  FaDribbble,
+  FaFingerprint,
+  FaHtml5,
+  FaPaperPlane,
+  FaRocket,
+  FaFacebook,
+} from "react-icons/fa";
 
 const AboutUs: React.FC = () => {
   return (
@@ -209,7 +226,7 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/img/team-1-800x800.jpg"
+                  src="/sirak-shrestha.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
@@ -244,11 +261,11 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/img/team-2-800x800.jpg"
+                  src="/jwalan-chand.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Romina Hadid</h5>
+                  <h5 className="text-xl font-bold">Jwalan Chand</h5>
                   <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                     Marketing Specialist
                   </p>
@@ -273,11 +290,11 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/img/team-3-800x800.jpg"
+                  src="/dipesh-sanjel.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Alexa Smith</h5>
+                  <h5 className="text-xl font-bold">Dipesh Sanjel</h5>
                   <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                     UI/UX Designer
                   </p>
@@ -304,7 +321,7 @@ const AboutUs: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+            {/* <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
               <div className="px-6">
                 <img
                   alt="..."
@@ -344,7 +361,7 @@ const AboutUs: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
