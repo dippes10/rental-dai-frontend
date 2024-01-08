@@ -1389,3 +1389,5 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-08 15:06:37,871 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [08/Jan/2024 15:06:37] "POST /recommend_properties HTTP/1.1" 200 -
 2024-01-08 15:20:31,584 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
 2024-01-08 15:20:31,697 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-08 15:20:33,319 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-08 15:20:33,330 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428

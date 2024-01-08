@@ -204,7 +204,7 @@ def recommend_properties():
     # Calculate distance for each property and add it to property details
     for prop in properties:
      prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
-     print(prop["distance"])
+     
     
 
     # Filter properties within the radius and sort by distance
