@@ -167,6 +167,79 @@ def add_property():
    cursor.close()
    return jsonify({'message': 'Property added successfully'}), 200
 
+#edit property
+from flask import jsonify
+
+@app.route('/api/properties/<property_id>', methods=['PUT'])
+@jwt_required()
+def update_property(property_id):
+    # Retrieve existing property details from the database
+    cursor = connection.cursor()
+    select_query = "SELECT * FROM propertieslist WHERE id=%s"
+    cursor.execute(select_query, (property_id,))
+    existing_property = cursor.fetchone()
+
+    if not existing_property:
+        cursor.close()
+        return jsonify({'message': 'Property not found'}), 404
+
+    # Retrieve updated property details from the request JSON
+    data = request.form
+
+    # Use existing values as default
+    updated_name = data.get('name', existing_property[1])
+    updated_address = data.get('address', existing_property[2])
+    updated_details = data.get('details', existing_property[4])
+    updated_latitude = data.get('latitude', existing_property[5])
+    updated_longitude = data.get('longitude', existing_property[6])
+    updated_agreed_to_terms = data.get('agreedToTerms', existing_property[7])
+
+    # Retrieve new images from the request
+    new_images = request.files.getlist('images')
+
+    # Concatenate existing images with new ones
+    existing_images = existing_property[3].split(',') if existing_property[3] else []
+    updated_images = existing_images.copy()  # Initialize with existing images
+    for file in new_images:
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            updated_images.append(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        else:
+            cursor.close()
+            return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
+
+    # Perform the update in the database
+    update_query = "UPDATE propertieslist SET name=%s, address=%s, image=%s, details=%s, latitude=%s, longitude=%s, agreedToTerms=%s WHERE id=%s"
+    cursor.execute(update_query, (updated_name, updated_address, ','.join(updated_images), updated_details, updated_latitude, updated_longitude, updated_agreed_to_terms, property_id))
+    connection.commit()
+    cursor.close()
+
+    return jsonify({'message': 'Property updated successfully'}), 200
+from flask import jsonify
+
+@app.route('/api/properties/<property_id>', methods=['DELETE'])
+@jwt_required
+def delete_property(property_id):
+    # Check if the property exists in the database
+    cursor = connection.cursor()
+    select_query = "SELECT * FROM propertieslist WHERE id=%s"
+    cursor.execute(select_query, (property_id,))
+    existing_property = cursor.fetchone()
+
+    if not existing_property:
+        cursor.close()
+        return jsonify({'message': 'Property not found'}), 404
+
+    # Perform deletion from the database
+    delete_query = "DELETE FROM propertieslist WHERE id=%s"
+    cursor.execute(delete_query, (property_id,))
+    connection.commit()
+    cursor.close()
+
+    return jsonify({'message': 'Property deleted successfully'}), 200
+
+
 # Haversine formula to calculate distance between two points
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371  # Radius of the Earth in kilometers
@@ -190,22 +263,18 @@ def recommend_properties():
     cursor.execute(query)
     
     columns = [col[0] for col in cursor.description]
-    print(columns)
+    
 
     # Convert fetched data into a list of dictionaries
     properties = [
         dict(zip(columns, row)) # Create dictionary for each row
         for row in cursor.fetchall()
     ]
-    print(properties)
-
-
+    
 
     # Calculate distance for each property and add it to property details
     for prop in properties:
      prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
-     
-    
 
     # Filter properties within the radius and sort by distance
     nearby_properties = [
@@ -218,6 +287,33 @@ def recommend_properties():
     cursor.close()
 
     return jsonify(nearby_properties)
+
+
+#listerko property details 
+@app.route('/lister_properties', methods=['GET'])
+@jwt_required()
+def lister_properties():
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')  # Assuming 'user_id' is the key for the user ID in the dictionary
+
+
+    # Fetch properties listed by the current user (based on created_by field)
+    cursor = connection.cursor()  
+    query = "SELECT * FROM propertieslist WHERE created_by = %s;"
+    cursor.execute(query, (user_id,))
+    
+    columns = [col[0] for col in cursor.description]
+    
+    # Convert fetched data into a list of dictionaries
+    properties = [
+        dict(zip(columns, row))  # Create dictionary for each row
+        for row in cursor.fetchall()
+    ]
+
+    cursor.close()
+
+    return jsonify(properties)
+
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)

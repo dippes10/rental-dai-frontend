@@ -48,25 +48,28 @@ const ListerProfile = () => {
   const [listings, setListings] = useState<Listing[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  
 
-  useEffect(() => {
-    // Replace with your actual API call
-    const fetchListings = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch("/api/listings");
-        if (!response.ok) throw new Error("Failed to fetch listings");
-        const data = await response.json();
-        setListings(data);
-      } catch (err) {
-        if (err instanceof Error) setError(err.message);
-        else setError("An unexpected error occurred");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchListings();
-  }, []);
+  const fetchListings = async () => {
+    setIsLoading(true);
+    try {
+      // const token = 
+      const response = await fetch("http://localhost:8080/lister_properties", {
+        headers: {
+          // Authorization: `Bearer ${token}`,
+        },
+      });
+      if (!response.ok) throw new Error("Failed to fetch listings");
+      const data = await response.json();
+      setListings(data);
+    } catch (err) {
+      if (err instanceof Error) setError(err.message);
+      else setError("An unexpected error occurred");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
 
   const saveUserProfile = async (userData: {
     name: string;

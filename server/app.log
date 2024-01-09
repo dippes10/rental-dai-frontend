@@ -1391,3 +1391,107 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-08 15:20:31,697 INFO werkzeug MainThread :  * Restarting with stat
 2024-01-08 15:20:33,319 WARNING werkzeug MainThread :  * Debugger is active!
 2024-01-08 15:20:33,330 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 10:14:40,519 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-09 10:14:40,520 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-09 10:14:40,525 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 10:14:41,208 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 10:14:41,219 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 10:15:46,471 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 10:15:46] "POST /recommend_properties HTTP/1.1" 200 -
+2024-01-09 10:20:28,327 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 10:20:28] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-09 10:20:28,595 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 10:20:28] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-09 10:21:22,911 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 10:21:22] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-09 10:21:23,239 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 10:21:23] "POST /api/properties HTTP/1.1" 200 -
+2024-01-09 19:45:54,809 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-09 19:45:54,809 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-09 19:45:54,812 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 19:45:55,273 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 19:45:55,278 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 19:48:20,897 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 19:48:20,941 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 19:48:21,492 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 19:48:21,499 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 19:48:41,382 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 19:48:41] "GET /api/properties/1 HTTP/1.1" 200 -
+2024-01-09 19:49:16,618 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 19:49:16] "GET /api/properties/11 HTTP/1.1" 200 -
+2024-01-09 19:56:19,589 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 19:56:19,643 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 19:56:20,201 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 19:56:20,206 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 19:56:46,192 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 19:56:46] "[31m[1mPUT /api/properties/11 HTTP/1.1[0m" 401 -
+2024-01-09 19:56:58,371 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 19:56:58,443 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 19:56:59,003 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 19:56:59,009 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 19:57:00,529 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 19:57:00] "PUT /api/properties/11 HTTP/1.1" 200 -
+2024-01-09 19:57:19,048 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 19:57:19] "PUT /api/properties/11 HTTP/1.1" 200 -
+2024-01-09 20:03:32,134 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:03:32] "PUT /api/properties/11 HTTP/1.1" 200 -
+2024-01-09 20:04:40,094 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:04:40,151 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:07:39,482 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-09 20:07:39,484 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-09 20:07:39,489 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:07:40,928 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:07:40,942 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:07:43,784 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:07:43] "DELETE /api/properties/11 HTTP/1.1" 200 -
+2024-01-09 20:23:36,350 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:23:36] "GET /api/properties HTTP/1.1" 200 -
+2024-01-09 20:24:25,229 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:24:25] "GET /api/properties HTTP/1.1" 200 -
+2024-01-09 20:26:05,443 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:26:05] "GET /api/properties HTTP/1.1" 200 -
+2024-01-09 20:26:42,760 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:26:42] "GET /api/properties HTTP/1.1" 200 -
+2024-01-09 20:31:13,626 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:31:13,756 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:31:14,970 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:31:14,988 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:31:19,069 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:31:19,227 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:31:20,360 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:31:20,372 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:31:24,427 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:31:24,555 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:31:26,177 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:31:26,190 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:31:34,274 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:31:34,359 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:31:35,516 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:31:35,523 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:31:37,557 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:31:37,700 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:40:00,765 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-09 20:40:00,766 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-09 20:40:00,770 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:40:01,816 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:40:01,830 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:40:05,371 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:40:05] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-09 20:40:36,500 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:40:36] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-09 20:41:04,258 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:41:04] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-09 20:44:06,247 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:44:06] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-09 20:47:02,454 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:47:02] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-09 20:47:47,720 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:47:47] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-09 20:52:31,908 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 20:52:31,994 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:53:02,667 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-09 20:53:02,667 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-09 20:53:02,669 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 20:53:03,162 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 20:53:03,168 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 20:53:08,625 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 20:53:08] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-09 21:00:03,962 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 21:00:04,046 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 21:00:04,657 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 21:00:04,664 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 21:00:41,805 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-09 21:00:41,863 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-09 21:00:42,446 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-09 21:00:42,452 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-09 21:00:48,923 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:00:48] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-09 21:01:48,901 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:01:48] "GET /api/properties HTTP/1.1" 200 -
+2024-01-09 21:01:52,969 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:01:52] "[33mGET / HTTP/1.1[0m" 404 -
+2024-01-09 21:02:17,056 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:02:17] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-09 21:02:36,355 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:02:36] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-09 21:02:53,534 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:02:53] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-09 21:02:53,801 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:02:53] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-09 21:02:53,841 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:02:53] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-09 21:04:01,355 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [09/Jan/2024 21:04:01] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
