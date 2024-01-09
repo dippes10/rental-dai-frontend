@@ -34,7 +34,7 @@ const rentalDaiMessage = {
 
 const Description: React.FC = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="bg-gray-100 mb-8">
       <div className="container-custom py-10 flex gap-10 md:gap-2 flex-wrap md:flex-nowrap items-center justify-between text-justify">
         <div className="md:w-4/5 mr-6" data-aos="fade-right">
           <h3 className="max-w-[500px] mb-5">{rentalDaiMessage.title}</h3>

@@ -1,11 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import Information from "./information";
-import Featuring from "./featuring";
-import Team from "./team";
-import Newsletter from "./newsLetter";
 import Link from "next/link";
-
 import AppLayout from "../../components/AppLayout";
 import {
   FaUser,
@@ -213,7 +208,9 @@ const AboutUs: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center text-center mb-24">
             <div className="w-full lg:w-6/12 px-4">
-              <h2 className="text-4xl font-semibold">Here are our heroes</h2>
+              <h2 className="text-4xl font-semibold text-red-500">
+                Here are our heroes
+              </h2>
               <p className="text-lg leading-relaxed m-4 text-blueGray-500">
                 According to the National Oceanic and Atmospheric
                 Administration, Ted, Scambos, NSIDClead scentist, puts the
@@ -234,25 +231,34 @@ const AboutUs: React.FC = () => {
                   <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                     UI/Ux Designer
                   </p>
-                  <div className="mt-6">
-                    <button
-                      className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1 display-flex"
-                      type="button"
-                    >
-                      <FaTwitter className="fab"></FaTwitter>
-                    </button>
-                    <button
-                      className="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaFacebook className="fab "></FaFacebook>
-                    </button>
-                    <button
-                      className=" text-center bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaDribbble className="fab"></FaDribbble>
-                    </button>
+
+                  <div className="mt-6 grid-flow-row gap-y-4">
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
+                        type="button"
+                      >
+                        <FaFacebook className="fab "></FaFacebook>
+                      </button>
+                    </a>
+
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className=" text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-yellow-300"
+                        type="button"
+                      >
+                        <FaDribbble className="fab"></FaDribbble>
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -270,14 +276,16 @@ const AboutUs: React.FC = () => {
                     Marketing Specialist
                   </p>
                   <div className="mt-6">
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 mx-2 text-center inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
+                        type="button"
+                      >
+                        <FaGoogle className="fab"></FaGoogle>
+                      </button>
+                    </a>
                     <button
-                      className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaGoogle className="fab"></FaGoogle>
-                    </button>
-                    <button
-                      className="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                      className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
                       type="button"
                     >
                       <FaFacebook className="fab"></FaFacebook>
@@ -298,25 +306,33 @@ const AboutUs: React.FC = () => {
                   <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                     UI/UX Designer
                   </p>
-                  <div className="mt-6">
-                    <button
-                      className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaGoogle className="fab"></FaGoogle>
-                    </button>
-                    <button
-                      className="bg-blue-300 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaTwitter className="fab"></FaTwitter>
-                    </button>
-                    <button
-                      className="bg-red-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaInstagram className="fab"></FaInstagram>
-                    </button>
+                  <div className="mt-6 mx-2">
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
+                        type="button"
+                      >
+                        <FaGoogle className="fab"></FaGoogle>
+                      </button>
+                    </a>
+
+                    <a href="https://www.twitter.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex hover:shadow-lg duration-150 items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                      <button
+                        className="text-yellow-200 p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-pink-700"
+                        type="button"
+                      >
+                        <FaInstagram className="fab"></FaInstagram>
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -402,7 +418,7 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="flex flex-wrap mt-12 justify-center">
             <div className="w-full lg:w-3/12 px-4 text-center">
-              <div className="text-yellow-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <div className="text-yellow-600 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                 <FaMedal className="fas text-xl"></FaMedal>
               </div>
               <h6 className="text-xl mt-5 font-semibold text-white">
@@ -414,7 +430,7 @@ const AboutUs: React.FC = () => {
               </p>
             </div>
             <div className="w-full lg:w-3/12 px-4 text-center">
-              <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <div className="text-green-600 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                 <FaPoll className="fas text-xl"></FaPoll>
               </div>
               <h5 className="text-xl mt-5 font-semibold text-white">
@@ -426,7 +442,7 @@ const AboutUs: React.FC = () => {
               </p>
             </div>
             <div className="w-full lg:w-3/12 px-4 text-center">
-              <div className="text-blueGray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+              <div className="text-red-600 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
                 <FaLightbulb className="fas text-xl"></FaLightbulb>
               </div>
               <h5 className="text-xl mt-5 font-semibold text-white">

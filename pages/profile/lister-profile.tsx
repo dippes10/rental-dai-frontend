@@ -37,9 +37,9 @@ const handleButtonClick = () => {
 
 const ListerProfile = () => {
   const [userData, setUserData] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    phone: "123-456-7890",
+    name: "SJ don",
+    email: "sj4321@gmail.com",
+    phone: "9854110021",
   });
 
   const [isEditingProfile, setIsEditingProfile] = useState(false);
