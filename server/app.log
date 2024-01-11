@@ -1853,3 +1853,33 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-12 00:58:44,621 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:58:44] "[33mGET /uploads/13.PNG HTTP/1.1[0m" 404 -
 2024-01-12 00:59:06,821 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
 2024-01-12 00:59:06,966 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 01:01:30,655 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-12 01:01:30,655 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-12 01:01:30,658 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 01:01:31,166 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 01:01:31,171 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 01:01:31,253 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:01:31] "GET /uploads/13.PNG HTTP/1.1" 200 -
+2024-01-12 01:01:39,817 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:01:39] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 01:01:39,833 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:01:39] "GET /uploads/1.PNG HTTP/1.1" 200 -
+2024-01-12 01:01:39,834 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:01:39] "GET /uploads/13.PNG HTTP/1.1" 200 -
+2024-01-12 01:01:39,835 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:01:39] "GET /uploads/2e.PNG HTTP/1.1" 200 -
+2024-01-12 01:02:54,474 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:02:54] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 01:02:54,490 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:02:54] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:02:54,491 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:02:54] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:02:54,492 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:02:54] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:03:29,798 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:03:29] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 01:03:29,853 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:03:29] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:03:29,854 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:03:29] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:03:29,856 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:03:29] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:04:27,900 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:04:27] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 01:04:28,165 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:04:28] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 01:04:28,530 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:04:28] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 01:04:28,853 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:04:28] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 01:05:07,102 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:07] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-12 01:05:07,464 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:07] "POST /api/properties HTTP/1.1" 200 -
+2024-01-12 01:05:14,898 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 01:05:14,914 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:05:14,919 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:05:14,920 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 01:05:14,925 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "GET /uploads/s.PNG HTTP/1.1" 200 -
