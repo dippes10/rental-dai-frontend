@@ -5,7 +5,8 @@ import logging
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import math
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static',static_folder='static')
+
 CORS(app)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 app.config['JWT_SECRET_KEY'] = 'thisissecret'  # Replace with a complex secret key
@@ -115,7 +116,7 @@ def properties():
 import os
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = r'C:\Users\PC\Desktop\rental-dai-frontend\static\uploads'
+UPLOAD_FOLDER = r'C:\Users\PC\Desktop\rental-dai-frontend\server\static\uploads'
 app.secret_key = "cairocoders-ednalan"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -153,7 +154,8 @@ def add_property():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            image_paths.append(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            relative_path = os.path.join('uploads', filename)
+            image_paths.append(relative_path)
         else:
             flash('Allowed image types are -> png, jpg, jpeg, gif')
             return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
@@ -168,7 +170,7 @@ def add_property():
    return jsonify({'message': 'Property added successfully'}), 200
 
 #edit property
-from flask import jsonify
+
 
 @app.route('/api/properties/<property_id>', methods=['PUT'])
 @jwt_required()
@@ -216,7 +218,6 @@ def update_property(property_id):
     cursor.close()
 
     return jsonify({'message': 'Property updated successfully'}), 200
-from flask import jsonify
 
 @app.route('/api/properties/<property_id>', methods=['DELETE'])
 @jwt_required
@@ -313,6 +314,7 @@ def lister_properties():
     cursor.close()
 
     return jsonify(properties)
+
 
 
 if __name__ == '__main__':

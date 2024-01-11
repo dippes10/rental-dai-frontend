@@ -53,10 +53,10 @@ const ListerProfile = () => {
   const fetchListings = async () => {
     setIsLoading(true);
     try {
-      // const token = 
+      const token = localStorage.getItem('access_token');
       const response = await fetch("http://localhost:8080/lister_properties", {
         headers: {
-          // Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
       if (!response.ok) throw new Error("Failed to fetch listings");
@@ -69,6 +69,9 @@ const ListerProfile = () => {
       setIsLoading(false);
     }
   };
+  useEffect(()=>{
+    fetchListings()
+  },[]) 
   
 
   const saveUserProfile = async (userData: {

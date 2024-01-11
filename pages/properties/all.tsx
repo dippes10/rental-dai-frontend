@@ -58,20 +58,22 @@ const PropertiesPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // To use fake data uncomment below commented code
-    setProperties(fakeProperties);
-    setFilteredProperties(fakeProperties);
-    setIsLoading(false);
+    // // To use fake data uncomment below commented code
+    // setProperties(fakeProperties);
+    // setFilteredProperties(fakeProperties);
+    // setIsLoading(false);
     // Uncomment the following code when using actual API
 
-    // fetch("http://localhost:8080/api/properties")
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     if (data.properties) {
-    //       setProperties(data.properties);
-    //     }
-    //   })
-    //   .catch(error => console.error('Error fetching properties:', error));
+    fetch("http://localhost:8080/api/properties")
+      .then(response => response.json())
+      .then(data => {
+        if (data.properties) {
+          setProperties(data.properties);
+          setFilteredProperties(data.properties);
+        }
+      })
+      .catch(error => console.error('Error fetching properties:', error))
+      .finally(() => setIsLoading(false));
   }, []);
 
   const handleFilter = (filterTerm: string) => {
@@ -97,6 +99,7 @@ const PropertiesPage: React.FC = () => {
     setIsMapModalOpen(false);
     setSelectedProperty(null);
   };
+  console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
 
   return (
     <AppLayout>
@@ -138,13 +141,22 @@ const PropertiesPage: React.FC = () => {
                     {/* Property Card */}
                     <div className="bg-red-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                       {/* Property Image */}
+                      {property.image && property.image.split(",").map((imagePath: string, index: number) => (
+                        
                       <img
-                        src={property.imageUrl}
-                        alt={`Property: ${property.name}`}
+                      key={index}
+                      
+                       src={"http://127.0.0.1:8080/"+imagePath.trim()}
+                       
+                       alt={`Image ${index}`}
                         width={0}
                         height={0}
                         className="w-full h-52 object-cover rounded-md mb-4"
+                        
                       />
+                      ))}
+                     
+
 
                       {/* Property Details */}
                       <div className="mb-4">

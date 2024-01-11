@@ -8,3 +8,4 @@ module.exports = {
       domains: ['images.unsplash.com', 'i.ibb.co'],
     },
   };
+  require('dotenv').config();
