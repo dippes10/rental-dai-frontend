@@ -201,8 +201,8 @@ const PropertiesPage: React.FC = () => {
                   disableMove={false}
                   showNavigationControl={true}
                   showMarker={true}
-                  latitude={selectedProperty.location.latitude}
-                  longitude={selectedProperty.location.longitude}
+                  latitude={selectedProperty.latitude}
+                  longitude={selectedProperty.longitude}
                   zoom={13}
                   height="400px"
                   properties={[selectedProperty]}

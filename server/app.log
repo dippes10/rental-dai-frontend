@@ -1832,3 +1832,24 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-12 00:50:02,763 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2024-01-12 00:50:11,855 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
 2024-01-12 00:50:11,955 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 00:54:23,330 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-12 00:54:23,331 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-12 00:54:23,337 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 00:54:24,534 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 00:54:24,545 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 00:55:58,217 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:55:58] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 00:55:58,247 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:55:58] "[33mGET /uploads/13.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:55:58,251 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:55:58] "[33mGET /uploads/1.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:55:58,257 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:55:58] "[33mGET /uploads/2e.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:05,782 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:05] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 00:56:05,948 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:05] "[33mGET /uploads/13.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:05,951 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:05] "[33mGET /uploads/1.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:05,954 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:05] "[33mGET /uploads/2e.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:40,794 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:40] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 00:56:40,991 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:40] "[33mGET /uploads/13.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:40,995 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:40] "[33mGET /uploads/1.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:56:41,000 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:56:41] "[33mGET /uploads/2e.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:58:44,621 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 00:58:44] "[33mGET /uploads/13.PNG HTTP/1.1[0m" 404 -
+2024-01-12 00:59:06,821 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 00:59:06,966 INFO werkzeug MainThread :  * Restarting with stat

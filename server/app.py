@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify,flash
+from flask import Flask, request, jsonify,flash, url_for,send_from_directory
 from flask_cors import CORS
 import mysql.connector
 import logging
@@ -315,7 +315,15 @@ def lister_properties():
 
     return jsonify(properties)
 
+@app.route('/')
+def index():
+  image_url = url_for('static', filename='1.png')
+  print("Generated URL:", image_url)
+  return f'<img src="{image_url}" alt="Image">'
 
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(r'C:\Users\PC\Desktop\rental-dai-frontend\server\static\uploads', filename)
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
