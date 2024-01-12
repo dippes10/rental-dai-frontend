@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  FaUserCircle,
-  FaEnvelope,
-  FaPhone,
-  FaUserEdit,
-  FaCog,
-  FaHome,
-} from "react-icons/fa";
+import { FaUserCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaHome, FaInfo } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
-import Link from "next/link";
-import router from "next/router";
-import Button from "../../components/Button";
+import MapboxComponent from "../../components/mapbox/mapbox";
 
 interface Listing {
   id: number;
@@ -20,219 +11,146 @@ interface Listing {
   latitude: number;
   longitude: number;
   images: string[];
-  views: number;
-  inquiries: number;
 }
 
-const handleButtonClick = () => {
-  router.push("/Forms/lister-form");
-  
-};
+interface ListerProfileData {
+  name: string;
+  email: string;
+  phone: string;
+}
 
 const ListerProfile = () => {
-  const [userData, setUserData] = useState({
-    name: "SJ don",
-    email: "sj4321@gmail.com",
-    phone: "9854110021",
-  });
-
-  const [isEditingProfile, setIsEditingProfile] = useState(false);
-  const [isEditingListings, setIsEditingListings] = useState(false);
-
+  const [profileData, setProfileData] = useState<ListerProfileData>({ name: "", email: "", phone: "" });
   const [listings, setListings] = useState<Listing[]>([]);
+  const [selectedProperty, setSelectedProperty] = useState<Listing | null>(null);
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  
 
-  const fetchListings = async () => {
-    setIsLoading(true);
-    try {
-      const token = localStorage.getItem('access_token');
-      const response = await fetch("http://localhost:8080/lister_properties", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      if (!response.ok) throw new Error("Failed to fetch listings");
-      const data = await response.json();
-      setListings(data);
-    } catch (err) {
-      if (err instanceof Error) setError(err.message);
-      else setError("An unexpected error occurred");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  useEffect(()=>{
-    fetchListings()
-  },[]) 
-  
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      setIsLoading(true);
+      try {
+        const token = localStorage.getItem('access_token'); // Assuming you store the token in localStorage
+        const response = await fetch("http://localhost:8080/lister_profile", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-  const saveUserProfile = async (userData: {
-    name: string;
-    email: string;
-    phone: string;
-  }) => {
-    try {
-      const response = await fetch("/api/update-profile", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to save user profile");
+        if (!response.ok) {
+          throw new Error("Failed to fetch profile data");
+        }
+        const profile = await response.json();
+        setProfileData(profile);
+      } catch (err) {
+        setError( "An unexpected error occurred");
+      } finally {
+        setIsLoading(false);
       }
-      // Handle success or any additional logic here
-    } catch (error) {
-      // Handle errors appropriately
-      console.error("Error saving user profile:", error);
-    }
+    };
+    
+    fetchProfileData();
+
+    const fetchListings = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("http://localhost:8080/lister_properties"); // Replace with your actual endpoint
+        if (!response.ok) {
+          throw new Error("Failed to fetch listings");
+        }
+        const data = await response.json();
+        setListings(data);
+      } catch (err) {
+        setError( "An unexpected error occurred");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfileData();
+    fetchListings();
+  }, []);
+
+  const handleViewMap = (property: Listing) => {
+    setSelectedProperty(property);
+    setIsMapModalOpen(true);
   };
 
-  const handleEditProfile = () => {
-    if (isEditingProfile) {
-      // Save changes to the backend
-      saveUserProfile(userData); // Implement saveUserProfile function
-    }
-    setIsEditingProfile(!isEditingProfile);
-  };
-
-  const handleListingChange = (id: number, property: string, value: string) => {
-    // Implement change handling for listings
-    // Update the listings state with the modified data
-    const updatedListings = listings.map((listing) =>
-      listing.id === id ? { ...listing, [property]: value } : listing
-    );
-    setListings(updatedListings);
+  const handleCloseMapModal = () => {
+    setIsMapModalOpen(false);
+    setSelectedProperty(null);
   };
 
   return (
     <AppLayout>
-      <div className="lister-profile">
-        <div className="p-6 bg-red-600 rounded-lg flex items-center justify-between transform hover:scale-105 transition-transform">
-          <Link href="/properties/listing" className="menu-item">
-            <div className="dashboard-link flex items-center text-white">
-              <FaHome className="mr-2 text-2xl" /> My Listings
-            </div>
-          </Link>
-          <Link href="/settings" className="menu-item">
-            <div className="dashboard-link flex items-center text-white">
-              <FaCog className="mr-2 text-2xl" /> Account Settings
-            </div>
-          </Link>
-        </div>
-
-        <div className="profile-header">
-          <div className="profile-icon">
-            <FaUserCircle />
+      {/* Profile Data */}
+      <div className="p-6 bg-white shadow-md rounded-lg mb-6">
+        <div className="flex items-center mb-4">
+          <FaUserCircle size={50} className="mr-4" />
+          <div>
+            <h2 className="text-xl font-bold">{profileData.name}</h2>
+            <p><FaEnvelope className="inline mr-2" />{profileData.email}</p>
+            <p><FaPhone className="inline mr-2" />{profileData.phone}</p>
           </div>
-          <div className="user-details">
-            {isEditingProfile ? (
-              // Editable fields for user profile
-              <>
-                <input
-                  type="text"
-                  value={userData.name}
-                  onChange={(e) =>
-                    setUserData({ ...userData, name: e.target.value })
-                  }
-                  className="edit-input"
-                />
-                <input
-                  type="text"
-                  value={userData.email}
-                  onChange={(e) =>
-                    setUserData({ ...userData, email: e.target.value })
-                  }
-                  className="edit-input"
-                />
-                <input
-                  type="text"
-                  value={userData.phone}
-                  onChange={(e) =>
-                    setUserData({ ...userData, phone: e.target.value })
-                  }
-                  className="edit-input"
-                />
-              </>
-            ) : (
-              // Display user profile
-              <>
-                <h1>{userData.name}</h1>
-                <p>
-                  <FaEnvelope /> {userData.email}
-                </p>
-                <p>
-                  <FaPhone /> {userData.phone}
-                </p>
-              </>
-            )}
-          </div>
-          <button onClick={handleEditProfile} className="edit-profile-button">
-            {isEditingProfile ? <FaUserEdit /> : "Edit Profile"}
-          </button>
-        </div>
-
-        <div className="analytics-section">
-          <h2 className="text-xl font-semibold mb-4">Listing Analytics</h2>
-        </div>
-
-        <div className="listings-section">
-          <h2>My Listings</h2>
-          {isLoading ? (
-            <p>Loading listings...</p>
-          ) : error ? (
-            <p className="error-message">{error}</p>
-          ) : (
-            <div className="listings-grid">
-              {listings.map((listing) => (
-                <div key={listing.id} className="listing-card">
-                  {isEditingListings ? (
-                    // Editable fields for listings
-                    <>
-                      <input
-                        type="text"
-                        value={listing.title}
-                        onChange={(e) =>
-                          handleListingChange(
-                            listing.id,
-                            "title",
-                            e.target.value
-                          )
-                        }
-                        className="edit-input"
-                      />
-                      {/* Add editable fields for other listing properties */}
-                    </>
-                  ) : (
-                    // Display listing details
-                    <>
-                      <h3>{listing.title}</h3>
-                      <p>Address: {listing.address}</p>
-                      {/* Display other listing details */}
-                    </>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-          <Button 
-            type="outline"
-            title="Add Listing"
-            onClick={handleButtonClick}
-          />
         </div>
       </div>
-    </AppLayout>
-  );
+
+      {/* Listings Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {isLoading ? (
+          <p>Loading listings...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          listings.map((listing) => (
+            <div key={listing.id} className="bg-white p-4 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-2">
+                <FaHome className="inline mr-2" />
+                {listing.title}
+              </h3>
+              <p className="mb-2 text-gray-600"><FaMapMarkerAlt className="inline mr-2" />{listing.address}</p>
+              <p className="mb-4 text-gray-600"><FaInfo className="inline mr-2" />{listing.details}</p>
+              {/* Optionally display images */}
+              {listing.images.map((image, index) => (
+                <img key={index} src={image} alt={`Listing ${listing.id} Image ${index}`} className="w-full h-52 object-cover rounded-md mb-4" />
+              ))}
+              {/* View Map Button */}
+              <button
+                className="mt-2 bg-blue-500
+text-white p-2 rounded hover:bg-blue-700 flex items-center"
+onClick={() => handleViewMap(listing)}
+>
+<FaMapMarkerAlt className="mr-2" /> View Map
+</button>
+</div>
+))
+)}
+</div>
+
+javascript
+Copy code
+  {/* Map Modal */}
+  {isMapModalOpen && selectedProperty && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-4 rounded-lg shadow-xl">
+        <MapboxComponent
+          latitude={selectedProperty.latitude}
+          longitude={selectedProperty.longitude}
+          // Add any other necessary props for your MapboxComponent
+        />
+        <button
+          className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
+          onClick={handleCloseMapModal}
+        >
+          Close Map
+        </button>
+      </div>
+    </div>
+  )}
+</AppLayout>
+);
 };
 
 export default ListerProfile;
-
-
-// function setShowMenu(arg0: boolean) {
-//   throw new Error("Function not implemented.");
-// }
