@@ -8,6 +8,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   password: string;
   confirmPassword: string;
   user_type: string;
@@ -18,6 +19,7 @@ const UserSignUp: React.FC = () => {
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
     password: "",
     confirmPassword: "",
     user_type: "lister",
