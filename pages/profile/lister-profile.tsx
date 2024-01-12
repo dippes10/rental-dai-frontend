@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
+import router from "next/router";
+import Button from "../../components/Button";
 
 interface Listing {
   id: number;
@@ -39,6 +41,12 @@ const ListerProfile = () => {
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleStartClick = () => {
+    router.push("/Forms/lister-form");
+    setShowMenu(false);
+  };
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -70,12 +78,15 @@ const ListerProfile = () => {
       setIsLoading(true);
       try {
         const token = localStorage.getItem("access_token");
-        const response = await fetch("http://localhost:8080/lister_properties",{ 
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        });
+        const response = await fetch(
+          "http://localhost:8080/lister_properties",
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch listings");
         }
@@ -102,11 +113,17 @@ const ListerProfile = () => {
     setSelectedProperty(null);
   };
 
+  function handleClick(): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
+    <div className="bg-gray-200 min-h-screen text-black pt-8 pb-6 bg-blue-100 px-4 flex item-center">
     <AppLayout>
       {/* Profile Data */}
-      <div className="p-6 bg-white shadow-md rounded-lg mb-6">
-        <div className="flex items-center mb-4">
+      <div className="bg-neutral-100 text-black pt-8 pb-6 bg-blue-100 justify-center item-center">
+      <div className="container mx-auto px-4 justify-center">
+        <div className="flex flex-wrap justify-between items-center gap-8">
           <FaUserCircle size={50} className="mr-4" />
           <div>
             <h2 className="text-xl font-bold">{profileData.name}</h2>
@@ -144,7 +161,7 @@ const ListerProfile = () => {
                 {listing.details}
               </p>
               {/* Optionally display images */}
-           
+
               {/* {listing.images && listing.images.split(",").map((imagePath: string, index: number) => (
   <img
     key={index}
@@ -185,7 +202,15 @@ text-white p-2 rounded hover:bg-blue-700 flex items-center"
           </div>
         </div>
       )}
+            <div className="flex item-center text-center justify-between">
+        <Button 
+        type="outline"
+        title="Add Listing"
+        onClick={handleClick}/>
+      </div>
+              </div>
     </AppLayout>
+    </div>
   );
 };
 

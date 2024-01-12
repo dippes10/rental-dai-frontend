@@ -146,6 +146,9 @@ def add_property():
    latitude = data.get('latitude')
    longitude = data.get('longitude')
    agreed_to_terms = data.get('agreedToTerms')
+   price=data.get("price")
+   bedroom=data.get("bedrooms")
+   bathrooms=data.get("bathrooms")
    current_user = get_jwt_identity()
    created_by=current_user["user_id"]
 
@@ -164,8 +167,8 @@ def add_property():
 
     # Insert property data into the properties table along with image paths
    cursor = connection.cursor()
-   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms,created_by) VALUES (%s, %s, %s, %s, %s, %s, %s,%s)"
-   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms,created_by)
+   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms,created_by,price,bedrooms,bathrooms) VALUES (%s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
+   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms,created_by,price,bedroom,bathrooms)
    cursor.execute(insert_query, property_data)
    connection.commit()
    cursor.close()
@@ -197,6 +200,10 @@ def update_property(property_id):
     updated_latitude = data.get('latitude', existing_property[5])
     updated_longitude = data.get('longitude', existing_property[6])
     updated_agreed_to_terms = data.get('agreedToTerms', existing_property[7])
+    updated_price = data.get("price",existing_property[8])
+    updated_bedroom = data.get("bedrooms",existing_property[9])
+    updated_bathroom = data.get("bathrooms",existing_property[10])
+    
 
     # Retrieve new images from the request
     new_images = request.files.getlist('images')
