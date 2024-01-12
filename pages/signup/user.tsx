@@ -5,6 +5,8 @@ import {
   faEnvelope,
   faLock,
   faPhone,
+  faDollarSign,
+  faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
 import router from "next/router";
@@ -17,6 +19,9 @@ interface FormData {
   password: string;
   confirmPassword: string;
   user_type: string;
+  longitude: string;
+  latitude: string;
+  preferredPrice: string;
 }
 
 const UserSignUp: React.FC = () => {
@@ -28,6 +33,9 @@ const UserSignUp: React.FC = () => {
     password: "",
     confirmPassword: "",
     user_type: "user",
+    longitude: "",
+    latitude: "",
+    preferredPrice: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,9 +43,13 @@ const UserSignUp: React.FC = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
+    setIsLoading(true);
+    setError("");
     try {
       const response = await fetch("http://localhost:8080/signup", {
         method: "POST",
@@ -72,51 +84,72 @@ const UserSignUp: React.FC = () => {
       type: "password",
       icon: faLock,
     },
+    {
+      name: "longitude",
+      label: "Longitude",
+      type: "text",
+      icon: faMapMarkerAlt,
+    },
+    { name: "latitude", label: "Latitude", type: "text", icon: faMapMarkerAlt },
+    {
+      name: "preferredPrice",
+      label: "Preferred Price",
+      type: "number",
+      icon: faDollarSign,
+    },
   ];
-
   return (
     <AppLayout>
       <section
-        className="bg-cover bg-center min-h-screen py-8 bgLogin"
+        className="min-h-screen py-8 bgLogin grid grid-cols-1 md:grid-cols-2"
         style={{ backgroundImage: "url('/bg-signup.jpg')" }}
       >
-        <div className="max-w-screen-lg mx-auto px-4">
-          <div className="flex justify-center items-center">
-            <div className="bg-white bg-opacity-90 shadow-md rounded-lg p-10 w-full sm:w-96">
-              <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">
-                User Sign Up
-              </h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
+        <div
+          className="bg-cover"
+          style={{ backgroundImage: "url('/bg-signup.jpg')" }}
+        ></div>
+        <div className="max-w-screen-lg mx-auto px-4 flex justify-center items-center">
+          <div className="bg-white bg-opacity-90 shadow-md rounded-lg p-10 w-full sm:w-96">
+            <h3 className="text-4xl mb-4 text-center font-bold text-gray-800">
+              User Sign Up
+            </h3>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="flex flex-wrap -mx-2">
                 {formFields.map((field) => (
-                  <div key={field.name}>
-                    <label className="block text-sm font-medium text-gray-700  items-center">
-                      <FontAwesomeIcon icon={field.icon} className="mr-2" />
+                  <div key={field.name} className="w-full md:w-1/2 px-2 mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
                       {field.label}
                     </label>
                     <div className="relative">
+                      <FontAwesomeIcon
+                        icon={field.icon}
+                        className="absolute left-2 top-3 text-gray-500"
+                      />
                       <input
                         type={field.type}
                         id={field.name}
                         name={field.name}
                         value={formData[field.name as keyof FormData]}
                         onChange={handleChange}
-                        className="border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:ring-red-500 focus:border-red-500"
+                        className="pl-10 border-2 border-gray-300 rounded-md p-3 w-full focus:outline-none focus:ring-red-500 focus:border-red-500"
                         placeholder={field.label}
                         required
                       />
                     </div>
                   </div>
                 ))}
-                <div className="flex justify-center">
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-red-500 to-red-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
-                  >
-                    Sign Up as a User
-                  </button>
-                </div>
-              </form>
-            </div>
+              </div>
+              {error && <p className="text-red-500 text-center">{error}</p>}
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-red-500 to-red-500 text-white py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 ease-in-out focus:outline-none"
+                >
+                  {isLoading ? "Signing Up..." : "Sign Up as a User"}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
