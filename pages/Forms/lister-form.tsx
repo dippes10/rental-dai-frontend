@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCheckCircle,
-  faExclamationCircle,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+  FaUserCircle,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaHome,
+  FaInfo,
+  FaBed,
+  FaBath,
+  FaDollarSign,
+} from "react-icons/fa";
+
 import AppLayout from "../../components/AppLayout";
 import GeocodingComponent from "../../components/mapbox/geocoding";
 
@@ -14,6 +20,10 @@ const ListerForm: React.FC = () => {
   const [image, setImage] = useState<File[]>([]);
   const [details, setDetails] = useState("");
   const [checked, setChecked] = useState(false);
+  const [price, setPrice] = useState("");
+  const [bedrooms, setBedrooms] = useState(1);
+  const [bathrooms, setBathrooms] = useState(1);
+  const [priceError, setPriceError] = useState("");
 
   const [nameError, setNameError] = useState("");
   const [addressError, setAddressError] = useState("");
@@ -22,16 +32,6 @@ const ListerForm: React.FC = () => {
 
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
-
-  const handleLatitudeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    setLatitude(isNaN(value) ? null : value);
-  };
-
-  const handleLongitudeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(e.target.value);
-    setLongitude(isNaN(value) ? null : value);
-  };
 
   const handleChecked = () => setChecked(!checked);
 
@@ -55,13 +55,14 @@ const ListerForm: React.FC = () => {
     }
 
     // Additional validation for image links
-    
 
     // Additional logic for handling image links
     const formData = new FormData();
     formData.append("name", name);
-
     formData.append("address", address);
+    formData.append("price", price);
+    formData.append("bedrooms", bedrooms.toString());
+    formData.append("bathrooms", bathrooms.toString());
     formData.append("details", details);
     formData.append("latitude", latitude?.toString() || "");
     formData.append("longitude", longitude?.toString() || "");
@@ -74,23 +75,22 @@ const ListerForm: React.FC = () => {
     for (let i = 0; i < image.length; i++) {
       formData.append(`files[${i}]`, image[i]);
     }
-    console.log("formData", formData)
+    console.log("formData", formData);
     formData.forEach((value, key) => {
-      console.log("key", key)
-      console.log("value", value)
-    })
-  
+      console.log("key", key);
+      console.log("value", value);
+    });
 
     try {
       // You can send the formData to your server or handle it as needed
       // For demonstration, I'll just display a success message
 
-      const token = localStorage.getItem('access_token');
+      const token = localStorage.getItem("access_token");
       const response = await fetch("http://localhost:8080/api/properties", {
         method: "POST",
         headers: {
           // "Content-Type": "multipart/form-data",
-          'Authorization': 'Bearer '+ token 
+          Authorization: "Bearer " + token,
         },
         body: formData,
       });
@@ -108,6 +108,11 @@ const ListerForm: React.FC = () => {
     }
   };
 
+  const incrementBedrooms = () => setBedrooms(bedrooms + 1);
+  const decrementBedrooms = () => setBedrooms(Math.max(1, bedrooms - 1));
+  const incrementBathrooms = () => setBathrooms(bathrooms + 1);
+  const decrementBathrooms = () => setBathrooms(Math.max(1, bathrooms - 1));
+
   const handleMapClick = (event: any) => {
     setLatitude(event.lngLat[1]);
     setLongitude(event.lngLat[0]);
@@ -122,7 +127,7 @@ const ListerForm: React.FC = () => {
     setLatitude(null);
     setLongitude(null);
   };
-  
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     console.log(files);
@@ -132,7 +137,6 @@ const ListerForm: React.FC = () => {
       setImage(imageFiles); // Set your state to store multiple images
     }
   };
-
 
   return (
     <AppLayout>
@@ -196,7 +200,26 @@ const ListerForm: React.FC = () => {
                 </div>
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700">
-                    Image 
+                    Price
+                  </label>
+                  <div className="relative flex items-center">
+                    <FaDollarSign className="absolute ml-3" />
+                    <input
+                      type="text"
+                      name="price"
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                      className="pl-10 p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
+                      placeholder="Price"
+                    />
+                  </div>
+                  {priceError && (
+                    <p className="text-red-500 text-sm mt-1">{priceError}</p>
+                  )}
+                </div>
+                <div className="w-full">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Image
                   </label>
                   <div className="relative">
                     <input
@@ -229,11 +252,54 @@ const ListerForm: React.FC = () => {
                     />
                   </div>
                 </div>
+
+                <div className="w-full flex flex-col space-y-4 mt-8">
+                  <div className="flex items-center">
+                    <FaBed className="mr-2 text-xl" />
+                    <button
+                      onClick={decrementBedrooms}
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      readOnly
+                      value={bedrooms}
+                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"/>
+                    <button
+                      onClick={incrementBedrooms}
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      +
+                    </button>
+                    <span className="ml-2 text-sm md:text-base">Bedrooms</span>
+                  </div>
+                  <div className="flex items-center">
+                    <FaBath className="mr-2 text-xl" />
+                    <button
+                      onClick={decrementBathrooms}
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      readOnly
+                      value={bathrooms}
+                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
+                    />
+                    <button
+                      onClick={incrementBathrooms}
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                    >
+                      +
+                    </button>
+                    <span className="ml-2 text-sm md:text-base">Bathrooms</span>
+                  </div>
+                </div>
               </div>
-                  <GeocodingComponent
-                  onLatitudeChange={setLatitude}
-                  onLongitudeChange={setLongitude}
-                  />
+              <GeocodingComponent
+                onLatitudeChange={setLatitude}
+                onLongitudeChange={setLongitude}
+              />
 
               <div className="flex items-center mt-4">
                 <label className="flex items-center space-x-2 cursor-pointer">

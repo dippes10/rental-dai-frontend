@@ -145,14 +145,14 @@ const ListerProfile = () => {
               </p>
               {/* Optionally display images */}
            
-              {listing.images && listing.images.split(",").map((imagePath: string, index: number) => (
+              {/* {listing.images && listing.images.split(",").map((imagePath: string, index: number) => (
   <img
     key={index}
     src={"http://127.0.0.1:8080/" + imagePath.trim()}
     alt={`Image ${index}`}
     className="w-full h-52 object-cover rounded-md mb-4"
   />
-))}
+))} */}
 
   
   

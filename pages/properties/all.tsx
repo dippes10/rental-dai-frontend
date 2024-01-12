@@ -155,8 +155,6 @@ const PropertiesPage: React.FC = () => {
                         
                       />
                       ))}
-                     
-
 
                       {/* Property Details */}
                       <div className="mb-4">
