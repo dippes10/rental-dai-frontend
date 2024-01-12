@@ -1883,3 +1883,69 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-12 01:05:14,919 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
 2024-01-12 01:05:14,920 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
 2024-01-12 01:05:14,925 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 01:05:14] "GET /uploads/s.PNG HTTP/1.1" 200 -
+2024-01-12 10:13:02,759 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-12 10:13:02,760 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-12 10:13:02,763 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:13:03,410 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:13:03,417 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:22:51,118 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:22:51] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:22:51,326 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:22:51] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:22:51,328 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:22:51] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:22:51,329 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:22:51] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:22:51,337 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:22:51] "[36mGET /uploads/s.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:25:51,348 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:51] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:25:51,366 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:51] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:25:51,366 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:51] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:25:51,368 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:51] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:25:51,371 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:51] "[36mGET /uploads/s.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:25:58,336 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:58] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:25:58,660 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:25:58] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-12 10:26:05,989 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:26:05] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:26:06,294 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:26:06] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-12 10:32:10,730 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:32:10] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:32:10,994 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:32:10] "[31m[1mGET /lister_properties HTTP/1.1[0m" 401 -
+2024-01-12 10:40:45,888 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:40:45] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:41:00,183 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:00] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:41:05,305 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:05] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:41:29,961 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:29] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:41:30,009 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:30] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:41:30,009 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:30] "[36mGET /uploads/2e.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:41:30,014 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:30] "[36mGET /uploads/s.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:41:30,017 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:30] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
+2024-01-12 10:41:59,475 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:41:59] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:42:28,363 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:42:28] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:42:58,929 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:42:58] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:43:26,083 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:43:26] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 10:43:26,397 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:43:26] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 10:43:26,653 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:43:26] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:43:26,904 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:43:26] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:44:11,124 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:44:11] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-12 10:44:11,464 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:44:11] "POST /api/properties HTTP/1.1" 200 -
+2024-01-12 10:44:44,928 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:44:44] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 10:46:00,756 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:46:00] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:46:01,024 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:46:01] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 10:47:21,351 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:47:21] "OPTIONS /signup HTTP/1.1" 200 -
+2024-01-12 10:47:21,607 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:47:21] "POST /signup HTTP/1.1" 200 -
+2024-01-12 10:49:41,088 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:49:41,355 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:49:44,343 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:49:44,354 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:49:46,395 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:49:46,504 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:49:47,734 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:49:47,749 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:49:48,782 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:49:48,886 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:49:50,078 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:49:50,090 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:49:56,147 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:49:56,229 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:49:57,278 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:49:57,290 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:50:00,334 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:50:00,414 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:50:01,508 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:50:01,516 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:50:03,548 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 10:50:03,627 INFO werkzeug MainThread :  * Restarting with stat

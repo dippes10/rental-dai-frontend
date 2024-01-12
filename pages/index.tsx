@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 // pages/index.tsx
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AppLayout from "../components/AppLayout";
 import RentalFlipImage from "../components/CardFlip";
@@ -13,7 +13,37 @@ import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
 // Example founder's photo from Unsplash (replace with actual URL)
 const founderPhotoUrl = "/sirak-shrestha.jpeg";
 
+
+
+
 const HomePage: React.FC = () => {
+
+  const [properties, setProperties] = useState<any[]>([]);
+  const [filteredProperties, setFilteredProperties] = useState<any[]>([]);
+  const [selectedProperty, setSelectedProperty] = useState<any | null>(null);
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // // To use fake data uncomment below commented code
+    // setProperties(fakeProperties);
+    // setFilteredProperties(fakeProperties);
+    // setIsLoading(false);
+    // Uncomment the following code when using actual API
+
+    fetch("http://localhost:8080/api/properties")
+      .then(response => response.json())
+      .then(data => {
+        if (data.properties) {
+          setProperties(data.properties);
+          setFilteredProperties(data.properties);
+        }
+      })
+      .catch(error => console.error('Error fetching properties:', error))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+
   return (
     <AppLayout>
       <div className="bg-black">
@@ -35,7 +65,7 @@ const HomePage: React.FC = () => {
             longitude={85.3526846}
             zoom={12}
             showAllProperties={true}
-            properties={fakeProperties}
+            properties={properties}
           />
           <Description />
 

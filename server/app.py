@@ -50,6 +50,7 @@ def signup():
             password = data.get('password')
             confirmPassword = data.get('confirmPassword')
             user_type = data.get("user_type")
+            phone = data.get("phone")
 
             # Validate data
             if not email or not password:
@@ -61,8 +62,8 @@ def signup():
 
             # Insert data into the database
             cursor = connection.cursor()
-            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type) VALUES (%s, %s, %s, %s,%s)"
-            user_data = (firstName, lastName, email, password,user_type)
+            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone) VALUES (%s, %s, %s, %s,%s,%s)"
+            user_data = (firstName, lastName, email, password,user_type,phone)
             cursor.execute(insert_query, user_data)
             connection.commit()
             cursor.close()
@@ -95,8 +96,9 @@ def signin():
                 user_id = user_data[0]  # Access the first element (ID)
                 user_type = user_data[1] 
                 user_email=user_data[2] # Access the second element (user_type)
+                user_phone = user_data[3]
                 access_token = create_access_token(identity={"user_id":user_id,"email":user_email})
-                return jsonify({'access_token': access_token, 'user':{"user_id":user_id,"email":user_email,"user_type":user_type} }), 200
+                return jsonify({'access_token': access_token, 'user':{"user_id":user_id,"email":user_email,"user_type":user_type,"phone":user_phone} }), 200
             else:
                 return jsonify({'message': 'Invalid credentials'}), 401
         except Exception as e:
