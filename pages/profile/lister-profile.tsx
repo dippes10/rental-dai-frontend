@@ -9,12 +9,6 @@ import {
 } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
 import Link from "next/link";
-import ListerForm from "../../pages/Forms/lister-form";
-
-import CardLineChart from "../../components/Cards/CardBarChart";
-import CardBarChart from "../../components/Cards/CardBarChart";
-import CardPageVisits from "../../components/Cards/CardPageVisits";
-import CardSocialTraffic from "../../components/Cards/CardSocialTraffic";
 import router from "next/router";
 import Button from "../../components/Button";
 

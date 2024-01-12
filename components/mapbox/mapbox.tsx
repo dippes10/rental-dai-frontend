@@ -55,8 +55,8 @@ const MapboxComponent = (props: Props) => {
                 props.properties.map((property: any) => (
                   <Marker 
                     key={property.id}
-                    latitude={property.latitude}
-                    longitude={property.longitude}
+                    latitude={property.location.latitude}
+                    longitude={property.location.longitude}
                     draggable={false}
                   />
                 ))
