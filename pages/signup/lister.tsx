@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEnvelope, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
 import router from "next/router";
 
@@ -59,6 +59,7 @@ const UserSignUp: React.FC = () => {
     { name: "firstName", label: "First Name", type: "text", icon: faUser },
     { name: "lastName", label: "Last Name", type: "text", icon: faUser },
     { name: "email", label: "Email Address", type: "email", icon: faEnvelope },
+    { name: "phone", label: "Phone Number", type: "phone", icon: faPhone },
     { name: "password", label: "Password", type: "password", icon: faLock },
     { name: "confirmPassword", label: "Confirm Password", type: "password", icon: faLock },
   ];
@@ -76,7 +77,7 @@ const UserSignUp: React.FC = () => {
             <form className="space-y-4" onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <div key={field.name}>
-                  <label className="block text-sm font-medium text-gray-700 flex items-center">
+                  <label className="block text-sm font-medium text-gray-700 items-center">
                     <FontAwesomeIcon icon={field.icon} className="mr-2" />
                     {field.label}
                   </label>
@@ -104,10 +105,6 @@ const UserSignUp: React.FC = () => {
               </div>
             </form>
           </div>
-        </div>
-       
-        <div className="h-64 w-full py-6">
-          {/* User-specific location or map */}
         </div>
       </div>
     </section>
