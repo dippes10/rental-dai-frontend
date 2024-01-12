@@ -7,7 +7,6 @@ import AppLayout from "../components/AppLayout";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
 import MapboxComponent from "../components/mapbox/mapbox";
-import { fakeProperties } from "./properties/all";
 import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
 
 // Example founder's photo from Unsplash (replace with actual URL)

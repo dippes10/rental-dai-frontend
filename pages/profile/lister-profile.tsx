@@ -154,11 +154,6 @@ const ListerProfile = () => {
   />
 ))}
 
-  
-  
-
-
-
               {/* View Map Button */}
               <button
                 className="mt-2 bg-blue-500
