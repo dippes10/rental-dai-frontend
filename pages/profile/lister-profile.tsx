@@ -41,18 +41,12 @@ const ListerProfile = () => {
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleStartClick = () => {
-    router.push("/Forms/lister-form");
-    setShowMenu(false);
-  };
 
   useEffect(() => {
     const fetchProfileData = async () => {
       setIsLoading(true);
       try {
-        const token = localStorage.getItem("access_token"); // Assuming you store the token in localStorage
+        const token = localStorage.getItem("access_token");
         const response = await fetch("http://localhost:8080/user_details", {
           method: "GET",
           headers: {
@@ -72,8 +66,6 @@ const ListerProfile = () => {
       }
     };
 
-    fetchProfileData();
-
     const fetchListings = async () => {
       setIsLoading(true);
       try {
@@ -91,7 +83,11 @@ const ListerProfile = () => {
           throw new Error("Failed to fetch listings");
         }
         const data = await response.json();
-        setListings(data);
+        const updatedListings = data.map((listing: { images: string }) => ({
+          ...listing,
+          images: listing.images ? listing.images.split(",") : [],
+        }));
+        setListings(updatedListings);
       } catch (err) {
         setError("An unexpected error occurred");
       } finally {
@@ -113,104 +109,102 @@ const ListerProfile = () => {
     setSelectedProperty(null);
   };
 
+  const handleStartClick = () => {
+    router.push("/Forms/lister-form");
+  };
+
   function handleClick(): void {
     throw new Error("Function not implemented.");
   }
 
   return (
-    <div className="bg-gray-200 min-h-screen text-black pt-8 pb-6 bg-blue-100 px-4 flex item-center">
     <AppLayout>
-      {/* Profile Data */}
-      <div className="bg-neutral-100 text-black pt-8 pb-6 bg-blue-100 justify-center item-center">
-      <div className="container mx-auto px-4 justify-center">
-        <div className="flex flex-wrap justify-between items-center gap-8">
-          <FaUserCircle size={50} className="mr-4" />
-          <div>
-            <h2 className="text-xl font-bold">{profileData.name}</h2>
-            <p>
-              <FaEnvelope className="inline mr-2" />
-              {profileData.email}
-            </p>
-            <p>
-              <FaPhone className="inline mr-2" />
-              {profileData.phone}
-            </p>
+      <div className="container mx-auto my-8 px-4">
+        {/* Profile Data */}
+        <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+          <div className="flex items-center gap-4">
+            <FaUserCircle size={50} className="text-blue-500" />
+            <div>
+              <h2 className="text-2xl font-semibold text-blue-600">
+                {profileData.name}
+              </h2>
+              <p className="text-gray-600">
+                <FaEnvelope className="inline mr-2" />
+                {profileData.email}
+              </p>
+              <p className="text-gray-600">
+                <FaPhone className="inline mr-2" />
+                {profileData.phone}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {isLoading ? (
-          <p>Loading listings...</p>
-        ) : error ? (
-          <p>{error}</p>
-        ) : (
-          listings.map((listing) => (
+        {/* Listings Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {listings.map((listing) => (
             <div key={listing.id} className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="text-xl font-bold mb-2">
-                <FaHome className="inline mr-2" />
+              {/* Listing Details */}
+
+              <h3 className="text-xl font-bold mb-2 text-blue-600">
+                <FaHome className="inline mr-2 text-green-500" />
                 {listing.title}
               </h3>
               <p className="mb-2 text-gray-600">
-                <FaMapMarkerAlt className="inline mr-2" />
+                <FaMapMarkerAlt className="inline mr-2 text-red-500" />
                 {listing.address}
               </p>
               <p className="mb-4 text-gray-600">
-                <FaInfo className="inline mr-2" />
+                <FaInfo className="inline mr-2 text-yellow-500" />
                 {listing.details}
               </p>
-              {/* Optionally display images */}
 
-              {/* {listing.images && listing.images.split(",").map((imagePath: string, index: number) => (
-  <img
-    key={index}
-    src={"http://127.0.0.1:8080/" + imagePath.trim()}
-    alt={`Image ${index}`}
-    className="w-full h-52 object-cover rounded-md mb-4"
-  />
-))} */}
+              {/* Images */}
+              {listing.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={`http:/localhost:8080/${image.trim()}`}
+                  alt={`Listing ${listing.title} - Image ${index + 1}`}
+                  className="w-full h-52 object-cover rounded-md mb-4"
+                />
+              ))}
 
               {/* View Map Button */}
               <button
-                className="mt-2 bg-blue-500
-text-white p-2 rounded hover:bg-blue-700 flex items-center"
+                className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
                 onClick={() => handleViewMap(listing)}
               >
                 <FaMapMarkerAlt className="mr-2" /> View Map
               </button>
             </div>
-          ))
-        )}
-      </div>
-
-      {/* Map Modal */}
-      {isMapModalOpen && selectedProperty && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-4 rounded-lg shadow-xl">
-            <MapboxComponent
-              latitude={selectedProperty.latitude}
-              longitude={selectedProperty.longitude}
-              // Add any other necessary props for your MapboxComponent
-            />
-            <button
-              className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
-              onClick={handleCloseMapModal}
-            >
-              Close Map
-            </button>
-          </div>
+          ))}
         </div>
-      )}
-            <div className="flex item-center text-center justify-between">
-        <Button 
-        type="outline"
-        title="Add Listing"
-        onClick={handleClick}/>
+
+        {/* Map Modal */}
+        {isMapModalOpen && selectedProperty && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white p-4 rounded-lg shadow-xl">
+              <MapboxComponent
+                latitude={selectedProperty.latitude}
+                longitude={selectedProperty.longitude}
+                // Additional props as needed
+              />
+              <button
+                className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
+                onClick={handleCloseMapModal}
+              >
+                Close Map
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Add Listing Button */}
+        <div className="text-center mt-6">
+          <Button type="outline" title="Add Listing" onClick={handleClick} />
+        </div>
       </div>
-              </div>
     </AppLayout>
-    </div>
   );
 };
 
