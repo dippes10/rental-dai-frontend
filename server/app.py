@@ -324,7 +324,7 @@ def user_details():
 
     # Fetch user details based on user_id
     cursor = connection.cursor()
-    query = "SELECT name,email, phone FROM users WHERE id = %s;"
+    query = "SELECT firstName,email, phone FROM users WHERE id = %s;"
     cursor.execute(query, (user_id,))
 
     user_details = cursor.fetchone()
