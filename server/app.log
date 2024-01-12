@@ -1949,3 +1949,360 @@ TypeError: tuple indices must be integers or slices, not str
 2024-01-12 10:50:01,516 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2024-01-12 10:50:03,548 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
 2024-01-12 10:50:03,627 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:54:35,719 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-12 10:54:35,719 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-12 10:54:35,723 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 10:54:36,798 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 10:54:36,814 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 10:54:52,355 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 10:54:52] "GET /api/properties HTTP/1.1" 200 -
+2024-01-12 11:01:38,168 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:01:38] "OPTIONS /signup HTTP/1.1" 200 -
+2024-01-12 11:01:38,437 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:01:38] "POST /signup HTTP/1.1" 200 -
+2024-01-12 11:01:58,422 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:01:58] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:01:58,730 ERROR root Thread-7 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:01:58,734 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:01:58] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:02:47,977 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:02:47] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:02:48,289 ERROR root Thread-9 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:02:48,290 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:02:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:16,139 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:16] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:03:16,451 ERROR root Thread-11 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:16,451 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:16] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:18,061 ERROR root Thread-12 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:18,064 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:18] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:18,588 ERROR root Thread-13 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:18,588 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:18] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:25,654 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:25] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:03:25,971 ERROR root Thread-15 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:25,972 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:25] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:46,621 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:46] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:03:46,931 ERROR root Thread-17 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:46,932 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:46] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:48,600 ERROR root Thread-18 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:48,601 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:49,101 ERROR root Thread-19 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:49,102 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:49] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:03:49,334 ERROR root Thread-20 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:03:49,335 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:03:49] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:38,654 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:38] "OPTIONS /signup HTTP/1.1" 200 -
+2024-01-12 11:07:38,927 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:38] "POST /signup HTTP/1.1" 200 -
+2024-01-12 11:07:45,038 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:45] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:07:45,346 ERROR root Thread-25 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:45,347 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:45] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:46,781 ERROR root Thread-26 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:46,783 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:46] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:47,293 ERROR root Thread-27 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:47,294 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:47] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:47,496 ERROR root Thread-28 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:47,496 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:47] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:47,557 ERROR root Thread-29 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:47,557 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:47] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:47,697 ERROR root Thread-30 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:47,698 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:47] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:47,899 ERROR root Thread-31 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:47,900 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:47] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:48,104 ERROR root Thread-32 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:48,105 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:48,306 ERROR root Thread-33 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:48,307 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:48,510 ERROR root Thread-34 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:48,511 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:48,713 ERROR root Thread-35 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:48,713 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:48,914 ERROR root Thread-36 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:48,915 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:48] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:49,116 ERROR root Thread-37 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:49,117 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:49] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:07:49,360 ERROR root Thread-38 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:07:49,361 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:07:49] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:08:04,073 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:08:04] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:08:04,338 ERROR root Thread-40 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:08:04,338 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:08:04] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:08:05,355 ERROR root Thread-41 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:08:05,356 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:08:05] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:08:13,152 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:08:13] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:08:13,414 ERROR root Thread-43 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:08:13,415 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:08:13] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:10:06,870 ERROR root Thread-45 (process_request_thread) : Error during signin: tuple index out of range
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\rental-dai-frontend\server\app.py", line 99, in signin
+    user_phone = user_data[3]
+                 ~~~~~~~~~^^^
+IndexError: tuple index out of range
+2024-01-12 11:10:06,871 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:10:06] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
+2024-01-12 11:13:05,883 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:13:05,933 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 11:13:06,532 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 11:13:06,538 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 11:13:10,572 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:13:10,646 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 11:13:11,286 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 11:13:11,293 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 11:13:20,194 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:13:20] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:13:40,979 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:13:40] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:13:41,244 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:13:41] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:13:41,765 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:13:41] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:13:42,086 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:13:42] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:27:48,957 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:48] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:27:49,221 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:49] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:27:56,371 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:56] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:27:56,679 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:56] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:27:58,289 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:58] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:27:58,817 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:27:58] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:00,790 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:00] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:01,324 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:01] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:05,835 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:05] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:06,144 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:06,450 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:06,945 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:07,165 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:07] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:08,006 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:08,503 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:08,687 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:08,982 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:09,497 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:09] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:09,717 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:09] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:17,069 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:17] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:17,380 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:17] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:17,821 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:17] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:18,332 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:18] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:18,536 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:18] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:18,599 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:18] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:18,739 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:18] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:18,973 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:18] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:19,191 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:19] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:19,389 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:19] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:19,610 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:19] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:19,811 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:19] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:20,012 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:20] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:20,377 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:20] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:20,900 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:20] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:21,176 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:21] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:28:21,851 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:28:21] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:06,234 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:06] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:06,542 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:08,068 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:08,597 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:08,859 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:09,092 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:09] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:09,309 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:09] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:27,462 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:27] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:27,771 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:27] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:28,059 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:28] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:28,570 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:28] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:29:28,786 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:29:28] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:35:37,888 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:35:37] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:35:38,149 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:35:38] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:36:45,474 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:36:45] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:36:45,741 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:36:45] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:37:11,053 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:37:11] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:37:11,357 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:37:11] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:06,713 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:06] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:06,979 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:07,857 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:07] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:08,382 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:08] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:12,450 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:12] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:12,759 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:12] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:13,310 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:13] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:13,819 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:13] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:39:14,052 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:39:14] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:42:59,180 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:42:59] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:42:59,447 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:42:59] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:43:23,927 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:43:23] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:43:24,238 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:43:24] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:45:55,571 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:45:55] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:45:55,837 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:45:55] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:45:56,293 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:45:56] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:45:56,615 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:45:56] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:46:38,022 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:46:38] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:46:38,337 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:46:38] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:50:36,822 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:50:36] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:50:37,087 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:50:37] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:51:01,264 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:51:01] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:51:01,585 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:51:01] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 11:56:25,430 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:56:25,489 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 11:56:26,215 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 11:56:26,220 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 11:56:27,241 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:56:27,303 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 11:56:27,948 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 11:56:27,954 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 11:57:11,117 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:57:11,219 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 11:57:11,818 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 11:57:11,824 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 11:57:59,341 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:57:59] "[33mGET /user-details HTTP/1.1[0m" 404 -
+2024-01-12 11:58:26,269 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:58:26] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-12 11:58:45,689 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 11:58:45] "[33mGET /user-details HTTP/1.1[0m" 404 -
+2024-01-12 11:59:59,447 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 11:59:59,585 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 12:00:09,532 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-12 12:00:09,533 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-12 12:00:09,538 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 12:00:10,118 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 12:00:10,124 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-12 12:00:54,580 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:00:54] "GET /user_details HTTP/1.1" 200 -
+2024-01-12 12:01:48,053 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:01:48] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:01:48,316 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:01:48] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:01:59,298 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:01:59] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:01:59,607 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:01:59] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:17,723 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:17] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:18,028 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:18] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:20,081 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:20] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:22,918 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:22] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:24,572 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:24] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:24,882 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:24] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:26,383 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:26] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:28,891 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:28] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:57,074 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:57] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:02:57,393 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:02:57] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:03:09,418 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:03:09] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:03:09,732 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:03:09] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:03:11,160 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:03:11] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:04:54,417 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:04:54] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:04:54,685 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:04:54] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:04:56,160 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:04:56] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:04:57,621 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:04:57] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:05:04,252 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:05:04] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:05:04,572 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:05:04] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:05:08,793 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jan/2024 12:05:08] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-12 12:07:34,679 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-12 12:07:34,731 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-12 12:07:35,437 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-12 12:07:35,443 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428

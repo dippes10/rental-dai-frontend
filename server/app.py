@@ -87,7 +87,7 @@ def signin():
             password = data.get('password')
 
             cursor = connection.cursor()
-            query = "SELECT id, user_type,email FROM users WHERE email = %s AND password = %s"
+            query = "SELECT id, user_type,email,phone FROM users WHERE email = %s AND password = %s"
             cursor.execute(query, (email, password))
             user_data = cursor.fetchone()
             cursor.close()
@@ -316,6 +316,28 @@ def lister_properties():
     cursor.close()
 
     return jsonify(properties)
+@app.route('/user_details', methods=['GET'])
+@jwt_required()
+def user_details():
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')
+
+    # Fetch user details based on user_id
+    cursor = connection.cursor()
+    query = "SELECT name,email, phone FROM users WHERE id = %s;"
+    cursor.execute(query, (user_id,))
+
+    user_details = cursor.fetchone()
+
+    cursor.close()
+
+    if user_details:
+        columns = [col[0] for col in cursor.description]
+        user_info = dict(zip(columns, user_details))
+        return jsonify(user_info)
+    else:
+        return jsonify({'message': 'User details not found'}), 404
+
 
 @app.route('/')
 def index():

@@ -18,31 +18,41 @@ function SignInBasic() {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/user-Signin', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8080/user-Signin", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email,password }), 
+        body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
+        const data = await response.json();
+        console.log(data);
 
-        // Authentication locally saving access token
-        const data = await response.json()
-        localStorage.setItem("access_token", data.access_token);
-
-        setSuccessMessage('Sign-in successful as user');
-        setErrorMessage('');
-        router.push("/properties/all");
+        // Check if user_type is 'user'
+      if (data.user && data.user.user_type === "user") {
+          localStorage.setItem("access_token", data.access_token);
+          setSuccessMessage("Sign-in successful as user");
+          setErrorMessage("");
+          router.push("/profile/user-profile");
+        } else if (data.user && data.user.user_type === "lister") {
+          // Handle the case where user_type is 'lister'
+          setErrorMessage("Sign-in restricted for listers.");
+          setSuccessMessage("");
+        } else {
+          // Handle other cases
+          setErrorMessage("Invalid user type");
+          setSuccessMessage("");
+        }
       } else {
-        setErrorMessage('Invalid credentials');
-        setSuccessMessage('');
+        setErrorMessage("Invalid credentials");
+        setSuccessMessage("");
       }
     } catch (error) {
-      console.error('Error during sign-in:', error);
-      setErrorMessage('Error during sign-in');
-      setSuccessMessage('');
+      console.error("Error during sign-in:", error);
+      setErrorMessage("Error during sign-in");
+      setSuccessMessage("");
     }
   };
 
@@ -61,7 +71,9 @@ function SignInBasic() {
                 className="mb-4" // Add margin-bottom to create space
               />
               <div>
-                <h4 className="text-white text-2xl font-medium mb-2">Sign in as user</h4>
+                <h4 className="text-white text-2xl font-medium mb-2">
+                  Sign in as user
+                </h4>
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
@@ -153,7 +165,9 @@ function SignInBasic() {
                 </button>
               </div>
               {successMessage && (
-                <div className="text-green-600 text-center">{successMessage}</div>
+                <div className="text-green-600 text-center">
+                  {successMessage}
+                </div>
               )}
               {errorMessage && (
                 <div className="text-red-600 text-center">{errorMessage}</div>

@@ -30,21 +30,32 @@ function SignInBasic() {
 
       if (response.ok) {
         
-        const data = await response.json()
-        localStorage.setItem("access_token", data.access_token);
+        const data = await response.json();
 
+      // Check if user_type is 'user'
+      if (data.user && data.user.user_type === 'lister') {
+        localStorage.setItem("access_token", data.access_token);
         setSuccessMessage('Sign-in successful as lister');
         setErrorMessage('');
         router.push("/profile/lister-profile");
+      } else if (data.user && data.user.user_type === 'user') {
+        // Handle the case where user_type is 'lister'
+        setErrorMessage('Sign-in restricted for users.');
+        setSuccessMessage('');
       } else {
-        setErrorMessage('Invalid credentials');
+        // Handle other cases
+        setErrorMessage('Invalid user type');
         setSuccessMessage('');
       }
-    } catch (error) {
-      console.error('Error during sign-in:', error);
-      setErrorMessage('Error during sign-in');
+    } else {
+      setErrorMessage('Invalid credentials');
       setSuccessMessage('');
     }
+  } catch (error) {
+    console.error('Error during sign-in:', error);
+    setErrorMessage('Error during sign-in');
+    setSuccessMessage('');
+  }
   };
 
   return (
