@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
           style={{
             height: "550px",
           }}
-          alt="hero landscape"
+          alt="home landscape"
         />
         <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-gray-50 overflow-visible">
           <RentalFlipImage />

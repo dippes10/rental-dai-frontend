@@ -109,23 +109,23 @@ const ListerProfile = () => {
     setSelectedProperty(null);
   };
 
-  const handleStartClick = () => {
+  const handleClick = () => {
     router.push("/Forms/lister-form");
   };
 
-  function handleClick(): void {
-    throw new Error("Function not implemented.");
-  }
 
   return (
     <AppLayout>
-      <div className="container mx-auto my-8 px-4">
+<div className="bg-slate-100 overflow-visible lg:mx-4 mx-2 w-full pt-[HeaderHeight] mb-12">
+  <div className="container felx flex-center mx-auto px-4 bg-slate-100 items-center py-8 rounded-lg shadow-xl w-full object-cover -mt-32 mb-16"> 
+
+    {/* Rest of your content */}
         {/* Profile Data */}
-        <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <div className="bg-gray-300 shadow-lg rounded-lg p-6 mb-12 mt-40">
           <div className="flex items-center gap-4">
-            <FaUserCircle size={50} className="text-blue-500" />
-            <div>
-              <h2 className="text-2xl font-semibold text-blue-600">
+            <FaUserCircle size={50} className="text-red-500" />
+            <div className="">
+              <h2 className="text-2xl font-semibold text-black">
                 {profileData.name}
               </h2>
               <p className="text-gray-600">
@@ -139,11 +139,10 @@ const ListerProfile = () => {
             </div>
           </div>
         </div>
-
         {/* Listings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {listings.map((listing) => (
-            <div key={listing.id} className="bg-white p-4 rounded-lg shadow-md">
+            <div key={listing.id} className="bg-gray-400 p-4 rounded-lg shadow-md"> {/* Replace 'bg-silver-color' with the actual color class or style */}
               {/* Listing Details */}
 
               <h3 className="text-xl font-bold mb-2 text-blue-600">
@@ -169,6 +168,7 @@ const ListerProfile = () => {
                 />
               ))}
 
+<MapboxComponent/>
               {/* View Map Button */}
               <button
                 className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
@@ -202,6 +202,7 @@ const ListerProfile = () => {
         {/* Add Listing Button */}
         <div className="text-center mt-6">
           <Button type="outline" title="Add Listing" onClick={handleClick} />
+        </div>
         </div>
       </div>
     </AppLayout>
