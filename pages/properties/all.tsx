@@ -4,6 +4,13 @@ import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox"; // Assuming you have this Mapbox component
 import GeocodingComponent from "../../components/mapbox/geocoding";
+import {
+  FaBed,
+  FaBath,
+  FaDollarSign,
+  FaMapMarkedAlt,
+  FaShare,
+} from "react-icons/fa";
 
 // export const fakeProperties = [
 //   {
@@ -56,6 +63,7 @@ const PropertiesPage: React.FC = () => {
   const [selectedProperty, setSelectedProperty] = useState<any | null>(null);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [mapVisible, setMapVisible] = useState(false);
 
   useEffect(() => {
     // // To use fake data uncomment below commented code
@@ -65,14 +73,14 @@ const PropertiesPage: React.FC = () => {
     // Uncomment the following code when using actual API
 
     fetch("http://localhost:8080/api/properties")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.properties) {
           setProperties(data.properties);
           setFilteredProperties(data.properties);
         }
       })
-      .catch(error => console.error('Error fetching properties:', error))
+      .catch((error) => console.error("Error fetching properties:", error))
       .finally(() => setIsLoading(false));
   }, []);
 
@@ -99,11 +107,24 @@ const PropertiesPage: React.FC = () => {
     setIsMapModalOpen(false);
     setSelectedProperty(null);
   };
-  
+
+  const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Close the map if clicking outside the map
+    if (e.target === e.currentTarget) {
+      hideMap();
+    }
+  };
+
+  const hideMap = () => {
+    setIsMapModalOpen(false);
+    setSelectedProperty(null);
+  };
+
+
 
   return (
     <AppLayout>
-      <div className="bg-properties">
+      <div className="bg-properties flex justify-center items-center">
         <div className="container mx-auto mt-8 px-4 lg:px-2">
           {/* Filter and Sort Controls */}
           <div className="flex flex-col lg:flex-row gap-2 mb-8">
@@ -141,27 +162,39 @@ const PropertiesPage: React.FC = () => {
                     {/* Property Card */}
                     <div className="bg-red-200 p-4 rounded-lg shadow-md transition-all hover:shadow-lg">
                       {/* Property Image */}
-                      {property.image && property.image.split(",").map((imagePath: string, index: number) => (
-                        
-                      <img
-                      key={index}
-                      
-                       src={"http://localhost:8080/"+imagePath.trim()}
-                       
-                       alt={`Image ${index}`}
-                        width={0}
-                        height={0}
-                        className="w-full h-52 object-cover rounded-md mb-4"
-                        
-                      />
-                      ))}
+                      {property.image &&
+                        property.image
+                          .split(",")
+                          .map((imagePath: string, index: number) => (
+                            <img
+                              key={index}
+                              src={"http://localhost:8080/" + imagePath.trim()}
+                              alt={`Image ${index}`}
+                              width={0}
+                              height={0}
+                              className="w-full h-52 object-cover rounded-md mb-4"
+                            />
+                          ))}
 
                       {/* Property Details */}
                       <div className="mb-4">
                         <h3 className="text-xl font-semibold mb-2">
                           {property.name}
                         </h3>
-                        <p className="text-gray-700">{property.address}</p>
+                        <p className="text-gray-700">
+                          <FaMapMarkedAlt className="inline mr-2" />
+                          {property.address}
+                        </p>
+                        <p className="text-gray-700">
+                          <FaBed className="inline mr-2" /> Bedrooms:{" "}
+                          {property.bedrooms},{" "}
+                          <FaBath className="inline mr-2" /> Bathrooms:{" "}
+                          {property.bathrooms}
+                        </p>
+                        <p className="text-gray-700">
+                          <FaDollarSign className="inline mr-2" /> Price:{" "}
+                          {property.price}
+                        </p>
                       </div>
 
                       {/* Share Button */}
@@ -169,7 +202,7 @@ const PropertiesPage: React.FC = () => {
                         className="flex mt-4 items-center bg-white text-red-500 px-3 py-1 rounded-md hover:bg-red-100 transition-all"
                         onClick={() => console.log("Share button clicked")}
                       >
-                        Share
+                        <FaShare className="inline mr-2" /> Share
                       </button>
 
                       {/* View Map Button */}
@@ -191,10 +224,12 @@ const PropertiesPage: React.FC = () => {
 
           {/* Map Modal */}
           {isMapModalOpen && selectedProperty && (
-            <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center">
-              <div className="bg-white p-8 rounded-lg">
-                {/* Mapbox Component */}
-                
+            <div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center mb-1"
+              onClick={handleMapClick} >
+              <div className="bg-white p-8 rounded-lg mt-32 w-full sm:w-3/4 md:w-1/2 lg:w-2/3 xl:w-1/2">
+               {/* Mapbox Component */}
+
                 <MapboxComponent
                   disableMove={false}
                   showNavigationControl={true}

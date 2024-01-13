@@ -17,6 +17,7 @@ type Props = {
   properties?: any;
   height?: string;
   onMapClick?: any;
+  width?: string;
 };
 
 const MapboxComponent = (props: Props) => {
