@@ -227,16 +227,13 @@ const UserProfile = () => {
             </div>
           </div>
 
-          
-
           {/* Map Modal */}
           {isMapModalOpen && selectedProperty && (
             <div
               className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center mb-1"
-              onClick={handleMapClick}
-            >
+              onClick={handleMapClick} >
               <div className="bg-white p-8 rounded-lg mt-32 w-full sm:w-3/4 md:w-1/2 lg:w-2/3 xl:w-1/2">
-                {/* Mapbox Component */}
+               {/* Mapbox Component */}
 
                 <MapboxComponent
                   disableMove={false}
@@ -249,6 +246,25 @@ const UserProfile = () => {
                   properties={[selectedProperty]}
                   showAllProperties={true}
                 />
+
+                {/* Additional Property Details */}
+                <div className="mt-4">
+                  <h3 className="text-xl font-semibold mb-2">
+                    {selectedProperty.name}
+                  </h3>
+                  <p className="text-gray-700">{selectedProperty.address}</p>
+                  <p className="text-gray-700">
+                    Bedrooms: {selectedProperty.bedrooms}, Bathrooms:{" "}
+                    {selectedProperty.bathrooms}
+                  </p>
+                  <p className="text-gray-700">
+                    Price: {selectedProperty.price}
+                  </p>
+                  <p className="text-gray-700">
+                    Description: {selectedProperty.description}
+                  </p>
+                </div>
+
                 {/* Close Button */}
                 <button
                   className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
