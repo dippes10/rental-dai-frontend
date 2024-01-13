@@ -175,8 +175,6 @@ def add_property():
    return jsonify({'message': 'Property added successfully'}), 200
 
 #edit property
-
-
 @app.route('/api/properties/<property_id>', methods=['PUT'])
 @jwt_required()
 def update_property(property_id):

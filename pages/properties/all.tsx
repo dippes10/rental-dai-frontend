@@ -146,7 +146,7 @@ const PropertiesPage: React.FC = () => {
                       <img
                       key={index}
                       
-                       src={"http://127.0.0.1:8080/"+imagePath.trim()}
+                       src={"http://localhost:8080/"+imagePath.trim()}
                        
                        alt={`Image ${index}`}
                         width={0}

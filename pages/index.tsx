@@ -2,18 +2,11 @@
 // pages/index.tsx
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import AppLayout from "../components/AppLayout";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
 import MapboxComponent from "../components/mapbox/mapbox";
 import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
-
-// Example founder's photo from Unsplash (replace with actual URL)
-const founderPhotoUrl = "/sirak-shrestha.jpeg";
-
-
-
 
 const HomePage: React.FC = () => {
 

@@ -1,243 +1,128 @@
-/* eslint-disable react/jsx-no-undef */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
+  FaUserCircle,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
   FaHome,
-  FaClipboardList,
-  FaUser,
-  FaCalendarAlt,
-  FaFileAlt,
+  FaInfo,
 } from "react-icons/fa";
+import AppLayout from "../../components/AppLayout";
+import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
-import Image from "next/image";
+import Button from "../../components/Button";
 
-const UserProfile: React.FC = () => {
-  // Expanded placeholder data for user profile
-  const userData = {
-    name: "Jane Doe",
-    email: "jane@example.com",
-    profilePicture: "/sirak-shrestha.jpg",
-    bookingsMade: 3,
-    messagesReceived: 8,
-    propertiesOwned: 2,
-    // Add more data properties as needed
+interface Listing {
+  id: number;
+  title: string;
+  address: string;
+  details: string;
+  latitude: number;
+  longitude: number;
+  images: string[];
+}
+
+interface UserProfileData {
+  name: string;
+  email: string;
+  phone: string;
+  longitude: string;
+  latitude: string;
+}
+
+const ListerProfile = () => {
+  const [profileData, setProfileData] = useState<UserProfileData>({
+    name: "",
+    email: "",
+    phone: "",
+    longitude: "",
+    latitude: "",
+  });
+  const [listings, setListings] = useState<Listing[]>([]);
+  const [selectedProperty, setSelectedProperty] = useState<Listing | null>(null);
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      setIsLoading(true);
+      try {
+        const token = localStorage.getItem("access_token");
+        const response = await fetch("http://localhost:8080/user_details", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch profile data");
+        }
+        const profile = await response.json();
+        const firstName = profile.name.split(' ')[0];
+        setProfileData({...profile, name: firstName});
+      } catch (err) {
+        setError("An unexpected error occurred");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfileData();
+  }, []);
+
+  const handleClick = () => {
+    router.push("/Forms/user-form");
   };
 
-  // Sample data for recent bookings
-  const recentBookings = [
-    {
-      id: 1,
-      property: "Ocean View Villa",
-      checkInDate: "2023-12-01",
-      checkOutDate: "2023-12-10",
-      guests: 2,
-      totalCost: 1200,
-    },
-    {
-      id: 2,
-      property: "Mountain Cabin Retreat",
-      checkInDate: "2024-01-05",
-      checkOutDate: "2024-01-10",
-      guests: 4,
-      totalCost: 800,
-    },
-  ];
-
-  // Sample data for news and updates
-  const newsAndUpdates = [
-    {
-      id: 1,
-      title: "Exciting News!",
-      content:
-        "We are launching a new loyalty program. Stay tuned for exclusive benefits!",
-      date: "2023-11-15",
-    },
-    {
-      id: 2,
-      title: "Holiday Discounts",
-      content:
-        "Enjoy special discounts on bookings made during the holiday season.",
-      date: "2023-12-05",
-    },
-  ];
-
-  // ProfileStat component
-  const ProfileStat: React.FC<{
-    icon: React.ReactNode;
-    title: string;
-    value: number;
-  }> = ({ icon, title, value }) => (
-    <div className="p-6 bg-white shadow-md rounded-md flex items-center justify-between transform hover:scale-105 transition-transform">
-      <div>{icon}</div>
-      <div className="ml-4">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <p className="text-gray-600">{value}</p>
-      </div>
-    </div>
-  );
-
-  // RecentBookings component
-  const RecentBookings: React.FC<{
-    userBookings: Array<{
-      id: number;
-      property: string;
-      checkInDate: string;
-      checkOutDate: string;
-      guests: number;
-      totalCost: number;
-    }>;
-  }> = ({ userBookings }) => (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Recent Bookings</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-        {userBookings.map((booking) => (
-          <div
-            key={booking.id}
-            className="p-6 bg-white shadow-md rounded-md flex items-center justify-between transform hover:scale-105 transition-transform"
-          >
-            <div>
-              <h3 className="text-lg font-semibold">{booking.property}</h3>
-              <p className="text-gray-600">
-                Check-in: {booking.checkInDate} - Check-out:{" "}
-                {booking.checkOutDate}
-                <br />
-                Guests: {booking.guests} | Total Cost: ${booking.totalCost}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  // UserProfileOverview component
-  const UserProfileOverview: React.FC = () => (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Profile Overview</h2>
-      <div className="flex items-center">
-        <Image
-        width = {0}
-        height = {0}
-          src={userData.profilePicture}
-          alt={userData.name}
-          className="w-12 h-12 rounded-full mr-4"
-        />
-        <div>
-          <p className="text-gray-600">{userData.email}</p>
-          {/* Add more profile information and statistics here */}
-        </div>
-      </div>
-    </div>
-  );
-
-
-  // QuickActions component
-  const QuickActions: React.FC = () => (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Quick Actions</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* Quick actions components */}
-        <div className="p-6 bg-white shadow-md rounded-md flex items-center justify-between transform hover:scale-105 transition-transform">
-          <div>
-            <FaCalendarAlt className="text-4xl text-yellow-500" />
-          </div>
-          <div className="ml-4">
-            <h3 className="text-lg font-semibold">Book a Property</h3>
-          </div>
-        </div>
-        <div className="p-6 bg-white shadow-md rounded-md flex items-center justify-between transform hover:scale-105 transition-transform">
-          <div>
-            <FaFileAlt className="text-4xl text-red-500" />
-          </div>
-          <div className="ml-4">
-            <h3 className="text-lg font-semibold">Manage Listings</h3>
-          </div>
-        </div>
-        {/* Add more quick action components as needed */}
-      </div>
-    </div>
-  );
-
-  // NewsAndUpdates component
-  const NewsAndUpdates: React.FC<{
-    updates: Array<{
-      id: number;
-      title: string;
-      content: string;
-      date: string;
-    }>;
-  }> = ({ updates }) => (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">News and Updates</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-        {updates.map((update) => (
-          <div
-            key={update.id}
-            className="p-6 bg-white shadow-md rounded-md flex flex-col justify-between transform hover:scale-105 transition-transform"
-          >
-            <div>
-              <h3 className="text-lg font-semibold">{update.title}</h3>
-              <p className="text-gray-600">{update.content}</p>
-            </div>
-            <p className="text-sm text-gray-400">{update.date}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  // PropertiesPage component
-  const PropertiesPage: React.FC = () => (
-    <div className="mt-8">
-      <h2 className="text-xl font-bold mb-4">Properties Listing</h2>
-      {/* Add your properties listing components or data here */}
-    </div>
-  );
-
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6">
-          Welcome back, {userData.name}!
-        </h1>
+    <AppLayout>
+      <div className="flex justify-center items-center bgLogin z-40">
+        <div className="relative w-full max-w-xl p-8 mx-auto px-4 bg-slate-100 items-center py-8 rounded-lg shadow-xl">
+          {/* Profile Data */}
+          <div className="bg-gray-300 shadow-sm hover:shadow-md rounded-md p-6 mb-12">
+            <div className="flex items-center gap-4">
+              <FaUserCircle size={50} className="text-red-500" />
+              <div className="">
+                <h2 className="text-2xl font-semibold text-black">
+                  {profileData.name}
+                </h2>
+                <p className="text-gray-600">
+                  <FaEnvelope className="inline mr-2" />
+                  {profileData.email}
+                </p>
+                <p className="text-gray-600">
+                  <FaPhone className="inline mr-2" />
+                  {profileData.phone}
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Bookings Made */}
-          <ProfileStat
-            icon={<FaClipboardList className="text-4xl text-green-500" />}
-            title="Bookings Made"
-            value={userData.bookingsMade}
-          />
-          {/* Messages Received */}
-          <ProfileStat
-            icon={<FaUser className="text-4xl text-red-500" />}
-            title="Messages Received"
-            value={userData.messagesReceived}
-          />
-          {/* Additional Profile Stats */}
-          <ProfileStat
-            icon={<FaHome className="text-4xl text-red-500" />}
-            title="Properties Owned"
-            value={userData.propertiesOwned}
-          />
+          {/* User Location Map */}
+          {profileData.latitude && profileData.longitude ? (
+            <div className="my-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Your Location
+              </h3>
+              <MapboxComponent
+                latitude={parseFloat(profileData.latitude)}
+                longitude={parseFloat(profileData.longitude)}
+              />
+            </div>
+          ) : (
+            <p className="text-gray-600 my-6">Location data not available.</p>
+          )}
+
+          {/* Add Listing Button */}
+          <div className="text-center mt-6">
+            <Button type="outline" title="Add Listing" onClick={handleClick} />
+          </div>
         </div>
-
-        {/* Recent Bookings */}
-        <RecentBookings userBookings={recentBookings} />
-
-        {/* User Profile Overview */}
-        <UserProfileOverview />
-
-        {/* Quick Actions */}
-        <QuickActions />
-
-        {/* News and Updates */}
-        <NewsAndUpdates updates={newsAndUpdates} />
-
-        {/* Properties Listing Section */}
-        <PropertiesPage />
       </div>
-    </div>
+    </AppLayout>
   );
 };
 
-export default UserProfile;
+export default ListerProfile;
