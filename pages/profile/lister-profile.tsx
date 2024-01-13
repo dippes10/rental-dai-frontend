@@ -23,14 +23,14 @@ interface Listing {
 }
 
 interface ListerProfileData {
-  name: string;
+  firstName: string;
   email: string;
   phone: string;
 }
 
 const ListerProfile = () => {
   const [profileData, setProfileData] = useState<ListerProfileData>({
-    name: "",
+    firstName: "",
     email: "",
     phone: "",
   });
@@ -65,6 +65,7 @@ const ListerProfile = () => {
         setIsLoading(false);
       }
     };
+
 
     const fetchListings = async () => {
       setIsLoading(true);
@@ -109,13 +110,22 @@ const ListerProfile = () => {
     setSelectedProperty(null);
   };
 
-  const handleStartClick = () => {
-    router.push("/Forms/lister-form");
-  };
-
   function handleClick(): void {
     throw new Error("Function not implemented.");
   }
+
+  const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Close the map if clicking outside the map
+    if (e.target === e.currentTarget) {
+      hideMap();
+    }
+  };
+
+  const hideMap = () => {
+    setIsMapModalOpen(false);
+    setSelectedProperty(null);
+  };
+
 
   return (
     <AppLayout>
@@ -127,7 +137,7 @@ const ListerProfile = () => {
             <FaUserCircle size={50} className="text-blue-500" />
             <div>
               <h2 className="text-2xl font-semibold text-blue-600">
-                {profileData.name}
+                {profileData.firstName}
               </h2>
               <p className="text-gray-600">
                 <FaEnvelope className="inline mr-2" />
@@ -183,22 +193,33 @@ const ListerProfile = () => {
 
         {/* Map Modal */}
         {isMapModalOpen && selectedProperty && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white p-4 rounded-lg shadow-xl">
-              <MapboxComponent
-                latitude={selectedProperty.latitude}
-                longitude={selectedProperty.longitude}
-                // Additional props as needed
-              />
-              <button
-                className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
-                onClick={handleCloseMapModal}
-              >
-                Close Map
-              </button>
+            <div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center mb-1"
+              onClick={handleMapClick} >
+              <div className="bg-white p-8 rounded-lg mt-32 w-full sm:w-3/4 md:w-1/2 lg:w-2/3 xl:w-1/2">
+               {/* Mapbox Component */}
+
+                <MapboxComponent
+                  disableMove={false}
+                  showNavigationControl={true}
+                  showMarker={true}
+                  latitude={selectedProperty.latitude}
+                  longitude={selectedProperty.longitude}
+                  zoom={13}
+                  height="400px"
+                  properties={[selectedProperty]}
+                  showAllProperties={true}
+                />
+                {/* Close Button */}
+                <button
+                  className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
+                  onClick={handleCloseMapModal}
+                >
+                  Close Map
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {/* Add Listing Button */}
         <div className="text-center mt-6">

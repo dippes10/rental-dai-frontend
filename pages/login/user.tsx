@@ -4,6 +4,7 @@ import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
+import { Toaster, toast } from 'sonner';
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -151,7 +152,7 @@ function SignInBasic() {
                 <label
                   htmlFor="rememberMe"
                   onClick={handleSetRememberMe}
-                  className="cursor-pointer text-sm bg-gray-600 text-gray-800"
+                  className="cursor-pointer text-sm text-gray-800"
                 >
                   Remember me
                 </label>
@@ -166,7 +167,8 @@ function SignInBasic() {
               </div>
               {successMessage && (
                 <div className="text-green-600 text-center">
-                  {successMessage}
+                                <Toaster richColors  />
+              toast.success('Event has been created');
                 </div>
               )}
               {errorMessage && (

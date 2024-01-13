@@ -1,9 +1,7 @@
 // pages/PropertiesPage.tsx
 import React, { useState, useEffect } from "react";
-import PropertyDetailsModal from "../../components/PropertyDetailsModal";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox"; // Assuming you have this Mapbox component
-import GeocodingComponent from "../../components/mapbox/geocoding";
 import {
   FaBed,
   FaBath,

@@ -96,6 +96,15 @@ a {
   padding-bottom: 8rem;
 }
 
+.bgSignup{
+  background-image: url('../public/bg-signup.jpg');
+  background-size: cover;
+  background-position: 100% 50%;
+  margin-top: -8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 .bgListerForm{
   background-image: url('../public/lister-form-bg.jpg');
   background-size: cover;
@@ -134,15 +143,6 @@ a {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-
-// .bgFooter{
-//   background-image: url('../public/footer.png');
-//   background-size: cover;
-//   background-position: 100% 50%;
-//   margin-top: -8rem;
-//   padding-top: 8rem;
-//   padding-bottom: 8rem;
-// }
 
 .Dropdown{
 height: 90px;
