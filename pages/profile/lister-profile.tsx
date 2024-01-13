@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  FaUserCircle,
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaHome,
-  FaInfo,
-} from "react-icons/fa";
+import { FaUserCircle, FaEnvelope, FaPhone, FaMapMarkerAlt, FaHome, FaInfo, FaEdit, FaTrash } from "react-icons/fa";
 import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
@@ -29,18 +22,13 @@ interface ListerProfileData {
 }
 
 const ListerProfile = () => {
-  const [profileData, setProfileData] = useState<ListerProfileData>({
-    firstName: "",
-    email: "",
-    phone: "",
-  });
+  const [profileData, setProfileData] = useState<ListerProfileData>({ firstName: "", email: "", phone: "" });
   const [listings, setListings] = useState<Listing[]>([]);
-  const [selectedProperty, setSelectedProperty] = useState<Listing | null>(
-    null
-  );
+  const [selectedProperty, setSelectedProperty] = useState<Listing | null>(null);
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -65,7 +53,6 @@ const ListerProfile = () => {
         setIsLoading(false);
       }
     };
-
 
     const fetchListings = async () => {
       setIsLoading(true);
