@@ -13,6 +13,7 @@ import {
 
 import AppLayout from "../../components/AppLayout";
 import GeocodingComponent from "../../components/mapbox/geocoding";
+import { Toaster, toast } from "sonner";
 
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -315,10 +316,11 @@ const ListerForm: React.FC = () => {
                 </label>
               </div>
               <div className="mt-6">
+                <Toaster/>
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
-                onClick={handleSubmit}
+                  onClick={() => toast.info('Form has been submitted successfully')}
                 >
                   Submit
                 </button>
