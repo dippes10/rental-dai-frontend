@@ -58,23 +58,25 @@ const Header: React.FC<HeaderProps> = () => {
         className="fixed z-40 pt-4 flex flex-row justify-center items-center w-full bg-transparent px-2"
         data-aos="fade-down" // Apply fade-down animation
       >
-        <div className="container px-2 rounded-xl border-2 shadow-lg bg-white mx-auto flex items-center justify-between h-20 text-black">
-          <FaBars
-            className="lg:hidden w-6 h-6 text-red-500 hover:red-900"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          />
-          {/* Logo */}
-          <Link href="/">
-            <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
-              <Image
-                src="/favicon.png"
-                alt="Rental-Dai Logo"
-                width={120}
-                height={40}
-                data-aos="fade-right" // Apply fade-right animation
-              />
-            </div>
-          </Link>
+        <div className="container md:px-2 rounded-xl border-2 shadow-lg bg-white flex items-center justify-between h-20 text-black">
+          <div className="flex flex-row items-center space-x-2">
+            <FaBars
+              className="md:hidden ml-2 w-6 h-6 text-red-500 hover:red-900"
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            />
+            {/* Logo */}
+            <Link href="/">
+              <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
+                <Image
+                  src="/favicon.png"
+                  alt="Rental-Dai Logo"
+                  width={120}
+                  height={40}
+                  data-aos="fade-right" // Apply fade-right animation
+                />
+              </div>
+            </Link>
+          </div>
           {/* Mobile Menu Toggle */}
           <div className={`lg:hidden ${showMenu ? "block" : "hidden"}`}>
             <button
@@ -142,23 +144,23 @@ const Header: React.FC<HeaderProps> = () => {
             )}
           </ul>
           {/* Call-to-action Buttons */}
-          <div className="mt-8 space-x-4 flex justify-center bg-opacity-50">
+          <div className="space-x-4 flex justify-center items-center bg-opacity-50">
             <div className="text-black transition duration-300 hover:text-red cursor-pointer">
               <button
                 onClick={handleClick}
                 className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
                 data-aos="fade-right" // Apply fade-right animation
               >
-                Get started as Lister
+                Register
               </button>
             </div>
             <div className="text-black transition duration-300 hover:text-black cursor-pointer">
               <button
                 onClick={handleStartClick}
-                className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-400 group-hover:to-lime-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-lime-200"
+                className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
                 data-aos="fade-left" // Apply fade-left animation
               >
-                Get started as User
+                LogIn
               </button>
             </div>
           </div>

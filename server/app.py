@@ -5,6 +5,8 @@ import logging
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import math
 
+from datetime import timedelta
+
 app = Flask(__name__, static_url_path='/static',static_folder='static')
 
 CORS(app)
@@ -12,20 +14,16 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 app.config['JWT_SECRET_KEY'] = 'thisissecret'  # Replace with a complex secret key
 jwt = JWTManager(app)
 
-@app.route('/api/properties', methods=['GET'])
-def get_properties():
-    cursor = connection.cursor(dictionary=True)  # Use dictionary cursor for easier JSON conversion
-    
-    try:
-        cursor.execute("SELECT * FROM propertieslist")  # Fetch all properties
-        properties = cursor.fetchall()  # Retrieve all rows
-        
-        cursor.close()
-        return jsonify({'properties': properties})
-    except Exception as e:
-        cursor.close()
-        print("Failed to fetch properties:", str(e))
-        return jsonify({'error': 'Failed to fetch properties'}), 500  # Return internal server error
+
+def get_conn():
+    connection = mysql.connector.connect(
+        host='localhost',
+        database='signup',
+        user='root',
+        password=''
+    )
+    return connection
+
 
 connection = mysql.connector.connect(
     host='localhost',
@@ -36,6 +34,24 @@ connection = mysql.connector.connect(
 
 if connection.is_connected():
     print('Connected to MySQL database')
+
+
+@app.route('/api/properties', methods=['GET'])
+def get_properties():
+    conn = get_conn()
+
+    with conn.cursor(dictionary=True) as cursor:  # Use dictionary cursor for easier JSON conversion
+    
+        try:
+            cursor.execute("SELECT * FROM propertieslist")  # Fetch all properties
+            properties = cursor.fetchall()  # Retrieve all rows
+            
+            cursor.close()
+            return jsonify({'properties': properties})
+        except Exception as e:
+            cursor.close()
+            print("Failed to fetch properties:", str(e))
+            return jsonify({'error': 'Failed to fetch properties'}), 500  # Return internal server error
 
 @app.route('/signup', methods=['POST'])
 def signup():
@@ -64,12 +80,12 @@ def signup():
                 return jsonify({'message': 'Passwords do not match.'}), 400
 
             # Insert data into the database
-            cursor = connection.cursor()
-            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice) VALUES (%s, %s, %s, %s,%s,%s,%s,%s,%s)"
-            user_data = (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice)
-            cursor.execute(insert_query, user_data)
-            connection.commit()
-            cursor.close()
+            conn = get_conn()
+            with connection.cursor() as cursor:
+                insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice) VALUES (%s, %s, %s, %s,%s,%s,%s,%s,%s)"
+                user_data = (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice)
+                cursor.execute(insert_query, user_data)
+                conn.commit()
 
             return jsonify({'message': 'User signed up successfully'}), 200
 
@@ -89,18 +105,18 @@ def signin():
             email = data.get('email')
             password = data.get('password')
 
-            cursor = connection.cursor()
-            query = "SELECT id, user_type,email,phone FROM users WHERE email = %s AND password = %s"
-            cursor.execute(query, (email, password))
-            user_data = cursor.fetchone()
-            cursor.close()
+            conn = get_conn()
+            with conn.cursor() as cursor:
+                query = "SELECT id, user_type,email,phone FROM users WHERE email = %s AND password = %s"
+                cursor.execute(query, (email, password))
+                user_data = cursor.fetchone()
 
             if user_data:
                 user_id = user_data[0]  # Access the first element (ID)
                 user_type = user_data[1] 
                 user_email=user_data[2] # Access the second element (user_type)
                 user_phone = user_data[3]
-                access_token = create_access_token(identity={"user_id":user_id,"email":user_email})
+                access_token = create_access_token(identity={"user_id":user_id,"email":user_email}, expires_delta=timedelta(days=15))
                 return jsonify({'access_token': access_token, 'user':{"user_id":user_id,"email":user_email,"user_type":user_type,"phone":user_phone} }), 200
             else:
                 return jsonify({'message': 'Invalid credentials'}), 401
@@ -134,31 +150,31 @@ def allowed_file(filename):
 @app.route('/api/properties', methods=['POST'])
 @jwt_required()
 def add_property():
-   print("request.files", request.files)    
-   print("request.form", request.form)  
-   print("reques.files.keys()", request.files.keys())  
-   if len(request.files) == 0:
+    print("request.files", request.files)    
+    print("request.form", request.form)  
+    print("reques.files.keys()", request.files.keys())  
+    if len(request.files) == 0:
         flash('No file provided')
         return jsonify({'message': 'No file part'}), 400
 
     # Retrieve property details from the request JSON
-   data = request.form
-   name = data.get('name')
-   address = data.get('address')
-   details = data.get('details')
-   latitude = data.get('latitude')
-   longitude = data.get('longitude')
-   agreed_to_terms = data.get('agreedToTerms')
-   price=data.get("price")
-   bedroom=data.get("bedrooms")
-   bathrooms=data.get("bathrooms")
-   current_user = get_jwt_identity()
-   created_by=current_user["user_id"]
+    data = request.form
+    name = data.get('name')
+    address = data.get('address')
+    details = data.get('details')
+    latitude = data.get('latitude')
+    longitude = data.get('longitude')
+    agreed_to_terms = data.get('agreedToTerms')
+    price=data.get("price")
+    bedroom=data.get("bedrooms")
+    bathrooms=data.get("bathrooms")
+    current_user = get_jwt_identity()
+    created_by=current_user["user_id"]
 
-   files = request.files.values()
-   print("files", files)
-   image_paths = []
-   for file in files:
+    files = request.files.values()
+    print("files", files)
+    image_paths = []
+    for file in files:
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -169,27 +185,27 @@ def add_property():
             return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
 
     # Insert property data into the properties table along with image paths
-   cursor = connection.cursor()
-   insert_query = "INSERT INTO propertieslist (name, address, image, details, latitude, longitude, agreedToTerms,created_by,price,bedrooms,bathrooms) VALUES (%s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
-   property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms,created_by,price,bedroom,bathrooms)
-   cursor.execute(insert_query, property_data)
-   connection.commit()
-   cursor.close()
-   return jsonify({'message': 'Property added successfully'}), 200
+    conn = get_conn()
+    with conn.cursor() as cursor:
+        insert_query = "INSERT INTO propertieslist (name, address, image, description, latitude, longitude, agreedToTerms,created_by,price,bedrooms,bathrooms) VALUES (%s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
+        property_data = (name, address, ','.join(image_paths), details, latitude, longitude, agreed_to_terms,created_by,price,bedroom,bathrooms)
+        cursor.execute(insert_query, property_data)
+        conn.commit()
+    return jsonify({'message': 'Property added successfully'}), 200
 
 #edit property
 @app.route('/api/properties/<property_id>', methods=['PUT'])
 @jwt_required()
 def update_property(property_id):
     # Retrieve existing property details from the database
-    cursor = connection.cursor()
-    select_query = "SELECT * FROM propertieslist WHERE id=%s"
-    cursor.execute(select_query, (property_id,))
-    existing_property = cursor.fetchone()
+    conn = get_conn()
+    with conn.cursor() as cursor:
+        select_query = "SELECT * FROM propertieslist WHERE id=%s"
+        cursor.execute(select_query, (property_id,))
+        existing_property = cursor.fetchone()
 
-    if not existing_property:
-        cursor.close()
-        return jsonify({'message': 'Property not found'}), 404
+        if not existing_property:
+            return jsonify({'message': 'Property not found'}), 404
 
     # Retrieve updated property details from the request JSON
     data = request.form
@@ -223,10 +239,11 @@ def update_property(property_id):
             return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
 
     # Perform the update in the database
-    update_query = "UPDATE propertieslist SET name=%s, address=%s, image=%s, details=%s, latitude=%s, longitude=%s, agreedToTerms=%s , price=%s,bedrooms=%s,bathrooms=%s WHERE id=%s"
-    cursor.execute(update_query, (updated_name, updated_address, ','.join(updated_images), updated_details, updated_latitude, updated_longitude, updated_agreed_to_terms,updated_price,updated_bedroom,updated_bathroom, property_id))
-    connection.commit()
-    cursor.close()
+    conn = get_conn()
+    with conn.cursor() as cursor:
+        update_query = "UPDATE propertieslist SET name=%s, address=%s, image=%s, description=%s, latitude=%s, longitude=%s, agreedToTerms=%s , price=%s,bedrooms=%s,bathrooms=%s WHERE id=%s"
+        cursor.execute(update_query, (updated_name, updated_address, ','.join(updated_images), updated_details, updated_latitude, updated_longitude, updated_agreed_to_terms,updated_price,updated_bedroom,updated_bathroom, property_id))
+        conn.commit()
 
     return jsonify({'message': 'Property updated successfully'}), 200
 
@@ -234,20 +251,21 @@ def update_property(property_id):
 @jwt_required
 def delete_property(property_id):
     # Check if the property exists in the database
-    cursor = connection.cursor()
-    select_query = "SELECT * FROM propertieslist WHERE id=%s"
-    cursor.execute(select_query, (property_id,))
-    existing_property = cursor.fetchone()
+    conn = get_conn()
+    with connection.cursor() as cursor:
+        select_query = "SELECT * FROM propertieslist WHERE id=%s"
+        cursor.execute(select_query, (property_id,))
+        existing_property = cursor.fetchone()
 
     if not existing_property:
-        cursor.close()
         return jsonify({'message': 'Property not found'}), 404
 
     # Perform deletion from the database
-    delete_query = "DELETE FROM propertieslist WHERE id=%s"
-    cursor.execute(delete_query, (property_id,))
-    connection.commit()
-    cursor.close()
+    conn = get_conn()
+    with connection.cursor() as cursor:
+        delete_query = "DELETE FROM propertieslist WHERE id=%s"
+        cursor.execute(delete_query, (property_id,))
+        conn.commit()
 
     return jsonify({'message': 'Property deleted successfully'}), 200
 
@@ -261,56 +279,57 @@ def haversine(lat1, lon1, lat2, lon2):
     c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
     distance = R * c
     return distance
-@app.route('/recommend_properties', methods=['POST'])
+
+@app.route('/recommend_properties', methods=['GET'])
 @jwt_required()
 def nearby_properties():
     current_user_id = get_jwt_identity()
     user_id = current_user_id.get('user_id')
 
-    cursor = connection.cursor() 
-    user_location_query = "SELECT latitude, longitude FROM users WHERE id = %s;"
-    cursor.execute(user_location_query, (user_id,))
-    user_location = cursor.fetchone()
-    
+    conn = get_conn()
+    with conn.cursor() as cursor: 
+        user_location_query = "SELECT latitude, longitude FROM users WHERE id = %s;"
+        cursor.execute(user_location_query, (user_id,))
+        user_location = cursor.fetchone()
+        
 
-    if user_location:
-        user_latitude, user_longitude = user_location
-        print(user_latitude)
-        print(user_longitude)
-        radius_in_km = 4  # Radius to search within (adjust as needed)
+        if user_location:
+            user_latitude, user_longitude = user_location
+            print(user_latitude)
+            print(user_longitude)
+            radius_in_km = 4  # Radius to search within (adjust as needed)
 
     # Execute Haversine query to find nearby properties
+    conn = get_conn()
+    with conn.cursor() as cursor:  
+        query = "SELECT * FROM propertieslist;"
+        cursor.execute(query)
+        
+        columns = [col[0] for col in cursor.description]
+        
 
-    cursor = connection.cursor()  
-    query = "SELECT * FROM propertieslist;"
-    cursor.execute(query)
-    
-    columns = [col[0] for col in cursor.description]
-    
+        # Convert fetched data into a list of dictionaries
+        properties = [
+            dict(zip(columns, row)) # Create dictionary for each row
+            for row in cursor.fetchall()
+        ]
+        
 
-    # Convert fetched data into a list of dictionaries
-    properties = [
-        dict(zip(columns, row)) # Create dictionary for each row
-        for row in cursor.fetchall()
-    ]
-    
-
-    # Calculate distance for each property and add it to property details
-    for prop in properties:
-     prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
+        # Calculate distance for each property and add it to property details
+        for prop in properties:
+            prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
      
 
 
-    # Filter properties within the radius and sort by distance
-    nearby_properties = [
-    {'property_details': prop, 'distance': prop['distance']}  # Structure the response
-    for prop in properties
-    if prop['distance'] <= radius_in_km
-    ]
-    nearby_properties.sort(key=lambda x: x['distance'])
-    nearby_properties = nearby_properties[:3]
+        # Filter properties within the radius and sort by distance
+        nearby_properties = [
+        {'property_details': prop, 'distance': prop['distance']}  # Structure the response
+        for prop in properties
+        if prop['distance'] <= radius_in_km
+        ]
+        nearby_properties.sort(key=lambda x: x['distance'])
+        nearby_properties = nearby_properties[:3]
 
-    cursor.close()
 
     return jsonify(nearby_properties)
 
@@ -324,21 +343,23 @@ def lister_properties():
 
 
     # Fetch properties listed by the current user (based on created_by field)
-    cursor = connection.cursor()  
-    query = "SELECT * FROM propertieslist WHERE created_by = %s;"
-    cursor.execute(query, (user_id,))
-    
-    columns = [col[0] for col in cursor.description]
-    
-    # Convert fetched data into a list of dictionaries
-    properties = [
-        dict(zip(columns, row))  # Create dictionary for each row
-        for row in cursor.fetchall()
-    ]
+    conn = get_conn()
+    with conn.cursor() as cursor:  
+        query = "SELECT * FROM propertieslist WHERE created_by = %s;"
+        cursor.execute(query, (user_id,))
+        
+        columns = [col[0] for col in cursor.description]
+        
+        # Convert fetched data into a list of dictionaries
+        properties = [
+            dict(zip(columns, row))  # Create dictionary for each row
+            for row in cursor.fetchall()
+        ]
 
-    cursor.close()
 
-    return jsonify(properties)
+        return jsonify(properties)
+
+
 @app.route('/user_details', methods=['GET'])
 @jwt_required()
 def user_details():
@@ -346,61 +367,59 @@ def user_details():
     user_id = current_user_id.get('user_id')
 
     # Fetch user details based on user_id
-    cursor = connection.cursor()
-    query = "SELECT firstName,email,phone FROM users WHERE id = %s;"
-    cursor.execute(query, (user_id,))
+    conn = get_conn()
+    with conn.cursor() as cursor:
+        query = "SELECT firstName,email,phone FROM users WHERE id = %s;"
+        cursor.execute(query, (user_id,))
 
-    user_details = cursor.fetchone()
+        user_details = cursor.fetchone()
 
-    cursor.close()
+        if user_details:
+            columns = [col[0] for col in cursor.description]
+            user_info = dict(zip(columns, user_details))
+            return jsonify(user_info)
+        else:
+            return jsonify({'message': 'User details not found'}), 404
 
-    if user_details:
-        columns = [col[0] for col in cursor.description]
-        user_info = dict(zip(columns, user_details))
-        return jsonify(user_info)
-    else:
-        return jsonify({'message': 'User details not found'}), 404
-    
 #recommendation by price
-@app.route('/recommend_price', methods=['POST'])
+@app.route('/recommend_price', methods=['GET'])
 @jwt_required()
 def recommend_price():
     current_user_id = get_jwt_identity()
     user_id = current_user_id.get('user_id')
     # Get user's preferences from the request
-    cursor = connection.cursor()
-    user_price_query = "SELECT preferredPrice FROM users WHERE id = %s;"
-    cursor.execute(user_price_query, (user_id,))
-    user_price = cursor.fetchone()[0]
+    conn = get_conn()
 
-    # Execute a query to fetch properties
-    cursor = connection.cursor()
-    query = "SELECT * FROM propertieslist;"
-    cursor.execute(query)
+    with conn.cursor() as cursor:
+        user_price_query = "SELECT preferredPrice FROM users WHERE id = %s;"
+        cursor.execute(user_price_query, (user_id,))
+        user_price = cursor.fetchone()[0]
 
-    columns = [col[0] for col in cursor.description]
+        # Execute a query to fetch properties
+        query = "SELECT * FROM propertieslist;"
+        cursor.execute(query)
 
-    # Convert fetched data into a list of dictionaries
-    properties = [
-        dict(zip(columns, row))  # Create dictionary for each row
-        for row in cursor.fetchall()
-    ]
+        columns = [col[0] for col in cursor.description]
 
-    # Filter properties below the maximum price
-    recommended_prop = [
-        {'property_details': prop}  # Structure the response
-        for prop in properties
-        if prop['price'] <= user_price
-        
-    ]
+        # Convert fetched data into a list of dictionaries
+        properties = [
+            dict(zip(columns, row))  # Create dictionary for each row
+            for row in cursor.fetchall()
+        ]
 
-    # Sort properties by price
-    recommended_prop.sort(key=lambda x: x["property_details"]["price"])
-    recommended_prop = recommended_prop[:3]
+        # Filter properties below the maximum price
+        recommended_prop = [
+            {'property_details': prop}  # Structure the response
+            for prop in properties
+            if prop['price'] <= user_price
 
-    cursor.close()
+        ]
 
-    return jsonify(recommended_prop)
+        # Sort properties by price
+        recommended_prop.sort(key=lambda x: x["property_details"]["price"])
+        recommended_prop = recommended_prop[:3]
+
+        return jsonify(recommended_prop)
 
       
 

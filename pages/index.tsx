@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
             showNavigationControl={true}
             latitude={27.6957053}
             longitude={85.3526846}
-            zoom={12}
+            zoom={11}
             showAllProperties={true}
             properties={properties}
           />

@@ -12,18 +12,20 @@ import MapboxComponent from "../../components/mapbox/mapbox";
 import PropertyCard from "../../components/propertyCard";
 
 interface Listing {
-  title: any;
-  latitude: number | undefined;
-  longitude: number | undefined;
-  details: string;
-  id: number;
-  name: string;
-  address: string;
-  images: string[]; // Array of image URLs
-  bedrooms: number;
-  bathrooms: number;
-  price: string;
-  description: string; // Add description field
+  property_details: {
+    title: any;
+    latitude: number | undefined;
+    longitude: number | undefined;
+    details: string;
+    id: number;
+    name: string;
+    address: string;
+    images: string[]; // Array of image URLs
+    bedrooms: number;
+    bathrooms: number;
+    price: string;
+    description: string; // Add description field}
+  };
 }
 
 interface UserProfileData {
@@ -45,7 +47,9 @@ const UserProfile = () => {
   const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
 
   const [listings, setListings] = useState<Listing[]>([]);
-  const [selectedProperty, setSelectedProperty] = useState<Listing | null>( null );
+  const [selectedProperty, setSelectedProperty] = useState<Listing | null>(
+    null
+  );
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -55,7 +59,7 @@ const UserProfile = () => {
     try {
       const token = localStorage.getItem("access_token");
       const response = await fetch("http://localhost:8080/recommend_price", {
-        method: "POST",
+        method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -82,7 +86,7 @@ const UserProfile = () => {
       const response = await fetch(
         "http://localhost:8080/recommend_properties",
         {
-          method: "POST",
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -132,10 +136,8 @@ const UserProfile = () => {
     fetchProfileData();
   }, []);
 
-  const handleViewMap = (property: Listing) => {
-    console.log("Latitude:", property.latitude);
-    console.log("Longitude:", property.longitude);
-    setSelectedProperty(property);
+  const handleViewMap = ({ property_details: property }: Listing) => {
+    setSelectedProperty({ property_details: property });
     setIsMapModalOpen(true);
   };
 
@@ -197,7 +199,7 @@ const UserProfile = () => {
                   ))
                 : priceRecommendations.map((listing) => (
                     <PropertyCard
-                      key={listing.id}
+                      key={listing.property_details.id}
                       property={listing}
                       onViewMap={() => handleViewMap(listing)}
                     />
@@ -219,7 +221,7 @@ const UserProfile = () => {
                   ))
                 : nearbyFlats.map((listing) => (
                     <PropertyCard
-                      key={listing.id}
+                      key={listing.property_details.id}
                       property={listing}
                       onViewMap={() => handleViewMap(listing)}
                     />
@@ -231,37 +233,40 @@ const UserProfile = () => {
           {isMapModalOpen && selectedProperty && (
             <div
               className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center mb-1"
-              onClick={handleMapClick} >
+              onClick={handleMapClick}
+            >
               <div className="bg-white p-8 rounded-lg mt-32 w-full sm:w-3/4 md:w-1/2 lg:w-2/3 xl:w-1/2">
-               {/* Mapbox Component */}
+                {/* Mapbox Component */}
 
                 <MapboxComponent
                   disableMove={false}
                   showNavigationControl={true}
                   showMarker={true}
-                  latitude={selectedProperty.latitude}
-                  longitude={selectedProperty.longitude}
+                  latitude={selectedProperty.property_details.latitude}
+                  longitude={selectedProperty.property_details.longitude}
                   zoom={13}
                   height="400px"
-                  properties={[selectedProperty]}
+                  properties={[selectedProperty?.property_details]}
                   showAllProperties={true}
                 />
 
                 {/* Additional Property Details */}
                 <div className="mt-4">
                   <h3 className="text-xl font-semibold mb-2">
-                    {selectedProperty.name}
+                    {selectedProperty.property_details.name}
                   </h3>
-                  <p className="text-gray-700">{selectedProperty.address}</p>
                   <p className="text-gray-700">
-                    Bedrooms: {selectedProperty.bedrooms}, Bathrooms:{" "}
-                    {selectedProperty.bathrooms}
+                    {selectedProperty.property_details.address}
                   </p>
                   <p className="text-gray-700">
-                    Price: {selectedProperty.price}
+                    Bedrooms: {selectedProperty.property_details.bedrooms},
+                    Bathrooms: {selectedProperty.property_details.bathrooms}
                   </p>
                   <p className="text-gray-700">
-                    Description: {selectedProperty.description}
+                    Price: {selectedProperty.property_details.price}
+                  </p>
+                  <p className="text-gray-700">
+                    Description: {selectedProperty.property_details.description}
                   </p>
                 </div>
 

@@ -109,10 +109,25 @@ const ListerForm: React.FC = () => {
     }
   };
 
-  const incrementBedrooms = () => setBedrooms(bedrooms + 1);
-  const decrementBedrooms = () => setBedrooms(Math.max(1, bedrooms - 1));
-  const incrementBathrooms = () => setBathrooms(bathrooms + 1);
-  const decrementBathrooms = () => setBathrooms( Math.max(1, bathrooms - 1));
+  const incrementBedrooms = (e: any) => {
+    e.preventDefault();
+    setBedrooms(bedrooms + 1);
+  };
+
+  const decrementBedrooms = (e: any) => {
+    e.preventDefault();
+    setBedrooms(Math.max(1, bedrooms - 1));
+  };
+
+  const incrementBathrooms = (e: any) => {
+    e.preventDefault();
+    setBathrooms(bathrooms + 1);
+  };
+
+  const decrementBathrooms = (e: any) => {
+    e.preventDefault();
+    setBathrooms(Math.max(1, bathrooms - 1));
+  };
 
   // const handleMapClick = (event: any) => {
   //   setLatitude(event.lngLat[1]);
@@ -205,15 +220,16 @@ const ListerForm: React.FC = () => {
                   <label className="block text-sm font-medium text-gray-700">
                     Price
                   </label>
-                  <div className="relative flex items-center">
-                    <FaDollarSign className="absolute ml-3" />
+                  <div className="relative p-3 flex items-center border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500">
+                    <FaDollarSign className="absolute left-2" />
                     <input
-                      type="text"
+                      type="number"
+                      min="0"
                       name="price"
                       value={price}
                       onChange={(e) => setPrice(e.target.value)}
-                      className="pl-10 p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
-                      placeholder="Price"
+                      className="w-full pl-4 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                      placeholder="Enter price"
                     />
                   </div>
                   {priceError && (
@@ -230,7 +246,6 @@ const ListerForm: React.FC = () => {
                       name="image"
                       onChange={(e) => handleFileChange(e)}
                       className="w-full p-3 border-2 rounded-md focus:outline-none focus:ring-red-500 focus:border-red-500"
-                      placeholder="https://example.com/image.jpg"
                       multiple
                     />
                     {imageUrlError && (
@@ -261,17 +276,20 @@ const ListerForm: React.FC = () => {
                     <FaBed className="mr-2 text-xl" />
                     <button
                       onClick={decrementBedrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                    >
                       -
                     </button>
                     <input
                       type="text"
                       readOnly
                       value={bedrooms}
-                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"/>
+                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
+                    />
                     <button
                       onClick={incrementBedrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                    >
                       +
                     </button>
                     <span className="ml-2 text-sm md:text-base">Bedrooms</span>
@@ -280,7 +298,8 @@ const ListerForm: React.FC = () => {
                     <FaBath className="mr-2 text-xl" />
                     <button
                       onClick={decrementBathrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold">
+                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                    >
                       -
                     </button>
                     <input
@@ -318,7 +337,7 @@ const ListerForm: React.FC = () => {
                 </label>
               </div>
               <div className="mt-6">
-                <Toaster position="top-center" richColors  />
+                <Toaster position="top-center" richColors />
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"

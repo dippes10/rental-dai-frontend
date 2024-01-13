@@ -5845,3 +5845,800 @@ mysql.connector.errors.OperationalError: MySQL Connection not available.
 2024-01-13 22:07:10,096 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:07:10] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
 2024-01-13 22:07:10,099 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:07:10] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
 2024-01-13 22:08:05,463 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:08:05] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 22:13:09,311 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:09] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:13:09,577 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:09] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:13:10,428 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:10] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:13:10,741 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:10] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:13:10,743 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:10] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:13:10,747 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:10] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:13:11,063 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:11] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 22:13:11,066 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:11] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 22:13:37,453 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:13:37,454 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:13:37,457 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:13:38,030 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:13:38,038 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:13:48,249 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:13:48,512 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:13:48,558 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:13:48,870 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:13:48,871 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:13:48,889 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 22:13:48,892 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:48] "[35m[1mPOST /recommend_price HTTP/1.1[0m" 500 -
+2024-01-13 22:13:49,183 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:13:49] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:14:17,786 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:17] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:14:17,787 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:17] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:14:17,789 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:17] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:14:18,052 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:18] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:14:18,110 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:18] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 22:14:18,113 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:14:18] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 22:16:22,094 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:16:22,095 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:16:22,099 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:16:22,658 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:16:22,664 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:16:34,779 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:34] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:16:35,047 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:16:35,103 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:16:35,419 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:16:35,423 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:16:35,426 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:16:35,744 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 22:16:35,746 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:16:35] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 22:22:57,007 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:22:57] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 22:25:12,492 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:25:12,561 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:27:43,428 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:27:43,428 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:27:43,431 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:27:43,946 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:27:43,951 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:28:04,773 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:04] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:28:04,775 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:04] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:28:04,776 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:04] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:28:05,223 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:05] "[31m[1mPOST /recommend_price HTTP/1.1[0m" 422 -
+2024-01-13 22:28:05,226 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:05] "[31m[1mPOST /recommend_properties HTTP/1.1[0m" 422 -
+2024-01-13 22:28:05,232 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:28:05] "[31m[1mGET /user_details HTTP/1.1[0m" 422 -
+2024-01-13 22:30:35,474 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:30:35] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:31:37,689 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:31:37] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:32:41,977 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:32:42,036 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:35:56,507 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:35:56,508 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:35:56,512 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:35:57,404 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:35:57,413 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:35:57,435 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:57] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:35:57,889 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:57] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:35:58,468 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:58] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:35:58,474 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:58] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:35:58,475 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:58] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:35:59,045 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:59] "[35m[1mPOST /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 22:35:59,047 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:59] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 22:35:59,051 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:35:59] "[35m[1mPOST /recommend_price HTTP/1.1[0m" 500 -
+2024-01-13 22:37:51,844 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:37:51,901 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:41:03,208 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:41:03,208 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:41:03,211 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:41:03,728 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:41:03,734 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:42:18,980 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:42:19,050 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:42:19,678 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:42:19,683 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:42:26,726 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:42:26,805 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:45:50,378 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:45:50,378 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:45:50,381 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:45:50,897 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:45:50,903 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:45:55,204 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:45:55] "[31m[1mPOST /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:46:26,030 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:46:26,082 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:47:29,591 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:47:29,592 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:47:29,595 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:47:30,216 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:47:30,221 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:47:30,235 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:47:30] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:47:33,671 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:47:33] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:47:47,385 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:47:47] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:48:47,091 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:48:47] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:13,440 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:13] "POST /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:49:29,026 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:49:29,027 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:49:29,030 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:29,286 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "[31m[1mPOST /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:49:29,336 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 405 -
+2024-01-13 22:49:29,340 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:29] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:49:30,141 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:49:30,142 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:49:30,144 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:30,617 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "POST /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:49:30,638 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 405 -
+2024-01-13 22:49:30,641 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:30] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:43,224 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:49:43,537 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:49:43,545 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:43,553 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "[31m[1mGET /recommend_price HTTP/1.1[0m" 405 -
+2024-01-13 22:49:43,856 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 405 -
+2024-01-13 22:49:43,859 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:43] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:49:44,579 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:44] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:49:44,582 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:44] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:49:44,590 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:44] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:49:45,030 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:45] "[31m[1mGET /recommend_price HTTP/1.1[0m" 405 -
+2024-01-13 22:49:45,033 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:45] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 405 -
+2024-01-13 22:49:45,038 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:49:45] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:50:04,778 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:50:04,860 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:50:05,535 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:50:05,540 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:50:15,583 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:50:15,659 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:50:16,204 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:50:16,209 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:50:33,282 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:50:33,347 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:50:34,386 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:50:34,391 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:50:35,411 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:50:35,486 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:50:36,537 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:50:36,545 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:50:37,580 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 22:50:37,632 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:52:46,900 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 22:52:46,901 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 22:52:46,904 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 22:52:47,514 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 22:52:47,520 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 22:52:51,925 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:52:51] "[31m[1mPOST /recommend_properties HTTP/1.1[0m" 405 -
+2024-01-13 22:52:57,829 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:52:57] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:53:03,909 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:03] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:53:27,776 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:27] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 22:53:36,207 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:53:36,208 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:53:36,209 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:53:36,682 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:53:36,683 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:53:36,684 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:53:36] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:54:15,893 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:15] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:54:16,362 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:16] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 22:54:16,907 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:16] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:54:16,909 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:16] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:54:16,911 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:16] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:54:17,388 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:17] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:54:17,390 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:17] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:54:17,392 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:54:17] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:30,138 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:30,140 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:30,143 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:30,403 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:58:30,450 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:58:30,453 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:30] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:58:31,466 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:31,467 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:31,469 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:31,938 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:31,940 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:31,942 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:31] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:37,629 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:37] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:37,945 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:37] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:37,947 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:37] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:37,950 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:37] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:58:38,265 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:38] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:58:38,267 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:38] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:58:38,625 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:38] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:38,626 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:38] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:38,627 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:38] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:39,086 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:39] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:39,091 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:39] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:39,096 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:39] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:54,604 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:54,607 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:54,616 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:54,866 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:58:54,912 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:58:54,917 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:54] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:58:56,566 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:56] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:56,568 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:56] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:58:56,570 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:56] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:57,409 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:57] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:58:57,416 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:57] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:58:57,419 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:58:57] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:02,509 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:02] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:02,821 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:02] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:02,823 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:02] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:59:02,825 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:02] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:03,132 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:59:03,135 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:59:03,295 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:03,297 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:03,301 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:03,771 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:03,775 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:03,779 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:03] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:54,855 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:54] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:54,858 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:54] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:54,861 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:54] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:55,121 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:59:55,169 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:59:55,171 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:59:55,935 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:55,945 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:55,973 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:55] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:56,457 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:56] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 22:59:56,461 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:56] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:56,463 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:56] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 22:59:58,237 INFO werkzeug Thread-74 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:58] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 22:59:58,545 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:58] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 22:59:58,550 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:58] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 22:59:58,958 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:58] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 22:59:59,006 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:59] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 22:59:59,012 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 22:59:59] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:00:19,524 INFO werkzeug Thread-86 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:19,527 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:19,530 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:19,785 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:00:19,835 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:00:19,838 INFO werkzeug Thread-91 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:19] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:00:20,652 INFO werkzeug Thread-93 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:20] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:20,654 INFO werkzeug Thread-94 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:20] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:20,655 INFO werkzeug Thread-95 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:20] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:20,914 INFO werkzeug Thread-92 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:20] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:00:21,115 INFO werkzeug Thread-96 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:21,124 INFO werkzeug Thread-98 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:21,128 INFO werkzeug Thread-97 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:21,227 INFO werkzeug Thread-99 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:00:21,229 INFO werkzeug Thread-100 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:00:21,611 INFO werkzeug Thread-103 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:21,615 INFO werkzeug Thread-101 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:21,617 INFO werkzeug Thread-102 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:21] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:26,412 INFO werkzeug Thread-104 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:26,439 INFO werkzeug Thread-105 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:26,442 INFO werkzeug Thread-106 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:26,679 INFO werkzeug Thread-107 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:00:26,732 INFO werkzeug Thread-108 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:00:26,752 INFO werkzeug Thread-109 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:26] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:00:27,426 INFO werkzeug Thread-111 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:27,431 INFO werkzeug Thread-112 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:00:27,432 INFO werkzeug Thread-113 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:27,891 INFO werkzeug Thread-114 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:00:27,898 INFO werkzeug Thread-116 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:00:27,904 INFO werkzeug Thread-115 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:00:27] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:13,657 INFO werkzeug Thread-110 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:13] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:13,969 INFO werkzeug Thread-117 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:13] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:13,971 INFO werkzeug Thread-118 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:13] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:13,978 INFO werkzeug Thread-119 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:13] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:14,307 INFO werkzeug Thread-120 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:14] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:14,312 INFO werkzeug Thread-121 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:14] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:15,261 INFO werkzeug Thread-122 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:15,262 INFO werkzeug Thread-123 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:15,272 INFO werkzeug Thread-124 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:15,733 INFO werkzeug Thread-125 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:15,737 INFO werkzeug Thread-126 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:15,742 INFO werkzeug Thread-127 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:15] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:18,856 INFO werkzeug Thread-128 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:18] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:18,858 INFO werkzeug Thread-129 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:18] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:18,862 INFO werkzeug Thread-130 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:18] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:19,622 INFO werkzeug Thread-132 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:19] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:19,623 INFO werkzeug Thread-134 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:19] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:19,627 INFO werkzeug Thread-133 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:19] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:30,653 INFO werkzeug Thread-131 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:30] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:30,966 INFO werkzeug Thread-135 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:30] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:30,968 INFO werkzeug Thread-136 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:30] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:30,975 INFO werkzeug Thread-137 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:30] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:31,291 INFO werkzeug Thread-138 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:31] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:31,295 INFO werkzeug Thread-139 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:31] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:32,061 INFO werkzeug Thread-140 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:32,062 INFO werkzeug Thread-141 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:32,063 INFO werkzeug Thread-142 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:32,523 INFO werkzeug Thread-145 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:32,526 INFO werkzeug Thread-143 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:32,529 INFO werkzeug Thread-144 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:32] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:33,777 INFO werkzeug Thread-146 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:33] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:33,781 INFO werkzeug Thread-147 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:33] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:33,784 INFO werkzeug Thread-148 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:33] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:34,260 INFO werkzeug Thread-151 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:34] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:34,264 INFO werkzeug Thread-149 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:34] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:34,266 INFO werkzeug Thread-150 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:34] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:40,820 INFO werkzeug Thread-152 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:40] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:41,138 INFO werkzeug Thread-153 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:41] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:41,141 INFO werkzeug Thread-154 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:41] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:41,146 INFO werkzeug Thread-155 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:41] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:41,386 INFO werkzeug Thread-156 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:41] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:41,451 INFO werkzeug Thread-157 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:41] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:42,195 INFO werkzeug Thread-159 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:42,198 INFO werkzeug Thread-160 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:42,211 INFO werkzeug Thread-161 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:42,651 INFO werkzeug Thread-162 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:42,654 INFO werkzeug Thread-163 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:42,662 INFO werkzeug Thread-164 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:42] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:43,114 INFO werkzeug Thread-158 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:43,432 INFO werkzeug Thread-165 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:43,435 INFO werkzeug Thread-166 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:43,904 INFO werkzeug Thread-169 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:43,906 INFO werkzeug Thread-167 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:43,908 INFO werkzeug Thread-168 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:43] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:48,393 INFO werkzeug Thread-170 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:48] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:48,712 INFO werkzeug Thread-171 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:48] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:48,720 INFO werkzeug Thread-172 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:48] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:48,724 INFO werkzeug Thread-173 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:48] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:49,037 INFO werkzeug Thread-174 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:49] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:49,039 INFO werkzeug Thread-175 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:49] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:49,774 INFO werkzeug Thread-176 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:49] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:49,775 INFO werkzeug Thread-177 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:49] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:49,779 INFO werkzeug Thread-178 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:49] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:50,231 INFO werkzeug Thread-181 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:50] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:50,234 INFO werkzeug Thread-180 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:50] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:50,236 INFO werkzeug Thread-179 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:50] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:53,927 INFO werkzeug Thread-182 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:53] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:53,931 INFO werkzeug Thread-183 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:53] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:53,940 INFO werkzeug Thread-184 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:53] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:54,191 INFO werkzeug Thread-185 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:54] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:54,716 INFO werkzeug Thread-187 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:54] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:54,743 INFO werkzeug Thread-189 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:54] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:01:54,751 INFO werkzeug Thread-188 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:54] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:01:55,768 INFO werkzeug Thread-186 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:55] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:01:56,083 INFO werkzeug Thread-190 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:56] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:56,086 INFO werkzeug Thread-191 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:56] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:56,392 INFO werkzeug Thread-192 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:56] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:01:56,395 INFO werkzeug Thread-193 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:56] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:01:57,117 INFO werkzeug Thread-194 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:57,118 INFO werkzeug Thread-195 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:01:57,119 INFO werkzeug Thread-196 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:01:57,573 INFO werkzeug Thread-197 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:01:57,586 INFO werkzeug Thread-198 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:01:57,587 INFO werkzeug Thread-199 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:01:57] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:01,791 INFO werkzeug Thread-200 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:01] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:01,801 INFO werkzeug Thread-201 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:01] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:01,804 INFO werkzeug Thread-202 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:01] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:02,014 INFO werkzeug Thread-203 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:02,107 INFO werkzeug Thread-204 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:02,110 INFO werkzeug Thread-205 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:02,784 INFO werkzeug Thread-207 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:02,785 INFO werkzeug Thread-208 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:02,788 INFO werkzeug Thread-209 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:02] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:03,258 INFO werkzeug Thread-210 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:03] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:03,266 INFO werkzeug Thread-212 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:03] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:03,269 INFO werkzeug Thread-211 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:03] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:08,030 INFO werkzeug Thread-206 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:08,335 INFO werkzeug Thread-213 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:08,337 INFO werkzeug Thread-214 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:08,340 INFO werkzeug Thread-215 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:08,647 INFO werkzeug Thread-216 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:08,649 INFO werkzeug Thread-217 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:08] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:09,405 INFO werkzeug Thread-218 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:09,407 INFO werkzeug Thread-219 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:09,408 INFO werkzeug Thread-220 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:09,910 INFO werkzeug Thread-223 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:09,919 INFO werkzeug Thread-221 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:09,968 INFO werkzeug Thread-222 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:09] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:11,370 INFO werkzeug Thread-224 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:11] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:11,373 INFO werkzeug Thread-225 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:11] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:11,379 INFO werkzeug Thread-226 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:11] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:12,428 INFO werkzeug Thread-228 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:12] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:12,442 INFO werkzeug Thread-230 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:12] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:12,445 INFO werkzeug Thread-229 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:12] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:14,487 INFO werkzeug Thread-227 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:14] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:14,805 INFO werkzeug Thread-231 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:14] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:14,806 INFO werkzeug Thread-232 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:14] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:14,809 INFO werkzeug Thread-233 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:14] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:15,071 INFO werkzeug Thread-234 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:15] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:15,118 INFO werkzeug Thread-235 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:15] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:15,880 INFO werkzeug Thread-237 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:15] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:15,882 INFO werkzeug Thread-238 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:15] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:15,885 INFO werkzeug Thread-239 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:15] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:16,345 INFO werkzeug Thread-240 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:16] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:16,355 INFO werkzeug Thread-242 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:16] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:16,358 INFO werkzeug Thread-241 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:16] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:17,211 INFO werkzeug Thread-236 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:17,526 INFO werkzeug Thread-243 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:17,529 INFO werkzeug Thread-244 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:17,968 INFO werkzeug Thread-245 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:17,979 INFO werkzeug Thread-247 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:17,984 INFO werkzeug Thread-246 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:17] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:21,180 INFO werkzeug Thread-248 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:21,188 INFO werkzeug Thread-249 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:21,192 INFO werkzeug Thread-250 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:21,416 INFO werkzeug Thread-251 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:21,491 INFO werkzeug Thread-252 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:21,495 INFO werkzeug Thread-253 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:21] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:22,299 INFO werkzeug Thread-255 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:22,301 INFO werkzeug Thread-256 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:22,303 INFO werkzeug Thread-257 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:22,757 INFO werkzeug Thread-258 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:22,762 INFO werkzeug Thread-259 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:22,781 INFO werkzeug Thread-260 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:22] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:26,838 INFO werkzeug Thread-254 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:26] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:27,153 INFO werkzeug Thread-261 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:27] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:27,156 INFO werkzeug Thread-262 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:27] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:02:27,159 INFO werkzeug Thread-263 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:27] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:27,466 INFO werkzeug Thread-264 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:27] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:02:27,471 INFO werkzeug Thread-265 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:27] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:02:28,235 INFO werkzeug Thread-266 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:28,238 INFO werkzeug Thread-267 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:28,240 INFO werkzeug Thread-268 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:28,711 INFO werkzeug Thread-269 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:28,728 INFO werkzeug Thread-271 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:02:28,734 INFO werkzeug Thread-270 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:28] "[35m[1mGET /recommend_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:02:42,702 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 23:02:42,702 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 23:02:42,706 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:02:43,321 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:02:43,328 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:02:53,464 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:53] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:02:57,319 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:57,320 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:02:57,321 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:57,786 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:02:57,792 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:02:57,796 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:02:57] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:03:24,751 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:24] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:03:24,752 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:24] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:03:24,756 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:24] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:03:25,010 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:25] "[31m[1mGET /recommend_price HTTP/1.1[0m" 401 -
+2024-01-13 23:03:25,062 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:25] "[31m[1mGET /recommend_properties HTTP/1.1[0m" 401 -
+2024-01-13 23:03:25,073 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:25] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 23:03:31,093 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:03:31,415 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:03:31,667 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:03:31,776 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:03:31,777 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:03:31,784 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:03:31,990 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:31] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:03:32,091 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:32] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:03:42,870 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:42] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:03:43,184 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:43] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:03:43,187 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:43] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:03:43,201 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:43] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:03:43,498 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:43] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:03:43,501 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:03:43] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:04:07,679 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:07] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:04:07,949 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:07] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:04:08,077 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:04:08,383 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:04:08,385 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:04:08,396 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:04:08,694 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:04:08,699 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:04:08] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:50,508 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:50,510 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:50,513 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:50,779 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:50,824 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:50,831 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:50] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:51,899 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:51] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:51,901 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:51] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:51,902 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:51] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:52,406 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:52] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:52,411 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:52] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:52,455 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:52] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:52,922 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:52] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:53,239 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:53] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:53,248 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:53] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:05:53,964 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:53] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:05:53,967 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:53] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:05:53,969 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:05:53] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:20,042 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:20,044 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:20,046 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:20,309 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:20,355 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:20,361 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:20] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:21,120 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:21,141 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:21,142 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:21,601 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:21,630 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:21,631 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:21] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:43,641 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:43] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:43,950 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:43] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:43,956 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:43] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:43,967 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:43] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:44,262 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:44] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:44,266 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:44] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:45,029 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:45,031 INFO werkzeug Thread-74 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:45,032 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:45,500 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:45,505 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:45,507 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:45] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:50,965 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:50] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:50,969 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:50] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:07:50,978 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:50] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:51,240 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:51] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:07:51,279 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:51] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:07:51,282 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:07:51] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:11:27,919 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:11:27,988 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:11:29,319 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:11:29,329 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:11:53,482 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:11:53,528 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:11:54,245 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:11:54,252 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:12:44,982 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:44] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:12:44,985 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:44] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:12:44,987 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:44] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:12:45,486 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:45] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:12:45,489 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:45] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:12:45,490 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:45] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:12:58,088 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "OPTIONS /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:12:58,089 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "OPTIONS /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:12:58,092 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:12:58,356 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "GET /recommend_price HTTP/1.1" 200 -
+2024-01-13 23:12:58,404 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:12:58,408 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:12:58] "GET /recommend_properties HTTP/1.1" 200 -
+2024-01-13 23:13:23,532 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:23] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:13:24,317 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/3.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:24,323 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/6.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:24,333 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/5.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:24,336 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/2.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:24,339 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/1.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:24,340 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:24] "GET /uploads/4.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:26,635 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:26] "GET /uploads/7.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:26,821 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:26] "GET /uploads/8.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:26,822 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:26] "GET /uploads/10.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:27,054 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:27] "GET /uploads/11.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:27,760 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:27] "GET /uploads/12.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:27,760 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:27] "GET /uploads/13.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:29,162 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:29] "GET /uploads/14.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:29,252 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:29] "GET /uploads/16.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:30,176 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:30] "GET /uploads/17.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:30,467 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:30] "GET /uploads/18.jpg HTTP/1.1" 200 -
+2024-01-13 23:13:40,443 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:40] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:13:40,766 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:40] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:13:41,177 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:41] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:13:41,481 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:41] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:13:41,483 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:41] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:13:41,797 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:41] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:13:54,412 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:13:54,752 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/2.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:54,754 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/1.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:54,763 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/3.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:54,766 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/5.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:54,768 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/4.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:54,771 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:54] "[36mGET /uploads/6.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,076 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/7.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,076 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/8.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,101 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/10.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,104 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/11.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,289 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,290 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,410 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,427 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/16.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,429 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/17.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:13:55,722 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:13:55] "[36mGET /uploads/18.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:14:38,028 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:14:38,339 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:14:38,602 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:14:38,680 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:14:38,684 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:14:38,922 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:38] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:14:39,614 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:39] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:14:40,075 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:40] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:14:41,142 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:41] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:14:41,168 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:41] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:14:41,613 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:41] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:14:41,620 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:14:41] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:16:15,962 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:15] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:16:16,455 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/1.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,460 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/3.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,460 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/2.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,460 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/4.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,460 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/5.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,462 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/6.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,922 INFO werkzeug Thread-74 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/7.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,922 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/8.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,926 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/10.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,946 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/11.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,946 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:16,947 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:16] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:17,404 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:17] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:17,474 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:17] "[36mGET /uploads/16.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:17,476 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:17] "[36mGET /uploads/17.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:17,537 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:17] "[36mGET /uploads/18.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:16:59,745 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:59] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:16:59,747 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:16:59] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:00,017 INFO werkzeug Thread-86 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:00] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:00,060 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:00] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:02,467 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:02] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:02,771 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:02] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:07,151 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:07] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:07,153 INFO werkzeug Thread-91 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:07] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:07,416 INFO werkzeug Thread-92 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:07] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:07,462 INFO werkzeug Thread-93 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:07] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:55,097 INFO werkzeug Thread-94 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:55] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:55,414 INFO werkzeug Thread-95 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:55] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:55,418 INFO werkzeug Thread-96 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:55] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:17:55,734 INFO werkzeug Thread-97 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:55] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:17:57,890 INFO werkzeug Thread-99 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:57] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:17:57,893 INFO werkzeug Thread-98 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:17:57] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:18:04,144 INFO werkzeug Thread-100 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:04] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:18:04,458 INFO werkzeug Thread-101 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:04] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:18:04,460 INFO werkzeug Thread-102 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:04] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:18:04,774 INFO werkzeug Thread-103 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:04] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:18:34,363 INFO werkzeug Thread-104 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:34] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:18:34,364 INFO werkzeug Thread-105 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:34] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:18:34,810 INFO werkzeug Thread-106 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:34] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:18:34,819 INFO werkzeug Thread-107 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:18:34] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:24,348 INFO werkzeug Thread-108 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:19:24,352 INFO werkzeug Thread-109 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:24,359 INFO werkzeug Thread-110 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:24,362 INFO werkzeug Thread-111 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:24,365 INFO werkzeug Thread-112 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:24,612 INFO werkzeug Thread-113 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:19:24,660 INFO werkzeug Thread-115 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:24] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:25,373 INFO werkzeug Thread-117 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:25] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:19:25,374 INFO werkzeug Thread-118 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:25] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:25,844 INFO werkzeug Thread-120 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:25] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:19:25,847 INFO werkzeug Thread-119 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:25] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:19:40,277 INFO werkzeug Thread-121 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:40] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:19:40,279 INFO werkzeug Thread-122 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:40] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:40,738 INFO werkzeug Thread-123 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:40] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:19:40,740 INFO werkzeug Thread-124 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:40] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:19:41,248 INFO werkzeug Thread-125 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:41] "[36mGET /uploads/1.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:41,253 INFO werkzeug Thread-126 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:41] "[36mGET /uploads/2.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:41,254 INFO werkzeug Thread-127 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:19:41] "[36mGET /uploads/3.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:19:56,423 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 23:19:56,424 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 23:19:56,428 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:19:57,073 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:19:57,079 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:20:42,197 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:42] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:42,198 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:42] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:42,452 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:42] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:42,510 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:42] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:43,340 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:43] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:43,342 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:43] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:43,816 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:43] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:20:43,820 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:43] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:20:50,584 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:50] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:50,899 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:50] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:50,903 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:50] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:51,213 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:51] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:51,971 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:51] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:51,976 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:51] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:52,459 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:52] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:20:52,463 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:52] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:20:57,290 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:57] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:57,293 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:57] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:57,538 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:57] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:57,637 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:57] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:58,361 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:58] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:20:58,363 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:58] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:58,832 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:58] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:20:58,837 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:20:58] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:01,822 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:01] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:02,133 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:02] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:21:02,537 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:02] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:21:02,541 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:02] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:21:04,572 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:04] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:04,574 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:04] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:21:04,836 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:04] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:04,888 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:04] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:21:05,004 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:05] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:05,008 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:05] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:21:05,467 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:05] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:21:05,469 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:05] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:21:06,238 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:06] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:21:06,551 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:06] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:21:07,019 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:07] "[35m[1mGET /lister_properties HTTP/1.1[0m" 500 -
+2024-01-13 23:21:07,025 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:21:07] "[35m[1mGET /user_details HTTP/1.1[0m" 500 -
+2024-01-13 23:21:29,501 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:21:29,590 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:21:30,512 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:21:30,524 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:21:32,557 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:21:32,631 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:21:33,249 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:21:33,256 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:21:59,380 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:21:59,432 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:22:00,156 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:22:00,165 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:22:04,208 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\rental-dai-frontend\\server\\app.py', reloading
+2024-01-13 23:22:04,281 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:26:43,959 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 23:26:43,959 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 23:26:43,963 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 23:26:44,572 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 23:26:44,578 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 23:27:48,873 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:27:48] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-13 23:27:49,139 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:27:49] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2024-01-13 23:27:49,349 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:27:49] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2024-01-13 23:28:10,884 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:10] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-13 23:28:11,102 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:11] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-13 23:28:11,270 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:11] "POST /api/properties HTTP/1.1" 200 -
+2024-01-13 23:28:11,271 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:11] "POST /api/properties HTTP/1.1" 200 -
+2024-01-13 23:28:37,131 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:37] "OPTIONS /api/properties HTTP/1.1" 200 -
+2024-01-13 23:28:37,587 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:28:37] "[31m[1mPOST /api/properties HTTP/1.1[0m" 400 -
+2024-01-13 23:33:38,166 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:33:38] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:40:14,011 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 23:40:14,636 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/2.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,638 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/3.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,649 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/4.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,652 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/6.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,660 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/1.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,662 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/5.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,977 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/7.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,985 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/8.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:14,994 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:14] "[36mGET /uploads/10.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,246 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/11.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,305 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,310 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,313 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,317 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/16.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,334 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/17.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,572 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "[36mGET /uploads/18.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:40:15,657 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:40:15] "GET /uploads/26.jpg HTTP/1.1" 200 -
+2024-01-13 23:49:47,604 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:47] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:49:47,873 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:47] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:49:53,298 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:53] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:49:53,611 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:53] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:49:54,417 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:54] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:49:54,719 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:54] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:49:54,727 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:54] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:49:55,044 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:55] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:49:55,385 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:55] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:49:55,386 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:55] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:49:55,388 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:55] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:49:55,390 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:49:55] "[36mGET /uploads/26.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:13,159 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:53:13,169 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:53:13,426 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:53:13,484 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:53:13,855 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:13,856 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:13,857 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:13] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:14,111 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:14] "[36mGET /uploads/26.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:44,826 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:44] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:53:45,146 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 23:53:45,400 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 23:53:45,540 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:53:45,544 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 23:53:45,715 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 23:53:45,736 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:45] "[36mGET /uploads/12.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:46,041 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:46] "[36mGET /uploads/13.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:46,043 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:46] "[36mGET /uploads/14.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:53:46,046 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:53:46] "[36mGET /uploads/26.jpg HTTP/1.1[0m" 304 -
+2024-01-13 23:59:48,029 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 23:59:48] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:00:28,085 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:00:28] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:01:09,760 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:01:09] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:01:10,679 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:01:10] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:01:16,609 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:01:16] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:01:29,473 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:01:29] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:01:35,034 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:01:35] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:08:17,575 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:08:17] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:09:21,283 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:09:21] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:09:32,873 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:09:32] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:10:25,786 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:10:25] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:11:20,720 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:11:20] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:13:17,183 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:13:17] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:14:18,688 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:14:18] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:14:19,779 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:14:19] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:14:48,508 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:14:48] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:33,168 INFO werkzeug Thread-86 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:33] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:34,219 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:34] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:36,135 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:36] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:47,829 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:47] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:49,390 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:49] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:18:59,371 INFO werkzeug Thread-91 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:18:59] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:19:29,208 INFO werkzeug Thread-92 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:19:29] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:19:30,230 INFO werkzeug Thread-94 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:19:30] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:19:38,342 INFO werkzeug Thread-93 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:19:38] "GET /api/properties HTTP/1.1" 200 -
+2024-01-14 00:19:54,444 INFO werkzeug Thread-95 (process_request_thread) : 127.0.0.1 - - [14/Jan/2024 00:19:54] "GET /api/properties HTTP/1.1" 200 -
