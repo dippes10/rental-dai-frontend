@@ -268,12 +268,15 @@ def nearby_properties():
     user_id = current_user_id.get('user_id')
 
     cursor = connection.cursor() 
-    user_location_query = "SELECT latitude, longitude FROM user WHERE id = %s;"
+    user_location_query = "SELECT latitude, longitude FROM users WHERE id = %s;"
     cursor.execute(user_location_query, (user_id,))
     user_location = cursor.fetchone()
+    print(user_location)
 
     if user_location:
         user_latitude, user_longitude = user_location
+        print(user_latitude)
+        print(user_longitude)
         radius_in_km = 4  # Radius to search within (adjust as needed)
 
     # Execute Haversine query to find nearby properties
@@ -295,6 +298,8 @@ def nearby_properties():
     # Calculate distance for each property and add it to property details
     for prop in properties:
      prop['distance'] = haversine( float(user_latitude), float(user_longitude),float(prop['latitude']), float(prop['longitude']))
+     print(prop['distance'])
+
 
     # Filter properties within the radius and sort by distance
     nearby_properties = [
@@ -363,7 +368,7 @@ def recommend_price():
     user_id = current_user_id.get('user_id')
     # Get user's preferences from the request
     cursor = connection.cursor()
-    user_price_query = "SELECT preferredPrice FROM user WHERE id = %s;"
+    user_price_query = "SELECT preferredPrice FROM users WHERE id = %s;"
     cursor.execute(user_price_query, (user_id,))
     user_price = cursor.fetchone()[0]
 

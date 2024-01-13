@@ -56,11 +56,11 @@ const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
   const fetchPriceRecommendations = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/price_recommendations', {
-        method: 'GET',
+      const token = localStorage.getItem("access_token");
+      const response = await fetch('http://localhost:8080/recommend_price', {
+        method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          // Include any other headers like Authorization if needed
+          Authorization: `Bearer ${token}`,        
         },
       });
   
@@ -81,11 +81,11 @@ const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
   const fetchNearbyFlats = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/nearby_flats', {
-        method: 'GET',
+      const token = localStorage.getItem("access_token");
+      const response = await fetch('http://localhost:8080/recommend_properties', {
+        method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          // Include any other headers like Authorization if needed
+          Authorization: `Bearer ${token}`,
         },
       });
   
@@ -129,39 +129,12 @@ const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
       }
     };
 
-    const fetchListings = async () => {
-      setIsLoading(true);
-      try {
-        const token = localStorage.getItem("access_token");
-        const response = await fetch(
-         "http://localhost:8080/",
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch listings");
-        }
-        const data = await response.json();
-        const updatedListings = data.map((listing: { images: string }) => ({
-          ...listing,
-          images: listing.images ? listing.images.split(",") : [],
-        }));
-        setListings(updatedListings);
-      } catch (err) {
-        setError("An unexpected error occurred");
-      } finally {
-        setIsLoading(false);
-      }
-    };
+   
 
     fetchPriceRecommendations();
     fetchNearbyFlats();
     fetchProfileData();
-    fetchListings();
+    
   }, []);
 
   const handleViewMap = (property: Listing) => {
@@ -235,14 +208,14 @@ const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
               </p>
 
               {/* Images */}
-              {listing.images.map((image, index) => (
+              {/* {listing.images.map((image, index) => (
                 <img
                   key={index}
                   src={`http:/localhost:8080/${image.trim()}`}
                   alt={`Listing ${listing.title} - Image ${index + 1}`}
                   className="w-full h-52 object-cover rounded-md mb-4"
                 />
-              ))}
+              ))} */}
 
               {/* View Map Button */}
               <button
