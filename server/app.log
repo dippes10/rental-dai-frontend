@@ -4148,3 +4148,58 @@ mysql.connector.errors.OperationalError: MySQL Connection not available.
 2024-01-13 00:11:40,050 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 00:11:40] "[36mGET /uploads/13.PNG HTTP/1.1[0m" 304 -
 2024-01-13 00:11:40,057 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 00:11:40] "[36mGET /uploads/WHAT.PNG HTTP/1.1[0m" 304 -
 2024-01-13 00:11:40,058 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 00:11:40] "[36mGET /uploads/1.PNG HTTP/1.1[0m" 304 -
+2024-01-13 10:38:14,140 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+2024-01-13 10:38:14,140 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2024-01-13 10:38:14,144 INFO werkzeug MainThread :  * Restarting with stat
+2024-01-13 10:38:14,616 WARNING werkzeug MainThread :  * Debugger is active!
+2024-01-13 10:38:14,628 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
+2024-01-13 10:39:55,294 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:39:55] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 10:39:59,355 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:39:59] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 10:39:59,674 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:39:59] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 10:40:03,087 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:40:03] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 10:40:30,382 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:40:30] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 10:40:30,622 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:40:30] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 10:41:31,342 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:41:31] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 10:41:31,599 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:41:31] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 10:41:31,659 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:41:31] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 10:41:31,946 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:41:31] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 10:42:06,107 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:42:06] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 10:42:06,416 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:42:06] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 10:42:06,685 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:42:06] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 10:42:06,765 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:42:06] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 10:46:51,093 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:46:51] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 10:49:17,075 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /api/properties HTTP/1.1" 200 -
+2024-01-13 10:49:17,576 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /uploads/1.PNG HTTP/1.1" 200 -
+2024-01-13 10:49:17,578 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /uploads/WHAT.PNG HTTP/1.1" 200 -
+2024-01-13 10:49:17,579 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /uploads/s.PNG HTTP/1.1" 200 -
+2024-01-13 10:49:17,579 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /uploads/13.PNG HTTP/1.1" 200 -
+2024-01-13 10:49:17,590 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:17] "GET /uploads/2e.PNG HTTP/1.1" 200 -
+2024-01-13 10:49:37,043 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:37] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 10:49:37,360 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 10:49:37] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:04:51,338 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:04:51] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:04:51,590 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:04:51] "[31m[1mGET /user_details HTTP/1.1[0m" 401 -
+2024-01-13 11:05:00,115 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:00] "OPTIONS /user-Signin HTTP/1.1" 200 -
+2024-01-13 11:05:00,437 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:00] "POST /user-Signin HTTP/1.1" 200 -
+2024-01-13 11:05:01,488 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:01] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:01,793 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:01] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:05:01,802 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:01] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:02,110 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:02] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:05:25,717 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:25] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:25,720 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:25] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:05:25,970 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:25] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:26,032 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:26] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:05:59,270 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:59] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:59,576 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:59] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:05:59,586 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:59] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:05:59,893 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:05:59] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:06:32,730 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:06:32] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:06:32,733 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:06:32] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:06:32,981 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:06:32] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:06:33,044 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:06:33] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:07:35,732 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:35] "OPTIONS /user_details HTTP/1.1" 200 -
+2024-01-13 11:07:35,737 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:35] "OPTIONS /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:07:36,000 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:36] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:07:36,047 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:36] "GET /lister_properties HTTP/1.1" 200 -
+2024-01-13 11:07:40,157 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:40] "GET /user_details HTTP/1.1" 200 -
+2024-01-13 11:07:40,472 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [13/Jan/2024 11:07:40] "GET /lister_properties HTTP/1.1" 200 -
