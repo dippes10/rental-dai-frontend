@@ -10,7 +10,7 @@ import {
   FaBath,
   FaDollarSign,
 } from "react-icons/fa";
-
+import router from "next/router";
 import AppLayout from "../../components/AppLayout";
 import GeocodingComponent from "../../components/mapbox/geocoding";
 
@@ -137,7 +137,9 @@ const ListerForm: React.FC = () => {
       setImage(imageFiles); // Set your state to store multiple images
     }
   };
-
+  function handleClick(): void {
+    router.push("/profile/lister-profile");
+  }
   return (
     <AppLayout>
       <div
@@ -318,6 +320,7 @@ const ListerForm: React.FC = () => {
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
+                  onClick={handleClick}
                 >
                   Send Message
                 </button>
