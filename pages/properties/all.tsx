@@ -119,7 +119,6 @@ const PropertiesPage: React.FC = () => {
   };
 
 
-
   return (
     <AppLayout>
       <div className="bg-properties flex justify-center items-center">
