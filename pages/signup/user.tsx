@@ -51,17 +51,24 @@ const UserSignUp: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
     setError("");
     try {
+      const completeFormData = {
+        ...formData,
+        longitude: longitude?.toString() || '',
+        latitude: latitude?.toString() || '',
+        user_type: "user",
+      };
+  
       const response = await fetch("http://localhost:8080/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, user_type: "user" }),
+        body: JSON.stringify(completeFormData),
       });
 
       if (response.ok) {
