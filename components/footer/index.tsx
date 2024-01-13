@@ -41,7 +41,7 @@ const Footer = () => {
   const { BottomFooterNav, FooterNav } = FooterConst;
 
   return (
-    <footer className="bg-neutral-100 text-black pt-8 pb-6 bg-blue-100">
+    <footer className="bg-neutral-100 text-black pt-8 pb-6 bg-gradient-to-r from-gray-200 via-blue-300 to-red-400">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center gap-8">
           <div className="w-full lg:w-auto">

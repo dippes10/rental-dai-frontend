@@ -19,6 +19,10 @@ import {
   FaPaperPlane,
   FaRocket,
   FaFacebook,
+  FaDollarSign,
+  FaHeart,
+  FaHome,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const AboutUs: React.FC = () => {
@@ -55,7 +59,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <section className="pb-20 bg-blueGray-200 -mt-52 bg-black">
+      <section className="pb-20 bg-gray-200 -mt-52 bg-black">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
             {/* <!-- Feature 1: Wide Range of Listings --> */}
@@ -68,7 +72,7 @@ const AboutUs: React.FC = () => {
                   <h6 className="text-xl font-semibold">
                     Wide Range of Listings
                   </h6>
-                  <p className="mt-2 mb-4 text-blueGray-500">
+                  <p className="mt-2 mb-4 text-gray-500">
                     Explore an extensive selection of properties, from
                     affordable rooms to luxurious houses, across Nepal.
                   </p>
@@ -84,7 +88,7 @@ const AboutUs: React.FC = () => {
                     <FaLock className="fas"></FaLock>
                   </div>
                   <h6 className="text-xl font-semibold">Trusted by Tenants</h6>
-                  <p className="mt-2 mb-4 text-blueGray-500">
+                  <p className="mt-2 mb-4 text-gray-500">
                     Join a community of satisfied tenants who found their ideal
                     home through Rental-Dai.
                   </p>
@@ -102,7 +106,7 @@ const AboutUs: React.FC = () => {
                   <h6 className="text-xl font-semibold">
                     Secure and Easy Transactions
                   </h6>
-                  <p className="mt-2 mb-4 text-blueGray-500">
+                  <p className="mt-2 mb-4 text-gray-500">
                     Experience a hassle-free and secure process, from house
                     searching to finalizing your rental agreement.
                   </p>
@@ -137,34 +141,39 @@ const AboutUs: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="items-center flex flex-wrap">
             <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+              {/* Updated Image */}
               <img
-                alt="..."
+                alt="A beautiful house in Nepal"
                 className="max-w-full rounded-lg shadow-lg"
-                src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXw3NjE2MHwwfDF8c2VhcmNofDF8fG5lcGFsfGVufDB8fHx8MTYxNjI4MjI2MQ&ixlib=rb-1.2.1&q=80&w=1080"
               />
             </div>
             <div className="w-full md:w-5/12 ml-auto mr-auto px-4 bg-white rounded-lg">
               <div className="md:pr-12">
-                <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-blueGray-200">
-                  <FaRocket className="fas text-xl text-green-600"></FaRocket>
+                {/* Icon and Title */}
+                <div className="text-green-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-green-100">
+                  <FaHome className="text-xl"></FaHome>
                 </div>
-                <h3 className="text-3xl font-semibold">A growing company</h3>
-                <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                  The extension comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and you're
-                  good to go.
+                <h3 className="text-3xl font-semibold">
+                  Find Your Perfect Home
+                </h3>
+                <p className="mt-4 text-lg leading-relaxed text-gray-500">
+                  Rental-Dai is your trusted partner in finding cozy homes and
+                  rooms across Nepal. Dive into our extensive selection and find
+                  a place that feels like home.
                 </p>
+                {/* Updated List Items */}
                 <ul className="list-none mt-6">
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-100 mr-3">
-                          <FaFingerprint className="fas"></FaFingerprint>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
+                          <FaMapMarkerAlt className="text-green-600"></FaMapMarkerAlt>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
-                          Carefully crafted components
+                        <h4 className="text-gray-500">
+                          Wide Range of Properties
                         </h4>
                       </div>
                     </div>
@@ -172,13 +181,13 @@ const AboutUs: React.FC = () => {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-100 mr-3">
-                          <FaHtml5 className="fab"></FaHtml5>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
+                          <FaHeart className="text-green-600"></FaHeart>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
-                          Amazing page examples
+                        <h4 className="text-gray-500">
+                          Trusted by Tenants
                         </h4>
                       </div>
                     </div>
@@ -186,13 +195,15 @@ const AboutUs: React.FC = () => {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blueGray-500 bg-blueGray-100 mr-3">
-                          <FaPaperPlane className="far"></FaPaperPlane>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
+                          <FaDollarSign className="text-green-600"></FaDollarSign>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500">
-                          Dynamic components
+                        <h4
+                          className="text-gray-500"
+                        >
+                          Competitive Pricing
                         </h4>
                       </div>
                     </div>
@@ -211,7 +222,7 @@ const AboutUs: React.FC = () => {
               <h2 className="text-4xl font-semibold text-red-500">
                 Here are our heroes
               </h2>
-              <p className="text-lg leading-relaxed m-4 text-blueGray-500">
+              <p className="text-lg leading-relaxed m-4 text-gray-500">
                 According to the National Oceanic and Atmospheric
                 Administration, Ted, Scambos, NSIDClead scentist, puts the
                 potentially record maximum.
@@ -223,12 +234,56 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
+                  src="/nabaraj-sir.png"
+                  className="shadow-lg rounded-full mx-auto max-w-120-px"
+                />
+                <div className="pt-6 text-center">
+                  <h5 className="text-xl font-bold">Nabaraj Negi</h5>
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
+                    Project Supervisor
+                  </p>
+
+                  <div className="mt-6 grid-flow-row gap-y-4">
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
+                        type="button"
+                      >
+                        <FaFacebook className="fab "></FaFacebook>
+                      </button>
+                    </a>
+
+                    <a href="https://www.google.com" target="_blank">
+                      <button
+                        className=" text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-yellow-300"
+                        type="button"
+                      >
+                        <FaDribbble className="fab"></FaDribbble>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div className="px-6">
+                <img
+                  alt="..."
                   src="/sirak-shrestha.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Sirak Shrestha Joshi</h5>
-                  <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
                     UI/Ux Designer
                   </p>
 
@@ -272,8 +327,8 @@ const AboutUs: React.FC = () => {
                 />
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Jwalan Chand</h5>
-                  <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                    Marketing Specialist
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
+                    Backend Developer
                   </p>
                   <div className="mt-6">
                     <a href="https://www.google.com" target="_blank">
@@ -303,8 +358,8 @@ const AboutUs: React.FC = () => {
                 />
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Dipesh Sanjel</h5>
-                  <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
-                    UI/UX Designer
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
+                    Frontend Developer
                   </p>
                   <div className="mt-6 mx-2">
                     <a href="https://www.google.com" target="_blank">
@@ -346,7 +401,7 @@ const AboutUs: React.FC = () => {
                 />
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Jenna Kardi</h5>
-                  <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
                     Founder and CEO
                   </p>
                   <div className="mt-6">
@@ -382,7 +437,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="pb-20 relative block bg-blue-200">
+      <section className="pb-20 relative block bg-blue-300">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style={{ transform: "translateZ(0)" }}
@@ -397,19 +452,19 @@ const AboutUs: React.FC = () => {
             y="0"
           >
             <polygon
-              className="text-blueGray-800 fill-blue-200"
+              className="text-gray-800 fill-blue-300"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
 
-        <div className="container mx-auto px-4 lg:pt-24 lg:pb-64">
+        <div className="containe mx-auto px-4 lg:pt-24 lg:pb-64">
           <div className="flex flex-wrap text-center justify-center">
             <div className="w-full lg:w-6/12 px-4">
               <h2 className="text-4xl font-semibold text-red-500">
                 Build something
               </h2>
-              <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
+              <p className="text-lg leading-relaxed mt-4 mb-4 text-gray-600">
                 Put the potentially record low maximum sea ice extent tihs year
                 down to low ice. According to the National Oceanic and
                 Atmospheric Administration, Ted, Scambos.
@@ -424,7 +479,7 @@ const AboutUs: React.FC = () => {
               <h6 className="text-xl mt-5 font-semibold text-white">
                 Excelent Services
               </h6>
-              <p className="mt-2 mb-4 text-blueGray-400">
+              <p className="mt-2 mb-4 text-gray-600">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -436,7 +491,7 @@ const AboutUs: React.FC = () => {
               <h5 className="text-xl mt-5 font-semibold text-white">
                 Grow your market
               </h5>
-              <p className="mt-2 mb-4 text-blueGray-400">
+              <p className="mt-2 mb-4 text-gray-600">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -448,7 +503,7 @@ const AboutUs: React.FC = () => {
               <h5 className="text-xl mt-5 font-semibold text-white">
                 Launch time
               </h5>
-              <p className="mt-2 mb-4 text-blueGray-400">
+              <p className="mt-2 mb-4 text-gray-600">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
@@ -457,54 +512,54 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
       <section className="relative block py-24 lg:pt-0 ">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+        <div className="container mx-auto px-4 ">
+          <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48 ">
             <div className="w-full lg:w-6/12 px-4">
-              <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-red-200">
-                <div className="flex-auto p-5 lg:p-10">
+              <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-slate-200">
+                <div className="flex-auto p-5 lg:p-10 bg-red-400 shadow-md">
                   <h4 className="text-2xl font-semibold">
-                    Want to work with us?
+                    Want to be a part of us with us?
                   </h4>
-                  <p className="leading-relaxed mt-1 mb-4 text-blueGray-500">
+                  <p className="leading-relaxed mt-1 mb-4 text-white">
                     Complete this form and we will get back to you in 24 hours.
                   </p>
                   <div className="relative w-full mb-3 mt-8">
                     <label
-                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2 focus:outline-none focus:border-red-500"
+                      className="block uppercase text-white text-xs font-bold mb-2 focus:outline-none focus:border-red-500"
                       htmlFor="full-name"
                     >
                       Full Name
                     </label>
                     <input
                       type="text"
-                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:ring w-full ease-linear transition-all duration-150 focus:outline-none focus:border-red-500"
+                      className="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:ring w-full ease-linear transition-all duration-150 focus:outline-none focus:border-red-500"
                       placeholder="Full Name"
                     />
                   </div>
 
                   <div className="relative w-full mb-3">
                     <label
-                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2 focus:border-red-500"
+                      className="block uppercase text-white text-xs font-bold mb-2 focus:border-red-500"
                       htmlFor="email"
                     >
                       Email
                     </label>
                     <input
                       type="email"
-                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      className="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
                     />
                   </div>
 
                   <div className="relative w-full mb-3">
                     <label
-                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2 focus:border-red-500"
+                      className="block uppercase text-white text-xs font-bold mb-2 focus:border-red-500"
                       htmlFor="message"
                     >
                       Message
                     </label>
                     <textarea
-                      className="border-0 px-3 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                      className="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Type a message..."
                     />
                   </div>
