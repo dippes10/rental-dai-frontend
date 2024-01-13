@@ -53,8 +53,20 @@ export const Header: { HeaderNav: NavItemProps[] } = {
     },
     {
       id: "profile",
-      navItem: "Pofile",
-      navLink: "/profile/lister-profile",
+      navItem: "Profile",
+      navLink: "/profile",
+      subNavItems: [
+        {
+          id: "user-profile",
+          navItem: "User Profile",
+          navLink: "/profile/user-profile",
+        },
+        {
+          id: "lister-profile",
+          navItem: "Lister Profile",
+          navLink: "/profile/lister-profile",
+        },
+      ],
     },
   ],
 };
