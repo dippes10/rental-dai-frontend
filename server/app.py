@@ -215,14 +215,15 @@ def update_property(property_id):
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            updated_images.append(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            relative_path = os.path.join('uploads', filename)
+            updated_images.append(os.path.join(relative_path))
         else:
             cursor.close()
             return jsonify({'message': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
 
     # Perform the update in the database
-    update_query = "UPDATE propertieslist SET name=%s, address=%s, image=%s, details=%s, latitude=%s, longitude=%s, agreedToTerms=%s WHERE id=%s"
-    cursor.execute(update_query, (updated_name, updated_address, ','.join(updated_images), updated_details, updated_latitude, updated_longitude, updated_agreed_to_terms, property_id))
+    update_query = "UPDATE propertieslist SET name=%s, address=%s, image=%s, details=%s, latitude=%s, longitude=%s, agreedToTerms=%s , price=%s,bedrooms=%s,bathrooms=%s WHERE id=%s"
+    cursor.execute(update_query, (updated_name, updated_address, ','.join(updated_images), updated_details, updated_latitude, updated_longitude, updated_agreed_to_terms,updated_price,updated_bedroom,updated_bathroom, property_id))
     connection.commit()
     cursor.close()
 
@@ -344,6 +345,43 @@ def user_details():
         return jsonify(user_info)
     else:
         return jsonify({'message': 'User details not found'}), 404
+    
+#recommendation by price
+@app.route('/recommend_price', methods=['POST'])
+def recommend_price():
+    
+    # Get user's preferences from the request
+    max_price = float(request.json.get('max_price'))  # Maximum price the user is willing to pay
+
+    # Execute a query to fetch properties
+    cursor = connection.cursor()
+    query = "SELECT * FROM propertieslist;"
+    cursor.execute(query)
+
+    columns = [col[0] for col in cursor.description]
+
+    # Convert fetched data into a list of dictionaries
+    properties = [
+        dict(zip(columns, row))  # Create dictionary for each row
+        for row in cursor.fetchall()
+    ]
+
+    # Filter properties below the maximum price
+    recommended_prop = [
+        {'property_details': prop}  # Structure the response
+        for prop in properties
+        if prop['price'] <= max_price
+        
+    ]
+
+    # Sort properties by price
+    recommended_prop.sort(key=lambda x: x['property_details']['price'])
+
+    cursor.close()
+
+    return jsonify(recommended_prop)
+
+      
 
 
 @app.route('/')
