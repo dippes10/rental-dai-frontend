@@ -113,10 +113,10 @@ const ListerForm: React.FC = () => {
   const incrementBathrooms = () => setBathrooms(bathrooms + 1);
   const decrementBathrooms = () => setBathrooms(Math.max(1, bathrooms - 1));
 
-  const handleMapClick = (event: any) => {
-    setLatitude(event.lngLat[1]);
-    setLongitude(event.lngLat[0]);
-  };
+  // const handleMapClick = (event: any) => {
+  //   setLatitude(event.lngLat[1]);
+  //   setLongitude(event.lngLat[0]);
+  // };
 
   const clearForm = () => {
     setName("");

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 
+import { Toaster, toast } from 'sonner';
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibnJpcGVuZHJhdGltaWxzaW5hIiwiYSI6ImNsbzdjeHlwdDA1NXYya3BkeWlrNzAxZHAifQ.tquxDmA15BRGrXcUyfUjJA';
 
 // Import statements remain the same as in your original code
@@ -99,7 +101,9 @@ const GeocodingComponent = (props: GeocodingComponentProps) => {
       }
     } catch (error) {
       console.error("Error fetching coordinates:", error);
-    } finally {
+      toast.warning("Error fetching coordinates. Please try again or enter manually.");
+    }
+    finally {
       setSearching(false);
     }
   };
@@ -110,11 +114,14 @@ const GeocodingComponent = (props: GeocodingComponentProps) => {
       props?.onMarkerChange && props?.onMarkerChange(marker);
       props.onLongitudeChange(markerLngLat.lng);
       props.onLatitudeChange(markerLngLat.lat);
-
+  
       console.log("Marker Latitude:", markerLngLat.lat);
       console.log("Marker Longitude:", markerLngLat.lng);
+  
+      toast.info("Marker location updated.");
     }
   };
+  
 
   const handleAddCurrentLocation = () => {
     if ("geolocation" in navigator) {
@@ -127,17 +134,17 @@ const GeocodingComponent = (props: GeocodingComponentProps) => {
           if (marker) {
             marker.setLngLat([currentLng, currentLat]);
           }
-          setWarning("Geo-location might not be accurate. You need to adjust the marker for better results.");
+          toast.warning("Geo-location might not be accurate. You need to adjust the marker for better results.");
           setMapVisible(true);
           setCoordinatesSet(true);
         },
         (error) => {
           console.error("Error getting current location:", error);
-          setWarning("Error getting current location. Please try again or enter manually.");
+          toast.error("Error getting current location. Please try again or enter manually.");
         }
       );
     } else {
-      setWarning("Geolocation is not supported by your browser. Please enter the location manually.");
+      toast.error("Geolocation is not supported by your browser. Please enter the location manually.");
     }
   };
 
@@ -145,15 +152,16 @@ const GeocodingComponent = (props: GeocodingComponentProps) => {
     setMapVisible(false);
   };
 
-  const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Close the map if clicking outside the map
-    if (e.target === e.currentTarget) {
-      hideMap();
-    }
-  };
+  // const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   // Close the map if clicking outside the map
+  //   if (e.target === e.currentTarget) {
+  //     hideMap();
+  //   }
+  // };
 
   return (
     <div className="geocoding-container border p-4">
+      <Toaster richColors/>
       <div className="grid gap-4">
         <label>
           Location:
@@ -183,7 +191,7 @@ const GeocodingComponent = (props: GeocodingComponentProps) => {
         </button>
       </div>
       {latitude !== null && longitude !== null && mapVisible && (
-        <div className="map-modal" onClick={handleMapClick}>
+        <div className="map-modal">
           <div id="map" className="map-container-modal"></div>
           <button
             className="mt-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none"
