@@ -25,10 +25,37 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+
 const AboutUs: React.FC = () => {
+
+  useEffect(() => {
+    // Initialize AOS with your preferred configuration
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Whether the animation should happen only once
+      easing: "ease-out", // Easing function for the animation (e.g., "ease-out", "linear", etc.)
+    });
+  
+    // Optionally, add event listeners to refresh AOS when the window is resized
+    window.addEventListener("resize", () => {
+      AOS.refresh();
+    });
+  
+    // Clean up the event listeners when the component unmounts
+    return () => {
+      window.removeEventListener("resize", () => {
+        AOS.refresh();
+      });
+    };
+  }, []);
+  
   return (
     <AppLayout>
-      <div className="relative pt-32 pb-64 flex content-center items-center justify-center min-h-screen-75 -mt-20">
+      <div data-aos="fade-up" className=" bg-black relative pt-32 pb-64 flex content-center items-center justify-center min-h-screen-75 -mt-20">
         <div
           className="absolute top-0 w-full h-full bg-center bg-cover -mt-20 z-79"
           style={{
@@ -59,7 +86,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <section className="pb-20 -mt-52 bg-black">
+      <section data-aos="fade-down" className="pb-20 -mt-52 bg-black">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
             {/* <!-- Feature 1: Wide Range of Listings --> */}
@@ -139,8 +166,8 @@ const AboutUs: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-4">
-          <div className="items-center flex flex-wrap">
-            <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
+          <div data-aos="fade-up"  className="items-center flex flex-wrap">
+            <div data-aos="fade-up" className="w-full md:w-4/12 ml-auto mr-auto px-4">
               {/* Updated Image */}
               <img
                 alt="A beautiful house in Nepal"
@@ -215,7 +242,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="pt-20 pb-48">
+      <section data-aos="fade-up" className="pt-20 pb-48">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center text-center mb-24">
             <div className="w-full lg:w-6/12 px-4">

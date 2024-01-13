@@ -2,8 +2,34 @@ import React from "react";
 import Image from "next/image";
 import AppLayout from "../components/AppLayout";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 const ContactUsPage = () => {
+
+  useEffect(() => {
+    // Initialize AOS with your preferred configuration
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Whether the animation should happen only once
+      easing: "ease-out", // Easing function for the animation (e.g., "ease-out", "linear", etc.)
+    });
+  
+    // Optionally, add event listeners to refresh AOS when the window is resized
+    window.addEventListener("resize", () => {
+      AOS.refresh();
+    });
+  
+    // Clean up the event listeners when the component unmounts
+    return () => {
+      window.removeEventListener("resize", () => {
+        AOS.refresh();
+      });
+    };
+  }, []);
+
   const contactInfo = {
     phone: "(+977) 986 76388495",
     email: "rentaldai2023@gmail.com",
@@ -17,6 +43,7 @@ const ContactUsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-black rounded-xl shadow-xl overflow-hidden">
             <div
+            data-aos='fade-right'
               className="h-full bg-cover bg-center"
               style={{
                 backgroundImage: `url(${Image})`,
@@ -48,7 +75,7 @@ const ContactUsPage = () => {
               </div>
             </div>
           </div>
-          <div className="px-6 py-4">
+          <div data-aos='fade-right' className="px-6 py-4">
             <h3 className="text-3xl font-bold mb-4">Get In Touch</h3>
             <div className="mb-3">
               <input
@@ -83,7 +110,7 @@ const ContactUsPage = () => {
             </button>
           </div>
         </div>
-        <h3 className="text-2xl font-bold mt-6 mb-4">Our Location</h3>
+        <h3 data-aos='fade-up' className="text-2xl font-bold mt-6 mb-4">Our Location</h3>
         <div className="h-64 w-full py-6">
 
         <iframe

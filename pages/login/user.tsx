@@ -1,10 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import router from "next/router";
 import { Toaster, toast } from 'sonner';
+import AOS from "aos"; // Import aos
+import "aos/dist/aos.css"; // Import aos styles
+
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -14,6 +17,13 @@ function SignInBasic() {
   const [password, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  useEffect(() => {
+    AOS.init({
+      // Customize your aos animations here
+      duration: 300,
+    });
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -59,7 +69,7 @@ function SignInBasic() {
 
   return (
     <AppLayout>
-      <div className="flex justify-center items-center bgLogin">
+      <div data-aos="fade-in"  className="flex justify-center items-center bgLogin">
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
           {/* Header box with red to white gradient */}
           <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2">
@@ -112,7 +122,7 @@ function SignInBasic() {
           </div>
 
           {/* Form box */}
-          <div className="bg-white rounded-md shadow-md p-8">
+          <div  data-aos="fade-in"  className="bg-white rounded-md shadow-md p-8">
             <form className="space-y-6">
               {/* Form inputs */}
               <div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -11,6 +11,8 @@ import {
 import AppLayout from "../../components/AppLayout";
 import router from "next/router";
 import GeocodingComponent from "../../components/mapbox/geocoding";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 interface FormData {
   firstName: string;
@@ -42,6 +44,9 @@ const UserSignUp: React.FC = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS with your preferred options
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -58,11 +63,11 @@ const UserSignUp: React.FC = () => {
     try {
       const completeFormData = {
         ...formData,
-        longitude: longitude?.toString() || '',
-        latitude: latitude?.toString() || '',
+        longitude: longitude?.toString() || "",
+        latitude: latitude?.toString() || "",
         user_type: "user",
       };
-  
+
       const response = await fetch("http://localhost:8080/signup", {
         method: "POST",
         headers: {
@@ -106,7 +111,10 @@ const UserSignUp: React.FC = () => {
 
   return (
     <AppLayout>
-      <section className="min-h-screen py-8 bg-gray-100 bgSignup">
+      <section
+        className="min-h-screen py-8 bg-gray-100 bgSignup"
+        data-aos="fade-left" // Apply fade-right animation
+      >
         <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Column for the form */}
           <div>
@@ -142,12 +150,11 @@ const UserSignUp: React.FC = () => {
                 </div>
                 {error && <p className="text-red-500 text-center">{error}</p>}
 
-
                 <div className="bg-blue-100 shadow-md">
-                <GeocodingComponent
-                onLatitudeChange={setLatitude}
-                onLongitudeChange={setLongitude}
-                />
+                  <GeocodingComponent
+                    onLatitudeChange={setLatitude}
+                    onLongitudeChange={setLongitude}
+                  />
                 </div>
 
                 <div className="flex justify-center">
@@ -191,4 +198,3 @@ const UserSignUp: React.FC = () => {
 };
 
 export default UserSignUp;
-

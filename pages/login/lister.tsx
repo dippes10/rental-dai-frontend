@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
 import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import { useRouter } from "next/router";
-
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 function SignInBasic() {
   const router = useRouter();
@@ -15,6 +16,10 @@ function SignInBasic() {
   const [password, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS with your preferred options
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -60,10 +65,16 @@ function SignInBasic() {
 
   return (
     <AppLayout>
-      <div className="flex justify-center items-center bgLogin">
+      <div
+        className="flex justify-center items-center bgLogin"
+        data-aos="fade-up" // Add fade-up animation
+      >
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
           {/* Header box with red to white gradient */}
-          <div className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2">
+          <div
+            className="bg-gradient-to-r from-red-500 to-white rounded-md shadow-md p-6 mb-2"
+            data-aos="fade-in" // Add fade-in animation
+          >
             <div className="flex flex-col items-center mb-4">
               <NextImage
                 src="/favicon.png" // Replace with your logo
@@ -111,7 +122,10 @@ function SignInBasic() {
           </div>
 
           {/* Form box */}
-          <div className="bg-white rounded-md shadow-md p-8">
+          <div
+            className="bg-white rounded-md shadow-md p-8"
+            data-aos="fade-up" // Add fade-up animation
+          >
             <form className="space-y-6">
               {/* Form inputs */}
               <div>
