@@ -51,6 +51,9 @@ def signup():
             confirmPassword = data.get('confirmPassword')
             user_type = data.get("user_type")
             phone = data.get("phone")
+            longitude = data.get("longitude")
+            latitude = data.get("latitude")
+            preferredPrice= data.get("preferredPrice")
 
             # Validate data
             if not email or not password:
@@ -62,8 +65,8 @@ def signup():
 
             # Insert data into the database
             cursor = connection.cursor()
-            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone) VALUES (%s, %s, %s, %s,%s,%s)"
-            user_data = (firstName, lastName, email, password,user_type,phone)
+            insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice) VALUES (%s, %s, %s, %s,%s,%s,%s,%s,%s)"
+            user_data = (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice)
             cursor.execute(insert_query, user_data)
             connection.commit()
             cursor.close()
@@ -259,11 +262,19 @@ def haversine(lat1, lon1, lat2, lon2):
     distance = R * c
     return distance
 @app.route('/recommend_properties', methods=['POST'])
-def recommend_properties():
-    # Get user's location data from request
-    user_latitude = request.json.get('latitude')
-    user_longitude = request.json.get('longitude')
-    radius_in_km = 4 # Radius to search within (adjust as needed)
+@jwt_required()
+def nearby_properties():
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')
+
+    cursor = connection.cursor() 
+    user_location_query = "SELECT latitude, longitude FROM user WHERE id = %s;"
+    cursor.execute(user_location_query, (user_id,))
+    user_location = cursor.fetchone()
+
+    if user_location:
+        user_latitude, user_longitude = user_location
+        radius_in_km = 4  # Radius to search within (adjust as needed)
 
     # Execute Haversine query to find nearby properties
 
@@ -346,10 +357,15 @@ def user_details():
     
 #recommendation by price
 @app.route('/recommend_price', methods=['POST'])
+@jwt_required()
 def recommend_price():
-    
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')
     # Get user's preferences from the request
-    max_price = float(request.json.get('max_price'))  # Maximum price the user is willing to pay
+    cursor = connection.cursor()
+    user_price_query = "SELECT preferredPrice FROM user WHERE id = %s;"
+    cursor.execute(user_price_query, (user_id,))
+    user_price = cursor.fetchone()[0]
 
     # Execute a query to fetch properties
     cursor = connection.cursor()
@@ -368,7 +384,7 @@ def recommend_price():
     recommended_prop = [
         {'property_details': prop}  # Structure the response
         for prop in properties
-        if prop['price'] <= max_price
+        if prop['price'] <= user_price
         
     ]
 
@@ -385,7 +401,6 @@ def recommend_price():
 @app.route('/')
 def index():
   image_url = url_for('static', filename='1.png')
-  print("Generated URL:", image_url)
   return f'<img src="{image_url}" alt="Image">'
 
 @app.route('/uploads/<filename>')
