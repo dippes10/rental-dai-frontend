@@ -111,7 +111,7 @@ const ListerForm: React.FC = () => {
   const incrementBedrooms = () => setBedrooms(bedrooms + 1);
   const decrementBedrooms = () => setBedrooms(Math.max(1, bedrooms - 1));
   const incrementBathrooms = () => setBathrooms(bathrooms + 1);
-  const decrementBathrooms = () => setBathrooms(Math.max(1, bathrooms - 1));
+  const decrementBathrooms = () => setBathrooms( Math.max(1, bathrooms - 1));
 
   // const handleMapClick = (event: any) => {
   //   setLatitude(event.lngLat[1]);
@@ -318,8 +318,9 @@ const ListerForm: React.FC = () => {
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
+                onClick={handleSubmit}
                 >
-                  Send Message
+                  Submit
                 </button>
               </div>
               {successMessage && (
