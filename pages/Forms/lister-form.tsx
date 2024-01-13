@@ -318,7 +318,7 @@ const ListerForm: React.FC = () => {
                 </label>
               </div>
               <div className="mt-6">
-                <Toaster/>
+                <Toaster position="top-center" richColors  />
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"

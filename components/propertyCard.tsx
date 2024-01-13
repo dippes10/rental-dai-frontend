@@ -23,16 +23,6 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewMap }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg mb-6 relative">
-      {/* Property Images */}
-      {/* {images.map((url, index) => (
-        <img
-          key={index}
-          src={url}
-          alt={`Image of ${name}`}
-          className="w-full h-52 object-cover"
-        />
-      ))} */}
-
       <div className="p-4">
         {/* Property Details */}
         <h3 className="text-xl font-semibold mb-2">{name}</h3>

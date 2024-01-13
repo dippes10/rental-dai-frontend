@@ -59,7 +59,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <section className="pb-20 bg-gray-200 -mt-52 bg-black">
+      <section className="pb-20 -mt-52 bg-black">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
             {/* <!-- Feature 1: Wide Range of Listings --> */}
@@ -148,7 +148,7 @@ const AboutUs: React.FC = () => {
                 src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXw3NjE2MHwwfDF8c2VhcmNofDF8fG5lcGFsfGVufDB8fHx8MTYxNjI4MjI2MQ&ixlib=rb-1.2.1&q=80&w=1080"
               />
             </div>
-            <div className="w-full md:w-5/12 ml-auto mr-auto px-4 bg-white rounded-lg">
+            <div className="w-full md:w-5/12 ml-auto mr-auto px-4 bg-white rounded-lg py-4">
               <div className="md:pr-12">
                 {/* Icon and Title */}
                 <div className="text-green-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-green-100">
@@ -259,15 +259,6 @@ const AboutUs: React.FC = () => {
                         type="button"
                       >
                         <FaFacebook className="fab "></FaFacebook>
-                      </button>
-                    </a>
-
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className=" text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-yellow-300"
-                        type="button"
-                      >
-                        <FaDribbble className="fab"></FaDribbble>
                       </button>
                     </a>
                   </div>
@@ -392,47 +383,6 @@ const AboutUs: React.FC = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div className="px-6">
-                <img
-                  alt="..."
-                  src="/img/team-4-470x470.png"
-                  className="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Jenna Kardi</h5>
-                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Founder and CEO
-                  </p>
-                  <div className="mt-6">
-                    <button
-                      className="bg-pink-500 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaDribbble className="fab"></FaDribbble>
-                    </button>
-                    <button
-                      className="bg-red-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaGoogle className="fab"></FaGoogle>
-                    </button>
-                    <button
-                      className="bg-yellow-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaTwitter className="fab"></FaTwitter>
-                    </button>
-                    <button
-                      className="bg-red-700 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                      type="button"
-                    >
-                      <FaInstagram className="fab"></FaInstagram>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

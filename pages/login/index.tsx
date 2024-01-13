@@ -1,91 +1,94 @@
-// Import necessary modules from React
-import React from "react";
-import Image from "next/image";
+// pages/coming-soon.tsx
+import { useState, useEffect } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import router from "next/router";
+import Button from "../../components/Button";
 import AppLayout from "../../components/AppLayout";
-import { useRouter } from "next/router";
-import { FaUser, FaClipboardList } from "react-icons/fa"; // Import Font Awesome icons
 
-// Define your functional component
-const HomePage: React.FC = () => {
-  const router = useRouter();
+type TimeLeft = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 
-  const handleUserLogin = () => {
-    router.push("/login/user");
+const calculateTimeLeft = (): TimeLeft => {
+  const targetDate = new Date("2024-12-31");
+  const difference = +targetDate - +new Date();
+
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
   };
+};
 
-  const handleListerLogin = () => {
-    router.push("/login/lister");
-  };
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+  const [showMenu, setShowMenu] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
 
   return (
-    <div className="bg-gradient-to-r from-red-300 via-red-500 to-red-700 text-white">
-      <AppLayout>
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          {/* Introduction Section */}
-          <div className="text-center mb-8">
-            <h1 className="text-white font-bold mb-4">Welcome to Rental Dai</h1>
-            <p className="text-lg">
-              Your platform for finding the perfect rental home.
-            </p>
-          </div>
-
-          <div>
-            {/* Components Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mb-12">
-              {/* Component 1: House Listing */}
-              <button
-                onClick={handleListerLogin}
-                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring-red-500 focus:border-red-50"
-              >
-                <h2 className="text-xl font-bold mb-4">House Listings</h2>
-                <div className="relative h-40 mb-4">
-                  <Image
-                    src="/lister-image.jpg"
-                    alt="House Listing"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-                <p className="mt-4">
-                  Explore a wide range of rental houses available for you.
-                </p>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <FaClipboardList className="text-white mr-2" />
-                  <p className="text-white font-bold">Sign In as Lister</p>
-                </div>
-              </button>
-
-              {/* Component 2: User Reviews */}
-              <button
-                onClick={handleUserLogin}
-                className="relative group p-6 bg-white rounded-md shadow-md text-center transition-transform transform hover:scale-105 focus:outline-none focus:ring-red-500 focus:border-red-500"
-              >
-                <h2 className="text-xl font-bold mb-4">User Reviews</h2>
-                <div className="relative h-40 mb-4">
-                  <Image
-                    src="/user-image.jpg"
-                    alt="User Reviews"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </div>
-                <p className="mt-4">
-                  Read reviews from other users to make informed decisions.
-                </p>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <FaUser className="text-white mr-2" />
-                  <p className="text-white font-bold">Sign In as User</p>
-                </div>
-              </button>
-            </div>
-          </div>
+    <div className="flex space-x-4 justify-center mt-4">
+      {Object.entries(timeLeft).map(([unit, value]) => (
+        <div key={unit} className="text-center">
+          <span className="text-4xl lg:text-5xl font-bold text-black">
+            {value}
+          </span>
+          <p className=" text-black capitalize">{unit}</p>
         </div>
-      </AppLayout>
+      ))}
     </div>
   );
 };
 
-// Export the component
-export default HomePage;
+const handleClick = () => {
+  router.push("/login/lister");
+};
+
+// Function to handle click on "Get started" button
+const handleStartClick = () => {
+  router.push("/login/user");
+};
+
+const LoginPage = () => {
+  return (
+    <AppLayout>
+      <div className="w-full h-screen bg-cover bg-center bg-login">
+        <div className="w-full h-full bg-black bg-opacity-25 flex flex-col justify-center items-center">
+          <h1 className="text-6xl md:text-8xl font-bold text-white">
+            Sign in to <span className="text-red-500">Rental-Dai</span> of us
+          </h1>
+          <div className="bg-button">
+            <CountdownTimer />
+            <div className="mt-8 space-x-4 flex flex-row bg-opacity-50 ">
+              <div className=" text-black transition duration-300 hover:text-red mr-4 cursor-pointer">
+                <button onClick={handleClick} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Sign in as Lister
+                  </span>
+                </button>
+              </div>
+              <div className="text-black transition duration-300 hover:text-black mr-4 cursor-pointer">
+                <button onClick={handleStartClick} className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
+                  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Sign in as User
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </AppLayout>
+  );
+};
+
+export default LoginPage;
