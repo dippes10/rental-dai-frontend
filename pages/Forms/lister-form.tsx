@@ -13,6 +13,7 @@ import {
 import router from "next/router";
 import AppLayout from "../../components/AppLayout";
 import GeocodingComponent from "../../components/mapbox/geocoding";
+import { Toaster, toast } from "sonner";
 
 const ListerForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -111,7 +112,7 @@ const ListerForm: React.FC = () => {
   const incrementBedrooms = () => setBedrooms(bedrooms + 1);
   const decrementBedrooms = () => setBedrooms(Math.max(1, bedrooms - 1));
   const incrementBathrooms = () => setBathrooms(bathrooms + 1);
-  const decrementBathrooms = () => setBathrooms(Math.max(1, bathrooms - 1));
+  const decrementBathrooms = () => setBathrooms( Math.max(1, bathrooms - 1));
 
   // const handleMapClick = (event: any) => {
   //   setLatitude(event.lngLat[1]);
@@ -317,12 +318,12 @@ const ListerForm: React.FC = () => {
                 </label>
               </div>
               <div className="mt-6">
+                <Toaster/>
                 <button
                   type="submit"
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
-                  onClick={handleClick}
                 >
-                  Send Message
+                  Submit
                 </button>
               </div>
               {successMessage && (
