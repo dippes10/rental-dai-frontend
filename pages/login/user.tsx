@@ -77,7 +77,7 @@ function SignInBasic() {
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
-                  href="your-github-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -87,7 +87,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="your-facebook-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -97,7 +97,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="your-gmail-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -151,7 +151,7 @@ function SignInBasic() {
                 <label
                   htmlFor="rememberMe"
                   onClick={handleSetRememberMe}
-                  className="cursor-pointer text-sm text-gray-800"
+                  className="cursor-pointer text-sm bg-gray-600 text-gray-800"
                 >
                   Remember me
                 </label>
@@ -159,7 +159,7 @@ function SignInBasic() {
               <div>
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full"
+                  className="w-full bg-gradient-to-r from-red-500 to-blue-200 text-white py-3 hover:shadow-lg px-4 rounded-full"
                 >
                   Sign in
                 </button>

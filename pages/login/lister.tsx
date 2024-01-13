@@ -77,33 +77,33 @@ function SignInBasic() {
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
-                  href="your-github-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaGithub
                     size={24}
-                    className="text-gray-800 cursor-pointer hover:text-gray-600"
+                    className="text-gray-800 cursor-pointer hover:text-gray-500"
                   />
                 </a>
                 <a
-                  href="your-facebook-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaFacebook
                     size={24}
-                    className="text-gray-800 cursor-pointer hover:text-red-600"
+                    className="text-gray-800 cursor-pointer hover:text-blue-800"
                   />
                 </a>
                 <a
-                  href="your-gmail-link"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaGoogle
                     size={24}
-                    className="text-gray-800 cursor-pointer hover:text-red-600"
+                    className="text-gray-800 cursor-pointer hover:text-red-800"
                   />
                 </a>
               </div>
@@ -159,7 +159,7 @@ function SignInBasic() {
               <div>
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-red-500 to-white text-white py-3 px-4 rounded-full"
+                  className="w-full bg-gradient-to-r from-red-500 to-blue-200 text-white py-3 hover:shadow-lg px-4 rounded-full"
                 >
                   Sign in
                 </button>
