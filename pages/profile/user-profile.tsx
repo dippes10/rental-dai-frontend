@@ -133,6 +133,8 @@ const UserProfile = () => {
   }, []);
 
   const handleViewMap = (property: Listing) => {
+    console.log("Latitude:", property.latitude);
+    console.log("Longitude:", property.longitude);
     setSelectedProperty(property);
     setIsMapModalOpen(true);
   };

@@ -271,7 +271,7 @@ def nearby_properties():
     user_location_query = "SELECT latitude, longitude FROM users WHERE id = %s;"
     cursor.execute(user_location_query, (user_id,))
     user_location = cursor.fetchone()
-    print(user_location)
+    
 
     if user_location:
         user_latitude, user_longitude = user_location
