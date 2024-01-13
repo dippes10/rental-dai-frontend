@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import AppLayout from "../../components/AppLayout";
 import router from "next/router";
+import GeocodingComponent from "../../components/mapbox/geocoding";
 
 interface FormData {
   firstName: string;
@@ -37,6 +38,10 @@ const UserSignUp: React.FC = () => {
     latitude: "",
     preferredPrice: "",
   });
+
+  const [latitude, setLatitude] = useState<number | null>(null);
+  const [longitude, setLongitude] = useState<number | null>(null);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -85,13 +90,6 @@ const UserSignUp: React.FC = () => {
       icon: faLock,
     },
     {
-      name: "longitude",
-      label: "Longitude",
-      type: "text",
-      icon: faMapMarkerAlt,
-    },
-    { name: "latitude", label: "Latitude", type: "text", icon: faMapMarkerAlt },
-    {
       name: "preferredPrice",
       label: "Preferred Price",
       type: "number",
@@ -136,6 +134,15 @@ const UserSignUp: React.FC = () => {
                   ))}
                 </div>
                 {error && <p className="text-red-500 text-center">{error}</p>}
+
+
+                <div className="bg-blue-100 shadow-md">
+                <GeocodingComponent
+                onLatitudeChange={setLatitude}
+                onLongitudeChange={setLongitude}
+                />
+                </div>
+
                 <div className="flex justify-center">
                   <button
                     type="submit"
@@ -177,3 +184,4 @@ const UserSignUp: React.FC = () => {
 };
 
 export default UserSignUp;
+

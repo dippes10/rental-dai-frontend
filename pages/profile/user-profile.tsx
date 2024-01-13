@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import {
   FaUserCircle,
   FaEnvelope,
@@ -11,15 +11,21 @@ import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
 import Button from "../../components/Button";
+import PropertyCard from "../../components/propertyCard";
 
 interface Listing {
-  id: number;
-  title: string;
-  address: string;
+  title: any;
+  latitude: number | undefined;
+  longitude: number | undefined;
   details: string;
-  latitude: number;
-  longitude: number;
-  images: string[];
+  id: number;
+  name: string;
+  address: string;
+  images: string[]; // Array of image URLs
+  bedrooms: number;
+  bathrooms: number;
+  price: string;
+  description: string; // Add description field
 }
 
 interface UserProfileData {
@@ -34,6 +40,10 @@ const UserProfile = () => {
     email: "",
     phone: "",
   });
+
+  const [priceRecommendations, setPriceRecommendations] = useState<Listing[]>([]);
+const [nearbyFlats, setNearbyFlats] = useState<Listing[]>([]);
+
   const [listings, setListings] = useState<Listing[]>([]);
   const [selectedProperty, setSelectedProperty] = useState<Listing | null>(
     null
@@ -42,6 +52,59 @@ const UserProfile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+
+  const fetchPriceRecommendations = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('http://localhost:8080/price_recommendations', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          // Include any other headers like Authorization if needed
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch price recommendations");
+      }
+  
+      const data = await response.json();
+      setPriceRecommendations(data); // Update your state with the received data
+    } catch (err) {
+      console.error("Error fetching price recommendations:", err);
+      setError("An error occurred while fetching price recommendations.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const fetchNearbyFlats = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('http://localhost:8080/nearby_flats', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          // Include any other headers like Authorization if needed
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch nearby flats");
+      }
+  
+      const data = await response.json();
+      setNearbyFlats(data); // Update your state with the received data
+    } catch (err) {
+      console.error("Error fetching nearby flats:", err);
+      setError("An error occurred while fetching nearby flats.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  
+  
   useEffect(() => {
     const fetchProfileData = async () => {
       setIsLoading(true);
@@ -95,6 +158,8 @@ const UserProfile = () => {
       }
     };
 
+    fetchPriceRecommendations();
+    fetchNearbyFlats();
     fetchProfileData();
     fetchListings();
   }, []);
@@ -158,7 +223,7 @@ const UserProfile = () => {
 
               <h3 className="text-xl font-bold mb-2 text-blue-600">
                 <FaHome className="inline mr-2 text-green-500" />
-                {listing.title}
+                {listing.name}
               </h3>
               <p className="mb-2 text-gray-600">
                 <FaMapMarkerAlt className="inline mr-2 text-red-500" />
@@ -219,13 +284,30 @@ const UserProfile = () => {
               </div>
             </div>
           )}
+      </div>
+      </div>
 
-        {/* Add Listing Button */}
-        <div className="text-center mt-6">
-          <Button type="outline" title="Add Listing" onClick={handleClick} />
-        </div>
-      </div>
-      </div>
+ {/* Price Recommendations Section */}
+ <div className="my-8">
+            <h2 className="text-2xl font-bold mb-4">Price Recommendations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {priceRecommendations.map(listing => (
+                <PropertyCard key={listing.id} property={listing} onViewMap={() => handleViewMap(listing)} />
+              ))}
+            </div>
+          </div>
+
+          {/* Nearby Flats Section */}
+          <div className="my-8">
+            <h2 className="text-2xl font-bold mb-4">Nearby Flats</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {nearbyFlats.map(listing => (
+                <PropertyCard key={listing.id} property={listing} onViewMap={() => handleViewMap(listing)} />
+              ))}
+            </div>
+          </div>
+
+    
     </AppLayout>
   );
 };
