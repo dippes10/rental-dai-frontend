@@ -111,7 +111,7 @@ const ListerProfile = () => {
   };
 
   function handleClick(): void {
-    throw new Error("Function not implemented.");
+    router.push("/Forms/lister-form");
   }
 
   const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
