@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
   const router = useRouter();
   const HeaderNav = HeaderData.HeaderNav;
 
-  // Function to handle click on "Join RentalDai" button
+  // Function to handle click on "Join HomeRental" button
   const handleClick = () => {
     router.push("/signup");
     setShowMenu(false);
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = () => {
     <header>
       {/* Use Head component to update title and icon */}
       <Head>
-        <title>Rental Dai</title>
+        <title>Home Rental</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = () => {
               <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
                 <Image
                   src="/favicon.png"
-                  alt="Rental-Dai Logo"
+                  alt="home-rental Logo"
                   width={120}
                   height={40}
                   data-aos="fade-right" // Apply fade-right animation

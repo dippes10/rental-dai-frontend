@@ -31,8 +31,8 @@ const ContactUsPage = () => {
   }, []);
 
   const contactInfo = {
-    phone: "(+977) 986 76388495",
-    email: "rentaldai2023@gmail.com",
+    phone: "(+977) 986 7638849",
+    email: "HomeRental2023@gmail.com",
     address: "Thamel, Kathmandu",
   };
 

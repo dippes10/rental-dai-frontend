@@ -76,7 +76,7 @@ function SignInBasic() {
             <div className="flex flex-col items-center mb-4">
               <NextImage
                 src="/favicon.png" // Replace with your logo
-                alt="Rental Dai Logo"
+                alt="Home Rental Logo"
                 width={120} // Set the width and height according to your design
                 height={120}
                 className="mb-4" // Add margin-bottom to create space
@@ -88,7 +88,7 @@ function SignInBasic() {
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
-                  href="https://github.com/dippes10/rental-dai-frontend"
+                  href="https://github.com/dippes10/home-rental-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -98,7 +98,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="https://github.com/dippes10/rental-dai-frontend"
+                  href="https://github.com/dippes10/home-rental-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -108,7 +108,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="https://github.com/dippes10/rental-dai-frontend"
+                  href="https://github.com/dippes10/home-rental-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

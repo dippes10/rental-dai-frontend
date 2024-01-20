@@ -6,10 +6,10 @@ import CardFlip from "react-card-flip";
 import Button from "../components/Button";
 
 const rentalImages: string[] = [
-    "https://source.unsplash.com/800x600/?apartment",
-    "https://source.unsplash.com/800x600/?room",
-  ];
-  
+  "https://source.unsplash.com/800x600/?Nepal-house",
+  "https://source.unsplash.com/800x600/?Nepal-traditional-home",
+];
+
 
 const RentalFlipImage: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -40,10 +40,10 @@ const RentalFlipImage: React.FC = () => {
     <section className="flex flex-col items-center justify-center py-10 md:flex-row md:gap-20 container-custom" data-aos="fade-right">
       <div className="md:w-3/5 text-center md:text-left" data-aos="fade-right">
         <h3 className="mb-4">
-          Find Your Perfect Rental with <span className="text-primary-500">RentalDai</span>
+          Find Your Perfect Rental with <span className="text-primary-500">HomeRental</span>
         </h3>
         <p className="max-w-[830px] text-neutral-700 mb-6 justify-between text-justify">
-          Explore a variety of flats and rooms available for rent through RentalDai. Whether you're looking for a cozy room or a spacious flat, we've got you covered. Our platform makes finding the perfect rental easy and convenient.
+          Explore a variety of flats and rooms available for rent through HomeRental. Whether you're looking for a cozy room or a spacious flat, we've got you covered. Our platform makes finding the perfect rental easy and convenient.
           <br />
           Join us on a journey to discover quality rentals and make your next living space a comfortable and enjoyable one.
         </p>

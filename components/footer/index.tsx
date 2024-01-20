@@ -20,19 +20,19 @@ type SocialLink = {
 
 const SocialMediaLinks: SocialLink[] = [
   {
-    link: "https://www.facebook.com/RentalDai",
+    link: "https://www.facebook.com/HomeRental",
     icon: <FaFacebook className="text-xl hover:text-blue-600" />,
   },
   {
-    link: "https://twitter.com/RentalDai",
+    link: "https://twitter.com/HomeRental",
     icon: <FaTwitter className="text-xl hover:text-blue-300" />,
   },
   {
-    link: "https://instagram.com/RentalDai",
+    link: "https://instagram.com/HomeRental",
     icon: <FaInstagram className="text-xl hover:text-pink-600" />,
   },
   {
-    link: "https://linkedin.com/RentalDai",
+    link: "https://linkedin.com/HomeRental",
     icon: <FaLinkedin className="text-xl hover:text-blue-700" />,
   },
 ];
@@ -52,7 +52,7 @@ const Footer = () => {
             >
               <Image
                 src="/favicon.png"
-                alt="Rental Dai Logo"
+                alt="Home Rental Logo"
                 width={160}
                 height={40}
                 className="h-20"

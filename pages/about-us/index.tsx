@@ -66,7 +66,7 @@ const AboutUs: React.FC = () => {
         >
           <span
             id="blackOverlay"
-            className="w-full h-full absolute opacity-75 bg-black"
+            className="w-full h-full absolute opacity-50 bg-black"
           ></span>
         </div>
         <div className="container relative mx-auto">
@@ -77,7 +77,7 @@ const AboutUs: React.FC = () => {
                   Your story starts with us.
                 </h1>
                 <p className="mt-4 text-lg text-white">
-                  Explore RentalDai's user-friendly platform, where you can
+                  Explore HomeRental's user-friendly platform, where you can
                   easily browse through available properties, view high-quality
                   images, and get detailed insights into each rental option.
                 </p>
@@ -118,7 +118,7 @@ const AboutUs: React.FC = () => {
                   <h6 className="text-xl font-semibold">Trusted by Tenants</h6>
                   <p className="mt-2 mb-4 text-gray-500">
                     Join a community of satisfied tenants who found their ideal
-                    home through Rental-Dai.
+                    home through home-rental.
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ const AboutUs: React.FC = () => {
                   Find Your Perfect Home
                 </h3>
                 <p className="mt-4 text-lg leading-relaxed text-gray-500">
-                  Rental-Dai is your trusted partner in finding cozy homes and
+                  home-rental is your trusted partner in finding cozy homes and
                   rooms across Nepal. Dive into our extensive selection and find
                   a place that feels like home.
                 </p>
@@ -259,13 +259,13 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/nabaraj-sir.png"
+                  // src="/nabaraj-sir.png"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Nabaraj Negi</h5>
+                  <h5 className="text-xl font-bold">Dolma Tshering Lama</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Project Supervisor
+                    Frontend Developer
                   </p>
 
                   <div className="mt-6 grid-flow-row gap-y-4">
@@ -294,11 +294,11 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/sirak-shrestha.jpeg"
+                  // src="/sirak-shrestha.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Sirak Shrestha Joshi</h5>
+                  <h5 className="text-xl font-bold">Chesna Maharjan</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
                     UI/Ux Designer
                   </p>
@@ -338,11 +338,11 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  src="/jwalan-chand.jpeg"
+                  // src="/jwalan-chand.jpeg"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Jwalan Chand</h5>
+                  <h5 className="text-xl font-bold">Leah KC</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
                     Backend Developer
                   </p>
@@ -375,7 +375,7 @@ const AboutUs: React.FC = () => {
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Dipesh Sanjel</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Frontend Developer
+                    Project Leader
                   </p>
                   <div className="mt-6 mx-2">
                     <a href="https://www.google.com" target="_blank">
@@ -412,7 +412,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="pb-20 relative block bg-blue-300">
+      <section className=" relative block bg-blue-300">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style={{ transform: "translateZ(0)" }}
@@ -486,7 +486,7 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="relative block py-24 lg:pt-0 ">
+      {/* <section className="relative block py-24 lg:pt-0 ">
         <div className="container mx-auto px-4 ">
           <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48 ">
             <div className="w-full lg:w-6/12 px-4">
@@ -551,7 +551,7 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </AppLayout>
   );
 };

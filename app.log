@@ -7,7 +7,7 @@
 2023-11-19 14:17:10,407 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:10] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
 2023-11-19 14:17:15,574 ERROR root Thread-3 (process_request_thread) : Error during signin:
 Traceback (most recent call last):
-  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+  File "C:\Users\PC\Desktop\home-rental\project\home-rental-frontend\server\log.py", line 129, in signin
     data = request.json
            ^^^^^^^^^^^^
   File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
@@ -25,7 +25,7 @@ werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not at
 2023-11-19 14:17:15,582 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:15] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
 2023-11-19 14:17:21,804 ERROR root Thread-4 (process_request_thread) : Error during signin:
 Traceback (most recent call last):
-  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+  File "C:\Users\PC\Desktop\home-rental\project\home-rental-frontend\server\log.py", line 129, in signin
     data = request.json
            ^^^^^^^^^^^^
   File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
@@ -43,7 +43,7 @@ werkzeug.exceptions.UnsupportedMediaType: 415 Unsupported Media Type: Did not at
 2023-11-19 14:17:21,805 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [19/Nov/2023 14:17:21] "[35m[1mPOST /signin HTTP/1.1[0m" 500 -
 2023-11-19 14:17:34,049 ERROR root Thread-5 (process_request_thread) : Error during signin:
 Traceback (most recent call last):
-  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 129, in signin
+  File "C:\Users\PC\Desktop\home-rental\project\home-rental-frontend\server\log.py", line 129, in signin
     data = request.json
            ^^^^^^^^^^^^
   File "C:\Python312\Lib\site-packages\werkzeug\wrappers\request.py", line 558, in json
@@ -138,7 +138,7 @@ _mysql_connector.MySQLInterfaceError: Table 'signup.user' doesn't exist
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "C:\Users\PC\Desktop\RENTAL-DAI\project\rental-dai-frontend\server\log.py", line 163, in usersignin
+  File "C:\Users\PC\Desktop\home-rental\project\home-rental-frontend\server\log.py", line 163, in usersignin
     cursor.execute(query, (email, password))
   File "C:\Python312\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
@@ -150,35 +150,35 @@ Traceback (most recent call last):
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'signup.user' doesn't exist
 2023-11-22 14:46:43,337 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:46:43] "[35m[1mPOST /user-Signin HTTP/1.1[0m" 500 -
-2023-11-22 14:47:39,582 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:47:39,582 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:47:39,641 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:47:40,207 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:47:40,212 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2023-11-22 14:47:49,248 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:47:49] "[31m[1mPOST /user-Signin HTTP/1.1[0m" 401 -
 2023-11-22 14:48:55,019 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:48:55] "POST /user-Signin HTTP/1.1" 200 -
-2023-11-22 14:49:13,654 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:49:13,654 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:49:13,696 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:49:14,174 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:49:14,180 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
-2023-11-22 14:49:15,198 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:49:15,198 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:49:15,319 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:49:15,742 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:49:15,747 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
-2023-11-22 14:49:16,763 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:49:16,763 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:49:16,802 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:49:17,308 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:49:17,314 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
-2023-11-22 14:49:18,338 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:49:18,338 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:49:18,395 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:49:18,907 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:49:18,913 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
 2023-11-22 14:49:23,066 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:49:23] "POST /user-Signin HTTP/1.1" 200 -
 2023-11-22 14:53:11,625 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [22/Nov/2023 14:53:11] "POST /user-Signin HTTP/1.1" 200 -
-2023-11-22 14:54:00,285 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:54:00,285 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:54:00,347 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:54:00,840 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:54:00,848 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
-2023-11-22 14:54:03,873 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\RENTAL-DAI\\project\\rental-dai-frontend\\server\\log.py', reloading
+2023-11-22 14:54:03,873 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\PC\\Desktop\\home-rental\\project\\home-rental-frontend\\server\\log.py', reloading
 2023-11-22 14:54:03,933 INFO werkzeug MainThread :  * Restarting with stat
 2023-11-22 14:54:04,549 WARNING werkzeug MainThread :  * Debugger is active!
 2023-11-22 14:54:04,554 INFO werkzeug MainThread :  * Debugger PIN: 102-172-428
