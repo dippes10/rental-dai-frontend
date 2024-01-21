@@ -185,7 +185,7 @@ const UserSignUp: React.FC = () => {
                     Contact Information
                   </h3>
                   <p className="opacity-80 mb-3 text-white">
-                    Fill up the form and become a part of Rental-Dai Family
+                    Fill up the form and become a part of home-rental Family
                   </p>
                 </div>
               </div>

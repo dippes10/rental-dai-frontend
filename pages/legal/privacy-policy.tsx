@@ -1,14 +1,14 @@
 import React from "react";
 import AppLayout from "../../components/AppLayout";
 
-const RentalDaiPrivacyPolicy: React.FC = () => {
+const HomeRentalPrivacyPolicy: React.FC = () => {
   return (
     <AppLayout>
     <div className="flex flex-col justify-center items-center min-h-full bg-gray-200 py-4">
       <div className="w-11/12 max-w-3xl p-8 rounded-lg shadow-lg bg-white text-justify">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
         <p className="mb-4">
-          At RentalDai, we are dedicated to safeguarding your privacy and ensuring the security of your personal information.
+          At HomeRental, we are dedicated to safeguarding your privacy and ensuring the security of your personal information.
         </p>
         <p className="mb-4">
           <strong>Data Collection:</strong> We collect certain information when you visit our website, including your IP address, browser type, device information, and the pages you viewed. This data is used to enhance the user experience, analyze site traffic, and improve our services.
@@ -26,7 +26,7 @@ const RentalDaiPrivacyPolicy: React.FC = () => {
           <strong>Your Rights:</strong> You have the right to access, update, or delete the personal information we hold about you. 
         </p>
         <p className="mb-4">
-          <strong>Changes to Policy:</strong> RentalDai reserves the right to modify this Privacy Policy at any time. Updates will be posted on our website, and your continued use of our services constitutes acceptance of the updated policy.
+          <strong>Changes to Policy:</strong> HomeRental reserves the right to modify this Privacy Policy at any time. Updates will be posted on our website, and your continued use of our services constitutes acceptance of the updated policy.
         </p>
       </div>
     </div>
@@ -34,4 +34,4 @@ const RentalDaiPrivacyPolicy: React.FC = () => {
   );
 };
 
-export default RentalDaiPrivacyPolicy;
+export default HomeRentalPrivacyPolicy;

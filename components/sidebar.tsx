@@ -102,7 +102,7 @@ export function Sidebar({
             />
 
             <h5 className="text-2xl font-sans font-semibold text-gray-900 leading-snug">
-              Rental Dai
+              Home Rental
             </h5>
             <div>
               <FaTimes

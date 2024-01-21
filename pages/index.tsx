@@ -8,35 +8,110 @@ import Description from "../components/Description";
 import MapboxComponent from "../components/mapbox/mapbox";
 import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
 
+export const fakeProperties = [
+  {
+    id: 1,
+    name: "Property 1",
+    address: "123 Fake Street",
+    imageUrl: "https://source.unsplash.com/800x600/?flat",
+    location: {
+      latitude: 27.6957153,
+      longitude: 85.3016536,
+    },
+    bedrooms: 3,
+    bathrooms: 2,
+    price: "$500,000",
+    description: "Spacious property with a beautiful view.",
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl: "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453,
+      longitude: 85.3136646,
+    },
+    bedrooms: 2,
+    bathrooms: 1,
+    price: "$300,000",
+    description: "Cozy property with modern amenities.",
+  },
+  {
+    id: 2,
+    name: "Property 2",
+    address: "123 Fake Street",
+    imageUrl: "https://source.unsplash.com/800x600/?room",
+    location: {
+      latitude: 27.6957453,
+      longitude: 85.3136646,
+    },
+    bedrooms: 2,
+    bathrooms: 1,
+    price: "$300,000",
+    description: "Cozy property with modern amenities.",
+  },
+  {
+    id: 5,
+    name: "Property 5",
+    address: "101 Patan Road",
+    imageUrl: "https://source.unsplash.com/800x600/?Nepal,patan-house",
+    location: {
+      latitude: 27.6740,
+      longitude: 85.3240,
+    },
+    bedrooms: 3,
+    bathrooms: 2,
+    price: "$450,000",
+    description: "Modern home in the heart of historic Patan.",
+  },
+  {
+    id: 6,
+    name: "Property 6",
+    address: "202 Bhaktapur Lane",
+    imageUrl: "https://source.unsplash.com/800x600/?Nepal,bhaktapur-house",
+    location: {
+      latitude: 27.6710,
+      longitude: 85.4297,
+    },
+    bedrooms: 5,
+    bathrooms: 4,
+    price: "$600,000",
+    description: "Spacious family house near cultural landmarks.",
+  },
+];
+
 const HomePage: React.FC = () => {
   const [properties, setProperties] = useState<any[]>([]);
   const [filteredProperties, setFilteredProperties] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     // // To use fake data uncomment below commented code
-    // setProperties(fakeProperties);
-    // setFilteredProperties(fakeProperties);
-    // setIsLoading(false);
+    setProperties(fakeProperties);
+    setFilteredProperties(fakeProperties);
+    setIsLoading(false);
+
     // Uncomment the following code when using actual API
 
-    fetch("http://localhost:8080/api/properties")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.properties) {
-          setProperties(data.properties);
-          setFilteredProperties(data.properties);
-        }
-      })
-      .catch((error) => console.error("Error fetching properties:", error))
-      .finally(() => setIsLoading(false));
+    // fetch("http://localhost:8080/api/properties")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.properties) {
+    //       setProperties(data.properties);
+    //       setFilteredProperties(data.properties);
+    //     }
+    //   })
+    //   .catch((error) => console.error("Error fetching properties:", error))
+    //   .finally(() => setIsLoading(false));
   }, []);
 
   return (
     <AppLayout>
       <div className="bg-black">
         <img
-          src="/bg-home.jpeg"
+          src="/home-bg.png"
           width={0}
           height={0}
           className="w-full object-cover -mt-32"
@@ -50,10 +125,10 @@ const HomePage: React.FC = () => {
           <MapboxComponent
             showNavigationControl={true}
             latitude={27.6957053}
-            longitude={85.3526846}
-            zoom={11}
+            longitude={85.3226846}
+            zoom={12}
             showAllProperties={true}
-            properties={properties}
+            properties={fakeProperties}
           />
           <Description />
 
@@ -63,7 +138,7 @@ const HomePage: React.FC = () => {
                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blue-300">
                   <img
                     alt="Cozy Home"
-                    src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                    src="https://images.unsplash.com/photo-1511215579272-6192432f83bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhpbWFsYXlhJTIwbmVwYWx8ZW58MHx8MHx8fDA%3D"
                     className="w-full align-middle rounded-t-lg"
                   />
                   <blockquote className="relative p-8 mb-4">
@@ -77,7 +152,7 @@ const HomePage: React.FC = () => {
                       Discover Your Perfect Home
                     </h4>
                     <p className="text-md font-light mt-2 text-white">
-                      Rental-Dai makes finding homes, flats, and rooms in Nepal
+                      home-rental makes finding homes, flats, and rooms in Nepal
                       effortless and enjoyable. Explore a variety of rental
                       options tailored to your needs.
                     </p>
