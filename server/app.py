@@ -81,9 +81,10 @@ def signup():
 
             # Insert data into the database
             conn = get_conn()
-            with connection.cursor() as cursor:
+            with conn.cursor() as cursor:
                 insert_query = "INSERT INTO users (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice) VALUES (%s, %s, %s, %s,%s,%s,%s,%s,%s)"
                 user_data = (firstName, lastName, email, password,user_type,phone,longitude,latitude,preferredPrice)
+                print(user_data)
                 cursor.execute(insert_query, user_data)
                 conn.commit()
 

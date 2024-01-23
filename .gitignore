@@ -2,6 +2,7 @@
 server/venv
 static/uploads
 server/app.log
+app.log
 # dependencies
 /node_modules
 /.pnp

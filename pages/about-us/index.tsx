@@ -248,9 +248,7 @@ const AboutUs: React.FC = () => {
                 Here are our heroes
               </h2>
               <p className="text-lg leading-relaxed m-4 text-gray-500">
-                According to the National Oceanic and Atmospheric
-                Administration, Ted, Scambos, NSIDClead scentist, puts the
-                potentially record maximum.
+              Unlock the door to hassle-free living with Rental Dai – where comfort meets convenience, and your perfect home is just a click away.
               </p>
             </div>
           </div>

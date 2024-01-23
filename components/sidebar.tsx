@@ -23,9 +23,9 @@ const items = [
       { label: "Featured Properties", path: "../properties/featured" },
     ],
   },
+
   { label: "About Us", icon: <FaInfoCircle size={20} />, path: "../about-us" },
   { label: "Contact Us", icon: <FaPhoneAlt size={20} />, path: "../contact" },
-  { label: "Log Out", icon: <FaSignOutAlt size={20} />, path: "/logout" },
 ];
 
 export function Sidebar({
