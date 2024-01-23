@@ -77,7 +77,7 @@ const AboutUs: React.FC = () => {
                   Your story starts with us.
                 </h1>
                 <p className="mt-4 text-lg text-white">
-                  Explore HomeRental's user-friendly platform, where you can
+                  Explore RentalDai's user-friendly platform, where you can
                   easily browse through available properties, view high-quality
                   images, and get detailed insights into each rental option.
                 </p>
@@ -118,7 +118,7 @@ const AboutUs: React.FC = () => {
                   <h6 className="text-xl font-semibold">Trusted by Tenants</h6>
                   <p className="mt-2 mb-4 text-gray-500">
                     Join a community of satisfied tenants who found their ideal
-                    home through home-rental.
+                    home through rental-dai.
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ const AboutUs: React.FC = () => {
                   Find Your Perfect Home
                 </h3>
                 <p className="mt-4 text-lg leading-relaxed text-gray-500">
-                  home-rental is your trusted partner in finding cozy homes and
+                  rental-dai is your trusted partner in finding cozy homes and
                   rooms across Nepal. Dive into our extensive selection and find
                   a place that feels like home.
                 </p>

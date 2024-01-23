@@ -20,19 +20,19 @@ type SocialLink = {
 
 const SocialMediaLinks: SocialLink[] = [
   {
-    link: "https://www.facebook.com/HomeRental",
+    link: "https://www.facebook.com/RentalDai",
     icon: <FaFacebook className="text-xl hover:text-blue-600" />,
   },
   {
-    link: "https://twitter.com/HomeRental",
+    link: "https://twitter.com/RentalDai",
     icon: <FaTwitter className="text-xl hover:text-blue-300" />,
   },
   {
-    link: "https://instagram.com/HomeRental",
+    link: "https://instagram.com/RentalDai",
     icon: <FaInstagram className="text-xl hover:text-pink-600" />,
   },
   {
-    link: "https://linkedin.com/HomeRental",
+    link: "https://linkedin.com/RentalDai",
     icon: <FaLinkedin className="text-xl hover:text-blue-700" />,
   },
 ];

@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
   const router = useRouter();
   const HeaderNav = HeaderData.HeaderNav;
 
-  // Function to handle click on "Join HomeRental" button
+  // Function to handle click on "Join RentalDai" button
   const handleClick = () => {
     router.push("/signup");
     setShowMenu(false);
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = () => {
               <div className="flex items-center cursor-pointer transition duration-300 hover:opacity-80">
                 <Image
                   src="/favicon.png"
-                  alt="home-rental Logo"
+                  alt="rental-dai Logo"
                   width={120}
                   height={40}
                   data-aos="fade-right" // Apply fade-right animation

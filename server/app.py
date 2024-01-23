@@ -137,7 +137,7 @@ def properties():
 import os
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = r'C:\Users\PC\Desktop\home-rental-frontend\server\static\uploads'
+UPLOAD_FOLDER = r'C:\Users\PC\Desktop\rental-dai-frontend\server\static\uploads'
 app.secret_key = "cairocoders-ednalan"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -431,7 +431,7 @@ def index():
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory(r'C:\Users\PC\Desktop\home-rental-frontend\server\static\uploads', filename)
+    return send_from_directory(r'C:\Users\PC\Desktop\rental-dai-frontend\server\static\uploads', filename)
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)

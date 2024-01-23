@@ -3,10 +3,10 @@ import router from 'next/router';
 import React from 'react';
 import Button from '../components/Button';
 
-const HomeRentalMessage = {
+const RentalDaiMessage = {
   title: 'About Us ',
   subTitle:
-    'Discover a wide range of rental options that suit your lifestyle. HomeRental makes the search for flats and rooms easy and convenient. Join us on a journey to find your ideal living space.',
+    'Discover a wide range of rental options that suit your lifestyle. RentalDai makes the search for flats and rooms easy and convenient. Join us on a journey to find your ideal living space.',
   cta: 'Explore Rentals',
   featureCards: [
     {
@@ -22,7 +22,7 @@ const HomeRentalMessage = {
     {
       icon: <FaCheckCircle />,
       title: 'Quality Assurance',
-      description: 'HomeRental ensures quality rentals for a comfortable living experience.',
+      description: 'RentalDai ensures quality rentals for a comfortable living experience.',
     },
     {
       icon: <FaComments />,
@@ -37,18 +37,18 @@ const Description: React.FC = () => {
     <section className="bg-gray-100 mb-8">
       <div className="container-custom py-10 flex gap-10 md:gap-2 flex-wrap md:flex-nowrap items-center justify-between text-justify">
         <div className="md:w-4/5 mr-6" data-aos="fade-right">
-          <h3 className="max-w-[500px] mb-5">{HomeRentalMessage.title}</h3>
+          <h3 className="max-w-[500px] mb-5">{RentalDaiMessage.title}</h3>
           <p className="text-neutral-700 mb-12 max-w-[733px]">
-            {HomeRentalMessage.subTitle}
+            {RentalDaiMessage.subTitle}
           </p>
           <Button
-            title={HomeRentalMessage.cta}
+            title={RentalDaiMessage.cta}
             type="outline"
             onClick={() => router.push('../properties/all')}
           />
         </div>
         <div className="md:max-w-[456px] grid xs:grid-cols-2 gap-4" data-aos="fade-left">
-          {HomeRentalMessage.featureCards.map((card, i) => (
+          {RentalDaiMessage.featureCards.map((card, i) => (
             <div
               key={i}
               className=" text-justify flex flex-col items-center justify-center px-4 py-5 bg-white rounded-lg shadow-main transition duration-300 transform hover:scale-105"

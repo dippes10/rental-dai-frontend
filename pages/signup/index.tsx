@@ -76,7 +76,7 @@ const LoginPage = () => {
             className="text-6xl md:text-8xl  font-bold text-white -mt-10"
             data-aos="fade-in" // Apply fade-in animation
           >
-            Get Started with <span className="text-red-500">home-rental</span>
+            Get Started with <span className="text-red-500">rental-dai</span>
           </h1>
           <div className="bg-button">
             <CountdownTimer />

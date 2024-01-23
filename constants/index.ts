@@ -2,9 +2,9 @@
 import { Key } from "react";
 
 export const SiteMeta = {
-  name: "HomeRental",
+  name: "RentalDai",
   description: "Real-Time House Renting Platform",
-  url: "https://www.HomeRental.com",
+  url: "https://www.RentalDai.com",
 };
 
 export type NavItemProps = {
@@ -108,27 +108,27 @@ export const Footer = {
           navLink: "https://maps.app.goo.gl/NAmYnYo9MoxmXbgRA",
         },
         {
-          navItem: "HomeRental2023@gmail.com",
-          navLink: "mailto:HomeRental2023@gmail.com",
+          navItem: "RentalDai2023@gmail.com",
+          navLink: "mailto:RentalDai2023@gmail.com",
         },
       ],
     },
   ],
 
   BottomFooterNav: {
-    copyright: `©${new Date().getFullYear()} HomeRental. All rights reserved.`,
+    copyright: `©${new Date().getFullYear()} RentalDai. All rights reserved.`,
     socialLinks: [
       {
         icon: "Facebook",
-        link: "https://www.facebook.com/HomeRental",
+        link: "https://www.facebook.com/RentalDai",
       },
       {
         icon: "Twitter",
-        link: "https://twitter.com/HomeRental",
+        link: "https://twitter.com/RentalDai",
       },
       {
         icon: "Instagram",
-        link: "https://instagram.com/HomeRental",
+        link: "https://instagram.com/RentalDai",
       },
     ],
   },
@@ -136,9 +136,9 @@ export const Footer = {
 
 export const Homepage = {
   Message: {
-    title: "Find Your Perfect Home with HomeRental",
+    title: "Find Your Perfect Home with RentalDai",
     subTitle:
-      "Welcome to HomeRental, your go-to platform for finding the perfect home for your needs. Whether you're looking for an apartment, house, or condo, we've got you covered. Start your search now!",
+      "Welcome to RentalDai, your go-to platform for finding the perfect home for your needs. Whether you're looking for an apartment, house, or condo, we've got you covered. Start your search now!",
     cta: "Explore Properties",
     description: "Your dream home is just a click away.",
     featureCards: [
@@ -178,21 +178,21 @@ export const Homepage = {
         name: "John Doe",
         designation: "Homeowner",
         testimonial:
-          "HomeRental made it easy for me to find the perfect home for my family. The process was smooth, and the platform is user-friendly.",
+          "RentalDai made it easy for me to find the perfect home for my family. The process was smooth, and the platform is user-friendly.",
       },
       {
         avatar: "/user2.jpg",
         name: "Jane Smith",
         designation: "Tenant",
         testimonial:
-          "I found my dream apartment on HomeRental. The search filters are powerful, and the property details are comprehensive.",
+          "I found my dream apartment on RentalDai. The search filters are powerful, and the property details are comprehensive.",
       },
       {
         avatar: "/user3.jpg",
         name: "Alex Johnson",
         designation: "Investor",
         testimonial:
-          "As a real estate investor, HomeRental has been an invaluable tool for discovering profitable investment opportunities.",
+          "As a real estate investor, RentalDai has been an invaluable tool for discovering profitable investment opportunities.",
       },
     ],
   },

@@ -88,7 +88,7 @@ function SignInBasic() {
               </div>
               <div className="flex space-x-4 mt-2">
                 <a
-                  href="https://github.com/dippes10/home-rental-frontend"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -98,7 +98,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="https://github.com/dippes10/home-rental-frontend"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -108,7 +108,7 @@ function SignInBasic() {
                   />
                 </a>
                 <a
-                  href="https://github.com/dippes10/home-rental-frontend"
+                  href="https://github.com/dippes10/rental-dai-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

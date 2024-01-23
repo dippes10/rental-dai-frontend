@@ -73,7 +73,7 @@ const LoginPage = () => {
       <div className="w-full h-screen bg-cover bg-center bg-login -mt-52">
         <div className="w-full h-full bg-black bg-opacity-25 flex flex-col justify-center items-center">
           <h1 className="text-6xl md:text-8xl font-bold text-white">
-            Sign in to <span className="text-red-500">home-rental</span> 
+            Sign in to <span className="text-red-500">rental-dai</span> 
           </h1>
           <div className="bg-button">
             <CountdownTimer />

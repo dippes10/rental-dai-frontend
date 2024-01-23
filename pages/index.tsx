@@ -152,7 +152,7 @@ const HomePage: React.FC = () => {
                       Discover Your Perfect Home
                     </h4>
                     <p className="text-md font-light mt-2 text-white">
-                      home-rental makes finding homes, flats, and rooms in Nepal
+                      rental-dai makes finding homes, flats, and rooms in Nepal
                       effortless and enjoyable. Explore a variety of rental
                       options tailored to your needs.
                     </p>

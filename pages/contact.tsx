@@ -32,7 +32,7 @@ const ContactUsPage = () => {
 
   const contactInfo = {
     phone: "(+977) 986 7638849",
-    email: "HomeRental2023@gmail.com",
+    email: "RentalDai2023@gmail.com",
     address: "Thamel, Kathmandu",
   };
 
