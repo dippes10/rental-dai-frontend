@@ -10,5 +10,4 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
     </>
   );
 };
-
 export default AppLayout;
