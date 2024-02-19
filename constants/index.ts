@@ -168,32 +168,4 @@ export const Homepage = {
       },
     ],
   },
-
-  Testimonial: {
-    title: "What Our Users Say",
-    subTitle: "",
-    testimonials: [
-      {
-        avatar: "/user1.jpg",
-        name: "John Doe",
-        designation: "Homeowner",
-        testimonial:
-          "RentalDai made it easy for me to find the perfect home for my family. The process was smooth, and the platform is user-friendly.",
-      },
-      {
-        avatar: "/user2.jpg",
-        name: "Jane Smith",
-        designation: "Tenant",
-        testimonial:
-          "I found my dream apartment on RentalDai. The search filters are powerful, and the property details are comprehensive.",
-      },
-      {
-        avatar: "/user3.jpg",
-        name: "Alex Johnson",
-        designation: "Investor",
-        testimonial:
-          "As a real estate investor, RentalDai has been an invaluable tool for discovering profitable investment opportunities.",
-      },
-    ],
-  },
 };
