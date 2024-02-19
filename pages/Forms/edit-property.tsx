@@ -32,6 +32,8 @@ const UpdatePropertyForm = () => {
   const [imageUrlError, setImageUrlError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 const [priceError, setPriceError] = useState("");
+const [bedrooms, setBedrooms] = useState(1);
+const [bathrooms, setBathrooms] = useState(1);
 
   useEffect(() => {
     if (!propertyId) return;
@@ -125,6 +127,26 @@ const [priceError, setPriceError] = useState("");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const incrementBedrooms = (e: any) => {
+    e.preventDefault();
+    setBedrooms(bedrooms + 1);
+  };
+
+  const decrementBedrooms = (e: any) => {
+    e.preventDefault();
+    setBedrooms(Math.max(1, bedrooms - 1));
+  };
+
+  const incrementBathrooms = (e: any) => {
+    e.preventDefault();
+    setBathrooms(bathrooms + 1);
+  };
+
+  const decrementBathrooms = (e: any) => {
+    e.preventDefault();
+    setBathrooms(Math.max(1, bathrooms - 1));
   };
 
   return (
@@ -250,52 +272,52 @@ const [priceError, setPriceError] = useState("");
                   </div>
                 </div>
 
-                {/* <div className="w-full flex flex-col space-y-4 mt-8">
-                  <div className="flex items-center">
-                    <FaBed className="mr-2 text-xl" />
-                    <button
-                      onClick={decrementBedrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
-                    >
-                      -
-                    </button>
-                    <input
-                      type="text"
-                      readOnly
-                      value={bedrooms}
-                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
-                    />
-                    <button
-                      onClick={incrementBedrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
-                    >
-                      +
-                    </button>
-                    <span className="ml-2 text-sm md:text-base">Bedrooms</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FaBath className="mr-2 text-xl" />
-                    <button
-                      onClick={decrementBathrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
-                    >
-                      -
-                    </button>
-                    <input
-                      type="text"
-                      readOnly
-                      value={bathrooms}
-                      className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
-                    />
-                    <button
-                      onClick={incrementBathrooms}
-                      className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
-                    >
-                      +
-                    </button>
-                    <span className="ml-2 text-sm md:text-base">Bathrooms</span>
-                  </div>
-                </div> */}
+                <div className="w-full flex flex-col space-y-4 mt-8">
+      <div className="flex items-center">
+        <FaBed className="mr-2 text-xl" />
+        <button
+          onClick={decrementBedrooms}
+          className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+        >
+          -
+        </button>
+        <input
+          type="text"
+          readOnly
+          value={bedrooms}
+          className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
+        />
+        <button
+          onClick={incrementBedrooms}
+          className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+        >
+          +
+        </button>
+        <span className="ml-2 text-sm md:text-base">Bedrooms</span>
+      </div>
+      <div className="flex items-center">
+        <FaBath className="mr-2 text-xl" />
+        <button
+          onClick={decrementBathrooms}
+          className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+        >
+          -
+        </button>
+        <input
+          type="text"
+          readOnly
+          value={bathrooms}
+          className="w-12 text-center mx-2 border-2 border-gray-300 rounded-md"
+        />
+        <button
+          onClick={incrementBathrooms}
+          className="px-2 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+        >
+          +
+        </button>
+        <span className="ml-2 text-sm md:text-base">Bathrooms</span>
+      </div>
+    </div>
 
           <GeocodingComponent
             onLatitudeChange={(latitude) => setFormData({ ...formData, latitude })}
