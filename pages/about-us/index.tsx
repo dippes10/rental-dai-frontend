@@ -257,108 +257,129 @@ const AboutUs: React.FC = () => {
               <div className="px-6">
                 <img
                   alt="..."
-                  // src="/nabaraj-sir.png"
+                  src="/nabaraj-sir.png"
                   className="shadow-lg rounded-full mx-auto max-w-120-px"
                 />
                 <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Dolma Tshering Lama</h5>
+                  <h5 className="text-xl font-bold">Nabraj Negi</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Frontend Developer
+                    Mentor/Supervisor
                   </p>
 
                   <div className="mt-6 grid-flow-row gap-y-4">
-                    <a href="https://www.google.com" target="_blank">
+                  <a href="https://www.google.com" target="_blank">
                       <button
-                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
-                        type="button"
-                      >
-                        <FaTwitter className="fab"></FaTwitter>
-                      </button>
-                    </a>
-
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
-                        type="button"
-                      >
-                        <FaFacebook className="fab "></FaFacebook>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div className="px-6">
-                <img
-                  alt="..."
-                  // src="/sirak-shrestha.jpeg"
-                  className="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Chesna Maharjan</h5>
-                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    UI/Ux Designer
-                  </p>
-
-                  <div className="mt-6 grid-flow-row gap-y-4">
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
-                        type="button"
-                      >
-                        <FaTwitter className="fab"></FaTwitter>
-                      </button>
-                    </a>
-
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
-                        type="button"
-                      >
-                        <FaFacebook className="fab "></FaFacebook>
-                      </button>
-                    </a>
-
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className=" text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-yellow-300"
-                        type="button"
-                      >
-                        <FaDribbble className="fab"></FaDribbble>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
-              <div className="px-6">
-                <img
-                  alt="..."
-                  // src="/jwalan-chand.jpeg"
-                  className="shadow-lg rounded-full mx-auto max-w-120-px"
-                />
-                <div className="pt-6 text-center">
-                  <h5 className="text-xl font-bold">Leah KC</h5>
-                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Backend Developer
-                  </p>
-                  <div className="mt-6">
-                    <a href="https://www.google.com" target="_blank">
-                      <button
-                        className="text-white p-3 mx-2 text-center inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
+                        className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
                         type="button"
                       >
                         <FaGoogle className="fab"></FaGoogle>
                       </button>
                     </a>
-                    <button
-                      className="text-white p-3 mx-2 text-center inline-flex items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-600"
-                      type="button"
-                    >
-                      <FaFacebook className="fab"></FaFacebook>
-                    </button>
+
+                    <a href="https://www.twitter.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex hover:shadow-lg duration-150 items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                      <button
+                        className="text-yellow-200 p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-pink-700"
+                        type="button"
+                      >
+                        <FaInstagram className="fab"></FaInstagram>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div className="px-6">
+                <img
+                  alt="..."
+                  src="/sirak-shrestha.jpeg"
+                  className="shadow-lg rounded-full mx-auto max-w-120-px"
+                />
+                <div className="pt-6 text-center">
+                  <h5 className="text-xl font-bold">Sirak Shrestha Joshi</h5>
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
+                    UI/Ux Designer
+                  </p>
+
+                  <div className="mt-6 grid-flow-row gap-y-4">
+                  <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
+                        type="button"
+                      >
+                        <FaGoogle className="fab"></FaGoogle>
+                      </button>
+                    </a>
+
+                    <a href="https://www.twitter.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex hover:shadow-lg duration-150 items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                      <button
+                        className="text-yellow-200 p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-pink-700"
+                        type="button"
+                      >
+                        <FaInstagram className="fab"></FaInstagram>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+              <div className="px-6">
+                <img
+                  alt="..."
+                  src="/jwalan-chand.jpeg"
+                  className="shadow-lg rounded-full mx-auto max-w-120-px"
+                />
+                <div className="pt-6 text-center">
+                  <h5 className="text-xl font-bold">Jwalan Chand</h5>
+                  <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
+                    Backend Developer
+                  </p>
+                  <div className="mt-6">
+                  <a href="https://www.google.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
+                        type="button"
+                      >
+                        <FaGoogle className="fab"></FaGoogle>
+                      </button>
+                    </a>
+
+                    <a href="https://www.twitter.com" target="_blank">
+                      <button
+                        className="text-white p-3 text-center mx-2 inline-flex hover:shadow-lg duration-150 items-center justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-blue-300"
+                        type="button"
+                      >
+                        <FaTwitter className="fab"></FaTwitter>
+                      </button>
+                    </a>
+
+                    <a href="https://www.instagram.com" target="_blank">
+                      <button
+                        className="text-yellow-200 p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-pink-700"
+                        type="button"
+                      >
+                        <FaInstagram className="fab"></FaInstagram>
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -373,7 +394,7 @@ const AboutUs: React.FC = () => {
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Dipesh Sanjel</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Project Leader
+                    Frontend  Developer
                   </p>
                   <div className="mt-6 mx-2">
                     <a href="https://www.google.com" target="_blank">

@@ -44,30 +44,10 @@ export const Header: { HeaderNav: NavItemProps[] } = {
           navItem: "All Properties",
           navLink: "/properties/all",
         },
-        {
-          id: "featured-properties",
-          navItem: "Featured Properties",
-          navLink: "/properties/featured",
-        },
+        
       ],
     },
-    {
-      id: "profile",
-      navItem: "Profile",
-      navLink: "/profile",
-      subNavItems: [
-        {
-          id: "user-profile",
-          navItem: "User Profile",
-          navLink: "/profile/user-profile",
-        },
-        {
-          id: "lister-profile",
-          navItem: "Lister Profile",
-          navLink: "/profile/lister-profile",
-        },
-      ],
-    },
+    
   ],
 };
 

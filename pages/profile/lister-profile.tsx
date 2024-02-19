@@ -209,7 +209,7 @@ const ListerProfile = () => {
                     className="w-full h-52 object-cover rounded-md mb-4"
                   />
                 ))}
-            <div className="absolute top-2 right-2 grid grid-cols-2 gap-x-4">
+           
                 {/* View Map Button */}
                 <button
                   className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
@@ -220,14 +220,14 @@ const ListerProfile = () => {
 
                 {/* Delete Button */}
                 <button
-                  className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
+                  className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
                   onClick={() => handleDelete(listing.id)}
                 >
                   <FaTrash />
                 </button>
               </div>
 
-              </div>
+              
             ))}
           </div>
 
