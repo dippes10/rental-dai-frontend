@@ -255,6 +255,7 @@ const ListerForm: React.FC = () => {
                     )}
                   </div>
                 </div>
+                
                 <div className="w-full">
                   <label className="block text-sm font-medium text-gray-700">
                     Details

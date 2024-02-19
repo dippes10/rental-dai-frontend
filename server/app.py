@@ -292,6 +292,10 @@ def delete_property(property_id):
     return jsonify({'message': 'Property deleted successfully'}), 200
 
 
+
+
+
+
 # Haversine formula to calculate distance between two points
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371  # Radius of the Earth in kilometers

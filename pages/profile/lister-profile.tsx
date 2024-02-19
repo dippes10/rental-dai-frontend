@@ -13,6 +13,8 @@ import AppLayout from "../../components/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
 import Button from "../../components/Button";
+import { toast } from "sonner";
+import UpdatePropertyForm from "../../pages/forms/edit-property";
 
 interface Listing {
   id: number;
@@ -44,7 +46,7 @@ const ListerProfile = () => {
   );
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -113,9 +115,30 @@ const ListerProfile = () => {
     setSelectedProperty(null);
   };
 
-  function handleClick(): void {
+  const handleClick = (): void => {
     router.push("/Forms/lister-form");
-  }
+  };
+
+  const handleDelete = async (propertyId: number) => {
+    try {
+      const response = await fetch(`/api/properties/${propertyId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete property");
+      }
+
+      toast.success("Property deleted successfully!");
+      router.reload(); // Reload the page to reflect changes
+    } catch (error) {
+      console.log("Error deleting property:");
+      toast.error(`Failed to delete property: `);
+    }
+  };
 
   const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
     // Close the map if clicking outside the map
@@ -131,6 +154,7 @@ const ListerProfile = () => {
 
   return (
     <AppLayout>
+      <UpdatePropertyForm/>
       <div className="flex justify-center items-center bgLogin z-40">
         <div className="relative w-full max-w-4xl p-8 mx-auto bg-slate-100 rounded-lg shadow-xl">
           {/* Profile Data */}
@@ -192,10 +216,18 @@ const ListerProfile = () => {
                 >
                   <FaMapMarkerAlt className="mr-2" /> View Map
                 </button>
+
+                {/* Delete Button */}
+                <button
+                  className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-700 focus:outline-none"
+                  onClick={() => handleDelete(listing.id)}
+                >
+                  <FaTrash />
+                </button>
               </div>
             ))}
           </div>
-          
+
           {/* Map Modal */}
           {isMapModalOpen && selectedProperty && (
             <div
