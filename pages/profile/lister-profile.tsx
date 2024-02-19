@@ -14,7 +14,7 @@ import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
 import Button from "../../components/Button";
 import { toast } from "sonner";
-import UpdatePropertyForm from "../../pages/forms/edit-property";
+
 
 interface Listing {
   id: number;
@@ -89,9 +89,10 @@ const ListerProfile = () => {
           throw new Error("Failed to fetch listings");
         }
         const data = await response.json();
-        const updatedListings = data.map((listing: { images: string }) => ({
+        const updatedListings = data.map((listing: any) => ({
           ...listing,
           images: listing.images ? listing.images.split(",") : [],
+          id:listing.id,
         }));
         setListings(updatedListings);
       } catch (err) {
@@ -154,7 +155,7 @@ const ListerProfile = () => {
 
   return (
     <AppLayout>
-      <UpdatePropertyForm/>
+      
       <div className="flex justify-center items-center bgLogin z-40">
         <div className="relative w-full max-w-4xl p-8 mx-auto bg-slate-100 rounded-lg shadow-xl">
           {/* Profile Data */}
