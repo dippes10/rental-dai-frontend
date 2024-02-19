@@ -322,7 +322,6 @@ const ListerForm: React.FC = () => {
                 onLatitudeChange={setLatitude}
                 onLongitudeChange={setLongitude}
               />
-
               <div className="flex items-center mt-4">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input

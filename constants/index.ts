@@ -133,39 +133,3 @@ export const Footer = {
     ],
   },
 };
-
-export const Homepage = {
-  Message: {
-    title: "Find Your Perfect Home with RentalDai",
-    subTitle:
-      "Welcome to RentalDai, your go-to platform for finding the perfect home for your needs. Whether you're looking for an apartment, house, or condo, we've got you covered. Start your search now!",
-    cta: "Explore Properties",
-    description: "Your dream home is just a click away.",
-    featureCards: [
-      {
-        icon: "search",
-        title: "Search Properties",
-        description:
-          "Browse through a wide range of properties to find the one that suits you.",
-      },
-      {
-        icon: "heart",
-        title: "Save Favorites",
-        description:
-          "Save your favorite properties so you can easily find and compare them later.",
-      },
-      {
-        icon: "user",
-        title: "Create an Account",
-        description:
-          "Sign up to unlock additional features and receive personalized recommendations.",
-      },
-      {
-        icon: "phone",
-        title: "Contact Agents",
-        description:
-          "Connect with real estate agents to get more information about properties.",
-      },
-    ],
-  },
-};

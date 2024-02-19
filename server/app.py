@@ -97,6 +97,11 @@ def signup():
     return jsonify({'message': 'Method not allowed'}), 405
 
 
+
+
+
+
+
 #userlogin
 @app.route('/user-Signin', methods=['POST'])
 def signin():
@@ -132,6 +137,10 @@ def signin():
 def properties():
     current_user_id = get_jwt_identity()
     return jsonify(logged_in_user_id=current_user_id), 200
+
+
+
+
 
 
 #listing properties
@@ -194,7 +203,12 @@ def add_property():
         conn.commit()
     return jsonify({'message': 'Property added successfully'}), 200
 
-#edit property
+
+
+
+
+
+## edit property
 @app.route('/api/properties/<property_id>', methods=['PUT'])
 @jwt_required()
 def update_property(property_id):
@@ -248,6 +262,13 @@ def update_property(property_id):
 
     return jsonify({'message': 'Property updated successfully'}), 200
 
+
+
+
+
+
+
+# Delete Property
 @app.route('/api/properties/<property_id>', methods=['DELETE'])
 @jwt_required
 def delete_property(property_id):
@@ -281,6 +302,11 @@ def haversine(lat1, lon1, lat2, lon2):
     distance = R * c
     return distance
 
+
+
+
+
+## Recommendation Algorithm
 @app.route('/recommend_properties', methods=['GET'])
 @jwt_required()
 def nearby_properties():
@@ -335,7 +361,10 @@ def nearby_properties():
     return jsonify(nearby_properties)
 
 
-#listerko property details 
+
+
+
+#Lister property details 
 @app.route('/lister_properties', methods=['GET'])
 @jwt_required()
 def lister_properties():
@@ -382,7 +411,11 @@ def user_details():
         else:
             return jsonify({'message': 'User details not found'}), 404
 
-#recommendation by price
+
+
+
+
+## Recommendation by price
 @app.route('/recommend_price', methods=['GET'])
 @jwt_required()
 def recommend_price():

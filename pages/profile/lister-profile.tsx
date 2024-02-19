@@ -195,7 +195,7 @@ const ListerProfile = () => {
               </div>
             ))}
           </div>
-
+          
           {/* Map Modal */}
           {isMapModalOpen && selectedProperty && (
             <div
@@ -226,7 +226,6 @@ const ListerProfile = () => {
               </div>
             </div>
           )}
-
           {/* Add Listing Button */}
           <div className="text-center mt-6">
             <Button type="outline" title="Add Listing" onClick={handleClick} />
