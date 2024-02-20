@@ -205,6 +205,20 @@ def add_property():
 
 
 
+#fetch details of selected property
+@app.route('/api/properties/<property_id>', methods=['GET'])
+@jwt_required()
+def fetch(property_id):
+    # Retrieve existing property details from the database
+    conn = get_conn()
+    with conn.cursor() as cursor:
+        select_query = "SELECT * FROM propertieslist WHERE id=%s"
+        cursor.execute(select_query, (property_id))
+        existing_property = cursor.fetchone()
+
+        if not existing_property:
+            return jsonify({'message': 'Property not found'}), 404
+        return jsonify(existing_property)
 
 
 
@@ -216,11 +230,13 @@ def update_property(property_id):
     conn = get_conn()
     with conn.cursor() as cursor:
         select_query = "SELECT * FROM propertieslist WHERE id=%s"
-        cursor.execute(select_query, (property_id,))
+        cursor.execute(select_query, (property_id))
         existing_property = cursor.fetchone()
 
         if not existing_property:
             return jsonify({'message': 'Property not found'}), 404
+        
+        
 
     # Retrieve updated property details from the request JSON
     data = request.form
@@ -270,11 +286,11 @@ def update_property(property_id):
 
 # Delete Property
 @app.route('/api/properties/<property_id>', methods=['DELETE'])
-@jwt_required
+@jwt_required()
 def delete_property(property_id):
     # Check if the property exists in the database
     conn = get_conn()
-    with connection.cursor() as cursor:
+    with conn.cursor() as cursor:
         select_query = "SELECT * FROM propertieslist WHERE id=%s"
         cursor.execute(select_query, (property_id,))
         existing_property = cursor.fetchone()
@@ -284,7 +300,7 @@ def delete_property(property_id):
 
     # Perform deletion from the database
     conn = get_conn()
-    with connection.cursor() as cursor:
+    with conn.cursor() as cursor:
         delete_query = "DELETE FROM propertieslist WHERE id=%s"
         cursor.execute(delete_query, (property_id,))
         conn.commit()

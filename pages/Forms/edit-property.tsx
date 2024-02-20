@@ -40,7 +40,7 @@ const [bathrooms, setBathrooms] = useState(1);
     const fetchPropertyData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`/api/properties/${propertyId}`, {
+        const response = await fetch(`http://localhost:8080/api/properties/${propertyId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('access_token')}`,
           },

@@ -122,7 +122,7 @@ const ListerProfile = () => {
 
   const handleDelete = async (propertyId: number) => {
     try {
-      const response = await fetch(`/api/properties/${propertyId}`, {
+      const response = await fetch(`http://localhost:8080/api/properties/${propertyId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -225,6 +225,11 @@ const ListerProfile = () => {
                 >
                   <FaTrash />
                 </button>
+                {/* Edit Button */}
+                <button
+                  className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
+                  onClick={() => router.push("/Forms/edit-property")}
+                >Edit</button>
               </div>
 
               
