@@ -7,6 +7,7 @@ import router from "next/router";
 import { Toaster, toast } from 'sonner';
 import AOS from "aos"; // Import aos
 import "aos/dist/aos.css"; // Import aos styles
+import LoginLayout from "../../components/LoginLayout";
 
 
 function SignInBasic() {
@@ -68,7 +69,7 @@ function SignInBasic() {
   };
 
   return (
-    <AppLayout>
+    <LoginLayout>
       <div data-aos="fade-in"  className="flex justify-center items-center bgLogin">
         <div className="relative w-full sm:w-96 md:w-96 lg:w-96 xl:w-96 p-8">
           {/* Header box with red to white gradient */}
@@ -202,7 +203,7 @@ function SignInBasic() {
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>
-    </AppLayout>
+    </LoginLayout>
   );
 }
 
