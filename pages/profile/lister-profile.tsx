@@ -175,63 +175,18 @@ const ListerProfile = () => {
                   <FaPhone className="inline mr-2" />
                   {profileData.phone}
                 </p>
+
+                {/* Add Listing Button */}
+                <div className="absolute bottom-0 right-0 mb-4 mr-4">
+                  <Button
+                    type="outline"
+                    title="Add Listing"
+                    onClick={handleClick}
+                  />
+                </div>
               </div>
             </div>
           </div>
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {listings.map((listing) => (
-              <div
-                key={listing.id}
-                className="bg-white p-4 rounded-lg shadow-md"
-              >
-
-
-                <h3 className="text-xl font-bold mb-2 text-blue-600">
-                  <FaHome className="inline mr-2 text-green-500" />
-                  {listing.name}
-                </h3>
-                <p className="mb-2 text-gray-600">
-                  <FaMapMarkerAlt className="inline mr-2 text-red-500" />
-                  {listing.address}
-                </p>
-                <p className="mb-4 text-gray-600">
-                  <FaInfo className="inline mr-2 text-yellow-500" />
-                  {listing.description}
-                </p>
-
-                {listing.image?.split(",").map((image, index) => (
-                  <img
-                    key={index}
-                    src={`http://localhost:8080/${image.trim()}`}
-                    alt={`Listing ${listing.title} - Image ${index + 1}`}
-                    className="w-full h-52 object-cover rounded-md mb-4"
-                  />
-                ))}
-           
-
-                <button
-                  className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                  onClick={() => handleViewMap(listing)}
-                >
-                  <FaMapMarkerAlt className="mr-2" /> View Map
-                </button>
-
-
-                <button
-                  className="mt-8 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
-                  onClick={() => handleDelete(listing.id)}
-                >
-                  <FaTrash />
-                </button>
-
-                <button
-                  className="mt-12 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                  onClick={() => router.push("/forms/edit-property")}
-                >Edit</button>
-              </div> 
-            ))}
-          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {listings.map((listing) => (
@@ -325,10 +280,6 @@ const ListerProfile = () => {
               </div>
             </div>
           )}
-          {/* Add Listing Button */}
-          <div className="text-center mt-6">
-            <Button type="outline" title="Add Listing" onClick={handleClick} />
-          </div>
         </div>
       </div>
     </AppLayout>
