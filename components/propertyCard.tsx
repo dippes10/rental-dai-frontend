@@ -16,7 +16,7 @@ interface PropertyCardProps {
       details: string;
       name: string;
       address: string;
-      image: string; // Array of image URLs
+      images: string[]; // Corrected to an array of image URLs
       bedrooms: number;
       bathrooms: number;
       price: string;
@@ -27,7 +27,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewMap }) => {
-  const { name, address, image, bedrooms, bathrooms, price, description } =
+  const { name, address, images, bedrooms, bathrooms, price, description } =
     property?.property_details;
 
   return (
@@ -48,14 +48,14 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewMap }) => {
         </p>
         <p className="text-gray-600 text-sm">{description}</p>
         {/* Images */}
-        {image?.split(",").map((image, index) => (
-                  <img
-                    key={index}
-                    src={`http://localhost:8080/${image.trim()}`}
-                    alt={`Listing ${name} - Image ${index + 1}`}
-                    className="w-full h-52 object-cover rounded-md mb-4"
-                  />
-                ))}
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={`http://localhost:8080/${image.trim()}`}
+            alt={`Listing ${name} - Image ${index + 1}`}
+            className="w-full h-52 object-cover rounded-md mb-4"
+          />
+        ))}
 
         {/* Share and View Map Buttons */}
         <div className="flex justify-between items-center mt-4">

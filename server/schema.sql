@@ -23,13 +23,8 @@ CREATE TABLE IF NOT EXISTS "properties" (
 27.89775
 89.97867
 
-
-
 tlong = ?
 tlat = ?
 userlong = ?
 userlat = ?
 output = long, lat
-
-
-
