@@ -20,7 +20,7 @@ interface Listing {
     id: number;
     name: string;
     address: string;
-    images: string[]; // Array of image URLs
+    image: string; 
     bedrooms: number;
     bathrooms: number;
     price: string;
