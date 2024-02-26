@@ -208,12 +208,15 @@ def add_property():
 #fetch details of selected property
 @app.route('/api/properties/<property_id>', methods=['GET'])
 @jwt_required()
-def fetch(property_id):
+def get_property(property_id):
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')
+    
     # Retrieve existing property details from the database
     conn = get_conn()
-    with conn.cursor() as cursor:
-        select_query = "SELECT * FROM propertieslist WHERE id=%s"
-        cursor.execute(select_query, (property_id))
+    with conn.cursor(dictionary=True) as cursor:
+        select_query = "SELECT * FROM propertieslist WHERE id = %s AND created_by = %s"
+        cursor.execute(select_query, (property_id, user_id))
         existing_property = cursor.fetchone()
 
         if not existing_property:
@@ -226,12 +229,16 @@ def fetch(property_id):
 @app.route('/api/properties/<property_id>', methods=['PUT'])
 @jwt_required()
 def update_property(property_id):
+    current_user_id = get_jwt_identity()
+    user_id = current_user_id.get('user_id')
+    
     # Retrieve existing property details from the database
     conn = get_conn()
-    with conn.cursor() as cursor:
-        select_query = "SELECT * FROM propertieslist WHERE id=%s"
-        cursor.execute(select_query, (property_id))
+    with conn.cursor(dictionary=True) as cursor:
+        select_query = "SELECT * FROM propertieslist WHERE id = %s AND created_by = %s"
+        cursor.execute(select_query, (property_id, user_id))
         existing_property = cursor.fetchone()
+
 
         if not existing_property:
             return jsonify({'message': 'Property not found'}), 404
@@ -242,22 +249,22 @@ def update_property(property_id):
     data = request.form
 
     # Use existing values as default
-    updated_name = data.get('name', existing_property[1])
-    updated_address = data.get('address', existing_property[2])
-    updated_details = data.get('details', existing_property[4])
-    updated_latitude = data.get('latitude', existing_property[5])
-    updated_longitude = data.get('longitude', existing_property[6])
-    updated_agreed_to_terms = data.get('agreedToTerms', existing_property[7])
-    updated_price = data.get("price",existing_property[8])
-    updated_bedroom = data.get("bedrooms",existing_property[9])
-    updated_bathroom = data.get("bathrooms",existing_property[10])
+    updated_name = data.get('name', existing_property.get("name"))
+    updated_address = data.get('address', existing_property.get("address"))
+    updated_details = data.get('description', existing_property.get("description"))
+    updated_latitude = data.get('latitude', existing_property.get( "latitude"))
+    updated_longitude = data.get('longitude', existing_property.get("longitude"))
+    updated_agreed_to_terms = data.get('agreedToTerms', existing_property.get("agreed_to_terms"))
+    updated_price = data.get("price",existing_property.get("price"))
+    updated_bedroom = data.get("bedrooms",existing_property.get( "bedrooms"))
+    updated_bathroom = data.get("bathrooms",existing_property.get( "bathrooms"))
     
 
     # Retrieve new images from the request
-    new_images = request.files.getlist('images')
+    new_images = request.files.getlist('image')
 
     # Concatenate existing images with new ones
-    existing_images = existing_property[3].split(',') if existing_property[3] else []
+    existing_images = existing_property.get("image").split(',') if existing_property.get("image") else []
     updated_images = existing_images.copy()  # Initialize with existing images
     for file in new_images:
         if file and allowed_file(file.filename):

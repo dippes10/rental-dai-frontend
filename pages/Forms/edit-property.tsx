@@ -51,7 +51,7 @@ const [bathrooms, setBathrooms] = useState(1);
           ...formData,
           name: property.name,
           address: property.address,
-          details: property.details,
+          details: property.description,
           checked: property.checked === "true",
           price: property.price,
           bedrooms: property.bedrooms,
