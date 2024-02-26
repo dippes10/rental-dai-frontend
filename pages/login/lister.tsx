@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
-import LoginLayout from "../../components/LoginLayout";
+import AppLayout from "../../components/AppLayout";
 import NextImage from "next/image"; // Import next/image
-import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaFacebook, FaGoogle } from "react-icons/fa"; // Import icons
 import { useRouter } from "next/router";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css"; // Import AOS styles
 
 function SignInBasic() {
   const router = useRouter();
@@ -18,7 +18,7 @@ function SignInBasic() {
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); 
+    AOS.init({ duration: 1000 }); // Initialize AOS with your preferred options
   }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -64,7 +64,7 @@ function SignInBasic() {
   };
 
   return (
-    <LoginLayout>
+    <AppLayout>
       <div
         className="flex justify-center items-center bgLogin"
         data-aos="fade-up" // Add fade-up animation
@@ -202,7 +202,7 @@ function SignInBasic() {
       <div className="w-full absolute z-2 bottom-8">
         {/* Footer code here (if you have an alternative component) */}
       </div>
-    </LoginLayout>
+    </AppLayout>
   );
 }
 

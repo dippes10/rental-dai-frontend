@@ -8,12 +8,93 @@ import Description from "../components/Description";
 import MapboxComponent from "../components/mapbox/mapbox";
 import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
 
+// export const fakeProperties = [
+//   {
+//     id: 1,
+//     name: "Property 1",
+//     address: "123 Fake Street",
+//     imageUrl: "https://source.unsplash.com/800x600/?flat",
+//     location: {
+//       latitude: 27.6957153,
+//       longitude: 85.3016536,
+//     },
+//     bedrooms: 3,
+//     bathrooms: 2,
+//     price: "$500,000",
+//     description: "Spacious property with a beautiful view.",
+//   },
+//   {
+//     id: 2,
+//     name: "Property 2",
+//     address: "123 Fake Street",
+//     imageUrl: "https://source.unsplash.com/800x600/?room",
+//     location: {
+//       latitude: 27.6957453,
+//       longitude: 85.3136646,
+//     },
+//     bedrooms: 2,
+//     bathrooms: 1,
+//     price: "$300,000",
+//     description: "Cozy property with modern amenities.",
+//   },
+//   {
+//     id: 2,
+//     name: "Property 2",
+//     address: "123 Fake Street",
+//     imageUrl: "https://source.unsplash.com/800x600/?room",
+//     location: {
+//       latitude: 27.6957453,
+//       longitude: 85.3136646,
+//     },
+//     bedrooms: 2,
+//     bathrooms: 1,
+//     price: "$300,000",
+//     description: "Cozy property with modern amenities.",
+//   },
+//   {
+//     id: 5,
+//     name: "Property 5",
+//     address: "101 Patan Road",
+//     imageUrl: "https://source.unsplash.com/800x600/?Nepal,patan-house",
+//     location: {
+//       latitude: 27.6740,
+//       longitude: 85.3240,
+//     },
+//     bedrooms: 3,
+//     bathrooms: 2,
+//     price: "$450,000",
+//     description: "Modern home in the heart of historic Patan.",
+//   },
+//   {
+//     id: 6,
+//     name: "Property 6",
+//     address: "202 Bhaktapur Lane",
+//     imageUrl: "https://source.unsplash.com/800x600/?Nepal,bhaktapur-house",
+//     location: {
+//       latitude: 27.6710,
+//       longitude: 85.4297,
+//     },
+//     bedrooms: 5,
+//     bathrooms: 4,
+//     price: "$600,000",
+//     description: "Spacious family house near cultural landmarks.",
+//   },
+// ];
+
 const HomePage: React.FC = () => {
   const [properties, setProperties] = useState<any[]>([]);
   const [filteredProperties, setFilteredProperties] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
+    // // To use fake data uncomment below commented code
+    // setProperties(fakeProperties);
+    // setFilteredProperties(fakeProperties);
+    // setIsLoading(false);
+
+    // Uncomment the following code when using actual API
+
     fetch("http://localhost:8080/api/properties")
       .then((response) => response.json())
       .then((data) => {
