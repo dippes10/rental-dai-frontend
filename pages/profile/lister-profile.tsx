@@ -15,6 +15,7 @@ import router from "next/router";
 import Button from "../../components/Button";
 import { toast } from "sonner";
 
+
 interface Listing {
   id: number;
   title: string;
@@ -91,7 +92,7 @@ const ListerProfile = () => {
         const updatedListings = data.map((listing: any) => ({
           ...listing,
           images: listing.images ? listing.images.split(",") : [],
-          id: listing.id,
+          id:listing.id,
         }));
         setListings(updatedListings);
       } catch (err) {
@@ -121,15 +122,12 @@ const ListerProfile = () => {
 
   const handleDelete = async (propertyId: number) => {
     try {
-      const response = await fetch(
-        `http://localhost:8080/api/properties/${propertyId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:8080/api/properties/${propertyId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
 
       if (!response.ok) {
         throw new Error("Failed to delete property");
@@ -157,6 +155,7 @@ const ListerProfile = () => {
 
   return (
     <AppLayout>
+      
       <div className="flex justify-center items-center bgLogin z-40">
         <div className="relative w-full max-w-4xl p-8 mx-auto bg-slate-100 rounded-lg shadow-xl">
           {/* Profile Data */}
@@ -179,13 +178,14 @@ const ListerProfile = () => {
             </div>
           </div>
 
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Listings Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {listings.map((listing) => (
               <div
                 key={listing.id}
                 className="bg-white p-4 rounded-lg shadow-md"
               >
-
+                {/* Listing Details */}
 
                 <h3 className="text-xl font-bold mb-2 text-blue-600">
                   <FaHome className="inline mr-2 text-green-500" />
@@ -200,6 +200,7 @@ const ListerProfile = () => {
                   {listing.description}
                 </p>
 
+                {/* Images */}
                 {listing.image?.split(",").map((image, index) => (
                   <img
                     key={index}
@@ -209,7 +210,7 @@ const ListerProfile = () => {
                   />
                 ))}
            
-
+                {/* View Map Button */}
                 <button
                   className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
                   onClick={() => handleViewMap(listing)}
@@ -217,81 +218,21 @@ const ListerProfile = () => {
                   <FaMapMarkerAlt className="mr-2" /> View Map
                 </button>
 
-
+                {/* Delete Button */}
                 <button
-                  className="mt-8 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
+                  className="mt-2 bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
                   onClick={() => handleDelete(listing.id)}
                 >
                   <FaTrash />
                 </button>
-
+                {/* Edit Button */}
                 <button
-                  className="mt-12 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                  onClick={() => router.push("/forms/edit-property")}
+                  className="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
+                  onClick={() => router.push("/Forms/edit-property")}
                 >Edit</button>
-              </div> 
-            ))}
-          </div> */}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {listings.map((listing) => (
-              <div
-                key={listing.id}
-                className="flex flex-col bg-white p-4 rounded-lg shadow-md h-full"
-              >
-                {/* Listing Details */}
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2 text-blue-600">
-                    <FaHome className="inline mr-2 text-green-500" />
-                    {listing.name}
-                  </h3>
-                  <p className="mb-2 text-gray-600">
-                    <FaMapMarkerAlt className="inline mr-2 text-red-500" />
-                    {listing.address}
-                  </p>
-                  <p className="mb-4 text-gray-600">
-                    <FaInfo className="inline mr-2 text-yellow-500" />
-                    {listing.description}
-                  </p>
-
-                  {/* Images */}
-                  {listing.image?.split(",").map((image, index) => (
-                    <img
-                      key={index}
-                      src={`http://localhost:8080/${image.trim()}`}
-                      alt={`Listing ${listing.title} - Image ${index + 1}`}
-                      className="w-full h-52 object-cover rounded-md mb-4"
-                    />
-                  ))}
-                </div>
-
-                {/* Buttons Container */}
-                <div className="mt-4 flex justify-between items-center">
-                  {/* View Map Button */}
-                  <button
-                    className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                    onClick={() => handleViewMap(listing)}
-                  >
-                    <FaMapMarkerAlt className="mr-2" /> View Map
-                  </button>
-
-                  {/* Delete Button */}
-                  <button
-                    className="bg-red-500 text-white p-2 rounded hover:bg-red-700 flex items-center"
-                    onClick={() => handleDelete(listing.id)}
-                  >
-                    <FaTrash />
-                  </button>
-
-                  {/* Edit Button */}
-                  <button
-                    className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                    onClick={() => router.push("/forms/edit-property")}
-                  >
-                    Edit
-                  </button>
-                </div>
               </div>
+
+              
             ))}
           </div>
 
