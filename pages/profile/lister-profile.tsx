@@ -161,6 +161,7 @@ const ListerProfile = () => {
         <div className="relative w-full max-w-4xl p-8 mx-auto bg-slate-100 rounded-lg shadow-xl">
           {/* Profile Data */}
           <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
+  
             <div className="flex items-center gap-4">
               <FaUserCircle size={50} className="text-blue-500" />
               <div>
@@ -175,15 +176,6 @@ const ListerProfile = () => {
                   <FaPhone className="inline mr-2" />
                   {profileData.phone}
                 </p>
-
-                {/* Add Listing Button */}
-                <div className="absolute bottom-0 right-0 mb-4 mr-4">
-                  <Button
-                    type="outline"
-                    title="Add Listing"
-                    onClick={handleClick}
-                  />
-                </div>
               </div>
             </div>
           </div>

@@ -23,6 +23,16 @@ const Header: React.FC<HeaderProps> = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const router = useRouter();
   const HeaderNav = HeaderData.HeaderNav;
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+
+  const isLoggedIn = () => {
+    if (typeof window !== "undefined") {
+      // This code runs only on the client side
+      return Boolean(localStorage.getItem("access_token"));
+    }
+    return false; // Default to false if not client-side
+  };
+  
 
   // Function to handle click on "Join RentalDai" button
   const handleClick = () => {
@@ -34,6 +44,11 @@ const Header: React.FC<HeaderProps> = () => {
   const handleStartClick = () => {
     router.push("/login");
     setShowMenu(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken'); 
+    router.push('/login');
   };
 
   // Initialize AOS when the component mounts
@@ -118,7 +133,7 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
           </div>
           {/* Desktop Navigation */}
-          <ul className="hidden lg:flex items-center space-x-4 gap-2">
+          <ul className="hidden lg:flex md:flex items-center space-x-4 gap-2">
             {HeaderNav.map((item) =>
               item.subNavItems ? (
                 <Dropdown
@@ -145,24 +160,35 @@ const Header: React.FC<HeaderProps> = () => {
           </ul>
           {/* Call-to-action Buttons */}
           <div className="space-x-4 flex justify-center items-center bg-opacity-50">
-            <div className="text-black transition duration-300 hover:text-red cursor-pointer">
+            {userLoggedIn ? (
+              // Display Logout button if user is logged in
               <button
-                onClick={handleClick}
-                className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
-                data-aos="fade-right" // Apply fade-right animation
+                onClick={handleLogout}
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
               >
-                Register
+                Logout
               </button>
-            </div>
-            <div className="text-black transition duration-300 hover:text-black cursor-pointer">
-              <button
-                onClick={handleStartClick}
-                className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
-                data-aos="fade-left" // Apply fade-left animation
-              >
-                LogIn
-              </button>
-            </div>
+            ) : (
+              // Display Register and Login buttons if user is not logged in
+              <>
+                <div className="text-black transition duration-300 hover:text-red cursor-pointer">
+                  <button
+                    onClick={handleClick}
+                    className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
+                  >
+                    Register
+                  </button>
+                </div>
+                <div className="text-black transition duration-300 hover:text-black cursor-pointer">
+                  <button
+                    onClick={handleStartClick}
+                    className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
+                  >
+                    LogIn
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </nav>
