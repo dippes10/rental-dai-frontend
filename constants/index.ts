@@ -37,17 +37,8 @@ export const Header: { HeaderNav: NavItemProps[] } = {
     {
       id: "properties",
       navItem: "Properties",
-      navLink: "/properties",
-      subNavItems: [
-        {
-          id: "all-properties",
-          navItem: "All Properties",
-          navLink: "/properties/all",
-        },
-        
-      ],
+      navLink: "/properties/all",
     },
-    
   ],
 };
 

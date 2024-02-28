@@ -233,7 +233,7 @@ const ListerProfile = () => {
                   {/* Edit Button */}
                   <button
                     className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                    onClick={() => router.push("/forms/edit-property")}
+                    onClick={() => router.push("/Forms/edit-property")}
                   >
                     Edit
                   </button>
