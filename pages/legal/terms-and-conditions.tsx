@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import App from "next/app";
 
 const RentalDaiTermsAndConditions: React.FC = () => {

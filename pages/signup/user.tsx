@@ -8,7 +8,7 @@ import {
   faDollarSign,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import router from "next/router";
 import GeocodingComponent from "../../components/mapbox/geocoding";
 import AOS from "aos";

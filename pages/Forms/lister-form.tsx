@@ -11,7 +11,7 @@ import {
   FaDollarSign,
 } from "react-icons/fa";
 import router from "next/router";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import GeocodingComponent from "../../components/mapbox/geocoding";
 import { Toaster, toast } from "sonner";
 

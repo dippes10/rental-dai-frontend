@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { FaBath, FaBed, FaDollarSign, FaUpload } from "react-icons/fa";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import { toast, Toaster } from "sonner";
 import GeocodingComponent from "../../components/mapbox/geocoding";
 

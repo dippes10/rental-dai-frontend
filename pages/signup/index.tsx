@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import router from "next/router";
 import Button from "../../components/Button";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 

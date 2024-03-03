@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 // pages/index.tsx
-
 import React, { useEffect, useState } from "react";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../components/utils/AppLayout";
 import RentalFlipImage from "../components/CardFlip";
 import Description from "../components/Description";
 import MapboxComponent from "../components/mapbox/mapbox";
 import { FaBed, FaBuilding, FaHome } from "react-icons/fa";
+import Image from "next/image";
 
 // export const fakeProperties = [
 //   {
@@ -86,7 +86,6 @@ const HomePage: React.FC = () => {
   const [filteredProperties, setFilteredProperties] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-
   useEffect(() => {
     // // To use fake data uncomment below commented code
     // setProperties(fakeProperties);
@@ -120,7 +119,7 @@ const HomePage: React.FC = () => {
           }}
           alt="home landscape"
         />
-        <div className="mx-2 lg:mx-4 relative rounded-xl bg-red -mt-8 z-69 bg-gray-50 overflow-visible">
+        <div className="mx-2 lg:mx-4 relative rounded-xl -mt-8 z-69 bg-gray-100 overflow-hidden">
           <RentalFlipImage />
           <MapboxComponent
             showNavigationControl={true}
@@ -200,7 +199,7 @@ const HomePage: React.FC = () => {
                         <h6 className="text-xl mb-1 font-semibold text-gray-700">
                           Rooms for Rent
                         </h6>
-                        <p className="mb-4 text-gray-600">
+                        <p className="text-gray-600">
                           Perfect for students and professionals, our selection
                           of rooms offers affordability and convenience.
                         </p>

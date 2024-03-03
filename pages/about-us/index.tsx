@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Link from "next/link";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import {
   FaUser,
   FaLock,
@@ -28,6 +28,8 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import houseNepal from '../../public/house-image.jpeg';
+import Image from "next/image";
 
 const AboutUs: React.FC = () => {
   useEffect(() => {
@@ -92,7 +94,7 @@ const AboutUs: React.FC = () => {
           <div className="flex flex-wrap">
             {/* <!-- Feature 1: Wide Range of Listings --> */}
             <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg ">
+              <div className="relative flex flex-col min-w-0 break-words bg-green-50 w-full mb-8 shadow-lg rounded-lg ">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
                     <FaUser className="fas FaUser"></FaUser>
@@ -110,7 +112,7 @@ const AboutUs: React.FC = () => {
             {/* 
     <!-- Feature 2: Trusted by Tenants --> */}
             <div className="w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div className="relative flex flex-col min-w-0 break-words bg-blue-50 w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                     <FaLock className="fas"></FaLock>
@@ -126,7 +128,7 @@ const AboutUs: React.FC = () => {
 
             {/* <!-- Feature 3: Secure and Easy Transactions --> */}
             <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div className="relative flex flex-col min-w-0 break-words bg-yellow-50 w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-yellow-400">
                     <FaFastForward className="fas "></FaFastForward>
@@ -145,8 +147,8 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className="relative py-20 bg-gray-500">
-        <div
+      <section className="relative py-20 bg-slate-800 mb-8">
+      <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style={{ transform: "translateZ(0)" }}
         >
@@ -160,50 +162,50 @@ const AboutUs: React.FC = () => {
             y="0"
           >
             <polygon
-              className="text-white fill-gray-500"
+              className="text-crimson fill-slate-800 border-crimson"
               points="2560 0 2560 100 0 100"
             ></polygon>
           </svg>
         </div>
-
         <div className="container mx-auto px-4">
-          <div data-aos="fade-up" className="items-center flex flex-wrap">
+          <div
+            data-aos="fade-up"
+            className="flex flex-wrap items-center justify-center"
+          >
             <div
               data-aos="fade-up"
-              className="w-full md:w-4/12 ml-auto mr-auto px-4"
+              className="w-full lg:w-5/12 px-4 mb-12 lg:mb-0"
             >
-              {/* Updated Image */}
-              <img
+              <Image
                 alt="A beautiful house in Nepal"
                 className="max-w-full rounded-lg shadow-lg"
-                src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXw3NjE2MHwwfDF8c2VhcmNofDF8fG5lcGFsfGVufDB8fHx8MTYxNjI4MjI2MQ&ixlib=rb-1.2.1&q=80&w=1080"
-              />
+                src={houseNepal}
+                 />
             </div>
-            <div className="w-full md:w-5/12 ml-auto mr-auto px-4 bg-white rounded-lg py-4">
+            <div className="w-full lg:w-6/12 px-4">
               <div className="md:pr-12">
-                {/* Icon and Title */}
-                <div className="text-green-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-green-100">
+                <div className="text-green-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-green-50">
+                  {/* Assuming FaHome is imported from 'react-icons/fa' */}
                   <FaHome className="text-xl"></FaHome>
                 </div>
-                <h3 className="text-3xl font-semibold">
+                <h3 className="text-3xl font-semibold text-white">
                   Find Your Perfect Home
                 </h3>
-                <p className="mt-4 text-lg leading-relaxed text-gray-500">
+                <p className="mt-4 text-lg leading-relaxed text-gray-400">
                   rental-dai is your trusted partner in finding cozy homes and
                   rooms across Nepal. Dive into our extensive selection and find
                   a place that feels like home.
                 </p>
-                {/* Updated List Items */}
                 <ul className="list-none mt-6">
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
-                          <FaMapMarkerAlt className="text-green-600"></FaMapMarkerAlt>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-50 mr-3">
+                          <FaMapMarkerAlt className="text-green-700"></FaMapMarkerAlt>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-gray-500">
+                        <h4 className="text-gray-400">
                           Wide Range of Properties
                         </h4>
                       </div>
@@ -212,24 +214,24 @@ const AboutUs: React.FC = () => {
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
-                          <FaHeart className="text-green-600"></FaHeart>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-50 mr-3">
+                          <FaHeart className="text-green-700"></FaHeart>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-gray-500">Trusted by Tenants</h4>
+                        <h4 className="text-gray-400">Trusted by Tenants</h4>
                       </div>
                     </div>
                   </li>
                   <li className="py-2">
                     <div className="flex items-center">
                       <div>
-                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-500 bg-green-100 mr-3">
-                          <FaDollarSign className="text-green-600"></FaDollarSign>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-50 mr-3">
+                          <FaDollarSign className="text-green-700"></FaDollarSign>
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-gray-500">Competitive Pricing</h4>
+                        <h4 className="text-gray-400">Competitive Pricing</h4>
                       </div>
                     </div>
                   </li>
@@ -241,6 +243,25 @@ const AboutUs: React.FC = () => {
       </section>
 
       <section data-aos="fade-up" className="pt-20 pb-48">
+      <div
+          className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+          style={{ transform: "translateZ(0)" }}
+        >
+          <svg
+            className="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              className="text-crimson fill-white border-crimson"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center text-center mb-24">
             <div className="w-full lg:w-6/12 px-4">
@@ -248,7 +269,9 @@ const AboutUs: React.FC = () => {
                 Here are our heroes
               </h2>
               <p className="text-lg leading-relaxed m-4 text-gray-500">
-              Unlock the door to hassle-free living with Rental Dai – where comfort meets convenience, and your perfect home is just a click away.
+                Unlock the door to hassle-free living with Rental Dai – where
+                comfort meets convenience, and your perfect home is just a click
+                away.
               </p>
             </div>
           </div>
@@ -267,7 +290,7 @@ const AboutUs: React.FC = () => {
                   </p>
 
                   <div className="mt-6 grid-flow-row gap-y-4">
-                  <a href="https://www.google.com" target="_blank">
+                    <a href="https://www.google.com" target="_blank">
                       <button
                         className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
                         type="button"
@@ -311,7 +334,7 @@ const AboutUs: React.FC = () => {
                   </p>
 
                   <div className="mt-6 grid-flow-row gap-y-4">
-                  <a href="https://www.google.com" target="_blank">
+                    <a href="https://www.google.com" target="_blank">
                       <button
                         className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
                         type="button"
@@ -354,7 +377,7 @@ const AboutUs: React.FC = () => {
                     Backend Developer
                   </p>
                   <div className="mt-6">
-                  <a href="https://www.google.com" target="_blank">
+                    <a href="https://www.google.com" target="_blank">
                       <button
                         className="text-white p-3 text-center mx-2 inline-flex items-center hover:shadow-lg duration-150 justify-center w-10 h-10 mb-5 shadow-lg rounded-full bg-red-600"
                         type="button"
@@ -394,7 +417,7 @@ const AboutUs: React.FC = () => {
                 <div className="pt-6 text-center">
                   <h5 className="text-xl font-bold">Dipesh Sanjel</h5>
                   <p className="mt-1 text-sm text-gray-400 uppercase font-semibold">
-                    Frontend  Developer
+                    Frontend Developer
                   </p>
                   <div className="mt-6 mx-2">
                     <a href="https://www.google.com" target="_blank">

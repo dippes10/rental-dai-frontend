@@ -341,3 +341,13 @@ border-color: rgb(238, 80, 80);
   // margin-right: 1rem;
   // margin-bottom: 1rem;
 }
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}

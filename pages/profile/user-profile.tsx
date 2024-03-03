@@ -7,7 +7,7 @@ import {
   FaHome,
   FaInfo,
 } from "react-icons/fa";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 import PropertyCard from "../../components/propertyCard";
 

@@ -9,7 +9,7 @@ import {
   FaEdit,
   FaTrash,
 } from "react-icons/fa";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox";
 import router from "next/router";
 import Button from "../../components/Button";

@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = () => {
   // Initialize AOS when the component mounts
   useEffect(() => {
     AOS.init({
-      duration: 500, // Animation duration in milliseconds
+      duration: 300, // Animation duration in milliseconds
       once: true, // Whether the animation should happen only once
       easing: "ease-out", // Easing function for the animation
     });

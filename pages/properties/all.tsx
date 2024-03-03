@@ -1,6 +1,6 @@
 // pages/PropertiesPage.tsx
 import React, { useState, useEffect } from "react";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import MapboxComponent from "../../components/mapbox/mapbox"; // Assuming you have this Mapbox component
 import {
   FaBed,

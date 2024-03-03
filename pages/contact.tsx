@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import AppLayout from "../components/AppLayout";
+import AppLayout from "../components/utils/AppLayout";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

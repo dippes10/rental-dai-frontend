@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import AppLayout from "../../components/AppLayout";
+import AppLayout from "../../components/utils/AppLayout";
 import router from "next/router";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
