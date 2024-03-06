@@ -12,6 +12,7 @@ export type NavItemProps = {
   navItem: string;
   navLink: string;
   subNavItems?: NavItemProps[];
+  requireAuthentication?:boolean;
 };
 
 export const Header: { HeaderNav: NavItemProps[] } = {
@@ -38,6 +39,7 @@ export const Header: { HeaderNav: NavItemProps[] } = {
       id: "properties",
       navItem: "Properties",
       navLink: "/properties/all",
+      requireAuthentication:true,
     },
   ],
 };

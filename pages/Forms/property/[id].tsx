@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { FaBath, FaBed, FaDollarSign, FaUpload } from "react-icons/fa";
-import AppLayout from "../../components/utils/AppLayout";
+import AppLayout from "../../../components/utils/AppLayout";
 import { toast, Toaster } from "sonner";
-import GeocodingComponent from "../../components/mapbox/geocoding";
+import GeocodingComponent from "../../../components/mapbox/geocoding";
 
 // Define a type for the errors state
 interface ErrorState {
@@ -12,7 +12,8 @@ interface ErrorState {
 
 const UpdatePropertyForm = () => {
   const router = useRouter();
-  const { propertyId } = router.query;
+  const { id:propertyId } = router.query;
+  console.log(propertyId);
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -103,7 +104,7 @@ const [bathrooms, setBathrooms] = useState(1);
     });
 
     try {
-      const response = await fetch(`/api/properties/${propertyId}`, {
+      const response = await fetch(`http://localhost:8080/api/properties/${propertyId}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem('access_token')}`,
@@ -117,7 +118,7 @@ const [bathrooms, setBathrooms] = useState(1);
       }
 
       toast.success("Property updated successfully!");
-      router.push(`/properties/${propertyId}`);
+      // router.reload();
     } catch (error) {
       let errorMessage = "An unexpected error occurred";
       if (error instanceof Error) errorMessage = error.message;

@@ -28,7 +28,8 @@ const Header: React.FC<HeaderProps> = () => {
   const isLoggedIn = () => {
     if (typeof window !== "undefined") {
       // This code runs only on the client side
-      return Boolean(localStorage.getItem("access_token"));
+      const isLoggedIn = Boolean(localStorage.getItem("access_token"));
+      return isLoggedIn;
     }
     return false; // Default to false if not client-side
   };
@@ -47,7 +48,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken'); 
+    localStorage.removeItem('access_token'); 
     router.push('/login');
   };
 
@@ -58,6 +59,8 @@ const Header: React.FC<HeaderProps> = () => {
       once: true, // Whether the animation should happen only once
       easing: "ease-out", // Easing function for the animation
     });
+    const loggedIn=isLoggedIn()
+    setUserLoggedIn(loggedIn)
   }, []);
 
   return (
@@ -134,7 +137,13 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex md:flex items-center space-x-4 gap-2">
-            {HeaderNav.map((item) =>
+            {HeaderNav
+            .filter((item) => {
+              if (item.requireAuthentication === undefined) return true;
+              if (item.requireAuthentication) return userLoggedIn;
+              return true;
+            })
+            .map((item) =>
               item.subNavItems ? (
                 <Dropdown
                   displayHoverEffect={true}
