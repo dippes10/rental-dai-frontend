@@ -161,22 +161,26 @@ const ListerProfile = () => {
         <div className="relative w-full max-w-4xl p-8 mx-auto bg-slate-100 rounded-lg shadow-xl">
           {/* Profile Data */}
           <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-  
-            <div className="flex items-center gap-4">
-              <FaUserCircle size={50} className="text-blue-500" />
-              <div>
-                <h2 className="text-2xl font-semibold text-blue-600">
-                  {profileData.firstName}
-                </h2>
-                <p className="text-gray-600">
-                  <FaEnvelope className="inline mr-2" />
-                  {profileData.email}
-                </p>
-                <p className="text-gray-600">
-                  <FaPhone className="inline mr-2" />
-                  {profileData.phone}
-                </p>
+            <div className="flex items-center gap-4 justify-between" >
+              <div className="flex items-center gap-4">
+                <FaUserCircle size={50} className="text-blue-500" />
+                <div>
+                  <h2 className="text-2xl font-semibold text-blue-600">
+                    {profileData.firstName}
+                  </h2>
+                  <p className="text-gray-600">
+                    <FaEnvelope className="inline mr-2" />
+                    {profileData.email}
+                  </p>
+                  <p className="text-gray-600">
+                    <FaPhone className="inline mr-2" />
+                    {profileData.phone}
+                  </p>
+                </div>
               </div>
+              <Button title="Add listing" onClick={handleClick}/>
+               
+              
             </div>
           </div>
 
@@ -233,7 +237,7 @@ const ListerProfile = () => {
                   {/* Edit Button */}
                   <button
                     className="bg-blue-500 text-white p-2 rounded hover:bg-blue-700 flex items-center"
-                    onClick={() => router.push("/Forms/edit-property")}
+                    onClick={() => router.push(`/Forms/property/${listing.id}`)}
                   >
                     Edit
                   </button>
