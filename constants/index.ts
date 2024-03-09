@@ -70,7 +70,6 @@ export const Footer = {
     },
     {
       navTitle: "Contact Us",
-      navLink: "/contact-us",
       navItems: [
         {
           navItem: "(+977) 984-7845124",
