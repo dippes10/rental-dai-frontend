@@ -24,7 +24,7 @@ interface Listing {
     bedrooms: number;
     bathrooms: number;
     price: string;
-    description: string; // Add description field}
+    description: string; 
   };
 }
 

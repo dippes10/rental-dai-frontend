@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-300 mt-8 pt-4">
-          <div className="flex flex-wrap items-center justify-between">
+          <div className="flex flex-wrap items-center  justify-between">
             <div className="w-full lg:w-auto mb-4 lg:mb-0 text-center lg:text-left">
               <p className="text-sm">{BottomFooterNav.copyright}</p>
             </div>
@@ -88,7 +88,7 @@ const Footer = () => {
               {SocialMediaLinks.map((link, index) => (
                 <a
                   key={index}
-                  href={link.link} // Changed from 'ref' to 'href'
+                  href={link.link}
                   className="text-gray-900 hover:text-blue-500 transition-all"
                   target="_blank"
                   rel="noopener noreferrer"
