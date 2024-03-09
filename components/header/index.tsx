@@ -33,7 +33,6 @@ const Header: React.FC<HeaderProps> = () => {
     }
     return false; // Default to false if not client-side
   };
-  
 
   // Function to handle click on "Join RentalDai" button
   const handleClick = () => {
@@ -47,20 +46,24 @@ const Header: React.FC<HeaderProps> = () => {
     setShowMenu(false);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('access_token'); 
-    router.push('/login');
+  const handleProfileClick = () => {
+    router.push("/profile");
+    setShowMenu(false);
   };
 
-  // Initialize AOS when the component mounts
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    router.push("/login");
+  };
+
   useEffect(() => {
     AOS.init({
-      duration: 300, // Animation duration in milliseconds
-      once: true, // Whether the animation should happen only once
-      easing: "ease-out", // Easing function for the animation
+      duration: 300,
+      once: true,
+      easing: "ease-out",
     });
-    const loggedIn=isLoggedIn()
-    setUserLoggedIn(loggedIn)
+    const loggedIn = isLoggedIn();
+    setUserLoggedIn(loggedIn);
   }, []);
 
   return (
@@ -90,7 +93,7 @@ const Header: React.FC<HeaderProps> = () => {
                   alt="rental-dai Logo"
                   width={120}
                   height={40}
-                  data-aos="fade-right" // Apply fade-right animation
+                  data-aos="fade-right"
                 />
               </div>
             </Link>
@@ -137,13 +140,11 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex md:flex items-center space-x-4 gap-2">
-            {HeaderNav
-            .filter((item) => {
+            {HeaderNav.filter((item) => {
               if (item.requireAuthentication === undefined) return true;
               if (item.requireAuthentication) return userLoggedIn;
               return true;
-            })
-            .map((item) =>
+            }).map((item) =>
               item.subNavItems ? (
                 <Dropdown
                   displayHoverEffect={true}
@@ -171,12 +172,20 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="space-x-4 flex justify-center items-center bg-opacity-50">
             {userLoggedIn ? (
               // Display Logout button if user is logged in
-              <button
-                onClick={handleLogout}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Logout
-              </button>
+              <div>
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Logout
+                </button>
+                <button
+                  onClick={handleProfileClick}
+                  className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-blue-500 to-gray-400 group-hover:from-blue-600 group-hover:to-gray-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200"
+                >
+                  My Profile
+                </button>
+              </div>
             ) : (
               // Display Register and Login buttons if user is not logged in
               <>
@@ -188,7 +197,7 @@ const Header: React.FC<HeaderProps> = () => {
                     Register
                   </button>
                 </div>
-                <div className="text-black transition duration-300 hover:text-black cursor-pointer">
+                <div className="gap-2 text-black transition duration-300 hover:text-black cursor-pointer">
                   <button
                     onClick={handleStartClick}
                     className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-600 group-hover:to-orange-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-pink-200"
