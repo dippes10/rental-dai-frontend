@@ -25,38 +25,38 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import houseNepal from '../../public/house-image.jpeg';
 import Image from "next/image";
 
 const AboutUs: React.FC = () => {
-  useEffect(() => {
-    // Initialize AOS with your preferred configuration
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true, // Whether the animation should happen only once
-      easing: "ease-out", // Easing function for the animation (e.g., "ease-out", "linear", etc.)
-    });
+  // useEffect(() => {
+  //   // Initialize AOS with your preferred configuration
+  //   AOS.init({
+  //     duration: 1000, // Animation duration in milliseconds
+  //     once: true, // Whether the animation should happen only once
+  //     easing: "ease-out", // Easing function for the animation (e.g., "ease-out", "linear", etc.)
+  //   });
 
-    // Optionally, add event listeners to refresh AOS when the window is resized
-    window.addEventListener("resize", () => {
-      AOS.refresh();
-    });
+  //   // Optionally, add event listeners to refresh AOS when the window is resized
+  //   window.addEventListener("resize", () => {
+  //     AOS.refresh();
+  //   });
 
-    // Clean up the event listeners when the component unmounts
-    return () => {
-      window.removeEventListener("resize", () => {
-        AOS.refresh();
-      });
-    };
-  }, []);
+  //   // Clean up the event listeners when the component unmounts
+  //   return () => {
+  //     window.removeEventListener("resize", () => {
+  //       AOS.refresh();
+  //     });
+  //   };
+  // }, []);
 
   return (
     <AppLayout>
       <div
-        data-aos="fade-up"
+        // data-aos="fade-up"
         className=" bg-black relative pt-32 pb-64 flex content-center items-center justify-center min-h-screen-75 -mt-20"
       >
         <div
@@ -89,7 +89,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      <section data-aos="fade-down" className="pb-20 -mt-52 bg-black">
+      <section className="pb-20 -mt-52 bg-black">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap">
             {/* <!-- Feature 1: Wide Range of Listings --> */}
@@ -134,7 +134,7 @@ const AboutUs: React.FC = () => {
                     <FaFastForward className="fas "></FaFastForward>
                   </div>
                   <h6 className="text-xl font-semibold">
-                    Secure and Easy Transactions
+                    Secure and Easy Reachability
                   </h6>
                   <p className="mt-2 mb-4 text-gray-500">
                     Experience a hassle-free and secure process, from house
@@ -169,11 +169,11 @@ const AboutUs: React.FC = () => {
         </div>
         <div className="container mx-auto px-4">
           <div
-            data-aos="fade-up"
+            // data-aos="fade-up"
             className="flex flex-wrap items-center justify-center"
           >
             <div
-              data-aos="fade-up"
+              // data-aos="fade-up"
               className="w-full lg:w-5/12 px-4 mb-12 lg:mb-0"
             >
               <Image
@@ -242,7 +242,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section data-aos="fade-up" className="pt-20 pb-48">
+      <section className="pt-20 pb-48">
       <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style={{ transform: "translateZ(0)" }}
@@ -454,7 +454,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      <section className=" relative block bg-blue-300">
+      {/* <section className=" relative block bg-blue-300">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
           style={{ transform: "translateZ(0)" }}
@@ -527,7 +527,7 @@ const AboutUs: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section className="relative block py-24 lg:pt-0 ">
         <div className="container mx-auto px-4 ">
           <div className="flex flex-wrap justify-center lg:-mt-64 -mt-48 ">

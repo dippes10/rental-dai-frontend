@@ -28,7 +28,7 @@ const MapboxComponent = (props: Props) => {
   const [viewport, setViewport] = useState({
     latitude: props.latitude || 28.3949,
     longitude: props.longitude || 84.124,
-    zoom: props.zoom || 12,
+    zoom: props.zoom || 9,
   });
 
   return (

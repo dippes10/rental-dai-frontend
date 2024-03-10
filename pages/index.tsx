@@ -131,6 +131,7 @@ const HomePage: React.FC = () => {
           />
           <Description />
 
+          {/* next container */}
           <div className="container mx-auto flex sm-flex">
             <div className="flex flex-wrap items-center -mt-2">
               <div className="w-full md:w-6/12 lg:w-4/12 px-4 mr-auto ml-auto -mt-12">
