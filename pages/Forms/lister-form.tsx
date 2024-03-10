@@ -35,6 +35,12 @@ const ListerForm: React.FC = () => {
   const [longitude, setLongitude] = useState<number | null>(null);
 
   const handleChecked = () => setChecked(!checked);
+  const handleBUttonClick = () => {
+    router.push("/profile/lister-profile");
+    // <Toaster  richColors />
+    toast.success("Property added successfully!");
+
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -337,9 +343,10 @@ const ListerForm: React.FC = () => {
                 </label>
               </div>
               <div className="mt-6">
-                <Toaster position="top-center" richColors />
+                
                 <button
                   type="submit"
+                  onClick={handleBUttonClick}
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
                 >
                   Submit

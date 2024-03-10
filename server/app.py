@@ -11,7 +11,7 @@ app = Flask(__name__, static_url_path='/static',static_folder='static')
 
 CORS(app)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
-app.config['JWT_SECRET_KEY'] = 'thisissecret'  # Replace with a complex secret key
+app.config['JWT_SECRET_KEY'] = 'thisissecret' 
 jwt = JWTManager(app)
 
 
@@ -321,7 +321,7 @@ def delete_property(property_id):
 
 # Haversine formula to calculate distance between two points
 def haversine(lat1, lon1, lat2, lon2):
-    R = 6371  # Radius of the Earth in kilometers
+    R = 6371  
     dlat = math.radians(lat2 - lat1)
     dlon = math.radians(lon2 - lon1)
     a = math.sin(dlat / 2) ** 2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2) ** 2
@@ -349,8 +349,6 @@ def nearby_properties():
 
         if user_location:
             user_latitude, user_longitude = user_location
-            print(user_latitude)
-            print(user_longitude)
             radius_in_km = 4  # Radius to search within (adjust as needed)
 
     # Execute Haversine query to find nearby properties
@@ -485,9 +483,9 @@ def recommend_price():
       
 
 
-@app.route('/')
+@app.route('/i')
 def index():
-  image_url = url_for('static', filename='1.png')
+  image_url = url_for('static', filename='1.jpg')
   return f'<img src="{image_url}" alt="Image">'
 
 @app.route('/uploads/<filename>')
