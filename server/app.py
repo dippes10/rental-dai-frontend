@@ -122,7 +122,7 @@ def signin():
                 user_type = user_data[1] 
                 user_email=user_data[2] # Access the second element (user_type)
                 user_phone = user_data[3]
-                access_token = create_access_token(identity={"user_id":user_id,"email":user_email}, expires_delta=timedelta(days=15))
+                access_token = create_access_token(identity={"user_id":user_id,"email":user_email}, expires_delta=timedelta(minutes=15))
                 return jsonify({'access_token': access_token, 'user':{"user_id":user_id,"email":user_email,"user_type":user_type,"phone":user_phone} }), 200
             else:
                 return jsonify({'message': 'Invalid credentials'}), 401

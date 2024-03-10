@@ -118,7 +118,7 @@ const [bathrooms, setBathrooms] = useState(1);
       }
 
       toast.success("Property updated successfully!");
-      // router.reload();
+      router.reload();
     } catch (error) {
       let errorMessage = "An unexpected error occurred";
       if (error instanceof Error) errorMessage = error.message;
