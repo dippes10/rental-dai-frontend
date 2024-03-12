@@ -118,7 +118,7 @@ const [bathrooms, setBathrooms] = useState(1);
       }
 
       toast.success("Property updated successfully!");
-      // router.reload();
+      router.reload();
     } catch (error) {
       let errorMessage = "An unexpected error occurred";
       if (error instanceof Error) errorMessage = error.message;
@@ -149,7 +149,12 @@ const [bathrooms, setBathrooms] = useState(1);
     e.preventDefault();
     setBathrooms(Math.max(1, bathrooms - 1));
   };
+  const handleBUttonClick = () => {
+    router.push("/profile/lister-profile");
+    // <Toaster  richColors />
+    toast.success("Property added successfully!");
 
+  };
   return (
     <AppLayout>
     <Toaster />
@@ -328,6 +333,7 @@ const [bathrooms, setBathrooms] = useState(1);
                 <Toaster position="top-center" richColors />
                 <button
                   type="submit"
+                  onClick={handleBUttonClick}
                   className="w-full px-6 py-3 text-white bg-gradient-to-r from-red-500 to-red-700 rounded-md focus:outline-none focus:ring focus:border-red-300"
                 >
                   Submit

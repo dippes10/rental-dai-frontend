@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   const handleProfileClick = () => {
-    router.push("/profile");
+    router.push("/profile/lister-profile");
     setShowMenu(false);
   };
 
@@ -172,18 +172,19 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="space-x-4 flex justify-center items-center bg-opacity-50">
             {userLoggedIn ? (
               // Display Logout button if user is logged in
-              <div>
-                <button
-                  onClick={handleLogout}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  Logout
-                </button>
+              <div  className="grid grid-cols-2 gap-2">
+
                 <button
                   onClick={handleProfileClick}
                   className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-blue-500 to-gray-400 group-hover:from-blue-600 group-hover:to-gray-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200"
                 >
                   My Profile
+                </button>
+                <button
+                  onClick={handleLogout}
+                 className="relative inline-flex items-center justify-center p-3 mb-2 me-2 overflow-hidden text-sm font-medium text-white rounded-full group bg-gradient-to-br from-red-500 to-gray-400 group-hover:from-red-600 group-hover:to-gray-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-200"
+                >
+                  Logout
                 </button>
               </div>
             ) : (
