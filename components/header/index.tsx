@@ -1,23 +1,19 @@
-// Import necessary modules
+
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaBars } from "react-icons/fa";
-import AOS from "aos"; // Import AOS library
-import "aos/dist/aos.css"; // Import AOS styles
-import Button from "../Button";
+import AOS from "aos";
 import Dropdown from "./Dropdown";
 import { Header as HeaderData, NavItemProps } from "../../constants";
 import { Sidebar } from "../../components/sidebar";
 
-// Interface for HeaderProps
 interface HeaderProps {
   HeaderNav: NavItemProps[];
 }
 
-// Header component
 const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,20 +23,17 @@ const Header: React.FC<HeaderProps> = () => {
 
   const isLoggedIn = () => {
     if (typeof window !== "undefined") {
-      // This code runs only on the client side
       const isLoggedIn = Boolean(localStorage.getItem("access_token"));
       return isLoggedIn;
     }
-    return false; // Default to false if not client-side
+    return false;
   };
 
-  // Function to handle click on "Join RentalDai" button
   const handleClick = () => {
     router.push("/signup");
     setShowMenu(false);
   };
 
-  // Function to handle click on "Get started" button
   const handleStartClick = () => {
     router.push("/login");
     setShowMenu(false);
@@ -68,16 +61,14 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header>
-      {/* Use Head component to update title and icon */}
       <Head>
         <title>Home Rental</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-      {/* Navigation */}
       <nav
         className="fixed z-40 pt-4 flex flex-row justify-center items-center w-full bg-transparent px-2"
-        data-aos="fade-down" // Apply fade-down animation
+        data-aos="fade-down"
       >
         <div className="container md:px-2 rounded-xl border-2 shadow-lg bg-white flex items-center justify-between h-20 text-black">
           <div className="flex flex-row items-center space-x-2">
@@ -103,7 +94,7 @@ const Header: React.FC<HeaderProps> = () => {
             <button
               onClick={() => setShowMenu(!showMenu)}
               className="text-black focus:outline-none transition duration-300 hover:opacity-80"
-              data-aos="fade-left" // Apply fade-left animation
+              data-aos="fade-left"
             >
               {showMenu ? (
                 <svg
@@ -159,7 +150,7 @@ const Header: React.FC<HeaderProps> = () => {
                         router.pathname === item.navLink &&
                         "after:left-0 text-primary-600"
                       }`}
-                      data-aos="fade-up" // Apply fade-up animation
+                      data-aos="fade-up" 
                     >
                       {item.navItem}
                     </div>
@@ -171,7 +162,6 @@ const Header: React.FC<HeaderProps> = () => {
           {/* Call-to-action Buttons */}
           <div className="space-x-4 flex justify-center items-center bg-opacity-50">
             {userLoggedIn ? (
-              // Display Logout button if user is logged in
               <div  className="grid grid-cols-2 gap-2">
 
                 <button
@@ -188,7 +178,6 @@ const Header: React.FC<HeaderProps> = () => {
                 </button>
               </div>
             ) : (
-              // Display Register and Login buttons if user is not logged in
               <>
                 <div className="text-black transition duration-300 hover:text-red cursor-pointer">
                   <button
@@ -215,5 +204,4 @@ const Header: React.FC<HeaderProps> = () => {
   );
 };
 
-// Export the Header component
 export default Header;
